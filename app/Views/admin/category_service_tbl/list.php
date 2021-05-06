@@ -106,6 +106,13 @@
             <input type="text" name="category_name"  class="form-control" id="category_name" />
             </div>
             </div>
+            <div class="row">
+            <div class="col-md-6">
+            <label for="category_name" class="control-label">Category Name</label>
+            <div class="form-group">
+            <input type="text" name="category_name"  class="form-control" id="category_name" />
+            </div>
+            </div>
             <div class="col-md-6">
             <label for="detail" class="control-label">Details</label>
             <div class="form-group">
