@@ -1,0 +1,20 @@
+<div class="air__layout__footer">
+        <div class="air__footer">
+    <div class="air__footer__inner">
+    <div class="row">
+        <div class="col-md-8">
+        <p>
+            &copy; 2021 QLIQ INTERGRATION
+        </p>
+        </div>
+        <div class="col-md-4">
+        <div class="air__footer__logo">
+            <div class="air__footer__logo__letter">G</div>
+            <div class="air__footer__logo__name">GNAT </div>
+            <div class="air__footer__logo__descr">GNAT BOOKING</div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+        </div>

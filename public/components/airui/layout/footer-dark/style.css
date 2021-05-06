@@ -1,0 +1,60 @@
+/* FOOTER DARK */
+.air__footerDark__outer {
+    background: #100f28;
+}
+
+.air__footerDark__bottom {
+    background: #161537;
+}
+
+.air__footerDark__container {
+    max-width: 85.33rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+.air__footerDark__container a:hover {
+    color: #aca6cc;
+}
+
+.air__footerDark__logo {
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.air__footerDark__logo__letter {
+    float: left;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.35714rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    border: 4px solid #fff;
+    padding-bottom: 0.13rem;
+}
+
+.air__footerDark__logo__name {
+    font-weight: 900;
+    color: #fff;
+    font-size: 21px;
+    margin-left: 2.66rem;
+}
+
+.air__footerDark__logo__descr {
+    color: #c3bedc;
+    margin-left: 2.66rem;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.air__footerDark__input, .air__footerDark__input:hover, .air__footerDark__input:focus {
+    background: #2a274d;
+    border-color: #2a274d;
+    color: #aeaee0;
+}

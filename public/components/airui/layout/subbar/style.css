@@ -1,0 +1,117 @@
+/* SUBBAR */
+.air__subbar {
+    background: #fff;
+    min-height: 4.26rem;
+    border-bottom: 1px solid #e4e9f0;
+    padding: 1rem 1.33rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.air__subbar__divider {
+    width: 1px;
+    background-color: #e4e9f0;
+    align-self: stretch;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.air__subbar__breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.air__subbar__breadcrumb {
+    position: relative;
+    margin-right: 2rem;
+}
+
+.air__subbar__breadcrumb::after {
+    content: '-';
+    position: absolute;
+    right: -1.2rem;
+    bottom: 0;
+}
+
+.air__subbar__breadcrumb:last-child {
+    margin-right: 0;
+}
+
+.air__subbar__breadcrumb:last-child::after {
+    display: none;
+}
+
+.air__subbar__breadcrumbLink {
+    display: block;
+}
+
+.air__subbar__breadcrumbLink--current {
+    color: #161537;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.air__subbar__amount {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.air__subbar__amountText {
+    font-size: 0.8rem;
+    color: #c3bedc;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    margin-bottom: 0;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.air__subbar__amountValue {
+    color: #161537;
+    font-size: 1.2rem;
+    display: block;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.air__subbar__amountGraph {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.air__subbar__amountGraphItem {
+    margin-right: 0.4rem;
+    width: 0.33rem;
+    border-radius: 3px;
+    background-color: var(--kit-color-primary);
+}
+
+.air__subbar__amountGraphItem:last-child {
+    margin-right: 0;
+}
+
+[data-kit-theme='dark'] .air__subbar {
+    background: #12112c;
+    border-color: #2a274d;
+}
+
+[data-kit-theme='dark'] .air__subbar__divider {
+    background-color: #2a274d;
+}
+
+[data-kit-theme='dark'] .air__subbar__amountText {
+    color: #aeaee0;
+}
+
+[data-kit-theme='dark'] .air__subbar__amountValue {
+    color: #fff;
+}

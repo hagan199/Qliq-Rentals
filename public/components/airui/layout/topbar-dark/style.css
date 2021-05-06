@@ -1,0 +1,102 @@
+/* TOPBAR DARK */
+.air__topbarDark {
+    background: #161537;
+    color: #786fa4;
+    min-height: 4.26rem;
+    padding: 1rem 1.33rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.air__topbarDark__logo {
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-right: 2rem;
+    line-height: 1;
+    height: 4.26rem;
+    white-space: nowrap;
+}
+
+.air__topbarDark__logo__letter {
+    float: left;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.35714rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    border: 4px solid #fff;
+    padding-bottom: 0.13rem;
+}
+
+.air__topbarDark__logo__name {
+    font-weight: 900;
+    color: #fff;
+    font-size: 21px;
+    margin-left: 2.66rem;
+}
+
+.air__topbarDark__logo__descr {
+    color: #c3bedc;
+    margin-left: 2.66rem;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.air__topbarDark__issueDropdown .dropdown-toggle {
+    background-color: #161537;
+    padding: 0.66rem 1.33rem;
+    border-radius: 0.33rem;
+}
+
+.air__topbarDark .dropdown,
+.air__topbarDark .dropdown-toggle {
+    color: #aca6cc;
+}
+
+.air__topbarDark .dropdown:focus, .air__topbarDark .dropdown:hover,
+.air__topbarDark .dropdown-toggle:focus,
+.air__topbarDark .dropdown-toggle:hover {
+    color: #fff;
+}
+
+.air__topbarDark .dropdown:focus::after, .air__topbarDark .dropdown:hover::after,
+.air__topbarDark .dropdown-toggle:focus::after,
+.air__topbarDark .dropdown-toggle:hover::after {
+    transition: color 0.2s ease-in-out;
+    color: #fff;
+}
+
+.air__topbarDark .dropdown:focus .dropdown-toggle-text, .air__topbarDark .dropdown:hover .dropdown-toggle-text,
+.air__topbarDark .dropdown-toggle:focus .dropdown-toggle-text,
+.air__topbarDark .dropdown-toggle:hover .dropdown-toggle-text {
+    color: #fff;
+}
+
+.air__topbarDark .dropdown:focus .dropdown-toggle-icon, .air__topbarDark .dropdown:hover .dropdown-toggle-icon,
+.air__topbarDark .dropdown-toggle:focus .dropdown-toggle-icon,
+.air__topbarDark .dropdown-toggle:hover .dropdown-toggle-icon {
+    color: #fff;
+}
+
+.air__topbarDark .dropdown.show .dropdown-toggle-text {
+    color: #aca6cc;
+}
+
+.air__topbarDark .dropdown-toggle-icon {
+    transition: color 0.2s ease-in-out;
+    color: #786fa4;
+}
+
+.air__topbarDark__status {
+    border-radius: 5px;
+    padding: 0.33rem 0.46rem;
+}

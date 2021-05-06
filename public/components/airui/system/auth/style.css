@@ -1,0 +1,106 @@
+.air__auth {
+    /* SETTINGS */
+}
+
+.air__auth__boxContainer {
+    padding: 3.33rem 2rem;
+}
+
+.air__auth__authContainer {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.air__auth__authContainer--white {
+    background: #fff;
+}
+
+.air__auth__authContainer--gray {
+    background: #f2f4f8;
+}
+
+.air__auth__containerInner {
+    max-width: 36rem;
+    width: 100%;
+}
+
+.air__auth__footerNav li {
+    margin: 0.33rem 0.93rem;
+}
+
+.air__auth__logo {
+    display: block;
+    padding: 1rem 1.33rem;
+    line-height: 1;
+    height: 4.26rem;
+    white-space: nowrap;
+}
+
+.air__auth__logo__letter {
+    float: left;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.35714rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #161537;
+    border: 4px solid #161537;
+    padding-bottom: 0.13rem;
+}
+
+.air__auth__logo__name {
+    font-weight: 900;
+    color: #161537;
+    font-size: 21px;
+    margin-left: 2.66rem;
+}
+
+.air__auth__logo__descr {
+    color: #786fa4;
+    margin-left: 2.66rem;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.air__auth--gray .air__auth__authContainer {
+    background: #f2f4f8;
+}
+
+.air__auth--img .air__auth__authContainer {
+    background-image: url(../../../kit/core/img/content/photos/7.jpg);
+}
+
+[data-kit-theme='dark'] .air__auth__authContainer {
+    background: transparent !important;
+}
+
+[data-kit-theme='dark'] .air__auth__topbar {
+    background: #161537 !important;
+    border-bottom: 1px solid #2a274d !important;
+}
+
+[data-kit-theme='dark'] .air__auth__logoContainer__letter {
+    color: #fff;
+    border-color: #fff;
+}
+
+[data-kit-theme='dark'] .air__auth__logoContainer__name {
+    color: #fff;
+}
+
+[data-kit-theme='dark'] .air__auth__logoContainer__descr {
+    color: #7575a3;
+    border-left: 1px solid #2a274d;
+}
