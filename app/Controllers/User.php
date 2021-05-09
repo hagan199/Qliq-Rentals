@@ -21,7 +21,7 @@ class User extends BaseController
                         'lname'  => $this->request->getVar('lname'),
                         'phone'  => $this->request->getVar('phone'),
                         'gender'  => $this->request->getVar('gender'),
-                        'user_email'  => $this->request->getVar('user_email'),
+                        'email'  => $this->request->getVar('user_email'),
                         'user_name'     => $this->request->getVar('user_name'),
                         'user_password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
                     ];
@@ -53,7 +53,7 @@ class User extends BaseController
 
 
         $model = new UserModel();
-        $data['users_detail'] = $model->orderBy('user_id', 'DESC')->findAll();
+        $data['users_detail'] = $model->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'User List';
 
 

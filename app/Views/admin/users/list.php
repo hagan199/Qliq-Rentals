@@ -67,7 +67,7 @@
                             <tr>
                                 <td><?= $i++?></td>
                                 <td><?= $u['fname'] ?></td>
-                                <td><?= $u['user_email'] ?></td>
+                                <td><?= $u['email'] ?></td>
                                 <td><?= $u['gender'] ?></td>
                                 <td><?php echo $u['phone']; ?></td>
                                 <td>

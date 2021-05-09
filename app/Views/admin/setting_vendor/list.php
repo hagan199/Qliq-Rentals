@@ -142,7 +142,7 @@
     </div>
     </div>
     </div>
-<!--------------------------Ower Vendor  -------------------->
+<!------------------
 <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="edit" role="tabpanel" aria-labelledby="edit-tab">    
     <div class="row">
     <div class="col-lg-12 col-md-offset-3">
@@ -223,7 +223,7 @@
                 </div>
                 </div>    
     
-
+--------Ower Vendor  -------------------->
     </div>
     </div>
     </div>
