@@ -36,17 +36,17 @@ $routes->get('/booking', 'Client::book_list');
 
 
 //  User 
-$routes->match(['get', 'post'], '/users/(:any)/(:any)', 'Admin::user/$1/$2');
 
 // Admin Route
 $routes->get('/dashboard', 'Admin::index');
 $routes->get('/dash', 'Admin::dashboard');
-$routes->match(['get', 'post'], '/vservices/(:any)/(:any)', 'Admin::setup_category_service/$1/$2');
-$routes->match(['get', 'post'], '/services/(:any)/(:any)', 'Admin::setup_service/$1/$2');
-$routes->match(['get', 'post'], '/vendor', ' Admin::setup_settingvendor/$1/$2');
-$routes->match(['get', 'post'], '/vendor', ' Admin::setup_vendor/$1/$2');
+$routes->match(['get', 'post'], '/users/(:any)/(:any)', 'Admin::user/$1/$2');
+$routes->match(['get', 'post'], '/cservice', 'Admin::categoryService/$1/$2');
+$routes->match(['get', 'post'], '/services/(:any)/(:any)', 'Admin::service/$1/$2');
+$routes->match(['get', 'post'], '/svendor', 'Admin::setup_settingVendor/$1/$2');
+$routes->match(['get', 'post'], '/vendor', 'Admin::setup_vendor/$1/$2');
 
-// Admin Route
+// Client Route
 $routes->get('/booking', 'Client::book_list');
 
 

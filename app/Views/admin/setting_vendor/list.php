@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="card-body ">
-                 <form action="/vendor/add/vendoradd" method="post">
+                 <form action="/svendor/add/goals" method="post">
             <div class="box-body">
                 <div class="card ">
     
@@ -141,7 +141,7 @@
     </div>
     </div>
     </div>
-<!------------------
+
 <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="edit" role="tabpanel" aria-labelledby="edit-tab">    
     <div class="row">
     <div class="col-lg-12 col-md-offset-3">
@@ -152,7 +152,7 @@
                     </div>
                 </div>
                 <div class="card-body ">
-                 <form action="/vendor/edit/vendoradd" method="post">
+                 <form action="/svendor/edit/goals" method="post">
             <div class="box-body"> 
             <div class="row">
             <div class="col-md-6">
@@ -221,8 +221,6 @@
                 </div>
                 </div>
                 </div>    
-    
---------Ower Vendor  -------------------->
     </div>
     </div>
     </div>

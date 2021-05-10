@@ -50,7 +50,7 @@
           <span>Vendor Configuration</span>
         </li>
         <li class="air__menuLeft__item">
-          <a href="/vendor" class="air__menuLeft__link air__sidebar__actionToggle">
+          <a href="/svendor" class="air__menuLeft__link air__sidebar__actionToggle">
             <i class="fe fe-settings air__menuLeft__icon"></i>
             <span>Setup Vendor Name</span>
           </a>
