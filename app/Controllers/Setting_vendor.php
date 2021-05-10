@@ -63,7 +63,6 @@ class setting_vendor extends BaseController
             session()->setFlashdata('alert-class', 'alert-danger');
         }
         return redirect()->route('/');
-
         }
     }
 ?>

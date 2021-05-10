@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class SettingVendor extends Model{
     protected $table = 'setting_vendor';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['company_name','address','phone','admin_id'];
+    protected $allowedFields = ['company_name','address','phone'];
     }
 
 

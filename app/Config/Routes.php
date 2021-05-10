@@ -33,28 +33,21 @@ $routes->setAutoRoute(true);
 $routes->get('/login', 'Login::auth');
 $routes->get('/logout', 'Login::logout');
 $routes->get('/booking', 'Client::book_list');
-$routes->get('/vendor', 'Setting_vendor::index');
-$routes->get('/dashboard', 'Dashboard::index');
 
-//$routes->match(['get', 'post'], '/users/(:any)', 'User::index');
-$routes->match(['get', 'post'], '/users/(:any)/(:any)', 'User::index/$1/$2');
 
-//Category service
+//  User 
+$routes->match(['get', 'post'], '/users/(:any)/(:any)', 'Admin::user/$1/$2');
+
+// Admin Route
+$routes->get('/dashboard', 'Admin::index');
+$routes->get('/dash', 'Admin::dashboard');
 $routes->match(['get', 'post'], '/vservices/(:any)/(:any)', 'Admin::setup_category_service/$1/$2');
-
-//Service
 $routes->match(['get', 'post'], '/services/(:any)/(:any)', 'Admin::setup_service/$1/$2');
-
-// Setting vendor
-$routes->match(['get', 'post'], '/vendor', ' Setting_::index/$1/$2');
-
-//Booking list
-$routes->get('/booking', 'Client::book_list');
-
-//Category service
+$routes->match(['get', 'post'], '/vendor', ' Admin::setup_settingvendor/$1/$2');
 $routes->match(['get', 'post'], '/vendor', ' Admin::setup_vendor/$1/$2');
 
-
+// Admin Route
+$routes->get('/booking', 'Client::book_list');
 
 
 

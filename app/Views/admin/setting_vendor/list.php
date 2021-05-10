@@ -21,7 +21,6 @@
                         Own Vendor Detail
                 </a>
                 </li>
-    
             </ul>
             </div>
 

@@ -1,3 +1,7 @@
+<?php
+  $fname = session()->get('fname');
+  $email = session()->get('email');
+  $user_name = session()->get('user_name');  ?>
 <!DOCTYPE html>
 <html lang="en" data-kit-theme="default">
 
@@ -43,6 +47,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap4.min.css"/>
 
   <script src="../../vendors/jquery/dist/jquery.min.js"></script>
+  <script src="../../vendors/jquery/datatable.js"></script>
   <script src="../../vendors/popper.js/dist/umd/popper.js"></script>
   <script src="../../vendors/jquery-ui/jquery-ui.min.js"></script>
   <script src="../../vendors/bootstrap/dist/js/bootstrap.js"></script>
@@ -84,7 +89,7 @@
   <script src="../../vendors/techan/dist/techan.min.js"></script>
   <script src="../../vendors/jqvmap/dist/jquery.vmap.js"></script>
   <script src="../../vendors/jqvmap/dist/maps/jquery.vmap.usa.js" charset="utf-8"></script>
-  
+  <script src="../../js/datatable.js" charset="utf-8"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
@@ -197,7 +202,6 @@
 </body>
 </html>
 
-<!---Datatable---->
 <script>     
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
@@ -282,5 +286,6 @@
       });
     });
   </script>
+
 
 

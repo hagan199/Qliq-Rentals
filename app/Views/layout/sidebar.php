@@ -7,7 +7,7 @@
       <span></span>
       <span></span>
     </div>
-    <a href="/dashboard" class="air__menuLeft__logo">
+    <a href="/dash" class="air__menuLeft__logo">
       <div class="air__menuLeft__logo__letter">G</div>
       <div class="air__menuLeft__logo__name">NAT</div>
       <div class="air__menuLeft__logo__descr">GNAT BOOKING</div>
@@ -50,7 +50,7 @@
           <span>Vendor Configuration</span>
         </li>
         <li class="air__menuLeft__item">
-          <a href="/vendor/add/vendoradd" class="air__menuLeft__link air__sidebar__actionToggle">
+          <a href="/vendor" class="air__menuLeft__link air__sidebar__actionToggle">
             <i class="fe fe-settings air__menuLeft__icon"></i>
             <span>Setup Vendor Name</span>
           </a>
@@ -61,16 +61,12 @@
             <span>Setup Service</span>
           </a>
         </li>
-
         <li class="air__menuLeft__item">
           <a href="/cservice" class="air__menuLeft__link air__sidebar__actionToggle">
             <i class="fe fe-settings air__menuLeft__icon"></i>
             <span>Setup Cat Service</span>
           </a>
         </li>
-
-
-
         <li class="air__menuLeft__item">
           <a href="/vservice" class="air__menuLeft__link air__sidebar__actionToggle">
             <i class="fe fe-settings air__menuLeft__icon"></i>
@@ -117,6 +113,8 @@
           Buy Air UI
         </a>
       </div>
+
+  
     </div>
   </div>
 </div>

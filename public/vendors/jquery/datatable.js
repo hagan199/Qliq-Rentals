@@ -1,4 +1,3 @@
-
 <!---Datatable---->
 <script>     
     $(document).ready(function() {
@@ -84,4 +83,3 @@
       });
     });
   </script>
-
