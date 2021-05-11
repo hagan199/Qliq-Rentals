@@ -45,8 +45,7 @@
                         <tr>
                             <th>#</th>
                             <th>Category name</th>     
-                            <th>detail</th> 
-                            <th>image</th>                                     
+                            <th>detail</th>                                                       
                             <th class="disabled-sorting text-right">Actions</th>
                         </tr>
                         </thead>
@@ -54,21 +53,20 @@
                         <tr>  
                             <th>#</th>
                             <th>Category name</th>     
-                            <th>detail</th> 
-                            <th>image</th>                                                                                        
-                        <th class="text-right">Actions</th>
+                            <th>detail</th>                                                                                                  
+                        <th class="text-center">Actions</th>
                         </tr>
                     </tfoot>
                         <tbody>
                             <?php $i=1; foreach($catergory as $u){ ?>
                             <tr>
                                 <td><?= $i++?></td>
-                                <td><?= $u['service'] ?></td>
+                                <td><?= $u['category_name'] ?></td>
                                 <td><?= $u['detail'] ?></td>                                             
                                 <td>
-                                <a title="edit" href="" class="btn btn-link btn-warning btn-just-icon like"><i class="material-icons">edit</i></a>
-                                <a title="delete" href="" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
-                                
+                                <a title="edit" href="" class="btn btn-success" ><i class="fe fe-edit mr-1" aria-hidden="true"></i>Edit</a>                 
+                            <!--- <a title="delete" href="" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>--->
+
                                 </td>
                             </tr>
                             <?php } ?>
@@ -96,8 +94,12 @@
                     </div>
                 </div>
                 <div class="card-body ">
-                 <form action="/cservice /add/cservicesadd" method="post">
+                 <form action="/cservice/add/goals" method="post">
+
             <div class="box-body">
+
+           
+
 
             <div class="row">
             <div class="col-md-6">
@@ -106,13 +108,7 @@
             <input type="text" name="category_name"  class="form-control" id="category_name" />
             </div>
             </div>
-            <div class="row">
-            <div class="col-md-6">
-            <label for="category_name" class="control-label">Category Name</label>
-            <div class="form-group">
-            <input type="text" name="category_name"  class="form-control" id="category_name" />
-            </div>
-            </div>
+        
             <div class="col-md-6">
             <label for="detail" class="control-label">Details</label>
             <div class="form-group">

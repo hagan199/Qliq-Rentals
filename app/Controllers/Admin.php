@@ -20,7 +20,52 @@ class Admin extends BaseController
 
     // Setting Vendor
     public function settingVendor($param1 = '',  $param2 = ''){    
-        $session = session();
+        $session = session();   
+        if($param1 == 'add'){
+            if($this->request->getMethod() == 'post'){
+                $rules = [
+                    "company_name" => "required",
+                    "address" => "required",             
+                ];
+                if (!$this->validate($rules)){
+                    $session->setFlashdata("error", "Invalid data request");
+                }else{
+                    $model = new Service();
+                    $data['company_name'] =  $this->request->getVar('company_name');
+                    $data['address'] =  $this->request->getVar('address');
+                    $data['phone'] =  $this->request->getVar('phone');
+                    if($model->insert($data)){
+                    $session->setFlashdata("success", "successfully");
+                        }else{
+                    $session->setFlashdata("error", "Something happened please try again");
+                    }
+                    }
+            }     
+        }
+        
+        if($param1 == 'edit'){
+            if($this->request->getMethod() == 'post'){
+                $rules = [
+                    "company_name" => "required",
+                    "address" => "required",             
+                ];
+                if (!$this->validate($rules)){
+                    $session->setFlashdata("error", "Invalid data request");
+                }else{
+                    $model = new UserModel();
+                    $data['fname'] =  $this->request->getVar('fname');
+                    $data['lname'] =  $this->request->getVar('lname');
+                    $data['user_name'] =  $this->request->getVar('user_name');
+                    $data['email'] =  $this->request->getVar('email');
+                    $data['address'] =  $this->request->getVar('address');
+                    if($model->insert($data)){
+                    $session->setFlashdata("success", "successfully");
+                        }else{
+                    $session->setFlashdata("error", "Something happened please try again");
+                    }
+                    }
+            }     
+        }  
         $model = new SettingVendor();
         $data['vendor'] = $model->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'Setup Vendor ';
@@ -70,12 +115,13 @@ class Admin extends BaseController
                 if (!$this->validate($rules)){
                     $session->setFlashdata("error", "Invalid data request");
                 }else{
-                    $model = new SettingVendor();       
+                    $model = new UserModel();       
                     $data['fname'] = $this->request->getVar('fname');
                     $data['lname'] = $this->request->getVar('lname');
                     $data['phone'] = $this->request->getVar('phone');
                     $data['gender'] = $this->request->getVar('gender');
                     $data['email'] = $this->request->getVar('email');
+                    $data['user_type'] = '101';
                     $data['user_name'] = $this->request->getVar('user_name');
                     $data['user_password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
 
@@ -106,6 +152,50 @@ class Admin extends BaseController
         $data['page'] = 'User ';
         return view('admin/users/list',$data);
     }  
+
+    public function vendorService($param1 = '',  $param2 = ''){   
+        if($param1 == 'add'){
+                if($this->request->getMethod() == 'post'){
+                    $rules = [
+                        "vendor_id" => "required",
+                        "service_id" => "required",             
+                    ];
+                    if (!$this->validate($rules)){
+                        $session->setFlashdata("error", "Invalid data request");
+                    }else{
+                        $model = new VendorService();       
+                        $data = [
+                        'vendor_id' => $this->request->getVar('vendor_id'),
+                        'service_id'  => $this->request->getVar('address'),
+                        'price'  => $this->request->getVar('price'),
+                        'catagory_id'=> $session()->get('catagory_id'), 
+                            ];
+                        if($model->insert($data)){
+                        $session->setFlashdata("success", "successfully");
+                            }else{
+                        $session->setFlashdata("error", "Something happened please try again");
+                        }
+                        }
+                }
+            }
+            $session = session();
+            $model = new VendorService();
+            $data['vendor'] = $model->orderBy('id', 'DESC')->findAll();
+    
+            $settingvendormodel = new SettingVendor();
+            $data['all_vendor_name'] = $settingvendormodel->orderBy('id', 'DESC')->findAll();
+    
+            $service_model = new Service();
+            $data['all_service'] = $service_model->orderBy('id', 'DESC')->findAll();
+    
+            $categoryservice_model = new CategoryService();
+            $data['all_categoryservice'] = $categoryservice_model->orderBy('id', 'DESC')->findAll();
+    
+            $service_model = new Service();
+            $data['all_service'] = $service_model->orderBy('id', 'DESC')->findAll();
+            $data['title'] = 'Setup Vendor Service ';
+            return view('admin/vendor_service_tbl/list',$data);
+        }  
 
     // Category  Service  
     public function categoryService($param1 = '',  $param2 = ''){    

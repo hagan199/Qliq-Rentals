@@ -85,7 +85,7 @@
             </div>
 
             <!--------add----->
-<div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tabpanel" aria-labelledby="add-tab">    
+<div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tabpane2" aria-labelledby="add-tab">    
     <div class="row">
     <div class="col-lg-12 col-md-offset-3">
                 <div class="card ">
@@ -104,15 +104,13 @@
             <div class="form-group">
             <input type="text" name="company_name"  class="form-control" id="company_name" />
             </div>
-            </div>
-        
+            </div>   
             <div class="col-md-6">
             <label for="address" class="control-label">Address</label>
             <div class="form-group">
             <input type="text" name="address"  class="form-control" id="address" />
             </div>
-            </div>
-            
+            </div>      
             <div class="col-md-6">
             <label for="phone" class="control-label">Phone</label>
             <div class="form-group">
@@ -142,7 +140,7 @@
     </div>
     </div>
 
-<div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="edit" role="tabpanel" aria-labelledby="edit-tab">    
+<div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="edit" role="tabpanel3" aria-labelledby="edit-tab">    
     <div class="row">
     <div class="col-lg-12 col-md-offset-3">
                 <div class="card ">
@@ -169,28 +167,23 @@
             </div>
             </div>
 
-
             <div class="row">
             <div class="col-md-6">
-                <label for="phone" class="control-label"> Phone</label>
-                    <div class="form-group">
-                    <input type="text" name="phone"  class="form-control" id="phone" />
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label for="user_name" class="control-label"> User Name</label>
+                <label for="user_name" class="control-label"> Username</label>
                     <div class="form-group">
                     <input type="text" name="user_name"  class="form-control" id="user_name" />
                 </div>
             </div>
-            </div>
-            <div class="row">
+            
             <div class="col-md-6">
             <label for="user_email" class="control-label">Email</label>
             <div class="form-group">
             <input type="text" name="user_email"  class="form-control" id="user_email" />
             </div>
             </div>
+            </div>
+
+            <div class="row">
             <div class="col-md-6">
             <label for="address" class="control-label">Address</label>
             <div class="form-group">
@@ -224,5 +217,7 @@
     </div>
     </div>
     </div>
+    </div>
+
 
         <?= $this->endSection()?> 

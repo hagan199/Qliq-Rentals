@@ -57,7 +57,6 @@ class Login extends Controller
             'user_type' => $user['user_type'],
 			'isLoggedIn' => true,
 		];
-
 		session()->set($data);
 		return true;
 	}

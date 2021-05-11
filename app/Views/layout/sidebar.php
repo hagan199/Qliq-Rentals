@@ -50,7 +50,7 @@
           <span>Vendor Configuration</span>
         </li>
         <li class="air__menuLeft__item">
-          <a href="/svendor" class="air__menuLeft__link air__sidebar__actionToggle">
+          <a href="/svendor/edit/goals" class="air__menuLeft__link air__sidebar__actionToggle">
             <i class="fe fe-settings air__menuLeft__icon"></i>
             <span>Setup Vendor Name</span>
           </a>
@@ -62,13 +62,13 @@
           </a>
         </li>
         <li class="air__menuLeft__item">
-          <a href="/cservice" class="air__menuLeft__link air__sidebar__actionToggle">
+          <a href="/cservice/add/goals" class="air__menuLeft__link air__sidebar__actionToggle">
             <i class="fe fe-settings air__menuLeft__icon"></i>
             <span>Setup Cat Service</span>
           </a>
         </li>
         <li class="air__menuLeft__item">
-          <a href="/vservice" class="air__menuLeft__link air__sidebar__actionToggle">
+          <a href="/vservice/add/goals" class="air__menuLeft__link air__sidebar__actionToggle">
             <i class="fe fe-settings air__menuLeft__icon"></i>
             <span>Setup Vendor Service</span>
           </a>

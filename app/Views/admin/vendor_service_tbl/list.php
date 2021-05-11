@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="card-body ">
-                 <form action="/vservices/add/vserviceadd" method="post">
+                 <form action="/vservice/add/goals" method="post">
             <div class="box-body">
 
             <div class="col-md-6">

@@ -26,7 +26,6 @@
             </ul>
           </div>
 
-
     <div class="tab-content" id="v-pills-tabContent">             
           <!-------USER lIST---->
     <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tabpanel" aria-labelledby="list-tab">    
@@ -48,6 +47,7 @@
                             <th>Staff Name</th>
                             <th>Email</th>                                
                             <th>Gender</th>
+                            <th>Username</th>       
                             <th>Phone</th>
                             <th class="disabled-sorting text-right">Actions</th>
                         </tr>
@@ -57,7 +57,8 @@
                             <th>#</th>                         
                             <th>Staff Name</th>
                             <th>Email</th>                                       
-                            <th>Gender</th>                          
+                            <th>Gender</th> 
+                            <th>Username</th>                                 
                             <th>Phone</th>
                           <th class="text-right">Actions</th>
                         </tr>
@@ -66,13 +67,15 @@
                             <?php $i=1; foreach($users_detail as $u){ ?>
                             <tr>
                                 <td><?= $i++?></td>
-                                <td><?= $u['fname'] ?></td>
+                                <td><?= $u['fname']. ' '.$u['lname']  ?></td>
                                 <td><?= $u['email'] ?></td>
                                 <td><?= $u['gender'] ?></td>
+                                <td><?= $u['user_name'] ?></td>
                                 <td><?php echo $u['phone']; ?></td>
                                 <td>
                                 <a title="edit" href="" class="btn btn-success" ><i class="fe fe-edit mr-1" aria-hidden="true"></i>Edit</a>
-                                <a title="delete" href="" class="btn btn-danger" ><i   aria-hidden="true" ></i>Delete</a>
+                           <!---     <a title="delete" href="" class="btn btn-danger" ><i   aria-hidden="true" ></i>Delete</a>-->
+                           
                                 </td>
                             </tr>
                             <?php } ?>
@@ -89,7 +92,7 @@
           </div>
           </div>
         
-            <!--------add----->
+           <!--------add----->
   <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tabpanel" aria-labelledby="add-tab">    
   <div class="row">
   <div class="col-md-12">
@@ -126,22 +129,25 @@
           <div class="col-md-4">
           <label for="phone" class="control-label">Phone</label>
           <div class="form-group">
-          <input type="text" name="phone"  class="form-control" placeholder="+233245958764" id="phone" required minlength="12" maxlength="12"  />
+          <input type="number" name="phone"  class="form-control" placeholder="+233245958764" id="phone" required minlength="12" maxlength="12"  />
           </div>
           </div>
+        
           <div class="col-md-4">
-          <label for="gender" class="control-label">Gender</label>
-          <div class="form-group">
-            <input type="text" name="gender"  class="form-control" id="gender" />
-            </div>
-            </div>
+            <label for="gender" class="control-label">Gender</label>
+            <select name="gender" class="form-control">
+            <option value="" selected="selected" disabled="disabled">Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            </select>
+          </div>
           <div class="col-md-4">
           <label for="user_name" class="control-label">Username</label>
-          <div class="form-group">
-            <input type="text" name="user_name"  class="form-control" id="user_name" />
+                <div class="form-group">
+                <input type="text" name="user_name"  class="form-control" id="user_name" />
             </div>
-            </div>
-            </div>
+          </div>
+          </div>
 
           <div class="row">
             <div class="col-md-6">
@@ -151,13 +157,12 @@
             </div>
             </div>
             <div class="col-md-6">
-          <label for="user_email" class="control-label">Email</label>
+          <label for="email" class="control-label">Email</label>
           <div class="form-group">
-            <input type="text" name="user_email" class="form-control" id="user_email" />
+            <input type="text" name="email" class="form-control" id="email" />
             </div>
             </div>
-        
-            </div>
+          </div>
 
               <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">

@@ -2,9 +2,9 @@
 use CodeIgniter\Controller;
 use App\Models\UserModel;
 
-class User extends BaseController
-{
-    function index($param1 = '',  $param2 = ''){    
+class User extends BaseController{
+
+     function index($param1 = '',  $param2 = ''){    
         $session = session();
         if($param1 == 'add'){
             if($this->request->getMethod() == 'post'){
