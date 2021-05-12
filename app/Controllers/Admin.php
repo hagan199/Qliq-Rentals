@@ -34,6 +34,7 @@ class Admin extends BaseController
                     $data['company_name'] =  $this->request->getVar('company_name');
                     $data['address'] =  $this->request->getVar('address');
                     $data['phone'] =  $this->request->getVar('phone');
+                    $data['email'] =  $this->request->getVar('email');
                     if($model->insert($data)){
                     $session->setFlashdata("success", "successfully");
                         }else{

@@ -28,84 +28,124 @@
       <li class="air__menuLeft__category">
           <span>Dashboards</span>
         </li>
-      <li class="air__menuLeft__category">
-          <span>Bookings</span>
+    
+            <!---DASHBOARD ----->
+        <li class="air__menuLeft__category">
+            <span>Booked List</span>
         </li>
-        <li class="air__menuLeft__item">
-          <a href="/booking" class="air__menuLeft__link air__sidebar__actionToggle">
-            <i class="fe fe-settings air__menuLeft__icon"></i>
+        <li class="air__menuLeft__item air__menuLeft__submenu">
+          <a href="javascript: void(0)" class="air__menuLeft__link">
+            <i class="fe fe-database air__menuLeft__icon"></i>
             <span>Booked List</span>
           </a>
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/booking" class="air__menuLeft__link">
+                <span>Book List</span>
+              </a>
+            </li>
+          </ul>
         </li>
+          <!----ADMINSTATOR ----->
         <li class="air__menuLeft__category">
-          <span>Adminstator</span>
+            <span>Adminstator</span>
         </li>
-        <li class="air__menuLeft__item">
-          <a href="/users/add/goals" class="air__menuLeft__link air__sidebar__actionToggle">
-            <i class="fe fe-settings air__menuLeft__icon"></i>
-            <span>Setup User</span>
+        <li class="air__menuLeft__item air__menuLeft__submenu">
+          <a href="javascript: void(0)" class="air__menuLeft__link">
+            <i class="fe fe-database air__menuLeft__icon"></i>
+            <span>Adminstator</span>
           </a>
-        </li>
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/users/add/goals" class="air__menuLeft__link">
+                <span>User</span>
+              </a>
+            </li>
+          </ul>
+
+          <!----VENDOR CONFIGURATION ----->
         <li class="air__menuLeft__category">
           <span>Vendor Configuration</span>
         </li>
-        <li class="air__menuLeft__item">
-          <a href="/svendor/edit/goals" class="air__menuLeft__link air__sidebar__actionToggle">
-            <i class="fe fe-settings air__menuLeft__icon"></i>
-            <span>Setup Vendor Name</span>
+        <li class="air__menuLeft__item air__menuLeft__submenu">
+          <a href="javascript: void(0)" class="air__menuLeft__link">
+            <i class="fe fe-database air__menuLeft__icon"></i>
+            <span>Vendor</span>
           </a>
-        </li>
-        <li class="air__menuLeft__item">
-          <a href="/services/add/servicesadd" class="air__menuLeft__link air__sidebar__actionToggle">
-            <i class="fe fe-settings air__menuLeft__icon"></i>
-            <span>Setup Service</span>
-          </a>
-        </li>
-        <li class="air__menuLeft__item">
-          <a href="/cservice/add/goals" class="air__menuLeft__link air__sidebar__actionToggle">
-            <i class="fe fe-settings air__menuLeft__icon"></i>
-            <span>Setup Cat Service</span>
-          </a>
-        </li>
-        <li class="air__menuLeft__item">
-          <a href="/vservice/add/goals" class="air__menuLeft__link air__sidebar__actionToggle">
-            <i class="fe fe-settings air__menuLeft__icon"></i>
-            <span>Setup Vendor Service</span>
-          </a>
-        </li>
-        <li class="air__menuLeft__category">
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/svendor/edit/goals" class="air__menuLeft__link">
+                <span>Setup Vendor Name</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/services/add/servicesadd" class="air__menuLeft__link">
+                <span>Setup Service</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/cservice/add/goals" class="air__menuLeft__link">
+                <span>Setup Cat Service</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/vservice/add/goals" class="air__menuLeft__link">
+                <span>Setup Vendor Service</span>
+              </a>
+            </li>
+          </ul>
+
+
+  
+
+       <!----VENDOR CONFIGURATION ----->
+          <li class="air__menuLeft__category">
           <span>Hotel Configuration</span>
         </li>
-        <li class="air__menuLeft__item">
-          <a href="/scanopy" class="air__menuLeft__link air__sidebar__actionToggle">
-            <i class="fe fe-settings air__menuLeft__icon"></i>
-            <span>Setup Canopy</span>
+        <li class="air__menuLeft__item air__menuLeft__submenu">
+          <a href="javascript: void(0)" class="air__menuLeft__link">
+            <i class="fe fe-database air__menuLeft__icon"></i>
+            <span>Hotel</span>
           </a>
-        </li>
-        <li class="air__menuLeft__item">
-          <a href="/shall" class="air__menuLeft__link air__sidebar__actionToggle">
-            <i class="fe fe-settings air__menuLeft__icon"></i>
-            <span>Setup Hall</span>
-          </a>
-        </li>
-        <li class="air__menuLeft__item">
-          <a href="/shostel" class="air__menuLeft__link air__sidebar__actionToggle">
-            <i class="fe fe-settings air__menuLeft__icon"></i>
-            <span>Setup hostel</span>
-          </a>
-        </li>
-        <li class="air__menuLeft__item">
-          <a href="/shostel" class="air__menuLeft__link air__sidebar__actionToggle">
-            <i class="fe fe-settings air__menuLeft__icon"></i>
-            <span>Setup Room</span>
-          </a>
-        </li>
-        <li class="air__menuLeft__item">
-          <a href="/shostel" class="air__menuLeft__link air__sidebar__actionToggle">
-            <i class="fe fe-settings air__menuLeft__icon"></i>
-            <span>Site Setting</span>
-          </a>
-        </li>
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/svendor/edit/goals" class="air__menuLeft__link">
+                <span>Setup Canopy</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/services/add/servicesadd" class="air__menuLeft__link">
+                <span>Setup Hall</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/cservice/add/goals" class="air__menuLeft__link">
+                <span>Setup Hall</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/vservice/add/goals" class="air__menuLeft__link">
+                <span>Setup Room</span>
+              </a>
+            </li>
+          </ul>
+
+
+
+
+      
       <div class="air__menuLeft__banner">
         <p>More components, more styles, more themes, and premium support!</p>
         <a href="https://themeforest.net/item/air-ui-multi-concept-admin-template/24434456" target="_blank"

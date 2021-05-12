@@ -110,7 +110,7 @@
 									<option value="">Select Vendor Name </option>
                                     <?php foreach($all_vendor_name as $vendor_name): ?>
                                         <option value="<?= $vendor_name['id'] ?>"><?= $vendor_name['company_name'] ?></option>
-                                      <?php endforeach; ?>                    
+                                    <?php endforeach; ?>                    
 							</select>
 			</div>
   
@@ -120,7 +120,7 @@
 									<option value="">Select Vendor  </option>
                                     <?php foreach($all_service as $service): ?>
                                         <option value="<?= $service['id'] ?>"><?= $service['service_name'] ?></option>
-                                      <?php endforeach; ?>
+                                    <?php endforeach; ?>
 							</select>
 			</div>
             <div class="col-md-6">
@@ -129,7 +129,7 @@
 									<option value="">Select Category  </option>
                                     <?php foreach($all_categoryservice as $categoryservice): ?>
                                         <option value="<?= $categoryservice['id'] ?>"><?= $categoryservice['category_name'] ?></option>
-                                      <?php endforeach; ?>
+                                    <?php endforeach; ?>
 									?>
 							</select>
 			</div>

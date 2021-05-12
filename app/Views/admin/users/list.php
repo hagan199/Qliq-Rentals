@@ -74,7 +74,7 @@
                                 <td><?php echo $u['phone']; ?></td>
                                 <td>
                                 <a title="edit" href="" class="btn btn-success" ><i class="fe fe-edit mr-1" aria-hidden="true"></i>Edit</a>
-                           <!---     <a title="delete" href="" class="btn btn-danger" ><i   aria-hidden="true" ></i>Delete</a>-->
+                           <!---  <a title="delete" href="" class="btn btn-danger" ><i   aria-hidden="true" ></i>Delete</a>-->
                            
                                 </td>
                             </tr>

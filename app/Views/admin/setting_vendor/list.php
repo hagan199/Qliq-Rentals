@@ -23,7 +23,6 @@
                 </li>
             </ul>
             </div>
-
     <div class="tab-content" id="v-pills-tabContent">    
                 <!-------USER lIST---->
         <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tabpanel" aria-labelledby="list-tab"> 
@@ -91,48 +90,52 @@
                 <div class="card ">
                 <div class="card-header card-header-rose card-header-text">
                     <div class="card-text">
-                    <h4 class="card-title">Add User</h4>
+                    <h4 class="card-title">Vendor Detail</h4>
                     </div>
                 </div>
                 <div class="card-body ">
-                 <form action="/svendor/add/goals" method="post">
+             <form action="/svendor/add/goals" method="post">
             <div class="box-body">
-                <div class="card ">
-    
-            <div class="col-md-6">
-            <label for="company_name" class="control-label">Company Name</label>
-            <div class="form-group">
-            <input type="text" name="company_name"  class="form-control" id="company_name" />
-            </div>
+            <div class="row">
+            <div class="col-md-4">
+                <label for="company_name" class="control-label">Company Name</label>
+                        <div class="form-group">
+                        <input type="text" name="company_name"  class="form-control" id="company_name" />
+                    </div>
             </div>   
-            <div class="col-md-6">
-            <label for="address" class="control-label">Address</label>
-            <div class="form-group">
-            <input type="text" name="address"  class="form-control" id="address" />
+            <div class="col-md-4">
+                <label for="address" class="control-label">Address</label>
+                    <div class="form-group">
+                        <input type="text" name="address"  class="form-control" id="address" />
+                    </div>
+                </div>      
+            <div class="col-md-4">
+                <label   label for="phone" class="control-label">Phone</label>
+                        <div class="form-group">
+                        <input type="tel" name="phone"  class="form-control" placeholder="+233245958764" id="phone" required minlength="13" maxlength="13"  />
+                    </div>
             </div>
-            </div>      
-            <div class="col-md-6">
-            <label for="phone" class="control-label">Phone</label>
-            <div class="form-group">
-            <input type="tel" name="phone"  class="form-control" placeholder="+233245958764" id="phone" required minlength="13" maxlength="13"  />
+            <div class="col-md-4">
+                <label   label for="email" class="control-label">Email</label>
+                        <div class="form-group">
+                        <input type="email" name="email"  class="form-control" placeholder="info@qlipintegrations.com" id="email" />
+                    </div>
             </div>
             </div>
-
-            <div class="col-md-12" style="margin-top:3%">
+            <class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">
                         <div class="form-group">
                         <div class="col-md-4"></div>
                         <div class="col-md-8">
 
                         <button type="submit" class="btn btn-success">
-                            <i class="fa fa-check"></i>Submit
+                            <i class="fa fa-check"></i>ADD
                         </button>
                          </div>
                         </div>
                     </div>
-                </div>
+                </class=>
         </form>        
-                </div>
                 </div>
                 </div>    
             </div>
@@ -146,65 +149,60 @@
                 <div class="card ">
                 <div class="card-header card-header-rose card-header-text">
                     <div class="card-text">
-                    <h4 class="card-title">Setup Own Vendor Detail</h4>
+                    <h4 class="card-title">Setup Own Detail</h4>
                     </div>
                 </div>
                 <div class="card-body ">
                  <form action="/svendor/edit/goals" method="post">
             <div class="box-body"> 
             <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                     <label for="fname" class="control-label">First Name</label>
                         <div class="form-group">
                     <input type="text" name="fname"  class="form-control" id="fname" />
                     </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label for="lname" class="control-label">Last Name</label>
                     <div class="form-group">
                     <input type="text" name="lname"  class="form-control" id="lname" />
                 </div>
             </div>
-            </div>
-
-            <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label for="user_name" class="control-label"> Username</label>
                     <div class="form-group">
                     <input type="text" name="user_name"  class="form-control" id="user_name" />
                 </div>
             </div>
-            
-            <div class="col-md-6">
-            <label for="user_email" class="control-label">Email</label>
-            <div class="form-group">
-            <input type="text" name="user_email"  class="form-control" id="user_email" />
             </div>
-            </div>
+            <div class="row">
+            <div class="col-md-4">
+                <label for="user_email" class="control-label">Email</label>
+                <div class="form-group">
+                <input type="text" name="user_email"  class="form-control" id="user_email" />
+                </div>
             </div>
 
-            <div class="row">
-            <div class="col-md-6">
-            <label for="address" class="control-label">Address</label>
-            <div class="form-group">
-            <input type="text" name="address"  class="form-control" id="address" />
+            <div class="col-md-4">
+                <label for="address" class="control-label">Address</label>
+                <div class="form-group">
+                <input type="text" name="address"  class="form-control" id="address" />
             </div>
             </div>          
-            <div class="col-md-6">
-            <label for="phone" class="control-label">Phone</label>
-            <div class="form-group">
-            <input type="tel" name="phone"  class="form-control" placeholder="+233245958764" id="phone" required minlength="13" maxlength="13"  />
+            <div class="col-md-4">
+                <label for="phone" class="control-label">Phone</label>
+                    <div class="form-group">
+                <input type="tel" name="phone"  class="form-control" placeholder="+233245958764" id="phone" required minlength="13" maxlength="13"  />
             </div>
             </div>
-            
+            </div>           
             <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">
                         <div class="form-group">
                         <div class="col-md-4"></div>
                         <div class="col-md-8">
-
                         <button type="submit" class="btn btn-success">
-                            <i class="fa fa-check"></i>Submit
+                            <i class="fa fa-check"></i>ADD
                         </button>
                          </div>
                         </div>
