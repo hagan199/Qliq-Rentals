@@ -100,27 +100,35 @@
 
 
             <div class="row">
-            <div class="col-md-6">
-            <label for="category_name" class="control-label">Category Name</label>
-            <div class="form-group">
-            <input type="text" name="category_name"  class="form-control" id="category_name" />
+            <div class="col-md-4">
+							<label for="service_id" class="control-label">Service List</label>				
+								<select name="service_id" class="form-control">
+									<option value="">Select Service </option>
+                                    <?php foreach($all_service as $service): ?>
+                                        <option value="<?= $service['id'] ?>"><?= $service['service_name'] ?></option>
+                                    <?php endforeach; ?>
+							</select>
+			</div>
+            <div class="col-md-4">
+                <label for="category_name" class="control-label">Category Name</label>
+                    <div class="form-group">
+                <input type="text" name="category_name"  class="form-control" id="category_name" />
             </div>
             </div>
         
-            <div class="col-md-6">
-            <label for="detail" class="control-label">Details</label>
-            <div class="form-group">
-            <input type="text" name="detail"  class="form-control" id="detail" />
+            <div class="col-md-4">
+                <label for="detail" class="control-label">Description</label>
+                    <div class="form-group">
+                    <input type="text" name="detail"  class="form-control" id="detail" />
             </div>
             </div>
-    <!--- <div class="col-md-6">
+            <!--- <div class="col-md-6">
 						<label for="image" class="control-label">Image</label>
 							<div class="form-group">
 						<input type="file" name="image" id="imagew" onchange="readURL(this);" accept=".png, .jpg, .jpeg" />
 							</div>
 						</div>---->
             </div>
-
                     <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">
                         <div class="form-group">
@@ -128,7 +136,7 @@
                         <div class="col-md-8">
 
                         <button type="submit" class="btn btn-success">
-                            <i class="fa fa-check"></i>Submit
+                            <i class="fa fa-check"></i>Add
                         </button>
                          </div>
                         </div>

@@ -230,6 +230,7 @@ class Admin extends BaseController
                 $data = [
                 'category_name' => $this->request->getVar('category_name'),
                 'detail'  => $this->request->getVar('detail'),
+                'service_id'  => $this->request->getVar('service_id'),
                 'image'  => $this->request->getVar('detail'),
                 ];
                 if($model->insert($data)){
@@ -265,6 +266,8 @@ class Admin extends BaseController
         }   
         $model = new UserModel();
         $data['users'] = $model->orderBy('id', 'DESC')->findAll();
+        $servicemodel = new Service();
+        $data['all_service'] = $servicemodel->orderBy('id', 'DESC')->findAll();
         $model = new CategoryService();
         $data['catergory'] = $model->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'Setup Category Service';

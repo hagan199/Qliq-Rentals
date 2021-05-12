@@ -28,17 +28,17 @@
 
 
     <div class="tab-content" id="v-pills-tabContent">             
-        <!-------USER lIST---->
+        <!------Service list---->
     <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tabpanel" aria-labelledby="list-tab"> 
             <div class="row">
             <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-primary card-header-icon">
-                <h4 class="card-title"><?= $title ?> </h4>
+                <h4 class="card-title">Service </h4>
                 </div>
                 <div class="card-body">    
                 <div class="toolbar">
-                    <!--        Here you can write extra buttons/actions for the toolbar -->
+                    <!--    Here you can write extra buttons/actions for the toolbar -->
                 </div>
                 <div class="material-datatables">
                     <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
@@ -90,7 +90,7 @@
             <div class="card ">
                 <div class="card-header card-header-rose card-header-text">
                     <div class="card-text">
-                    <h4 class="card-title">Add User</h4>
+                    <h4 class="card-title"><?= $title ?> </h4>
                     </div>
                 </div>
                 <div class="card-body ">
@@ -99,27 +99,25 @@
 
             <div class="row">
             <div class="col-md-6">
-            <label for="service_name" class="control-label">Service Name</label>
-            <div class="form-group">
-            <input type="text" name="service_name"  class="form-control" id="service_name" />
-            </div>
+                <label for="service_name" class="control-label">Service Name</label>
+                    <div class="form-group">
+                        <input type="text" name="service_name"  class="form-control" id="service_name" />
+                </div>
             </div>
             <div class="col-md-6">
-            <label for="detail" class="control-label">Service Details</label>
-            <div class="form-group">
-            <input type="text" name="detail"  class="form-control" id="detail" />
+                <label for="detail" class="control-label">Service Details</label>
+                    <div class="form-group">
+                <input type="text" name="detail"  class="form-control" id="detail" />
             </div>
             </div>
             </div>
-
                     <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">
                         <div class="form-group">
                         <div class="col-md-4"></div>
                         <div class="col-md-8">
-
                         <button type="submit" class="btn btn-success">
-                            <i class="fa fa-check"></i>Submit
+                            <i class="fa fa-check"></i>Add
                         </button>
                          </div>
                         </div>

@@ -74,7 +74,7 @@
                     </table>
                 </div>
                 </div>
-                <!-- end content-->
+            <!-- end content-->
             </div>
             <!--  end card  -->
             </div>
@@ -127,7 +127,6 @@
                         <div class="form-group">
                         <div class="col-md-4"></div>
                         <div class="col-md-8">
-
                         <button type="submit" class="btn btn-success">
                             <i class="fa fa-check"></i>ADD
                         </button>
@@ -135,7 +134,7 @@
                         </div>
                     </div>
                 </class=>
-        </form>        
+            </form>        
                 </div>
                 </div>    
             </div>

@@ -113,7 +113,7 @@
                                     <?php endforeach; ?>                    
 							</select>
 			</div>
-  
+
             <div class="col-md-6">
 							<label for="service_id" class="control-label">Service List</label>				
 								<select name="service_id" class="form-control">
