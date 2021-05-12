@@ -30,12 +30,11 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+// Layout
 $routes->get('/login', 'Login::auth');
 $routes->get('/logout', 'Login::logout');
 $routes->get('/booking', 'Client::book_list');
-
-
-//  User 
 
 // Admin Route
 $routes->get('/dashboard', 'Admin::index');

@@ -4,6 +4,13 @@ use App\Models\Booking;
 
 class Client extends BaseController
 {
+
+    
+	public function index()
+	{
+		return view('layout/site');
+	}
+
     //List of Booking Service
     function book_list()
     {    

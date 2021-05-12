@@ -103,7 +103,7 @@
                 <div class="card-body ">
                  <form action="/vservice/add/goals" method="post">
             <div class="box-body">
-
+            <div class="row">
             <div class="col-md-6">
 							<label for="service_id" class="control-label">Vendor Name</label>				
 								<select name="service_id" class="form-control">
@@ -123,6 +123,9 @@
                                     <?php endforeach; ?>
 							</select>
 			</div>
+            </div>
+            <br>
+            <div class="row">
             <div class="col-md-6">
 							<label for="category_id" class="control-label">Category List</label>				
 								<select name="category_id" class="form-control">
@@ -139,8 +142,7 @@
             <input type="text" name="price"  class="form-control" id="price" />
             </div>
             </div>
-
-                
+            </div>
             <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">
                         <div class="form-group">
@@ -148,7 +150,7 @@
                         <div class="col-md-8">
 
                         <button type="submit" class="btn btn-success">
-                            <i class="fa fa-check"></i>Submit
+                            <i class="fa fa-check"></i>Add
                         </button>
                          </div>
                         </div>
