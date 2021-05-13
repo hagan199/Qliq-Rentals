@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>
-    GNAT BOOKING
+QI.Rentals
   </title>
   <link rel="icon" type="image/png" href="../../components/kit/core/img/favicon.png" />
   <link href="https://fonts.googleapis.com/css?family=Mukta:400,700,800&amp;display=swap" rel="stylesheet">
@@ -71,8 +71,6 @@
   <script src="../../vendors/owl.carousel/dist/owl.carousel.min.js"></script>
   <script src="../../vendors/ionrangeslider/js/ion.rangeSlider.min.js"></script>
   <script src="../../vendors/nestable/jquery.nestable.js"></script>
-  <script type="text/javascript"
-    src="../../../cdn.datatables.net/v/bs4/dt-1.10.18/fc-3.2.5/r-2.2.2/datatables.min.js"></script>
   <script src="../../vendors/editable-table/mindmup-editabletable.js"></script>
   <script src="../../vendors/d3/d3.min.js"></script>
   <script src="../../vendors/c3/c3.min.js"></script>

@@ -8,9 +8,9 @@
       <span></span>
     </div>
     <a href="/dash" class="air__menuLeft__logo">
-      <div class="air__menuLeft__logo__letter">G</div>
-      <div class="air__menuLeft__logo__name">NAT</div>
-      <div class="air__menuLeft__logo__descr">GNAT BOOKING</div>
+      <div class="air__menuLeft__logo__letter">QI</div>
+      <div class="air__menuLeft__logo__name">Rental</div>
+      <div class="air__menuLeft__logo__descr">QI Rental</div>
     </a>
     <a href="javascript: void(0);" class="air__menuLeft__user">
       <div class="air__menuLeft__user__avatar">
@@ -29,9 +29,9 @@
           <span>Dashboards</span>
         </li>
     
-            <!---DASHBOARD ----->
+        <!---DASHBOARD ----->
         <li class="air__menuLeft__category">
-            <span>Booked List</span>
+            <span>Booked</span>
         </li>
         <li class="air__menuLeft__item air__menuLeft__submenu">
           <a href="javascript: void(0)" class="air__menuLeft__link">
@@ -44,6 +44,21 @@
                 <span>Book List</span>
               </a>
             </li>
+            <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/booking" class="air__menuLeft__link">
+                <span>Book List</span>
+              </a>
+            </li>
+          </ul>
+          </ul>
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/booking" class="air__menuLeft__link">
+                <span>Vendor Order </span>
+              </a>
+            </li>
+          </ul>
           </ul>
         </li>
           <!----ADMINSTATOR ----->
@@ -101,10 +116,7 @@
             </li>
           </ul>
 
-
-  
-
-       <!----VENDOR CONFIGURATION ----->
+    <!----VENDOR CONFIGURATION ----->
           <li class="air__menuLeft__category">
           <span>Hotel Configuration</span>
         </li>

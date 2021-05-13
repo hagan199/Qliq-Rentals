@@ -44,6 +44,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Service name</th>
                             <th>Category name</th>     
                             <th>detail</th>                                                       
                             <th class="disabled-sorting text-right">Actions</th>
@@ -52,6 +53,7 @@
                         <tfoot>
                         <tr>  
                             <th>#</th>
+                            <th>Service name</th>
                             <th>Category name</th>     
                             <th>detail</th>                                                                                                  
                         <th class="text-center">Actions</th>
@@ -61,12 +63,12 @@
                             <?php $i=1; foreach($catergory as $u){ ?>
                             <tr>
                                 <td><?= $i++?></td>
+                                <td><?= get_column_name_by_id('service_tbl', $u['service_id'], 'service_name') ?></td>
                                 <td><?= $u['category_name'] ?></td>
                                 <td><?= $u['detail'] ?></td>                                             
                                 <td>
                                 <a title="edit" href="" class="btn btn-success" ><i class="fe fe-edit mr-1" aria-hidden="true"></i>Edit</a>                 
-                            <!--- <a title="delete" href="" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>--->
-
+                            <!--<a title="delete" href="" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>--->
                                 </td>
                             </tr>
                             <?php } ?>
@@ -95,10 +97,7 @@
                 </div>
                 <div class="card-body ">
                  <form action="/cservice/add/goals" method="post">
-
             <div class="box-body">
-
-
             <div class="row">
             <div class="col-md-4">
 							<label for="service_id" class="control-label">Service List</label>				
@@ -115,26 +114,24 @@
                 <input type="text" name="category_name"  class="form-control" id="category_name" />
             </div>
             </div>
-        
             <div class="col-md-4">
                 <label for="detail" class="control-label">Description</label>
                     <div class="form-group">
                     <input type="text" name="detail"  class="form-control" id="detail" />
             </div>
             </div>
-            <!--- <div class="col-md-6">
+    <!---   <div class="col-md-6">
 						<label for="image" class="control-label">Image</label>
 							<div class="form-group">
 						<input type="file" name="image" id="imagew" onchange="readURL(this);" accept=".png, .jpg, .jpeg" />
 							</div>
-						</div>---->
+			</div>---->
             </div>
                     <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">
                         <div class="form-group">
                         <div class="col-md-4"></div>
                         <div class="col-md-8">
-
                         <button type="submit" class="btn btn-success">
                             <i class="fa fa-check"></i>Add
                         </button>

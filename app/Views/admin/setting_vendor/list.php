@@ -41,7 +41,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Company Name</th>
+                            <th>Business Name</th>
                             <th>Address</th>                                
                             <th>Phone Number</th>                       
                             <th class="disabled-sorting text-right">Actions</th>
@@ -50,7 +50,7 @@
                         <tfoot>
                         <tr>  
                         <th>#</th>
-                        <th>Company Name</th>
+                        <th>Business Namee</th>
                         <th>Address</th>                                
                         <th>Phone Number</th>                         
                         <th class="text-right">Actions</th>
@@ -98,7 +98,7 @@
             <div class="box-body">
             <div class="row">
             <div class="col-md-4">
-                <label for="company_name" class="control-label">Company Name</label>
+                <label for="company_name" class="control-label">Business Name</label>
                         <div class="form-group">
                         <input type="text" name="company_name"  class="form-control" id="company_name" />
                     </div>
@@ -108,7 +108,37 @@
                     <div class="form-group">
                         <input type="text" name="address"  class="form-control" id="address" />
                     </div>
-                </div>      
+                </div>     
+                <div class="col-md-4">
+                <label for="address" class="control-label">Ghana GPS</label>
+                    <div class="form-group">
+                        <input type="text" name="address"  class="form-control" id="address" />
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                <label for="address" class="control-label">Business Acctivity</label>
+                    <div class="form-group">
+                        <input type="text" name="address"  class="form-control" id="address" />
+                    </div>
+                </div>  
+                <div class="col-md-4">
+                <label for="address" class="control-label">Area</label>
+                    <div class="form-group">
+                        <input type="text" name="address"  class="form-control" id="address" />
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                <label for="address" class="control-label">Sub Metro</label>
+                    <div class="form-group">
+                        <input type="text" name="address"  class="form-control" id="address" />
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                <label for="address" class="control-label">Street Name</label>
+                    <div class="form-group">
+                        <input type="text" name="address"  class="form-control" id="address" />
+                    </div>
+                </div> 
             <div class="col-md-4">
                 <label   label for="phone" class="control-label">Phone</label>
                         <div class="form-group">
@@ -163,6 +193,24 @@
             </div>
             <div class="col-md-4">
                 <label for="lname" class="control-label">Last Name</label>
+                    <div class="form-group">
+                    <input type="text" name="lname"  class="form-control" id="lname" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="lname" class="control-label">GhanaPost GPS</label>
+                    <div class="form-group">
+                    <input type="text" name="lname"  class="form-control" id="lname" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="tin_num" class="control-label">Tin Number</label>
+                    <div class="form-group">
+                    <input type="text" name="lname"  class="form-control" id="lname" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="lname" class="control-label">National ID</label>
                     <div class="form-group">
                     <input type="text" name="lname"  class="form-control" id="lname" />
                 </div>
