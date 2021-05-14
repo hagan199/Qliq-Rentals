@@ -112,7 +112,6 @@ class Admin extends BaseController
         $data['page'] = ' Service ';
         return view('admin/service_tbl/list',$data);
     } 
-
     // User
     public function user($param1 = '',  $param2 = ''){    
         $session = session();
@@ -134,7 +133,6 @@ class Admin extends BaseController
                     $data['user_type'] = '101';
                     $data['user_name'] = $this->request->getVar('user_name');
                     $data['user_password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
-
                 if($model->insert($data)){
                 $session->setFlashdata("success", "successfully");
                     }else{
@@ -147,10 +145,8 @@ class Admin extends BaseController
         if($param1 == 'edit' && $param3 == 'doupdate'){
             if($this->request->getMethod() == 'post'){
 
-            }
-        
+            }        
         }
-
         if($param1 == 'delete'){
             if($this->request->getMethod() == 'post'){
             }
@@ -222,7 +218,6 @@ class Admin extends BaseController
             if (!$this->validate($rules)){
                 $session->setFlashdata("error", "Invalid data request");
             }else{
-
                 $model = new CategoryService();       
                 $data = [
                 'category_name' => $this->request->getVar('category_name'),
