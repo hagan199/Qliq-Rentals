@@ -25,7 +25,7 @@
             </div>
     <div class="tab-content" id="v-pills-tabContent">    
                 <!-------USER lIST---->
-        <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tabpanel" aria-labelledby="list-tab"> 
+        <div class="tab-pane fade <?php if(!isset($print_report) && !isset($edit_report))echo 'show active'; ?>" id="list" role="tab" aria-labelledby="list-tab"> 
             <div class="row">
             <div class="col-md-12">
             <div class="card">
@@ -43,7 +43,8 @@
                             <th>#</th>
                             <th>Business Name</th>
                             <th>Address</th>                                
-                            <th>Phone Number</th>                       
+                            <th>Phone Number</th> 
+                            <th>Area</th>                       
                             <th class="disabled-sorting text-right">Actions</th>
                         </tr>
                         </thead>
@@ -52,7 +53,8 @@
                         <th>#</th>
                         <th>Business Namee</th>
                         <th>Address</th>                                
-                        <th>Phone Number</th>                         
+                        <th>Phone Number</th>    
+                        <th>Area</th>                      
                         <th class="text-right">Actions</th>
                         </tr>
                     </tfoot>
@@ -62,10 +64,11 @@
                                 <td><?= $i++?></td>
                                 <td><?= $u['company_name'] ?></td>
                                 <td><?= $u['address'] ?></td>
-                                <td><?= $u['phone'] ?></td>                                                         
+                                <td><?= $u['phone'] ?></td>  
+                                <td><?= $u['area'] ?></td>                                                         
                                 <td>
                                 <a  title="edit" href="" class="btn btn-success" ><i class="fe fe-edit mr-1" aria-hidden="true"></i>Edit</a>
-                                <a title="delete" href="" class="btn btn-danger" ><i   aria-hidden="true" ></i>Delete</a>
+                                <a title="delete" href="" class="btn btn-danger" ><i aria-hidden="true" ></i>Delete</a>
                                 </td>
                             </tr>
                             <?php } ?>
@@ -84,7 +87,7 @@
             </div>
 
             <!--------add----->
-<div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tabpane2" aria-labelledby="add-tab">    
+<div class="tab-pane fade <?php if(isset($print_report))echo 'show active'; ?>" id="add" role="tab" aria-labelledby="add-tab">    
     <div class="row">
     <div class="col-lg-12 col-md-offset-3">
                 <div class="card ">
@@ -110,33 +113,33 @@
                     </div>
                 </div>     
                 <div class="col-md-4">
-                <label for="address" class="control-label">Ghana GPS</label>
+                <label for="gps" class="control-label">Ghana GPS</label>
                     <div class="form-group">
-                        <input type="text" name="address"  class="form-control" id="address" />
+                        <input type="text" name="gps"  class="form-control" id="gps" />
                     </div>
                 </div> 
                 <div class="col-md-4">
-                <label for="address" class="control-label">Business Acctivity</label>
+                <label for="area" class="control-label">Area</label>
                     <div class="form-group">
-                        <input type="text" name="address"  class="form-control" id="address" />
-                    </div>
-                </div>  
-                <div class="col-md-4">
-                <label for="address" class="control-label">Area</label>
-                    <div class="form-group">
-                        <input type="text" name="address"  class="form-control" id="address" />
+                        <input type="text" name="area"  class="form-control" id="area" />
                     </div>
                 </div> 
                 <div class="col-md-4">
-                <label for="address" class="control-label">Sub Metro</label>
+                <label for="sub_metro" class="control-label">Sub Metro</label>
                     <div class="form-group">
-                        <input type="text" name="address"  class="form-control" id="address" />
+                        <input type="text" name="sub_metro"  class="form-control" id="sub_metro" />
                     </div>
                 </div> 
                 <div class="col-md-4">
-                <label for="address" class="control-label">Street Name</label>
+                <label for="street_name" class="control-label">Street Name</label>
                     <div class="form-group">
-                        <input type="text" name="address"  class="form-control" id="address" />
+                        <input type="text" name="street_name"  class="form-control" id="street_name" />
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                <label for="business_activity" class="control-label">Business Activity</label>
+                    <div class="form-group">
+                        <input type="text" name="business_activity"  class="form-control" id="business_activity" />
                     </div>
                 </div> 
             <div class="col-md-4">
@@ -172,7 +175,7 @@
     </div>
     </div>
 
-<div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="edit" role="tabpanel3" aria-labelledby="edit-tab">    
+<div class="tab-pane fade <?php if(isset($print_report))echo 'show active'; ?>" id="edit" role="tab" aria-labelledby="edit-tab">    
     <div class="row">
     <div class="col-lg-12 col-md-offset-3">
                 <div class="card ">
@@ -198,21 +201,21 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="lname" class="control-label">GhanaPost GPS</label>
+                <label for="gps" class="control-label">GhanaPost GPS</label>
                     <div class="form-group">
-                    <input type="text" name="lname"  class="form-control" id="lname" />
+                    <input type="text" name="gps"  class="form-control" id="gps" />
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="tin_num" class="control-label">Tin Number</label>
+                <label for="tin_number" class="control-label">Tin Number</label>
                     <div class="form-group">
-                    <input type="text" name="lname"  class="form-control" id="lname" />
+                    <input type="text" name="tin_number"  class="form-control" id="tin_number" />
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="lname" class="control-label">National ID</label>
+                <label for="nation_id" class="control-label">National ID</label>
                     <div class="form-group">
-                    <input type="text" name="lname"  class="form-control" id="lname" />
+                    <input type="text" name="nation_id"  class="form-control" id="nation_id" />
                 </div>
             </div>
             <div class="col-md-4">
@@ -229,7 +232,23 @@
                 <input type="text" name="user_email"  class="form-control" id="user_email" />
                 </div>
             </div>
-
+            <div class="col-md-4">
+							<label for="seting_vendor_id" class="control-label">List of Company</label>				
+								<select name="seting_vendor_id" class="form-control">
+									<option value="">Select List of Company </option>
+                                    <?php foreach($all_vendor as $vendor): ?>
+                                        <option value="<?= $vendor['id'] ?>"><?= $vendor['company_name'] ?></option>
+                                    <?php endforeach; ?>
+							</select>
+			</div>
+            <div class="col-md-4">
+            <label for="gender" class="control-label">Gender</label>
+                <select name="gender" class="form-control">
+                    <option value="" selected="selected" disabled="disabled">Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+            </select>
+            </div>
             <div class="col-md-4">
                 <label for="address" class="control-label">Address</label>
                 <div class="form-group">
@@ -242,6 +261,12 @@
                 <input type="tel" name="phone"  class="form-control" placeholder="+233245958764" id="phone" required minlength="13" maxlength="13"  />
             </div>
             </div>
+            <div class="col-md-4">
+                <label for="password" class="control-label">Password</label>
+                    <div class="form-group">
+                        <input type="text" name="password"  class="form-control" id="password" />
+                    </div>
+                </div> 
             </div>           
             <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">

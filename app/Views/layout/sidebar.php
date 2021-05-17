@@ -110,12 +110,18 @@
           </ul>
           <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
+              <a href="/subservice/add/goals" class="air__menuLeft__link">
+                <span>Setup Sub Cat Service</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
               <a href="/vservice/add/goals" class="air__menuLeft__link">
                 <span>Setup Vendor Service</span>
               </a>
             </li>
           </ul>
-
     <!----VENDOR CONFIGURATION ----->
           <li class="air__menuLeft__category">
           <span>Hotel Configuration</span>

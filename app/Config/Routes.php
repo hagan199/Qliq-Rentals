@@ -41,6 +41,7 @@ $routes->get('/dashboard', 'Admin::index');
 $routes->get('/dash', 'Admin::dashboard');
 $routes->match(['get', 'post'], '/users/(:any)/(:any)', 'Admin::user/$1/$2');
 $routes->match(['get', 'post'], '/cservice/(:any)/(:any)', 'Admin::categoryService/$1/$2');
+$routes->match(['get', 'post'], '/subservice/(:any)/(:any)', 'Admin::subcategoryService/$1/$2');
 $routes->match(['get', 'post'], '/services/(:any)/(:any)', 'Admin::service/$1/$2');
 $routes->match(['get', 'post'], '/svendor/(:any)/(:any)', 'Admin::settingVendor/$1/$2');
 $routes->match(['get', 'post'], '/vservice/(:any)/(:any)', 'Admin::vendorService/$1/$2');
@@ -48,18 +49,6 @@ $routes->match(['get', 'post'], '/vendor', 'Admin::setup_vendor/$1/$2');
 
 // Client Route
 $routes->get('/booking', 'Client::book_list');
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Users 

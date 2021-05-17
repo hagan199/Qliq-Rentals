@@ -102,6 +102,10 @@ class User extends BaseController{
                     'user_id'       => $data['user_id'],
                     'user_name'     => $data['user_name'],
                     'user_email'    => $data['user_email'],
+                    'gps'           => $data['gps'],
+                    'tin_number'    => $data['tin_number'],
+                    'setting_vendor_id'    => $data['setting_vendor_id'],
+                    'phone'    => $data['phone'],
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);
