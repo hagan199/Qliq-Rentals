@@ -97,7 +97,7 @@
                     </div>
                 </div>
                 <div class="card-body ">
-             <form action="/svendor/add/goals" method="post">
+            <form action="/svendor/add/goals" method="post"    enctype="multipart/form-data">
             <div class="box-body">
             <div class="row">
             <div class="col-md-4">

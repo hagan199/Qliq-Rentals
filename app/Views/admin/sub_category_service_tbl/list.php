@@ -61,7 +61,7 @@
                             <?php $i=1; foreach($all_catergory as $u){ ?>
                             <tr>
                                 <td><?= $i++?></td>
-                                <td><?= $u['category_service_id'] ?></td>     
+                                <td><?= get_column_name_by_id('category_service_tbl', $u['category_service_id'], 'category_name') ?></td>
                                 <td><?= $u['sub_cat_name'] ?></td>                                                         
                                 <td>
                                 <a title="edit" href="" class="btn btn-success" ><i class="fe fe-edit mr-1" aria-hidden="true"></i>Edit</a>                 
@@ -92,8 +92,13 @@
                     <h4 class="card-title">Add  Sub Category service</h4>
                     </div>
                 </div>
-                <div class="card-body ">
-                 <form action="/subservice/add/goals" method="post">
+                <?php if (isset($validation)): ?>
+                        <div class="alert alert-danger">
+                        <label><?= $validation->listErrors() ?></label>
+                        </div>
+                            <?php endif; ?>
+            <div class="card-body ">
+                 <form action="/subservice/add/goals" method="post" >
             <div class="box-body">
             <div class="row">
             <div class="col-md-4">

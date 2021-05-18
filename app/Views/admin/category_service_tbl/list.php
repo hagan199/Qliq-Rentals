@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 <div class="card-body ">
-                 <form action="/cservice/add/goals" method="post">
+                 <form action="/cservice/add/goals" method="post"  enctype="multipart/form-data">
             <div class="box-body">
             <div class="row">
             <div class="col-md-4">
@@ -120,12 +120,12 @@
                     <input type="text" name="detail"  class="form-control" id="detail" />
             </div>
             </div>
-    <!---   <div class="col-md-6">
-						<label for="image" class="control-label">Image</label>
-							<div class="form-group">
-						<input type="file" name="image" id="imagew" onchange="readURL(this);" accept=".png, .jpg, .jpeg" />
-							</div>
-			</div>---->
+    
+        <div class="col-md-4">
+        <label for="image" class="form-label">Upload File</label>
+        <input class="form-control" name='image' type="file" id="image">
+            </div>
+
             </div>
                     <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">

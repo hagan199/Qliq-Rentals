@@ -25,7 +25,6 @@
                 <?php endif; ?>
             </ul>
             </div>
-
         <div class="tab-content" id="v-pills-tabContent">    
             <!---------------USER lIST------------------>
         <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tabpanel" aria-labelledby="list-tab"> 
@@ -117,7 +116,7 @@
             <div class="col-md-6">
 							<label for="service_id" class="control-label">Service List</label>				
 								<select name="service_id" class="form-control">
-									<option value="">Select Vendor  </option>
+									<option value="">Select Service  </option>
                                     <?php foreach($all_service as $service): ?>
                                         <option value="<?= $service['id'] ?>"><?= $service['service_name'] ?></option>
                                     <?php endforeach; ?>
@@ -136,6 +135,18 @@
 									?>
 							</select>
 			</div>
+            <div class="col-md-6">
+							<label for="category_id" class="control-label"> Sub Category List</label>				
+								<select name="category_id" class="form-control">
+									<option value="">Select Sub Category  </option>
+                                    <?php foreach($all_subcategoryservice as $subcategoryservice): ?>
+                                        <option value="<?= $subcategoryservice['id'] ?>"><?= $subcategoryservice['sub_cat_name'] ?></option>
+                                    <?php endforeach; ?>
+									?>
+						</select>
+			</div>
+            <br>
+            <br>
             <div class="col-md-6">
                             <label for="price" class="control-label">Price</label>
                         <div class="form-group">

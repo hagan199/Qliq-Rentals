@@ -29,7 +29,8 @@ class Admin extends BaseController
                     "address" => "required",       
                     "sub_metro" => "required",     
                     "business_activity" => "required",    
-                    "gps" => "required",     
+                    "gps" => "required",
+                    "email" => "required|valid_email",   
                 ];
                 if (!$this->validate($rules)){
                     $session->setFlashdata("error", "Invalid data request");
@@ -60,16 +61,27 @@ class Admin extends BaseController
                     "address" => "required",   
                     "lname" => "required", 
                     "user_name" => "required",
-                    "user_email" => "required",              
+                    "email" => "required|valid_email",  
+
                 ];
                 if (!$this->validate($rules)){
                     $session->setFlashdata("error", "Invalid data request");
                 }else{
+
+                    
+                $file = $this->request->getFile('image');
+                //echo $file->getName();
+               // exit();
+                if($file->isValid() && !$file->hasMoved()){
+                    $file->move('./uploads/users','testName.' .$file->getExtension());
+                } 
                     $model = new UserModel();
                     $data['fname'] =  $this->request->getVar('fname');
                     $data['lname'] =  $this->request->getVar('lname');
                     $data['user_name'] =  $this->request->getVar('user_name');
-                    $data['user_email'] =  $this->request->getVar('user_email');
+                    $data['phone'] =  $this->request->getVar('phone');
+                    $data['tin_number'] =  $this->request->getVar('tin_number');
+                    $data['email'] =  $this->request->getVar('email');
                     $data['address'] =  $this->request->getVar('address');
                     $data['seting_vendor_id'] =  $this->request->getVar('seting_vendor_id');
                     $data['gps'] =  $this->request->getVar('gps');
@@ -77,6 +89,7 @@ class Admin extends BaseController
                     $data['nation_id'] =  $this->request->getVar('nation_id');
                     $data['user_type'] = '202';
                     $data['user_name'] = $this->request->getVar('user_name');
+                    $data['image'] = $file;
                     $data['user_password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
                     if($model->insert($data)){
                     $session->setFlashdata("success", "successfully");
@@ -182,9 +195,10 @@ class Admin extends BaseController
                         $model = new VendorService();       
                         $data = [
                         'vendor_id' => $this->request->getVar('vendor_id'),
-                        'service_id'  => $this->request->getVar('address'),
+                        'service_id'  => $this->request->getVar('service_id'),
                         'price'  => $this->request->getVar('price'),
                         'catagory_id'=> $session()->get('catagory_id'), 
+                        'sub_catagory_id'=> $session()->get('sub_catagory_id'), 
                             ];
                         if($model->insert($data)){
                         $session->setFlashdata("success", "successfully");
@@ -207,6 +221,9 @@ class Admin extends BaseController
             $categoryservice_model = new CategoryService();
             $data['all_categoryservice'] = $categoryservice_model->orderBy('id', 'DESC')->findAll();
     
+            $subcategoryservice_model = new SubCategoryService();
+            $data['all_subcategoryservice'] = $subcategoryservice_model->orderBy('id', 'DESC')->findAll();
+    
             $service_model = new Service();
             $data['all_service'] = $service_model->orderBy('id', 'DESC')->findAll();
             $data['title'] = 'Setup Vendor Service ';
@@ -222,17 +239,24 @@ class Admin extends BaseController
             $rules = [
                 "category_name" => "required",
                 "service_id" => "required",
-                
-            // 'image' => 'uploaded[file]|max_size[file,1024]|ext_in[file,jpg,jpeg,docx,pdf],'         
+                "image" =>  "uploaded[image]|max_size[image,1024]|ext_in[image,jpg]",
             ];
             if (!$this->validate($rules)){
-                $session->setFlashdata("error", "Invalid data request");
+                $session->setFlashdata("error", "Invalid data request");    
             }else{
-                $model = new CategoryService();       
+                $model = new CategoryService();    
+                
+                $file = $this->request->getFile('image');
+                //echo $file->getName();
+               // exit();
+                if($file->isValid() && !$file->hasMoved()){
+                    $file->move('./uploads/images','testName.' .$file->getExtension());
+                } 
                 $data = [
                 'category_name' => $this->request->getVar('category_name'),
                 'detail'  => $this->request->getVar('detail'),
                 'service_id'  => $this->request->getVar('service_id'),
+                'image'  =>  $file,
                 ];
                 if($model->insert($data)){
                 $session->setFlashdata("success", "successfully");
@@ -253,8 +277,13 @@ class Admin extends BaseController
         }  
 }
 
-public function subcategoryService($param1 = '',  $param2 = ''){    
+public function subcategoryService($param1 = '',  $param2 = ''){  
+    helper(['form']);  
     $session = session();
+    $data =[];
+    $data[''] = [''
+
+];
     if($param1 == 'add'){
         if($this->request->getMethod() == 'post'){
             $rules = [
@@ -272,6 +301,7 @@ public function subcategoryService($param1 = '',  $param2 = ''){
                 ];
                 if($model->insert($data)){
                 $session->setFlashdata("success", "successfully");
+                $data['validation'] = $this->vaidator;
                     }else{
                 $session->setFlashdata("error", "Something happened please try again");
                 }
@@ -279,7 +309,7 @@ public function subcategoryService($param1 = '',  $param2 = ''){
         } 
         $model = new UserModel();
         $data['users'] = $model->orderBy('id', 'DESC')->findAll();
-
+      
         $servicemodel = new Service();
         $data['all_service'] = $servicemodel->orderBy('id', 'DESC')->findAll();
 
