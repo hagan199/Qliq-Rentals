@@ -28,7 +28,7 @@
 
     <div class="tab-content" id="v-pills-tabContent">             
           <!-------USER lIST---->
-    <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tabpanel" aria-labelledby="list-tab">    
+    <div class="tab-pane fade <?php if(!isset($print_report) && !isset($edit_report))echo 'active'; ?>" id="list" role="tab" aria-labelledby="list-tab">    
     <div class="row">
             <div class="col-md-12">
               <div class="card">
@@ -47,7 +47,8 @@
                             <th>Staff Name</th>
                             <th>Email</th>                                
                             <th>Gender</th>
-                            <th>Username</th>       
+                            <th>Username</th> 
+                            <th>User Type</th>           
                             <th>Phone</th>
                             <th class="disabled-sorting text-right">Actions</th>
                         </tr>
@@ -58,7 +59,8 @@
                             <th>Staff Name</th>
                             <th>Email</th>                                       
                             <th>Gender</th> 
-                            <th>Username</th>                                 
+                            <th>Username</th>  
+                            <th>User Type</th>                                
                             <th>Phone</th>
                           <th class="text-right">Actions</th>
                         </tr>
@@ -71,11 +73,12 @@
                                 <td><?= $u['email'] ?></td>
                                 <td><?= $u['gender'] ?></td>
                                 <td><?= $u['user_name'] ?></td>
+                                <td><?= $u['user_type'] ?></td>
                                 <td><?php echo $u['phone']; ?></td>
                                 <td>
                                 <a title="edit" href="" class="btn btn-success" ><i class="fe fe-edit mr-1" aria-hidden="true"></i>Edit</a>
-                           <!---  <a title="delete" href="" class="btn btn-danger" ><i   aria-hidden="true" ></i>Delete</a>-->
-                           
+                          <!---  <a title="delete" href="" class="btn btn-danger" ><i   aria-hidden="true" ></i>Delete</a>-->
+
                                 </td>
                             </tr>
                             <?php } ?>
@@ -93,7 +96,7 @@
           </div>
         
            <!--------add----->
-  <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tabpanel" aria-labelledby="add-tab">    
+  <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tab" aria-labelledby="add-tab">    
   <div class="row">
   <div class="col-md-12">
               <div class="card ">
@@ -123,7 +126,6 @@
             </div>
             </div>
             </div>
-
 
           <div class="row">
           <div class="col-md-4">
@@ -171,7 +173,7 @@
                       <div class="col-md-8">
 
                         <button type="submit" class="btn btn-success">
-                          <i class="fa fa-check"></i>Submit
+                          <i class="fa fa-check"></i>ADD
                         </button>
                          </div>
                       </div>

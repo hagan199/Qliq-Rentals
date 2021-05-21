@@ -2,7 +2,7 @@
 <?= $this->section('content')?>
 
 <div class="col-lg-12 mb-6">
-            <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-bold">
+            <!---    <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-bold">
                 <li class="nav-item">
                 <a class="nav-link <?php if(!isset($print_report) && !isset($edit_report))echo 'active'; ?>" id="list-tab" href="#list" role="tab" aria-selected="true" data-toggle="tab">
                     <i class="fe fe-file-plus mr-1"></i>
@@ -14,7 +14,7 @@
                     <i class="fe fe-file-text mr-1"></i>
                     Add Vendor Service
                 </a>
-                </li>
+                </li>-->
                 <?php if(isset($edit_report)): ?>
                 <li class="nav-item">
                 <a class="nav-link active " id="edit-list-tab" href="#edit" role="tab" aria-selected="true" data-toggle="tab">
@@ -27,7 +27,7 @@
             </div>
         <div class="tab-content" id="v-pills-tabContent">    
             <!---------------USER lIST------------------>
-        <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tabpanel" aria-labelledby="list-tab"> 
+        <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tab" aria-labelledby="list-tab"> 
             <div class="row">
             <div class="col-md-12">
             <div class="card">
@@ -46,6 +46,7 @@
                             <th>Vendor Name</th>
                             <th>Service Name</th>                                
                             <th>category </th> 
+                            <th>Sub category </th>
 							<th>Price </th> 
                             <th class="disabled-sorting text-right">Actions</th>
                         </tr>
@@ -56,6 +57,7 @@
                             <th>Vendor Name</th>
                             <th>Service</th>                                
                             <th>category </th> 
+                            <th>Sub category </th> 
 							<th>Price </th>                        
                         <th class="text-right">Actions</th>
                         </tr>
@@ -64,12 +66,12 @@
                             <?php $i=1; foreach($vendor as $u){ ?>
                             <tr>
                                 <td><?= $i++?></td>
-                                <td><?= $u['id'] ?></td>
-                                <td><?= $u['company_name'] ?></td>
-								<td><?= $u['address'] ?></td>
-                                <td><?= $u['phone'] ?></td>   
-                                <td><?= $u['admin_id'] ?></td>  
-										
+                            
+                                <td><?= get_column_name_by_id('setting_vendor', $u['vendor_id'], 'company_name') ?></td>
+                                <td><?= get_column_name_by_id('service_tbl', $u['service_id'], 'service_name') ?></td>
+                                <td><?= get_column_name_by_id('category_service_tbl', $u['category_id'], 'category_name') ?></td>
+                                <td><?= get_column_name_by_id('sub_category_service_tbl', $u['sub_category_id'], 'sub_cat_name') ?></td>
+                                <td><?= $u['price'] ?></td>  			
                                 <td>
                                 <a title="edit" href="" class="btn btn-link btn-warning btn-just-icon like"><i class="material-icons">edit</i></a>                              
                                 </td>
@@ -89,7 +91,7 @@
             <!-- end row -->
             </div>
 
-            <!--------add----->
+            <!------
 <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tabpanel" aria-labelledby="add-tab">    
     <div class="row">
     <div class="col-md-12">
@@ -104,8 +106,8 @@
             <div class="box-body">
             <div class="row">
             <div class="col-md-6">
-							<label for="service_id" class="control-label">Vendor Name</label>				
-								<select name="service_id" class="form-control">
+							<label for="vendor_id" class="control-label">Vendor Name</label>				
+								<select name="vendor_id" class="form-control" required>
 									<option value="">Select Vendor Name </option>
                                     <?php foreach($all_vendor_name as $vendor_name): ?>
                                         <option value="<?= $vendor_name['id'] ?>"><?= $vendor_name['company_name'] ?></option>
@@ -115,7 +117,7 @@
 
             <div class="col-md-6">
 							<label for="service_id" class="control-label">Service List</label>				
-								<select name="service_id" class="form-control">
+								<select name="service_id" class="form-control" required>
 									<option value="">Select Service  </option>
                                     <?php foreach($all_service as $service): ?>
                                         <option value="<?= $service['id'] ?>"><?= $service['service_name'] ?></option>
@@ -127,7 +129,7 @@
             <div class="row">
             <div class="col-md-6">
 							<label for="category_id" class="control-label">Category List</label>				
-								<select name="category_id" class="form-control">
+								<select name="category_id" class="form-control" required>
 									<option value="">Select Category  </option>
                                     <?php foreach($all_categoryservice as $categoryservice): ?>
                                         <option value="<?= $categoryservice['id'] ?>"><?= $categoryservice['category_name'] ?></option>
@@ -135,9 +137,15 @@
 									?>
 							</select>
 			</div>
+            
+            <div class="col-md-4">
+        <label for="image" class="form-label">Upload File</label>
+        <input class="form-control" name='image' type="file" id="image">
+            </div>
+
             <div class="col-md-6">
-							<label for="category_id" class="control-label"> Sub Category List</label>				
-								<select name="category_id" class="form-control">
+							<label for="sub_category_id" class="control-label"> Sub Category List</label>				
+							<select name="sub_category_id" class="form-control"required> 
 									<option value="">Select Sub Category  </option>
                                     <?php foreach($all_subcategoryservice as $subcategoryservice): ?>
                                         <option value="<?= $subcategoryservice['id'] ?>"><?= $subcategoryservice['sub_cat_name'] ?></option>
@@ -150,7 +158,7 @@
             <div class="col-md-6">
                             <label for="price" class="control-label">Price</label>
                         <div class="form-group">
-            <input type="text" name="price"  class="form-control" id="price" />
+                <input type="number" name="price"  class="form-control" id="price"  min="1" max="5" required/>
             </div>
             </div>
             </div>
@@ -159,7 +167,6 @@
                         <div class="form-group">
                         <div class="col-md-4"></div>
                         <div class="col-md-8">
-
                         <button type="submit" class="btn btn-success">
                             <i class="fa fa-check"></i>Add
                         </button>
@@ -167,12 +174,13 @@
                         </div>
                     </div>
                 </div>
-        </form>        
                 </div>
+                </form>  
                 </div>
-</div>    
-    </div>
-    </div>
+            </div>    
+        </div>
+    </div>--add----->
+</div>
 
 
 

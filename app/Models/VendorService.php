@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class VendorService extends Model{
     protected $table = 'vendor_service_tbl';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['vender_id','price','category_id','service_id'];
+    protected $allowedFields = ['vendor_id','price','category_id','service_id','sub_category_id', 'image'];
     }
 
     function vendorserviceById($id)

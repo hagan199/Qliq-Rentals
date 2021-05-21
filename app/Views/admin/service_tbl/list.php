@@ -101,7 +101,7 @@
             <div class="col-md-6">
                 <label for="service_name" class="control-label">Service Name</label>
                     <div class="form-group">
-                        <input type="text" name="service_name"  class="form-control" id="service_name" />
+                        <input type="text" name="service_name"  class="form-control" id="service_name" required/>
                 </div>
             </div>
             <div class="col-md-6">

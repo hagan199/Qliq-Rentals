@@ -24,11 +24,9 @@
                 <?php endif; ?>
             </ul>
         </div>
-
-
 <div class="tab-content" id="v-pills-tabContent">             
         <!-------USER lIST---->
-    <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tabpanel" aria-labelledby="list-tab"> 
+    <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tab" aria-labelledby="list-tab"> 
         <div class="row">
             <div class="col-md-12">
             <div class="card">
@@ -45,8 +43,7 @@
                         <tr>
                             <th>#</th>
                             <th>Service name</th>
-                            <th>Category name</th>     
-                            <th>detail</th>                                                       
+                            <th>Category name</th>                                                                                 
                             <th class="disabled-sorting text-right">Actions</th>
                         </tr>
                         </thead>
@@ -54,8 +51,7 @@
                         <tr>  
                             <th>#</th>
                             <th>Service name</th>
-                            <th>Category name</th>     
-                            <th>detail</th>                                                                                                  
+                            <th>Category name</th>                                                                                                                  
                         <th class="text-center">Actions</th>
                         </tr>
                     </tfoot>
@@ -64,8 +60,7 @@
                             <tr>
                                 <td><?= $i++?></td>
                                 <td><?= get_column_name_by_id('service_tbl', $u['service_id'], 'service_name') ?></td>
-                                <td><?= $u['category_name'] ?></td>
-                                <td><?= $u['detail'] ?></td>                                             
+                                <td><?= $u['category_name'] ?></td>                                                     
                                 <td>
                                 <a title="edit" href="" class="btn btn-success" ><i class="fe fe-edit mr-1" aria-hidden="true"></i>Edit</a>                 
                             <!--<a title="delete" href="" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>--->
@@ -86,7 +81,7 @@
             </div>
 <!-- end row -->            
                         <!--------add----->
-    <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tabpanel" aria-labelledby="add-tab">    
+    <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tab" aria-labelledby="add-tab">    
         <div class="row">
         <div class="col-md-12">
             <div class="card ">
@@ -101,7 +96,7 @@
             <div class="row">
             <div class="col-md-4">
 							<label for="service_id" class="control-label">Service List</label>				
-								<select name="service_id" class="form-control">
+								<select name="service_id" class="form-control" required>
 									<option value="">Select Service </option>
                                     <?php foreach($all_service as $service): ?>
                                         <option value="<?= $service['id'] ?>"><?= $service['service_name'] ?></option>
@@ -111,20 +106,10 @@
             <div class="col-md-4">
                 <label for="category_name" class="control-label">Category Name</label>
                     <div class="form-group">
-                <input type="text" name="category_name"  class="form-control" id="category_name" />
+                <input type="text" name="category_name"  class="form-control" id="category_name" required/>
             </div>
             </div>
-            <div class="col-md-4">
-                <label for="detail" class="control-label">Description</label>
-                    <div class="form-group">
-                    <input type="text" name="detail"  class="form-control" id="detail" />
-            </div>
-            </div>
-    
-        <div class="col-md-4">
-        <label for="image" class="form-label">Upload File</label>
-        <input class="form-control" name='image' type="file" id="image">
-            </div>
+
 
             </div>
                     <div class="col-md-12" style="margin-top:3%">
@@ -147,5 +132,4 @@
 </div>
 </div>
 </div>
-
     <?= $this->endSection()?> 

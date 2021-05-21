@@ -1,3 +1,13 @@
+<?php
+use App\Models\UserModel;
+$model = new UserModel();
+$session = session();
+$firstname = session()->get('fname');
+$lastname = session()->get('lname');
+
+$user = $model->orderBy('id', 'DESC')->findAll();
+?>
+
 <div class="air__menuLeft">
   <div class="air__menuLeft__outer">
     <div class="air__menuLeft__mobileToggleButton air__menuLeft__mobileActionToggle">
@@ -17,7 +27,14 @@
         <img src="../../components/kit/core/img/avatars/avatar.png" alt="David Beckham" />
       </div>
       <div class="air__menuLeft__user__name">
-        David Beckham
+
+
+        <?php foreach($user as $u){ ?>
+          <tr>
+              <td><?= $u['fname'] ?></td>                                                         
+          </tr>
+          <?php } ?>
+
       </div>
       <div class="air__menuLeft__user__role">
       Adminstator  
@@ -87,6 +104,7 @@
             <i class="fe fe-database air__menuLeft__icon"></i>
             <span>Vendor</span>
           </a>
+
           <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
               <a href="/svendor/edit/goals" class="air__menuLeft__link">
@@ -94,6 +112,7 @@
               </a>
             </li>
           </ul>
+
           <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
               <a href="/services/add/servicesadd" class="air__menuLeft__link">
@@ -101,6 +120,7 @@
               </a>
             </li>
           </ul>
+        
           <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
               <a href="/cservice/add/goals" class="air__menuLeft__link">
@@ -159,7 +179,6 @@
               </a>
             </li>
           </ul>
-
 
 
 

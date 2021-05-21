@@ -28,7 +28,7 @@
 
 <div class="tab-content" id="v-pills-tabContent">             
         <!-------USER lIST---->
-    <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tab" aria-labelledby="list-tab"> 
+    <div class="tab-pane fade<?php if(!isset($print_report) && !isset($edit_report))echo 'show active'; ?>" id="list" role="tab" aria-labelledby="list-tab"> 
         <div class="row">
             <div class="col-md-12">
             <div class="card">
@@ -89,7 +89,7 @@
             <div class="card ">
                 <div class="card-header card-header-rose card-header-text">
                     <div class="card-text">
-                    <h4 class="card-title">Add  Sub Category service</h4>
+                    <h4 class="card-title">Add Sub Category service</h4>
                     </div>
                 </div>
                 <?php if (isset($validation)): ?>
@@ -117,12 +117,12 @@
             </div>
             </div>
 
-    <!---   <div class="col-md-6">
+            <div class="col-md-6">
 						<label for="image" class="control-label">Image</label>
 							<div class="form-group">
-						<input type="file" name="image" id="imagew" onchange="readURL(this);" accept=".png, .jpg, .jpeg" />
+						<input type="file" name="image" id="image" onchange="readURL(this);" accept=".png, .jpg, .jpeg" />
 							</div>
-			</div>---->
+			</div>
             </div>
                     <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">
