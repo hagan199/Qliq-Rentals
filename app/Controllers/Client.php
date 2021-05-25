@@ -17,6 +17,8 @@ class Client extends BaseController
         $model = new Booking();
         $data['booking_list'] = $model->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'Booking List';
+        $data['page'] = 'Booking ';
+
         return view('admin/booking_tbl/list',$data);
     }  
     

@@ -4,8 +4,8 @@ $model = new UserModel();
 $session = session();
 $firstname = session()->get('fname');
 $lastname = session()->get('lname');
-
 $user = $model->orderBy('id', 'DESC')->findAll();
+$id = session()->get('logged_user');
 ?>
 
 <div class="air__menuLeft">
@@ -17,7 +17,7 @@ $user = $model->orderBy('id', 'DESC')->findAll();
       <span></span>
       <span></span>
     </div>
-    <a href="/dash" class="air__menuLeft__logo">
+    <a href="/dashboard" class="air__menuLeft__logo">
       <div class="air__menuLeft__logo__letter">QI</div>
       <div class="air__menuLeft__logo__name">Rental</div>
       <div class="air__menuLeft__logo__descr">QI Rental</div>
@@ -28,16 +28,16 @@ $user = $model->orderBy('id', 'DESC')->findAll();
       </div>
       <div class="air__menuLeft__user__name">
 
-
-        <?php foreach($user as $u){ ?>
-          <tr>
-              <td><?= $u['fname'] ?></td>                                                         
-          </tr>
-          <?php } ?>
-
+      <?= session()->get('fname').  ' ' .session()->get('lname') ?>
       </div>
       <div class="air__menuLeft__user__role">
-      Adminstator  
+      <?php
+      if(session()->get('user_type') == 101 ){
+        echo 'Admin';
+      }elseif(session()->get('user_type') == 202){
+      echo 'vendor';
+      }
+      ?>
       </div>
     </a>
     <div class="air__menuLeft__container kit__customScroll">
@@ -45,8 +45,11 @@ $user = $model->orderBy('id', 'DESC')->findAll();
       <li class="air__menuLeft__category">
           <span>Dashboards</span>
         </li>
-    
-        <!---DASHBOARD ----->
+
+        <?php if (session()->has("logged_user")):?>
+      <?php else:?>
+        <?php endif;?>
+        <!--DASHBOARD ----->
         <li class="air__menuLeft__category">
             <span>Booked</span>
         </li>
@@ -69,6 +72,7 @@ $user = $model->orderBy('id', 'DESC')->findAll();
             </li>
           </ul>
           </ul>
+          <?php if (session()->get('user_type') == 202):?>
           <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
               <a href="/booking" class="air__menuLeft__link">
@@ -78,6 +82,7 @@ $user = $model->orderBy('id', 'DESC')->findAll();
           </ul>
           </ul>
         </li>
+        <?php endif;?>
           <!----ADMINSTATOR ----->
         <li class="air__menuLeft__category">
             <span>Adminstator</span>
@@ -112,7 +117,6 @@ $user = $model->orderBy('id', 'DESC')->findAll();
               </a>
             </li>
           </ul>
-
           <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
               <a href="/services/add/servicesadd" class="air__menuLeft__link">
@@ -120,7 +124,6 @@ $user = $model->orderBy('id', 'DESC')->findAll();
               </a>
             </li>
           </ul>
-        
           <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
               <a href="/cservice/add/goals" class="air__menuLeft__link">

@@ -76,7 +76,7 @@
                                 <td><?= $u['area'] ?></td>   
                                 <td><?= $u['gps'] ?></td>                                                        
                                 <td>
-                                <a  title="edit" href="" class="btn btn-success" ><i class="fe fe-edit mr-1" aria-hidden="true"></i>Edit</a>
+                                <a title="edit" href="" class="btn btn-success" ><i class="fe fe-edit mr-1" aria-hidden="true"></i>Edit</a> 
                                 </td>
                             </tr>
                             <?php } ?>
@@ -321,7 +321,7 @@
                  <form action="/vservice/add/goals" method="post">
             <div class="box-body">
             <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
 							<label for="vendor_id" class="control-label">Vendor Name</label>				
 								<select name="vendor_id" class="form-control" required>
 									<option value="">Select Vendor Name </option>
@@ -330,8 +330,8 @@
                                     <?php endforeach; ?>                    
 							</select>
 			</div>
-
-            <div class="col-md-6">
+            <!---
+            <div class="col-md-4">
 							<label for="service_id" class="control-label">Service List</label>				
 								<select name="service_id" class="form-control" required>
 									<option value="">Select Service  </option>
@@ -340,10 +340,7 @@
                                     <?php endforeach; ?>
 							</select>
 			</div>
-            </div>
-            <br>
-            <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
 							<label for="category_id" class="control-label">Category List</label>				
 								<select name="category_id" class="form-control" required>
 									<option value="">Select Category  </option>
@@ -353,13 +350,7 @@
 									?>
 							</select>
 			</div>
-            
             <div class="col-md-4">
-        <label for="image" class="form-label">Upload File</label>
-        <input class="form-control" name='image' type="file" id="image">
-            </div>
-
-            <div class="col-md-6">
 							<label for="sub_category_id" class="control-label"> Sub Category List</label>				
 							<select name="sub_category_id" class="form-control"required> 
 									<option value="">Select Sub Category  </option>
@@ -369,14 +360,52 @@
 									?>
 						</select>
 			</div>
-            <br>
-            <br>
-            <div class="col-md-6">
+
+-->
+                        <div class="col-md-4">
+							<label for="category_id" class="control-label"> Sub Category List</label>
+                            <select name="service_id" id="service_id" class="form-control input-lg">
+                                <option value="">Select Service</option>
+                                <?php
+                                foreach($all_service as $row)
+                                {
+                                    echo '<option value="'.$row["id"].'">'.$row["service_name"].'</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="col-md-4">
+							<label for="category_id" class="control-label"> Category List</label>		
+                            <select name="category_id" id="category_id" class="form-control input-lg">
+                                <option value="">Select Catergory</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="col-md-4">
+							<label for="sub_category_id" class="control-label"> Sub Category List</label>		
+                            <select name="sub_category_id" id="sub_category_id" class="form-control input-lg">
+                                <option value="">Select Sub Category </option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
                             <label for="price" class="control-label">Price</label>
                         <div class="form-group">
-                <input type="number" name="price"  class="form-control" id="price"  min="1" max="5" required/>
+                <input type="number" name="price"  class="form-control" id="price"   required/>
             </div>
             </div>
+    
+
+            </div>
+            <br>
+            <div class="row"> 
+            <br>
+            <div class="col-md-4">
+                <label for="image" class="form-label">Upload File</label>
+                    <input type='file' name="image[]" multiple/>
+                    <div id="myImg">
+                </div>
             </div>
             <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">
@@ -399,6 +428,84 @@
 </div>
 
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+    $(function() {
+    $(":file").change(function() {
+        if (this.files && this.files[0]) {
+        for (var i = 0; i < this.files.length; i++) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[i]);
+        }
+        }
+            });
+    });
+    function imageIsLoaded(e) {
+    $('#myImg').append('<img src=' + e.target.result + '>');
+    };
+    </script>
 
 
-        <?= $this->endSection()?> 
+        <!---- Dynamic Dependent dropdown with Ajax--->
+<script>
+$(document).ready(function(){
+    $('#service_id').change(function(){
+        var service_id = $('#service_id').val();
+        var action = 'get_category_service';
+        if(service_id != '')
+        {
+            $.ajax({
+                url:"<?php echo base_url('/admin/settingVendor'); ?>",
+                method:"POST",
+                data:{ca:service_id, action:action},
+                dataType:"JSON",
+                success:function(data)
+                {
+                    var html = '<option value="">Select Service</option>';
+                    for(var count = 0; count < data.length; count++)
+                    {
+                        html += '<option value="'+data[count].service_id+'">'+data[count].service_name+'</option>';
+                    }
+                    $('#service_id').html(html);
+                }
+            });
+        }
+        else
+        {
+            $('#state').val('');
+        }
+        $('#city').val('');
+    });
+
+    $('#state').change(function(){
+        var state_id = $('#state').val();
+        var action = 'get_city';
+        if(state_id != '')
+        {
+            $.ajax({
+                url:"<?php echo base_url('admin/settingVendor/'); ?>",
+                method:"POST",
+                data:{state_id:state_id, action:action},
+                dataType:"JSON",
+                success:function(data)
+                {
+                    var html = '<option value="">Select Category </option>';
+                    for(var count = 0; count < data.length; count++)
+                    {
+                        html += '<option value="'+data[count].city_id+'">'+data[count].city_name+'</option>';
+                    }
+                    $('#category_id').html(html);
+                }
+            });
+        }
+        else
+        {
+            $('#sub_category_id').val('');
+        }
+    });
+});
+
+</script>
+    <?= $this->endSection()?> 

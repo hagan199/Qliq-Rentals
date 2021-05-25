@@ -19,8 +19,11 @@ $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Login');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
-$routes->set404Override();
 $routes->setAutoRoute(true);
+$routes->set404Override(function()
+{
+	echo view('errors/custom_error');
+});
 
 /**
  * --------------------------------------------------------------------

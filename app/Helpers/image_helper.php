@@ -1,6 +1,6 @@
 <?php 
 function src($filename,$type="full"){
-        $path= './upload/image/chair/';
+        $path= './uploads/services/';
         if($type != 'full'){
             $path .= $type .'/';
             return $path . $filename;

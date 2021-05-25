@@ -6,24 +6,24 @@ use App\Models\UserModel;
 use App\Models\SettingVendor;
 use App\Models\VendorService;
 use App\Models\SubCategoryService;
+use CodeIgniter\Exceptions\PageNotFoundException;
+use App\Libraries\TestLibrary;
 
 class Admin extends BaseController
 {  
+    
     // Main layout  
     public function index(){
-        $session = session();
-        $model = new UserModel();
-        return view('layout/main');
-    }
-
-    // Dashboard
-    public function dashboard(){
-        return view("layout/dashboard");
+        $userdata = get_column_name_by_id('users', session()->get('id'), session()->get('fname'));
+        $data['title'] ='Qi Rentals';
+        $data['page'] ='Main';
+        return view('layout/dashboard', $data);
     }
 
     // Setting Vendor
     public function settingVendor($param1 = '',  $param2 = '' , $param3 = ''){    
-        $session = session();   
+        $session = session();  
+        helper(['form', 'image']); 
         if($param1 == 'add'){
             if($this->request->getMethod() == 'post'){
                 $rules = [
@@ -94,21 +94,49 @@ class Admin extends BaseController
 
         if($param1 == 'add_update'){
             if($this->request->getMethod() == 'post'){
+
+            helper(['form']);  
+            $session = session();
+            $data =[];
                 $rules = [
                     "vendor_id" => "required",
                     "service_id" => "required",   
                     "price" => "required",   
-                    "vendor_id" => "required",        
-                ];
+                    "vendor_id" => "required",
+                    "image" =>  "uploaded[image]|max_size[image,1024]|ext_in[image,jpg]",         
+                    ];
+
                 if(!$this->validate($rules)){
                     $session->setFlashdata("error", "Invalid data request");
                 }else{
-                    $file = $this->request->getFile('image');
-                    //echo $file->getName();
-                   // exit();
+
+                    $file = $this->request->getFileMultiple('image');
+                    echo $file->getName();
+            
                     if($file->isValid() && !$file->hasMoved()){
-                        $file->move('./uploads/images','testName.' .$file->getExtension());
-                    } 
+                    $file->move('./uploads/images','testName.' .$file->getExtension());
+                    }
+                    
+                    
+
+		if($this->request->getVar('action'))
+		{
+			$action = $this->request->getVar('action');
+			if($action == 'get_category_service')
+			{
+				$categoryModel = new CategoryService();
+				$catdata = $categoryModel->where('id', $this->request->getVar('category_id'))->findAll();
+				echo json_encode($catdata);
+			}
+
+			if($action == 'get_sub_category_service')
+			{
+				$subcategoryService = new SubCategoryService();
+				$subcatdata = $subcategoryService->where('id', $this->request->getVar('sub_category_id'))->findAll();
+				echo json_encode($subcatdata);
+			}
+		}
+
                     $model = new VendorService();       
                     $data = [
                     'vendor_id' => $this->request->getVar('vendor_id'),
@@ -118,7 +146,7 @@ class Admin extends BaseController
                     'sub_category_id'=> $this->request->getVar('sub_category_id'),
                     'image'  =>  $file,
                         ];
-                        var_dump($data);
+                        //var_dump($file);
                     if($model->insert($data)){
                     $session->setFlashdata("success", "successfully");
                         }else{
@@ -127,6 +155,7 @@ class Admin extends BaseController
                 }
             }
         }
+
         $model = new VendorService();
         $data['vendor'] = $model->orderBy('id', 'DESC')->findAll();
         $settingvendormodel = new SettingVendor();
@@ -211,7 +240,6 @@ class Admin extends BaseController
         if($param1 == 'delete'){
             if($this->request->getMethod() == 'post'){
             }
-        
         }
         $model = new UserModel();
         $data['users_detail'] = $model->orderBy('id', 'DESC')->findAll();
@@ -275,23 +303,25 @@ class Admin extends BaseController
             $rules = [
                 "category_name" => "required",
                 "service_id" => "required",
+                //"image" =>  "uploaded[image]|max_size[image,1024]|ext_in[image,jpg]", 
             ];
             if (!$this->validate($rules)){
                 $session->setFlashdata("error", "Invalid data request");    
             }else{
                 $model = new CategoryService();    
                 
-             //   $file = $this->request->getFile('image');
-                //echo $file->getName();
+                $file = $this->request->getFile('image');
+                echo $file->getName();
                // exit();
-             //   if($file->isValid() && !$file->hasMoved()){
-             //       $file->move('./uploads/images','testName.' .$file->getExtension());
-             //   } 
+                if($file->isValid() && !$file->hasMoved()){
+                $file->move('./uploads/images','testName.' .$file->getExtension());
+            }
+
                 $data = [
                 'category_name' => $this->request->getVar('category_name'),
                 'detail'  => $this->request->getVar('detail'),
                 'service_id'  => $this->request->getVar('service_id'),
-              //  'image'  =>  $file,
+                'image'  =>  $file,
                 ];
                 if($model->insert($data)){
                 $session->setFlashdata("success", "successfully");

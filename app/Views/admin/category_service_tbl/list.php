@@ -79,8 +79,8 @@
             <!-- end col-md-12 -->
             </div>
             </div>
-<!-- end row -->            
-                        <!--------add----->
+            <!-- end row -->            
+            <!--------add----->
     <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tab" aria-labelledby="add-tab">    
         <div class="row">
         <div class="col-md-12">
@@ -110,7 +110,6 @@
             </div>
             </div>
 
-
             </div>
                     <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">
@@ -127,9 +126,9 @@
                 </form>
                 </div>
                 </div>
-</div>
-</div>
-</div>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
     <?= $this->endSection()?> 
