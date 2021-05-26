@@ -35,7 +35,7 @@ $id = session()->get('logged_user');
       if(session()->get('user_type') == 101 ){
         echo 'Admin';
       }elseif(session()->get('user_type') == 202){
-      echo 'vendor';
+      echo 'Vendor';
       }
       ?>
       </div>
@@ -58,12 +58,14 @@ $id = session()->get('logged_user');
             <i class="fe fe-database air__menuLeft__icon"></i>
             <span>Booked List</span>
           </a>
+          <?php if (session()->get('user_type') == 101):?>
           <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
               <a href="/booking" class="air__menuLeft__link">
                 <span>Book List</span>
               </a>
             </li>
+       
             <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
               <a href="/booking" class="air__menuLeft__link">
@@ -71,7 +73,10 @@ $id = session()->get('logged_user');
               </a>
             </li>
           </ul>
+      
           </ul>
+          <?php endif;?>
+       
           <?php if (session()->get('user_type') == 202):?>
           <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
@@ -84,6 +89,8 @@ $id = session()->get('logged_user');
         </li>
         <?php endif;?>
           <!----ADMINSTATOR ----->
+
+          <?php if (session()->get('user_type') == 101):?>
         <li class="air__menuLeft__category">
             <span>Adminstator</span>
         </li>
@@ -182,7 +189,7 @@ $id = session()->get('logged_user');
               </a>
             </li>
           </ul>
-
+          <?php endif;?>
 
 
       

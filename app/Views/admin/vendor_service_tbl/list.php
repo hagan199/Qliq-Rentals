@@ -2,19 +2,19 @@
 <?= $this->section('content')?>
 
 <div class="col-lg-12 mb-6">
-            <!---    <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-bold">
+            <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-bold">
                 <li class="nav-item">
-                <a class="nav-link <?php if(!isset($print_report) && !isset($edit_report))echo 'active'; ?>" id="list-tab" href="#list" role="tab" aria-selected="true" data-toggle="tab">
+                <a class="nav-link <?php if(!isset($vendor_service))echo 'active'; ?>" id="list-tab" href="#list" role="tab" aria-selected="true" data-toggle="tab">
                     <i class="fe fe-file-plus mr-1"></i>
                     List Vendor Service
                 </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link <?php if(isset($print_report))echo 'active'; ?>" id="add-tab" href="#add" role="tab" aria-selected="true" data-toggle="tab">
+                <a class="nav-link  <?php if(isset($vendor_service))echo 'active'; ?>" id="add-tab" href="#add" role="tab" aria-selected="true" data-toggle="tab">
                     <i class="fe fe-file-text mr-1"></i>
                     Add Vendor Service
                 </a>
-                </li>-->
+                </li>
                 <?php if(isset($edit_report)): ?>
                 <li class="nav-item">
                 <a class="nav-link active " id="edit-list-tab" href="#edit" role="tab" aria-selected="true" data-toggle="tab">
@@ -27,7 +27,7 @@
             </div>
         <div class="tab-content" id="v-pills-tabContent">    
             <!---------------USER lIST------------------>
-        <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tab" aria-labelledby="list-tab"> 
+        <div class="tab-pane fade <?php if(!isset($vendor_service))echo 'show active'; ?>" id="list" role="tabpanel" aria-labelledby="list-tab"> 
             <div class="row">
             <div class="col-md-12">
             <div class="card">
@@ -47,7 +47,8 @@
                             <th>Service Name</th>                                
                             <th>category </th> 
                             <th>Sub category </th>
-							<th>Price </th> 
+							<th>Price </th>
+                            <th>Image </th>  
                             <th class="disabled-sorting text-right">Actions</th>
                         </tr>
                         </thead>
@@ -58,7 +59,8 @@
                             <th>Service</th>                                
                             <th>category </th> 
                             <th>Sub category </th> 
-							<th>Price </th>                        
+							<th>Price </th>   
+                            <th>Image </th>                      
                         <th class="text-right">Actions</th>
                         </tr>
                     </tfoot>
@@ -71,7 +73,8 @@
                                 <td><?= get_column_name_by_id('service_tbl', $u['service_id'], 'service_name') ?></td>
                                 <td><?= get_column_name_by_id('category_service_tbl', $u['category_id'], 'category_name') ?></td>
                                 <td><?= get_column_name_by_id('sub_category_service_tbl', $u['sub_category_id'], 'sub_cat_name') ?></td>
-                                <td><?= $u['price'] ?></td>  			
+                                <td><?= $u['price'] ?></td>  	
+                                <td><img src="<?= './uploads/images'.$u['name']; ?>"  /></td>		
                                 <td>
                                 <a title="edit" href="" class="btn btn-link btn-warning btn-just-icon like"><i class="material-icons">edit</i></a>                              
                                 </td>
@@ -91,8 +94,8 @@
             <!-- end row -->
             </div>
 
-            <!------
-<div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tabpanel" aria-labelledby="add-tab">    
+
+<div class="tab-pane fade <?php if(isset($vendor_service))echo 'show active'; ?>" id="add" role="tabpanel" aria-labelledby="add-tab">    
     <div class="row">
     <div class="col-md-12">
                 <div class="card ">
@@ -102,10 +105,10 @@
                     </div>
                 </div>
                 <div class="card-body ">
-                 <form action="/vservice/add/goals" method="post">
+                 <form action="/vservice/add/goals" enctype="multipart/form-data" method="post">
             <div class="box-body">
             <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
 							<label for="vendor_id" class="control-label">Vendor Name</label>				
 								<select name="vendor_id" class="form-control" required>
 									<option value="">Select Vendor Name </option>
@@ -115,7 +118,7 @@
 							</select>
 			</div>
 
-            <div class="col-md-6">
+            <div class="col-md-4">
 							<label for="service_id" class="control-label">Service List</label>				
 								<select name="service_id" class="form-control" required>
 									<option value="">Select Service  </option>
@@ -124,10 +127,9 @@
                                     <?php endforeach; ?>
 							</select>
 			</div>
-            </div>
-            <br>
-            <div class="row">
-            <div class="col-md-6">
+            
+
+            <div class="col-md-4">
 							<label for="category_id" class="control-label">Category List</label>				
 								<select name="category_id" class="form-control" required>
 									<option value="">Select Category  </option>
@@ -137,13 +139,9 @@
 									?>
 							</select>
 			</div>
-            
+            <br>
+            <br>
             <div class="col-md-4">
-        <label for="image" class="form-label">Upload File</label>
-        <input class="form-control" name='image' type="file" id="image">
-            </div>
-
-            <div class="col-md-6">
 							<label for="sub_category_id" class="control-label"> Sub Category List</label>				
 							<select name="sub_category_id" class="form-control"required> 
 									<option value="">Select Sub Category  </option>
@@ -155,12 +153,20 @@
 			</div>
             <br>
             <br>
-            <div class="col-md-6">
+            <div class="col-md-4">
+                <label for="image" class="form-label">Upload File</label>
+                    <input type='file' name="image[]" multiple/>
+                    <div id="myImg">
+                </div>
+            </div>
+            <div class="col-md-4">
                             <label for="price" class="control-label">Price</label>
                         <div class="form-group">
-                <input type="number" name="price"  class="form-control" id="price"  min="1" max="5" required/>
+                <input type="number" name="price"  class="form-control" id="price" required/>
             </div>
             </div>
+
+
             </div>
             <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">
@@ -179,11 +185,26 @@
                 </div>
             </div>    
         </div>
-    </div>--add----->
+    </div>
+</div>
 </div>
 
-
-
+<script>
+    $(function() {
+    $(":file").change(function() {
+        if (this.files && this.files[0]) {
+        for (var i = 0; i < this.files.length; i++) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[i]);
+        }
+        }
+            });
+    });
+    function imageIsLoaded(e) {
+    $('#myImg').append('<img src=' + e.target.result + '>');
+    };
+</script>
 
 
 

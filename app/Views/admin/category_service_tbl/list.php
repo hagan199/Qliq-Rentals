@@ -3,13 +3,13 @@
 <div class="col-lg-12 mb-6">         
             <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-bold">
                 <li class="nav-item">
-                <a class="nav-link <?php if(!isset($print_report) && !isset($edit_report))echo 'active'; ?>" id="list-tab" href="#list" role="tab" aria-selected="true" data-toggle="tab">
+                <a class="nav-link <?php if(!isset($categoryservice)) echo 'active'; ?>" id="list-tab" href="#list" role="tab" aria-selected="true" data-toggle="tab">
                     <i class="fe fe-file-plus mr-1"></i>
                     List Category Service
                 </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link <?php if(isset($print_report))echo 'active'; ?>" id="add-tab" href="#add" role="tab" aria-selected="true" data-toggle="tab">
+                <a class="nav-link <?php if(isset($categoryservice))echo 'active'; ?>" id="add-tab" href="#add" role="tab" aria-selected="true" data-toggle="tab">
                     <i class="fe fe-file-text mr-1"></i>
                     Add Category Service
                 </a>
@@ -26,7 +26,7 @@
         </div>
 <div class="tab-content" id="v-pills-tabContent">             
         <!-------USER lIST---->
-    <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tab" aria-labelledby="list-tab"> 
+    <div class="tab-pane fade <?php if(!isset($categoryservice))echo 'show active'; ?>" id="list" role="tab" aria-labelledby="list-tab"> 
         <div class="row">
             <div class="col-md-12">
             <div class="card">
@@ -81,7 +81,7 @@
             </div>
             <!-- end row -->            
             <!--------add----->
-    <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tab" aria-labelledby="add-tab">    
+    <div class="tab-pane fade <?php if(isset($categoryservice))echo 'show active'; ?>" id="add" role="tab" aria-labelledby="add-tab">    
         <div class="row">
         <div class="col-md-12">
             <div class="card ">
@@ -94,7 +94,7 @@
                  <form action="/cservice/add/goals" method="post"  enctype="multipart/form-data">
             <div class="box-body">
             <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
 							<label for="service_id" class="control-label">Service List</label>				
 								<select name="service_id" class="form-control" required>
 									<option value="">Select Service </option>
@@ -103,7 +103,7 @@
                                     <?php endforeach; ?>
 							</select>
 			</div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <label for="category_name" class="control-label">Category Name</label>
                     <div class="form-group">
                 <input type="text" name="category_name"  class="form-control" id="category_name" required/>

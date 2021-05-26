@@ -4,13 +4,13 @@
 <div class="col-lg-12 mb-6">         
             <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-bold">
               <li class="nav-item">
-                <a class="nav-link <?php if(!isset($print_report) && !isset($edit_report))echo 'active'; ?>" id="list-tab" href="#list" role="tab" aria-selected="true" data-toggle="tab">
+                <a class="nav-link <?php if(!isset($users))echo 'active'; ?>" id="list-tab" href="#list" role="tab" aria-selected="true" data-toggle="tab">
                   <i class="fe fe-file-plus mr-1"></i>
                   List User
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link <?php if(isset($print_report))echo 'active'; ?>" id="add-tab" href="#add" role="tab" aria-selected="true" data-toggle="tab">
+                <a class="nav-link <?php if(isset($users))echo 'active'; ?>" id="add-tab" href="#add" role="tab" aria-selected="true" data-toggle="tab">
                   <i class="fe fe-file-text mr-1"></i>
                   Add User
                 </a>
@@ -28,7 +28,7 @@
 
     <div class="tab-content" id="v-pills-tabContent">             
           <!-------USER lIST---->
-    <div class="tab-pane fade <?php if(!isset($print_report) && !isset($edit_report))echo 'active'; ?>" id="list" role="tab" aria-labelledby="list-tab">    
+    <div class="tab-pane fade <?php if(isset($users))echo 'active'; ?>" id="list" role="tab" aria-labelledby="list-tab">    
     <div class="row">
             <div class="col-md-12">
               <div class="card">
@@ -95,8 +95,8 @@
           </div>
           </div>
         
-           <!--------add----->
-  <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tab" aria-labelledby="add-tab">    
+        <!--------add----->
+  <div class="tab-pane fade <?php if(isset($users))echo 'show active'; ?>" id="add" role="tab" aria-labelledby="add-tab">    
   <div class="row">
   <div class="col-md-12">
               <div class="card ">

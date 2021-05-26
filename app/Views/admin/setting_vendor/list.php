@@ -4,34 +4,36 @@
 <div class="col-lg-12 mb-6">
             <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-bold">
                 <li class="nav-item">
-                <a class="nav-link <?php if(!isset($print_report) && !isset($edit_report))echo 'active'; ?>" id="list-tab" href="#list" role="tab" aria-selected="true" data-toggle="tab">
+                <a class="nav-link <?php if(!isset($settingvendor))echo 'active'; ?>" id="list-tab" href="#list" role="tab" aria-selected="true" data-toggle="tab">
                     <i class="fe fe-file-plus mr-1"></i>
                     List Vendor
                 </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link <?php if(isset($print_report))echo 'active'; ?>" id="add-tab" href="#add" role="tab" aria-selected="true" data-toggle="tab">
+                <a class="nav-link <?php if(isset($settingvendor))echo 'active'; ?>" id="add-tab" href="#add" role="tab" aria-selected="true" data-toggle="tab">
                     <i class="fe fe-file-text mr-1"></i>
                     Setup Vendor
                 </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link <?php if(isset($print_report))echo 'active'; ?>" id="edit-tab" href="#edit" role="tab" aria-selected="true" data-toggle="tab">
+                <a class="nav-link <?php if(isset($settingvendor))echo 'active'; ?>" id="edit-tab" href="#edit" role="tab" aria-selected="true" data-toggle="tab">
                     <i class="fe fe-file-text mr-1"></i>
                         Own Vendor Detail
                 </a>
                 </li>
+                <?php if(isset($edit_report)): ?>
                 <li class="nav-item">
-                <a class="nav-link <?php if(isset($print_report))echo 'active'; ?>" id="edit-tab" href="#add_update" role="tab" aria-selected="true" data-toggle="tab">
+                <a class="nav-link active " id="edit-list-tab" href="#edit" role="tab" aria-selected="true" data-toggle="tab">
                     <i class="fe fe-file-text mr-1"></i>
-                    Setup Vendor Service
+                    list of report data
                 </a>
                 </li>
+                <?php endif; ?>
             </ul>
         </div>
-    <div class="tab-content" id="v-pills-tabContent">    
+<div class="tab-content" id="v-pills-tabContent">    
                 <!-------USER lIST---->
-        <div class="tab-pane fade <?php if(!isset($print_report) && !isset($edit_report))echo 'show active'; ?>" id="list" role="tab" aria-labelledby="list-tab"> 
+<div class="tab-pane fade <?php if(!isset($settingvendor))echo 'show active'; ?>" id="list" role="tab" aria-labelledby="list-tab"> 
             <div class="row">
             <div class="col-md-12">
             <div class="card">
@@ -94,7 +96,7 @@
             <!-- end row -->
             </div>
             <!--------add----->
-<div class="tab-pane fade <?php if(isset($print_report))echo 'show active'; ?>" id="add" role="tab" aria-labelledby="add-tab">    
+<div class="tab-pane fade <?php if(isset($settingvendor))echo 'show active'; ?>" id="add" role="tab" aria-labelledby="add-tab">    
     <div class="row">
     <div class="col-lg-12 col-md-offset-3">
                 <div class="card ">
@@ -169,8 +171,6 @@
                         <textarea type="text" name="business_activity"  class="form-control" id="business_activity" ></textarea>
                     </div>
                 </div> 
-            
-        
             </div>
             <class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">
@@ -188,11 +188,11 @@
                 </div>
                 </div>    
             </div>
+        </div>
     </div>
-    </div>
-    </div>
+</div>
 
-<div class="tab-pane fade <?php if(isset($print_report))echo 'show active'; ?>" id="edit" role="tab" aria-labelledby="edit-tab">    
+<div class="tab-pane fade <?php if(isset($settingvendor))echo 'show active'; ?>" id="edit" role="tab" aria-labelledby="edit-tab">    
     <div class="row">
     <div class="col-lg-12 col-md-offset-3">
                 <div class="card ">
@@ -307,8 +307,16 @@
     </div>
     </div>
     </div>
+    </div>
 
-    <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add_update" role="tab" aria-labelledby="add-tab">    
+
+
+
+
+
+  <!---
+
+    <div class="tab-pane fade <?php if(!isset($settingvendor))echo 'show active'; ?>" id="add_update" role="tab" aria-labelledby="add-tab">    
     <div class="row">
     <div class="col-md-12">
                 <div class="card ">
@@ -318,7 +326,11 @@
                     </div>
                 </div>
                 <div class="card-body ">
-                 <form action="/vservice/add/goals" method="post">
+        
+            <?php  if(isset($validation)):?>
+                <? $validation->listErrors(); ?> 
+            <?php endif; ?>
+                 <form action="/vendorservice/add/goals" method="post">
             <div class="box-body">
             <div class="row">
             <div class="col-md-4">
@@ -330,8 +342,8 @@
                                     <?php endforeach; ?>                    
 							</select>
 			</div>
-            <!---
-            <div class="col-md-4">
+
+           <div class="col-md-4">
 							<label for="service_id" class="control-label">Service List</label>				
 								<select name="service_id" class="form-control" required>
 									<option value="">Select Service  </option>
@@ -360,8 +372,6 @@
 									?>
 						</select>
 			</div>
-
--->
                         <div class="col-md-4">
 							<label for="category_id" class="control-label"> Sub Category List</label>
                             <select name="service_id" id="service_id" class="form-control input-lg">
@@ -426,8 +436,7 @@
         </div>
     </div>
 </div>
-
-    </div>
+</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <script>
@@ -448,7 +457,7 @@
     </script>
 
 
-        <!---- Dynamic Dependent dropdown with Ajax--->
+        --- Dynamic Dependent dropdown with Ajax--->
 <script>
 $(document).ready(function(){
     $('#service_id').change(function(){
@@ -506,6 +515,6 @@ $(document).ready(function(){
         }
     });
 });
-
+-->
 </script>
     <?= $this->endSection()?> 
