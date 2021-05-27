@@ -28,7 +28,7 @@
 
     <div class="tab-content" id="v-pills-tabContent">             
           <!-------USER lIST---->
-    <div class="tab-pane fade <?php if(isset($users))echo 'active'; ?>" id="list" role="tab" aria-labelledby="list-tab">    
+    <div class="tab-pane fade <?php if(!isset($users))echo 'active'; ?>" id="list" role="tab" aria-labelledby="list-tab">    
     <div class="row">
             <div class="col-md-12">
               <div class="card">
@@ -183,13 +183,11 @@
         
                 </div>
               </div>
+            </div>
+        </div>
+    </div>
   </div>
-          
-      
-      </div>
-    </div>
-    </div>
-    </div>
+</div>
 
 
           <!-- end row -->

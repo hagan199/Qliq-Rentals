@@ -1,4 +1,5 @@
-<?php namespace App\Controllers;
+<?php 
+namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\Service;
 use App\Models\CategoryService;
@@ -177,7 +178,7 @@ class Admin extends BaseController{
                     $data['gender'] = $this->request->getVar('gender');
                     $data['email'] = $this->request->getVar('email');
                     $data['user_type'] = '101';
-                    $data['user_name'] = $this->request->getVar('user_name');
+                    $data['user_name'] = $this->request->getVar('user_name',FILTER_SANITIZE_STRING);
                     $data['user_password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
                 if($model->insert($data)){
                 $session->setFlashdata("success", "successfully");
@@ -188,14 +189,7 @@ class Admin extends BaseController{
             }   
         }   
         }
-        if($param1 == 'edit' && $param3 == 'doupdate'){
-            if($this->request->getMethod() == 'post'){
-            }        
-        }
-        if($param1 == 'delete'){
-            if($this->request->getMethod() == 'post'){
-            }
-        }
+
         $model = new UserModel();
         $data['users_detail'] = $model->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'User List';
@@ -207,7 +201,6 @@ class Admin extends BaseController{
         $session = session();   
         if($param1 == 'add'){
                 if($this->request->getMethod() == 'post'){
-
                     $rules = [
                         "vendor_id" => "required",
                         "service_id" => "required",   
@@ -215,7 +208,6 @@ class Admin extends BaseController{
                         "vendor_id" => "required",  
                     //  "image" =>  "uploaded[image]|max_size[image,1024]|ext_in[image,jpg]", 
                     //  "image" =>  "required", 
-
                     ];
                     if(!$this->validate($rules)){
                         $session->setFlashdata("error", "Invalid data request");

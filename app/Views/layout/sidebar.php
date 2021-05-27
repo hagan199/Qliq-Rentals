@@ -28,7 +28,7 @@ $id = session()->get('logged_user');
       </div>
       <div class="air__menuLeft__user__name">
 
-      <?= session()->get('fname').  ' ' .session()->get('lname') ?>
+      <?php session()->get('fname').  ' ' .session()->get('lname') ?>
       </div>
       <div class="air__menuLeft__user__role">
       <?php
@@ -65,7 +65,6 @@ $id = session()->get('logged_user');
                 <span>Book List</span>
               </a>
             </li>
-       
             <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
               <a href="/booking" class="air__menuLeft__link">
@@ -73,21 +72,48 @@ $id = session()->get('logged_user');
               </a>
             </li>
           </ul>
-      
           </ul>
           <?php endif;?>
-       
           <?php if (session()->get('user_type') == 202):?>
           <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
               <a href="/booking" class="air__menuLeft__link">
-                <span>Vendor Order </span>
+                <span>My Order </span>
               </a>
             </li>
           </ul>
           </ul>
         </li>
         <?php endif;?>
+
+
+<!----- Payment  Confirm--------> 
+        <li class="air__menuLeft__category">
+            <span>Payment</span>
+        </li>
+        <li class="air__menuLeft__item air__menuLeft__submenu">
+          <a href="javascript: void(0)" class="air__menuLeft__link">
+            <i class="fe fe-database air__menuLeft__icon"></i>
+            <span>Payment Confirm</span>
+          </a>
+
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/booking" class="air__menuLeft__link">
+                <span>Completed Transaction</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="air__menuLeft__list">
+            <li class="air__menuLeft__item">
+              <a href="/booking" class="air__menuLeft__link">
+                <span>My Payment </span>
+              </a>
+            </li>
+          </ul>
+          </ul>
+        </li>
+      
           <!----ADMINSTATOR ----->
 
           <?php if (session()->get('user_type') == 101):?>
@@ -152,7 +178,7 @@ $id = session()->get('logged_user');
               </a>
             </li>
           </ul>
-    <!----VENDOR CONFIGURATION ----->
+    <!----VENDOR CONFIGURATION 
           <li class="air__menuLeft__category">
           <span>Hotel Configuration</span>
         </li>
@@ -188,7 +214,7 @@ $id = session()->get('logged_user');
                 <span>Setup Room</span>
               </a>
             </li>
-          </ul>
+          </ul>----->
           <?php endif;?>
 
 

@@ -6,9 +6,9 @@ class Client extends BaseController
 {
 
     
-	public function index()
+	public function site()
 	{
-		return view('layout/site');
+		return view('layout/site/index');
 	}
 
     //List of Booking Service
