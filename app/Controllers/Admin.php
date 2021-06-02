@@ -193,7 +193,7 @@ class Admin extends BaseController{
         $model = new UserModel();
         $data['users_detail'] = $model->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'User List';
-        $data['page'] = 'User ';
+        $data['page'] = 'User';
         return view('admin/users/list',$data);
     }  
 

@@ -145,7 +145,7 @@
 </div>
 <?php endif;?>
 <?php if (session()->get('user_type') == 202):?>
-<div class="col-lg-8">
+<div class="col-lg-12">
 <div class="card">
     <div class="card-body">
         <h5 class="mb-2">My Order History</h5>
@@ -154,7 +154,7 @@
             <table class="table table-hover">
             <tr>
                 <td>Order Date</td>
-                <td>Open Date</td>
+                <td>Order</td>
                 <td>Type</td>
                 <td>BID/ASK</td>
                 <td>Filled</td>

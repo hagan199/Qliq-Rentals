@@ -120,8 +120,8 @@
 
             <div class="col-md-4">
 							<label for="service_id" class="control-label">Service List</label>				
-								<select name="service_id" class="form-control" required>
-									<option value="">Select Service  </option>
+								<select name="service_id" id="service" class="form-control" required>
+									<option value="" selected disabled>Select Service  </option>
                                     <?php foreach($all_service as $service): ?>
                                         <option value="<?= $service['id'] ?>"><?= $service['service_name'] ?></option>
                                     <?php endforeach; ?>
@@ -131,25 +131,13 @@
 
             <div class="col-md-4">
 							<label for="category_id" class="control-label">Category List</label>				
-								<select name="category_id" class="form-control" required>
-									<option value="">Select Category  </option>
-                                    <?php foreach($all_categoryservice as $categoryservice): ?>
-                                        <option value="<?= $categoryservice['id'] ?>"><?= $categoryservice['category_name'] ?></option>
-                                    <?php endforeach; ?>
-									?>
-							</select>
+								<select name="category_id"  id="category" class="form-control" required></select>
 			</div>
             <br>
             <br>
             <div class="col-md-4">
 							<label for="sub_category_id" class="control-label"> Sub Category List</label>				
-							<select name="sub_category_id" class="form-control"required> 
-									<option value="">Select Sub Category  </option>
-                                    <?php foreach($all_subcategoryservice as $subcategoryservice): ?>
-                                        <option value="<?= $subcategoryservice['id'] ?>"><?= $subcategoryservice['sub_cat_name'] ?></option>
-                                    <?php endforeach; ?>
-									?>
-						</select>
+							<select name="sub_category_id" id="sub_category" class="form-control"required></select>
 			</div>
             <br>
             <br>
@@ -189,22 +177,6 @@
 </div>
 </div>
 
-<script>
-    $(function() {
-    $(":file").change(function() {
-        if (this.files && this.files[0]) {
-        for (var i = 0; i < this.files.length; i++) {
-            var reader = new FileReader();
-            reader.onload = imageIsLoaded;
-            reader.readAsDataURL(this.files[i]);
-        }
-        }
-            });
-    });
-    function imageIsLoaded(e) {
-    $('#myImg').append('<img src=' + e.target.result + '>');
-    };
-</script>
 
 
 

@@ -5,10 +5,18 @@ use App\Models\UserModel;
 
 class Login extends Controller
 {
-    public function index()
+    public function site()
     {
         helper(['form']);
         echo view('/login');
+    } 
+
+
+    public function index()
+    {   helper(['form']);
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Website';
+		return view('layout/site/index',$data);
     } 
 
     public function auth()
@@ -17,7 +25,6 @@ class Login extends Controller
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
         if ($this->request->getMethod() == 'post') {
-
             $rules = [
                 'email' => 'required|min_length[6]|max_length[50]|valid_email',
                 'password' => 'required|min_length[8]|max_length[255]|validateUser[email,password]',
@@ -38,7 +45,6 @@ class Login extends Controller
                 // Stroing session values
                 $this->setUserSession($user);
                 // Redirecting to dashboard after login
-
                 return redirect()->to('/dashboard');
             }
             return view('/login',$data);

@@ -44,6 +44,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.bootstrap4.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap4.min.css"/>
 
+  <script src="../../js/jquery-3.3.1.js"></script>
   <script src="../../vendors/jquery/dist/jquery.min.js"></script>
   <script src="../../vendors/jquery/datatable.js"></script>
   <script src="../../vendors/popper.js/dist/umd/popper.js"></script>
@@ -282,6 +283,65 @@
       });
     });
   </script>
+
+  <script>
+
+  // on class category change
+  $('#catg').on('change',function(){
+            let value = $(this).val();
+            if(value){
+                $.ajax({
+                    url: '<?php echo site_url("Billing/getsubcategory/")?>'+value,
+                    dataType: 'Json',
+                    contentType: 'application/json',
+                    success: function( data ) {
+                    // console.log(data);
+                        if(data){
+                            let options_html = '<option value="">Select Sub Category</option>';
+                            $.each(data,function(i,err){
+                                options_html +='<option data-tokens="'+data[i].name+'" value='+data[i].id+'>'+data[i].name+'</option>';
+                            });
+                            $('#category_zone_id').html(options_html);
+                        } 
+                    }
+                });
+            }
+            else{
+                console.log('failed');
+            }
+        });
+        
+  </script>
+
+<script>
+  // on class category change
+$('#service').on('change',function(){
+            let value = $(this).val();
+            if(value){
+                $.ajax({
+                    url: '<?php echo site_url('/dynamic_dependent/getcategory'); ?>'+value,
+                    dataType: 'Json',
+                    contentType: 'application/json',
+                    success: function( data ) {
+                    // console.log(data);
+                        if(data){
+                            let options_html = '<option value="">Select Category</option>';
+                            $.each(data,function(i,err){
+                                options_html +='<option data-tokens="'+data[i].name+'" value='+data[i].category_id+'>'+data[i].category_name+'</option>';
+                            });
+                            $('#category_zone_id').html(options_html);
+                        } 
+                    }
+                });
+            }
+            else{
+                console.log('failed');
+            }
+        });
+</script>
+
+
+
 
 
 

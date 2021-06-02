@@ -49,7 +49,7 @@ $id = session()->get('logged_user');
         <?php if (session()->has("logged_user")):?>
       <?php else:?>
         <?php endif;?>
-        <!--DASHBOARD ----->
+        <!--DASHBOARD --<?php if($page == 'User')echo 'active' ?> --->
         <li class="air__menuLeft__category">
             <span>Booked</span>
         </li>
@@ -60,7 +60,7 @@ $id = session()->get('logged_user');
           </a>
           <?php if (session()->get('user_type') == 101):?>
           <ul class="air__menuLeft__list">
-            <li class="air__menuLeft__item">
+            <li class="<?php if($page == 'Book')echo 'dropdown active'; ?>">
               <a href="/booking" class="air__menuLeft__link">
                 <span>Book List</span>
               </a>
@@ -118,29 +118,29 @@ $id = session()->get('logged_user');
 
           <?php if (session()->get('user_type') == 101):?>
         <li class="air__menuLeft__category">
-            <span>Adminstator</span>
+            <span>Adminstrator</span>
         </li>
         <li class="air__menuLeft__item air__menuLeft__submenu">
           <a href="javascript: void(0)" class="air__menuLeft__link">
             <i class="fe fe-database air__menuLeft__icon"></i>
-            <span>Adminstator</span>
+            <span>Adminstrator</span>
           </a>
-          <ul class="air__menuLeft__list">
-            <li class="air__menuLeft__item">
+          <ul class="air__menuLeft__list" id="collapseUsers">
+            <li class="active">
               <a href="/users/add/goals" class="air__menuLeft__link">
                 <span>User</span>
               </a>
             </li>
           </ul>
 
-          <!----VENDOR CONFIGURATION ----->
+        <!----VENDOR CONFIGURATION------->
         <li class="air__menuLeft__category">
           <span>Vendor Configuration</span>
         </li>
         <li class="air__menuLeft__item air__menuLeft__submenu">
           <a href="javascript: void(0)" class="air__menuLeft__link">
             <i class="fe fe-database air__menuLeft__icon"></i>
-            <span>Vendor</span>
+            <span>Vendor Configuration</span>
           </a>
 
           <ul class="air__menuLeft__list">
@@ -178,54 +178,12 @@ $id = session()->get('logged_user');
               </a>
             </li>
           </ul>
-    <!----VENDOR CONFIGURATION 
-          <li class="air__menuLeft__category">
-          <span>Hotel Configuration</span>
-        </li>
-        <li class="air__menuLeft__item air__menuLeft__submenu">
-          <a href="javascript: void(0)" class="air__menuLeft__link">
-            <i class="fe fe-database air__menuLeft__icon"></i>
-            <span>Hotel</span>
-          </a>
-          <ul class="air__menuLeft__list">
-            <li class="air__menuLeft__item">
-              <a href="/svendor/edit/goals" class="air__menuLeft__link">
-                <span>Setup Canopy</span>
-              </a>
-            </li>
-          </ul>
-          <ul class="air__menuLeft__list">
-            <li class="air__menuLeft__item">
-              <a href="/services/add/servicesadd" class="air__menuLeft__link">
-                <span>Setup Hall</span>
-              </a>
-            </li>
-          </ul>
-          <ul class="air__menuLeft__list">
-            <li class="air__menuLeft__item">
-              <a href="/cservice/add/goals" class="air__menuLeft__link">
-                <span>Setup Hall</span>
-              </a>
-            </li>
-          </ul>
-          <ul class="air__menuLeft__list">
-            <li class="air__menuLeft__item">
-              <a href="/vservice/add/goals" class="air__menuLeft__link">
-                <span>Setup Room</span>
-              </a>
-            </li>
-          </ul>----->
+
           <?php endif;?>
 
 
       
-      <div class="air__menuLeft__banner">
-        <p>More components, more styles, more themes, and premium support!</p>
-        <a href="https://themeforest.net/item/air-ui-multi-concept-admin-template/24434456" target="_blank"
-          rel="noopener noreferrer" class="btn btn-white text-center d-block">
-          Buy Air UI
-        </a>
-      </div>
+
 
   
     </div>

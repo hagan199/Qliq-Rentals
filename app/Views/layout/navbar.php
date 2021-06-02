@@ -113,10 +113,11 @@
       <img class="dropdown-toggle-avatar" src="../../components/kit/core/img/avatars/avatar-2.png" alt="User avatar" />
     </a>
     <div class="dropdown-menu dropdown-menu-right" role="menu">
-      <a class="dropdown-item" href="javascript:void(0)">
+     <!--- <a class="dropdown-item" href="javascript:void(0)">
         <i class="dropdown-icon fe fe-user"></i>
         Profile
-      </a>
+      </a>-->
+      <a href="#" class="dropdown-item"  data-toggle="modal" data-target="#signupPopupForm">  Profile</a>
       <div class="dropdown-divider"></div>
       <div class="dropdown-header">
         Home
@@ -128,3 +129,54 @@
     </div>
   </div>
 </div>
+
+<!-- end modal-shared -->
+<div class="modal-popup">
+    <div class="modal fade" id="signupPopupForm" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title title" id="exampleModalLongTitle">Profile Detail</h5>
+                        <p class="font-size-14">Hello! Welcome Create a New Account</p>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="la la-close"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="contact-form-action">
+                        <form method="post">
+                            <div class="input-box">
+                                <label class="label-text">Username</label>
+                                <div class="form-group">
+                                    <span class="la la-user form-icon"></span>
+                                    <input class="form-control" type="text" name="text" placeholder="Type your username">
+                                </div>
+                            </div><!-- end input-box -->
+                            <div class="input-box">
+                                <label class="label-text">Email Address</label>
+                                <div class="form-group">
+                                    <span class="la la-envelope form-icon"></span>
+                                    <input class="form-control" type="text" name="text" placeholder="Type your email">
+                                </div>
+                            </div><!-- end input-box -->
+                            <div class="input-box">
+                                <label class="label-text">Password</label>
+                                <div class="form-group">
+                                    <span class="la la-lock form-icon"></span>
+                                    <input class="form-control" type="text" name="text" placeholder="Type password">
+                                </div>
+                            </div><!-- end input-box -->
+                            <span class="button" data-dismiss="modal" aria-label="Close">Close</span>
+                        </form>
+                    </div><!-- end contact-form-action -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- end modal-popup -->
+
+<script>
+$('.modal').removeClass('show');
+</script>

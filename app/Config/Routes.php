@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Login');
-$routes->setDefaultMethod('index');
+$routes->setDefaultMethod('site');
 $routes->setTranslateURIDashes(false);
 $routes->setAutoRoute(true);
 $routes->set404Override(function()
@@ -35,6 +35,7 @@ $routes->set404Override(function()
 // route since we don't have to scan directories.
 
 // Layout
+$routes->get('/logins', 'Login::index');
 $routes->get('/login', 'Login::auth');
 $routes->get('/logout', 'Login::logout');
 $routes->get('/booking', 'Client::book_list');

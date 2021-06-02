@@ -8,7 +8,9 @@ class Client extends BaseController
     
 	public function site()
 	{
-		return view('layout/site/index');
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Website';
+		return view('layout/site/index',$data);
 	}
 
     //List of Booking Service
