@@ -49,7 +49,7 @@ $id = session()->get('logged_user');
         <?php if (session()->has("logged_user")):?>
       <?php else:?>
         <?php endif;?>
-        <!--DASHBOARD --<?php if($page == 'User')echo 'active' ?> --->
+        <!--DASHBOARD  --->
         <li class="air__menuLeft__category">
             <span>Booked</span>
         </li>

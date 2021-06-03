@@ -55,6 +55,8 @@ $routes->match(['get', 'post'], '/vendor', 'Admin::setup_vendor/$1/$2');
 $routes->get('/booking', 'Client::book_list');
 $routes->get('/sites', 'Client::site');
 
+$routes->match(['get', 'post'], '/canopy/(:any)/(:any)', 'Client::canopies/$1/$2');
+
 // Users 
 $routes->get('/users-add', 'User::create');
 // Service
