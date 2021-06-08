@@ -13,18 +13,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- Template CSS Files -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="css/line-awesome.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/daterangepicker.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/animated-headline.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/flag-icon.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../site_file/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../site_file/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../../site_file/css/line-awesome.css">
+    <link rel="stylesheet" href="../../site_file/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../site_file/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../../site_file/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="../../site_file/css/daterangepicker.css">
+    <link rel="stylesheet" href="../../site_file/css/animate.min.css">
+    <link rel="stylesheet" href="../../site_file/css/animated-headline.css">
+    <link rel="stylesheet" href="../../site_file/css/jquery-ui.css">
+    <link rel="stylesheet" href="../../site_file/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../site_file/css/style.css">
 </head>
 <body>
 <!-- start cssload-loader -->
@@ -125,164 +125,45 @@
         </div>
     </div>
     <div class="header-menu-wrapper padding-right-100px padding-left-100px">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="menu-wrapper">
-                        <a href="#" class="down-button"><i class="la la-angle-down"></i></a>
-                        <div class="logo">
-                            <a href="index.html"><img src="images/logo.png" alt="logo"></a>
-                            <div class="menu-toggler">
-                                <i class="la la-bars"></i>
-                                <i class="la la-times"></i>
-                            </div><!-- end menu-toggler -->
-                        </div><!-- end logo -->
-                        <div class="main-menu-content">
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="#">Home <i class="la la-angle-down"></i></a>
-                                        <ul class="dropdown-menu-item">
-                                            <li><a href="index.html">Home - main</a></li>
-                                            <li><a href="index2.html">Home - Hotel</a></li>
-                                            <li><a href="index3.html">Home - Activity</a></li>
-                                            <li><a href="index4.html">Home - Car</a></li>
-                                            <li><a href="index5.html">Home - Cruise</a></li>
-                                            <li><a href="index6.html">Home - Flight</a></li>
-                                            <li><a href="index7.html">Home - City Tour <span class="badge bg-2 text-white">New</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Tour <i class="la la-angle-down"></i></a>
-                                        <ul class="dropdown-menu-item">
-                                            <li><a href="tour-fullwidth.html">Tour Full width</a></li>
-                                            <li><a href="tour-grid.html">Tour Grid</a></li>
-                                            <li><a href="tour-list.html">Tour List</a></li>
-                                            <li><a href="tour-left-sidebar.html">Tour Left Sidebar</a></li>
-                                            <li><a href="tour-right-sidebar.html">Tour Right Sidebar</a></li>
-                                            <li><a href="tour-details.html">Tour details</a></li>
-                                            <li><a href="tour-booking.html">Tour Booking</a></li>
-                                            <li><a href="tour-search-result.html">Tour Search Result</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cruise <i class="la la-angle-down"></i></a>
-                                        <ul class="dropdown-menu-item">
-                                            <li><a href="cruises.html">Cruises</a></li>
-                                            <li><a href="cruises-list.html">Cruise list</a></li>
-                                            <li><a href="cruise-sidebar.html">Cruise Sidebar</a></li>
-                                            <li><a href="cruise-details.html">Cruise details</a></li>
-                                            <li><a href="cruise-booking.html">Cruise Booking</a></li>
-                                            <li><a href="cruise-search-result.html">Cruise Search Result</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Pages <i class="la la-angle-down"></i></a>
-                                        <div class="dropdown-menu-item mega-menu">
-                                            <ul class="row no-gutters">
-                                                <li class="col-lg-3 mega-menu-item">
-                                                    <ul>
-                                                        <li><a href="add-hotel.html">add hotel </a></li>
-                                                        <li><a href="add-flight.html">add flight </a></li>
-                                                        <li><a href="add-tour.html">add tour </a></li>
-                                                        <li><a href="add-cruise.html">add cruise </a></li>
-                                                        <li><a href="add-car.html">add car</a></li>
-                                                        <li><a href="user-dashboard.html">User Dashboard</a></li>
-                                                        <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
-                                                        <li><a href="career.html">career <span class="badge bg-2 text-white">New</span></a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="col-lg-3 mega-menu-item">
-                                                    <ul>
-                                                        <li><a href="career-details.html">career details<span class="badge bg-2 text-white">New</span></a></li>
-                                                        <li><a href="user-profile.html">User profile</a></li>
-                                                        <li><a href="become-local-expert.html">Become Local Expert</a></li>
-                                                        <li><a href="contact.html">contact</a></li>
-                                                        <li><a href="cart.html">Cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                        <li><a href="recover.html">recover password</a></li>
-                                                        <li><a href="payment-received.html">payment received</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="col-lg-3 mega-menu-item">
-                                                    <ul>
-                                                        <li><a href="payment-complete.html">payment complete</a></li>
-                                                        <li><a href="destinations.html">Destinations</a></li>
-                                                        <li><a href="about.html">about</a></li>
-                                                        <li><a href="services.html">Our Services</a></li>
-                                                        <li><a href="gallery.html">Gallery</a></li>
-                                                        <li><a href="pricing.html">pricing</a></li>
-                                                        <li><a href="faq.html">faq</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="col-lg-3 mega-menu-item">
-                                                    <ul>
-                                                        <li><a href="add-new-post.html">add new post</a></li>
-                                                        <li><a href="blog-full-width.html">blog full width</a></li>
-                                                        <li><a href="blog-grid.html">blog grid</a></li>
-                                                        <li><a href="blog-sidebar.html">blog sidebar</a></li>
-                                                        <li><a href="blog-single.html">blog details</a></li>
-                                                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                        <li><a href="page-404.html">404 page</a></li>
-                                                    </ul>
-                                                </li>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="menu-wrapper">
+                            <a href="#" class="down-button"><i class="la la-angle-down"></i></a>
+                            <div class="logo">
+                                <div class="menu-toggler">
+                                    <i class="la la-bars"></i>
+                                    <i class="la la-times"></i>
+                                </div><!-- end menu-toggler -->
+                            </div><!-- end logo -->
+                            <div class="main-menu-content">
+                                <nav>
+                                    <ul>
+                                        <li><a href="/sites">Home</a></li>
+                                        <li><a href="/about">About</a></li>
+                                        <li>
+                                            <a href="#"> Service<i class="la la-angle-down"></i></a>
+                                            <ul class="dropdown-menu-item">
+                                                <li><a href="cruises.html">Canopies</a></li>
+                                                <li><a href="cruises-list.html">Chairs</a></li>
+                                                <li><a href="cruise-sidebar.html">Tables</a></li>
+                                                <li><a href="cruise-details.html">Mattress</a></li>
                                             </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">Flight <i class="la la-angle-down"></i></a>
-                                        <ul class="dropdown-menu-item">
-                                            <li><a href="flight-grid.html">Flight grid</a></li>
-                                            <li><a href="flight-list.html">Flight list</a></li>
-                                            <li><a href="flight-sidebar.html">Flight sidebar </a></li>
-                                            <li><a href="flight-single.html">Flight details</a></li>
-                                            <li><a href="flight-booking.html">Flight Booking</a></li>
-                                            <li><a href="flight-search-result.html">Flight Search Result</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Hotel <i class="la la-angle-down"></i></a>
-                                        <ul class="dropdown-menu-item">
-                                            <li><a href="hotel-grid.html">Hotel grid</a></li>
-                                            <li><a href="hotel-list.html">Hotel list</a></li>
-                                            <li><a href="hotel-sidebar.html">Hotel sidebar </a></li>
-                                            <li><a href="hotel-single.html">Hotel details</a></li>
-                                            <li><a href="hotel-booking.html">Hotel Booking</a></li>
-                                            <li><a href="hotel-search-result.html">Hotel Search Result</a></li>
-                                            <li>
-                                                <a href="#">Rooms <i class="la la-plus"></i></a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="room-list.html">Room List</a></li>
-                                                    <li><a href="room-grid.html">Room Grid</a></li>
-                                                    <li><a href="room-search-result.html">Search Result</a></li>
-                                                    <li><a href="room-search-result-list.html">Search Result list</a></li>
-                                                    <li><a href="room-details.html">Room Details</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">car <i class="la la-angle-down"></i></a>
-                                        <ul class="dropdown-menu-item">
-                                            <li><a href="car-grid.html">car grid</a></li>
-                                            <li><a href="car-list.html">car list</a></li>
-                                            <li><a href="car-sidebar.html">car sidebar </a></li>
-                                            <li><a href="car-single.html">car details</a></li>
-                                            <li><a href="car-booking.html">Car Booking</a></li>
-                                            <li><a href="car-search-result.html">Car Search Result</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div><!-- end main-menu-content -->
-                        <div class="nav-btn">
-                            <a href="become-local-expert.html" class="theme-btn">Become Local Expert</a>
-                        </div><!-- end nav-btn -->
-                    </div><!-- end menu-wrapper -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container-fluid -->
-    </div><!-- end header-menu-wrapper -->
+                                        </li>
+                                        <li><a href="/contact"></a>Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                                
+
+                            </div><!-- end main-menu-content -->
+                            <div class="nav-btn">
+                                <!----    <a href="become-local-expert.html" class="theme-btn">Become Local Expert</a>--->
+                            </div><!-- end nav-btn -->
+                        </div><!-- end menu-wrapper -->
+                    </div><!-- end col-lg-12 -->
+                </div><!-- end row -->
+            </div><!-- end container-fluid -->
+        </div><!-- end header-menu-wrapper -->
 </header>
 <!-- ================================
          END HEADER AREA
@@ -298,7 +179,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-content">
                         <div class="section-heading">
-                            <h2 class="sec__title line-height-50 text-white">Trizen.com is Your Trusted <br> Travel Companion.</h2>
+                            <h2 class="sec__title line-height-50 text-white">Qi Rentals is Your Trusted <br> Travel Companion.</h2>
                         </div>
                     </div><!-- end breadcrumb-content -->
                 </div><!-- end col-lg-12 -->
@@ -322,7 +203,7 @@
             <div class="col-lg-4 responsive-column">
                 <div class="card-item" data-toggle="tooltip" data-placement="top" title="hello word">
                     <div class="card-img">
-                        <img src="images/img21.jpg" alt="about-img">
+                        <img src="../../site_file/images/img21.jpg" alt="about-img">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title mb-2">Who We Are?</h3>
@@ -335,7 +216,7 @@
             <div class="col-lg-4 responsive-column">
                 <div class="card-item ">
                     <div class="card-img">
-                        <img src="images/img22.jpg" alt="about-img">
+                        <img src="../../site_file/images/img22.jpg" alt="about-img">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title mb-2">What We Do?</h3>
@@ -348,7 +229,7 @@
             <div class="col-lg-4 responsive-column">
                 <div class="card-item ">
                     <div class="card-img">
-                        <img src="images/img23.jpg" alt="about-img">
+                        <img src="../../site_file/images/img23.jpg" alt="about-img">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title mb-2">Our Mission</h3>
@@ -382,8 +263,8 @@
             </div><!-- end col-lg-6 -->
             <div class="col-lg-5 ml-auto">
                 <div class="image-box about-img-box">
-                    <img src="images/img24.jpg" alt="about-img" class="img__item img__item-1">
-                    <img src="images/img25.jpg" alt="about-img" class="img__item img__item-2">
+                    <img src="../../site_file/images/img24.jpg" alt="about-img" class="img__item img__item-1">
+                    <img src="../../site_file/images/img25.jpg" alt="about-img" class="img__item img__item-2">
                 </div>
             </div><!-- end col-lg-5 -->
         </div><!-- end row -->
@@ -514,7 +395,7 @@
                         </div>
                         <div class="author-content d-flex align-items-center">
                             <div class="author-img">
-                                <img src="images/team9.jpg" alt="testimonial image">
+                                <img src="../../site_file/images/team9.jpg" alt="testimonial image">
                             </div>
                             <div class="author-bio">
                                 <h4 class="author__title">Richard Pam</h4>
@@ -535,7 +416,7 @@
                         </div>
                         <div class="author-content d-flex align-items-center">
                             <div class="author-img">
-                                <img src="images/team10.jpg" alt="testimonial image">
+                                <img src="../../site_file/images/team10.jpg" alt="testimonial image">
                             </div>
                             <div class="author-bio">
                                 <h4 class="author__title">Luke Jacobs</h4>
@@ -556,7 +437,7 @@
                         </div>
                         <div class="author-content d-flex align-items-center">
                             <div class="author-img">
-                                <img src="images/team8.jpg" alt="testimonial image">
+                                <img src="../../site_file/images/team8.jpg" alt="testimonial image">
                             </div>
                             <div class="author-bio">
                                 <h4 class="author__title">Chulbul Panday</h4>
@@ -596,7 +477,7 @@
             <div class="col-lg-4 responsive-column">
                 <div class="card-item team-card">
                     <div class="card-img">
-                        <img src="images/team1.jpg" alt="team-img">
+                        <img src="../../site_file/images/team1.jpg" alt="team-img">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">David Roberts</h3>
@@ -614,7 +495,7 @@
             <div class="col-lg-4 responsive-column">
                 <div class="card-item team-card">
                     <div class="card-img">
-                        <img src="images/team2.jpg" alt="team-img">
+                        <img src="../../site_file/images/team2.jpg" alt="team-img">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">Augusta Silva</h3>
@@ -632,7 +513,7 @@
             <div class="col-lg-4 responsive-column">
                 <div class="card-item team-card">
                     <div class="card-img">
-                        <img src="images/team3.jpg" alt="team-img">
+                        <img src="../../site_file/images/team3.jpg" alt="team-img">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">Bernice Lucas</h3>
@@ -650,7 +531,7 @@
              <div class="col-lg-4 responsive-column">
                 <div class="card-item team-card">
                     <div class="card-img">
-                        <img src="images/team4.jpg" alt="team-img">
+                        <img src="../../site_file/images/team4.jpg" alt="team-img">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">David Jackson</h3>
@@ -668,7 +549,7 @@
             <div class="col-lg-4 responsive-column">
                 <div class="card-item team-card">
                     <div class="card-img">
-                        <img src="images/team5.jpg" alt="team-img">
+                        <img src="../../site_file/images/team5.jpg" alt="team-img">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">Kyle Martin</h3>
@@ -686,7 +567,7 @@
             <div class="col-lg-4 responsive-column">
                 <div class="card-item team-card">
                     <div class="card-img">
-                        <img src="images/team6.jpg" alt="team-img">
+                        <img src="../../site_file/images/team6.jpg" alt="team-img">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">Evan Porter</h3>
@@ -736,111 +617,89 @@
        START FOOTER AREA
 ================================= -->
 <section class="footer-area section-bg padding-top-100px padding-bottom-30px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 responsive-column">
-                <div class="footer-item">
-                    <div class="footer-logo padding-bottom-30px">
-                        <a href="index.html" class="foot__logo"><img src="images/logo.png" alt="logo"></a>
-                    </div><!-- end logo -->
-                    <p class="footer__desc">Morbi convallis bibendum urna ut viverra. Maecenas consequat</p>
-                    <ul class="list-items pt-3">
-                        <li>3015 Grand Ave, Coconut Grove,<br> Cerrick Way, FL 12345</li>
-                        <li>+123-456-789</li>
-                        <li><a href="#">trizen@yourwebsite.com</a></li>
-                    </ul>
-                </div><!-- end footer-item -->
-            </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
-                <div class="footer-item">
-                    <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Company</h4>
-                    <ul class="list-items list--items">
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="blog-grid.html">News</a></li>
-                        <li><a href="contact.html">Support</a></li>
-                        <li><a href="#">Advertising</a></li>
-                    </ul>
-                </div><!-- end footer-item -->
-            </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
-                <div class="footer-item">
-                    <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Other Links</h4>
-                    <ul class="list-items list--items">
-                        <li><a href="#">USA Vacation Packages</a></li>
-                        <li><a href="#">USA Flights</a></li>
-                        <li><a href="#">USA Hotels</a></li>
-                        <li><a href="#">USA Car Hire</a></li>
-                        <li><a href="#">Create an Account</a></li>
-                        <li><a href="#">Trizen Reviews</a></li>
-                    </ul>
-                </div><!-- end footer-item -->
-            </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
-                <div class="footer-item">
-                    <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Subscribe now</h4>
-                    <p class="footer__desc pb-3">Subscribe for latest updates & promotions</p>
-                    <div class="contact-form-action">
-                        <form action="#">
-                            <div class="input-box">
-                                <label class="label-text">Enter email address</label>
-                                <div class="form-group mb-0">
-                                    <span class="la la-envelope form-icon"></span>
-                                    <input class="form-control" type="email" name="email" placeholder="Email address">
-                                    <button class="theme-btn theme-btn-small submit-btn" type="submit">Go</button>
-                                    <span class="font-size-14 pt-1"><i class="la la-lock mr-1"></i>Your information is safe with us.</span>
-                                </div>
-                            </div>
-                        </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 responsive-column">
+                    <div class="footer-item">
+                        <div class="footer-logo padding-bottom-30px">
+                            <a href="index.html" class="foot__logo"><img src="../../site_file/images/logo.png"
+                                    alt="logo"></a>
+                        </div><!-- end logo -->
+                        <p class="footer__desc">Best Service Rental</p>
+                        <ul class="list-items pt-3">
+                            <li>Anija,<br>Blue Water</li>
+                            <li>+(233) 241 977 529</li>
+                            <li><a href="#">info@Qirentals.com</a></li>
+                        </ul>
+                    </div><!-- end footer-item -->
+                </div><!-- end col-lg-3 -->
+                <div class="col-lg-4 responsive-column">
+                    <div class="footer-item">
+                        <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Company</h4>
+                        <ul class="list-items list--items">
+                            <li><a href="about.html">About us</a></li>
+                            <li><a href="services.html">Services</a></li>
+
+                        </ul>
+                    </div><!-- end footer-item -->
+                </div><!-- end col-lg-3 -->
+                <div class="col-lg-4 responsive-column">
+                    <div class="footer-item">
+                        <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Other Links</h4>
+                        <ul class="list-items list--items">
+                            <li><a href="#">About Qi Rentals</a></li>
+                            <li><a href="#">Canopies</a></li>
+                            <li><a href="#">Tables</a></li>
+                            <li><a href="#">Mattress</a></li>
+                        </ul>
+                    </div><!-- end footer-item -->
+                </div><!-- end col-lg-3 -->
+            </div><!-- end row -->
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="term-box footer-item">
+                        <ul class="list-items list--items d-flex align-items-center">
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
                     </div>
-                </div><!-- end footer-item -->
-            </div><!-- end col-lg-3 -->
-        </div><!-- end row -->
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <div class="term-box footer-item">
-                    <ul class="list-items list--items d-flex align-items-center">
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Help Center</a></li>
-                    </ul>
-                </div>
-            </div><!-- end col-lg-8 -->
-            <div class="col-lg-4">
-                <div class="footer-social-box text-right">
-                    <ul class="social-profile">
-                        <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                        <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                        <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
-            </div><!-- end col-lg-4 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-    <div class="section-block mt-4"></div>
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-7">
-                <div class="copy-right padding-top-30px">
-                    <p class="copy__desc">
-                        &copy; Copyright Trizen 2020. Made with
-                        <span class="la la-heart"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
-                    </p>
-                </div><!-- end copy-right -->
-            </div><!-- end col-lg-7 -->
-            <div class="col-lg-5">
-                <div class="copy-right-content d-flex align-items-center justify-content-end padding-top-30px">
-                    <h3 class="title font-size-15 pr-2">We Accept</h3>
-                    <img src="images/payment-img.png" alt="">
-                </div><!-- end copy-right-content -->
-            </div><!-- end col-lg-5 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end footer-area -->
+                </div><!-- end col-lg-8 -->
+                <div class="col-lg-4">
+                    <div class="footer-social-box text-right">
+                        <ul class="social-profile">
+                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
+                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
+                            <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div><!-- end col-lg-4 -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+        <div class="section-block mt-4"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="copy-right padding-top-30px">
+                        <p class="copy__desc">
+                            &copy; Copyright Qliq 2021. Made with
+                            <span class="la la-heart"></span> by <a
+                                href="https://themeforest.net/user/techydevs/portfolio">Qliq Integrations</a>
+                        </p>
+                    </div><!-- end copy-right -->
+                </div><!-- end col-lg-7 -->
+                <div class="col-lg-5">
+                    <div class="copy-right-content d-flex align-items-center justify-content-end padding-top-30px">
+                        <h3 class="title font-size-15 pr-2">We Accept</h3>
+                        <img src="images/payment-img.png" alt="">
+                    </div><!-- end copy-right-content -->
+                </div><!-- end col-lg-5 -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section><!-- end footer-area -->
 <!-- ================================
-       START FOOTER AREA
+                START FOOTER AREA
 ================================= -->
 
 <!-- start back-to-top -->
@@ -975,18 +834,18 @@
 </div><!-- end modal-popup -->
 
 <!-- Template JS Files -->
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-select.min.js"></script>
-<script src="js/moment.min.js"></script>
-<script src="js/daterangepicker.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.fancybox.min.js"></script>
-<script src="js/jquery.countTo.min.js"></script>
-<script src="js/animated-headline.js"></script>
-<script src="js/jquery.ripples-min.js"></script>
-<script src="js/main.js"></script>
+<script src="../../site_file/js/jquery-3.4.1.min.js"></script>
+<script src="../../site_file/js/jquery-ui.js"></script>
+<script src="../../site_file/js/popper.min.js"></script>
+<script src="../../site_file/js/bootstrap.min.js"></script>
+<script src="../../site_file/js/bootstrap-select.min.js"></script>
+<script src="../../site_file/js/moment.min.js"></script>
+<script src="../../site_file/js/daterangepicker.js"></script>
+<script src="../../site_file/js/owl.carousel.min.js"></script>
+<script src="../../site_file/js/jquery.fancybox.min.js"></script>
+<script src="../../site_file/js/jquery.countTo.min.js"></script>
+<script src="../../site_file/js/animated-headline.js"></script>
+<script src="../../site_file/js/jquery.ripples-min.js"></script>
+<script src="../../site_file/js/main.js"></script>
 </body>
 </html>

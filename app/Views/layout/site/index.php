@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="author" content="TechyDevs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title><?= $page . ' | '. $title ?></title>
     <!-- Favicon -->
     <link rel="icon" href="../../site_file/images/favicon.png">
     <!-- Google Fonts -->
@@ -26,8 +25,13 @@
     <link rel="stylesheet" href="../../site_file/css/jquery-ui.css">
     <link rel="stylesheet" href="../../site_file/css/flag-icon.min.css">
     <link rel="stylesheet" href="../../site_file/css/style.css">
-</head>
 
+</head>
+<style>
+        #frm-add-user label.error{
+            color:red;
+        }
+    </style>
 <body>
     <!-- start cssload-loader -->
     <div class="preloader" id="preloader">
@@ -59,6 +63,7 @@
                             </div>
                         </div>
                     </div>
+                
                     <div class="col-lg-6">
                         <div class="header-top-content">
                             <div class="header-right d-flex align-items-center justify-content-end">
@@ -132,7 +137,7 @@
                                 <nav>
                                     <ul>
                                         <li><a href="#">Home</a></li>
-                                        <li><a href="#">About</a></li>
+                                        <li><a href="/about">About</a></li>
                                         <li>
                                             <a href="#"> Service<i class="la la-angle-down"></i></a>
                                             <ul class="dropdown-menu-item">
@@ -142,9 +147,11 @@
                                                 <li><a href="cruise-details.html">Mattress</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="/contact">Contact Us</a></li>
                                     </ul>
                                 </nav>
+                                
+
                             </div><!-- end main-menu-content -->
                             <div class="nav-btn">
                                 <!----    <a href="become-local-expert.html" class="theme-btn">Become Local Expert</a>--->
@@ -154,6 +161,7 @@
                 </div><!-- end row -->
             </div><!-- end container-fluid -->
         </div><!-- end header-menu-wrapper -->
+     
     </header>
     <!-- ================================
     END HEADER AREA
@@ -221,15 +229,15 @@
                             </ul>
                         </div><!-- end section-tab -->
 
-                        <!---------Mattress------->
+                        <!---------Canopies------->
                         <div class="tab-content search-fields-container" id="myTabContent">
                             <div class="tab-pane fade show active" id="hotel" role="tabpanel"
                                 aria-labelledby="hotel-tab">
                                 <div class="contact-form-action">
-                                    <form action="/canopy/add/goal" method="post" class="row align-items-center">
+                                    <form action="javascript:void(0)" id="frm-add-user"   class="row align-items-center">
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
-                                                <label class="label-text" for="event_location">Event Location </label>
+                                                <label class="label-text" id="event" for="event_location">Event Locations </label>
                                                 <div class="form-group">
                                                     <span class="la la-map-marker form-icon"></span>
                                                     <input class="form-control" type="text" name="event_location"
@@ -239,27 +247,27 @@
                                         </div><!-- end col-lg-3 -->
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
-                                                <label for="phone" class="label-text">Phone</label>
+                                                <label for="phone" id="phone" class="label-text">Phone</label>
                                                 <div class="form-group">
                                                     <span class="la la-map-phone form-icon"></span>
                                                     <input class="form-control" type="text"
-                                                        placeholder="+233 023 234 3030" minlength="13" maxlength="13">
+                                                        placeholder="+233 023 234 3030" type="number" minlength="13" maxlength="13">
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
-                                                <label class="label-text">Pickup Date </label>
+                                                <label for="pick_date" id="pick_date" class="label-text">Pickup Date </label>
                                                 <div class="form-group">
                                                     <span class="la la-calendar form-icon"></span>
-                                                    <input class="date-range form-control" type="text"
+                                                    <input  name="pick_date" class="date-range form-control" type="date"
                                                         name="daterange-single" readonly required>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
-                                                <label for="drop_off" class="label-text">Drop off </label>
+                                                <label for="drop_off" id="drop_off" id="event_type" class="label-text">Drop off </label>
                                                 <div class="form-group">
                                                     <span class=""></span>
                                                     <input class="date-range form-control" type="date" name="drop_off"
@@ -268,19 +276,19 @@
                                             </div>
                                         </div><!-- end col-lg-3 -->
 
-
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
                                                 <label for="event_type" class="label-text">Event Type</label>
                                                 <div class="form-group">
                                                     <div class="select-contain w-auto">
-                                                        <select class="select-contain-select" name="event_type"
+                                                        <select class="select-contain-select" id="event_type" name="event_type"
                                                             required>
                                                             <option value="Naming Ceremony" selected>Naming Ceremony
                                                             </option>
                                                             <option value="Graduation">Graduation</option>
                                                             <option value="Wedding">Wedding</option>
                                                             <option value="Funeral">Funeral</option>
+                                                            <option value="Funeral">Camp</option>
                                                             <option value="Other">Other</option>
                                                         </select>
                                                     </div>
@@ -293,49 +301,49 @@
                                                     <label for="numer_room">Number Room</label>
                                                     <div class="qtyBtn d-flex align-items-center">
                                                         <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                        <input type="text" name="number_room" value="0" required>
+                                                        <input type="text" id="number_room" name="number_room" value="0" required>
                                                         <div class="qtyInc"><i class="la la-plus"></i></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
-
-
-
-
                                 </div>
+
                                 <div class="btn-box">
-                                    <button type="submit" class="theme-btn">Book</button>
+                                    <button  id="colorchange" data-toggle="modal"
+                                        data-target="#contactdetail" class="theme-btn">Book</button>
                                 </div>
-                                </form>
+
+</form>
                             </div><!-- end tab-pane -->
                             <!------------Mattress ------------------->
                             <div class="tab-pane fade" id="package" role="tabpanel" aria-labelledby="package-tab">
                                 <div class="contact-form-action">
-                                    <form action="#" class="row align-items-center">
+                                <form class="form-horizontal" action="javascript:void(0)" id="frm-add-mattress">
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
                                                 <label class="label-text" for="event_location">Event Location </label>
                                                 <div class="form-group">
                                                     <span class="la la-map-marker form-icon"></span>
-                                                    <input class="form-control" type="text" name="event_location"
+                                                    <input class="form-control" type="text" id="event_location"  name="event_location"
                                                         placeholder="Enter city or town" required>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
-                                                <label class="label-text">Picking Date </label>
+                                                <label for="pickup_date" id="pick_date"  class="label-text">Pickup Date </label>
                                                 <div class="form-group">
-                                                    <span class="la la-calendar form-icon"></span>
-                                                    <input class="date-range form-control" type="text"
-                                                        name="daterange-single" readonly required>
+                                                    <span class=""></span>
+                                                    <input class="date-range form-control" type="date" name="pickup_date"
+                                                        required>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
+
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
-                                                <label for="drop_off" class="label-text">Drop off </label>
+                                                <label for="drop_off" id="drop_off" class="label-text">Drop off </label>
                                                 <div class="form-group">
                                                     <span class=""></span>
                                                     <input class="date-range form-control" type="date" name="drop_off"
@@ -343,9 +351,10 @@
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
+                                        
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
-                                                <label for="event_type" class="label-text">Event Type</label>
+                                                <label for="event_type" id="event_type"  class="label-text">Event Type</label>
                                                 <div class="form-group">
                                                     <div class="select-contain w-auto">
                                                         <select class="select-contain-select" name="event_type"
@@ -355,37 +364,43 @@
                                                             <option value="Graduation">Graduation</option>
                                                             <option value="Wedding">Wedding</option>
                                                             <option value="Funeral">Funeral</option>
-                                                            <option value="Funeral">Camping</option>
+                                                            <option value="Camping">Camping</option>
                                                             <option value="Other">Other</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
+
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
                                                 <div class="qty-box d-flex align-items-center justify-content-between">
-                                                    <label for="numer_room">Number Mattress</label>
+                                                    <label for="number_mattress">Number Mattress</label>
                                                     <div class="qtyBtn d-flex align-items-center">
                                                         <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                        <input type="text" name="number_room" value="0" required>
+                                                        <input type="number"  id="number_mattress" name="number_mattress" value="0" required>
                                                         <div class="qtyInc"><i class="la la-plus"></i></div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <br>
                                         </div><!-- end col-lg-3 -->
 
                                 </div>
+                                
                                 <div class="btn-box">
                                     <button type="submit" class="theme-btn">Book</button>
                                 </div>
                                 </form>
-                            </div><!-- end tab-pane -->
+                        </div>
+
+       
+                            <!-- end tab-pane -->
 
                             <!----------------------Tables------------------------->
                             <div class="tab-pane fade" id="car" role="tabpanel" aria-labelledby="car-tab">
                                 <div class="contact-form-action">
-                                    <form action="#" class="row align-items-center">
+                                    <form action="/canopy/add_table/goal" class="row align-items-center">
                                         <div class="col-lg-4 pr-0">
                                             <div class="input-box">
                                                 <label class="label-text">Event Location</label>
@@ -428,7 +443,7 @@
                                                             <option value="Graduation">Graduation</option>
                                                             <option value="Wedding">Wedding</option>
                                                             <option value="Funeral">Funeral</option>
-                                                            <option value="Funeral">Camping</option>
+                                                            <option value="Camping">Camping</option>
                                                             <option value="Other">Other</option>
                                                         </select>
                                                     </div>
@@ -540,7 +555,6 @@
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
-
                                 </div>
                                 <div class="btn-box">
                                     <a href="cruise-search-result.html" class="theme-btn">Book</a>
@@ -614,995 +628,6 @@
 ================================= -->
 
     <div class="section-block"></div>
-
-    <!-- ================================
-    START ROUND-TRIP AREA
-================================= -->
-    <section class="round-trip-flight section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading text-center">
-                        <h2 class="sec__title line-height-55">Most Popular Round-trip <br> Flight Destinations</h2>
-                    </div><!-- end section-heading -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-            <div class="row padding-top-50px">
-                <div class="col-lg-12">
-                    <div class="flight-filter-tab text-center">
-                        <div class="section-tab section-tab-3">
-                            <ul class="nav nav-tabs justify-content-center" id="myTab4" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="new-york-tab" data-toggle="tab" href="#new-york"
-                                        role="tab" aria-controls="new-york" aria-selected="false">
-
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="hong-kong-tab" data-toggle="tab" href="#hong-kong"
-                                        role="tab" aria-controls="hong-kong" aria-selected="false">
-                                        Hong Kong
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="beijing-tab" data-toggle="tab" href="#beijing" role="tab"
-                                        aria-controls="beijing" aria-selected="false">
-                                        Beijing
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tokyo-tab" data-toggle="tab" href="#tokyo" role="tab"
-                                        aria-controls="tokyo" aria-selected="false">
-                                        Tokyo
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="seoul-tab" data-toggle="tab" href="#seoul" role="tab"
-                                        aria-controls="seoul" aria-selected="false">
-                                        Seoul
-                                    </a>
-                                </li>
-                            </ul>
-                        </div><!-- end section-tab -->
-                    </div><!-- end flight-filter-tab -->
-                    <div class="popular-round-trip-wrap padding-top-40px">
-                        <div class="tab-content" id="myTabContent4">
-                            <div class="tab-pane fade show active" id="new-york" role="tabpanel"
-                                aria-labelledby="new-york-tab">
-                                <div class="row">
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        New York<i class="la la-exchange mx-2"></i>Los Angeles
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$340</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img2.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        New York<i class="la la-exchange mx-2"></i>Barcelona
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$740</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img3.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        New York<i class="la la-exchange mx-2"></i>Dallas
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$140</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img4.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        New York<i class="la la-exchange mx-2"></i>San Francisco
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$340</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img5.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        New York<i class="la la-exchange mx-2"></i>Miami
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$100</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="/../../site_file/images/airline-img6.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        New York<i class="la la-exchange mx-2"></i>London
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$640</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                </div>
-                            </div><!-- end tab-pane -->
-                            <div class="tab-pane fade" id="hong-kong" role="tabpanel" aria-labelledby="hong-kong-tab">
-                                <div class="row">
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Hong Kong<i class="la la-exchange mx-2"></i>Singapore
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$340</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img2.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Hong Kong<i class="la la-exchange mx-2"></i>Tokyo
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$740</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img3.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Hong Kong<i class="la la-exchange mx-2"></i>Seoul
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$140</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_filei/mages/airline-img4.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Hong Kong<i class="la la-exchange mx-2"></i>Manila
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$340</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="/../../site_file/images/airline-img5.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Hong Kong<i class="la la-exchange mx-2"></i>Nepal
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$100</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img6.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Hong Kong<i class="la la-exchange mx-2"></i>Beijing
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$640</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                </div>
-                            </div><!-- end tab-pane -->
-                            <div class="tab-pane fade" id="seoul" role="tabpanel" aria-labelledby="seoul-tab">
-                                <div class="row">
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Seoul<i class="la la-exchange mx-2"></i>Nepal
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$340</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="/../../site_file/images/airline-img2.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Seoul<i class="la la-exchange mx-2"></i>Taipei
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$740</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img3.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Seoul<i class="la la-exchange mx-2"></i>Beijing
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$140</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img4.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Seoul<i class="la la-exchange mx-2"></i>Tokyo
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$340</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img5.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Seoul<i class="la la-exchange mx-2"></i>Hong kong
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$100</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img6.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Seoul<i class="la la-exchange mx-2"></i>Bangkok
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$640</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                </div>
-                            </div><!-- end tab-pane -->
-                            <div class="tab-pane fade" id="tokyo" role="tabpanel" aria-labelledby="tokyo-tab">
-                                <div class="row">
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Tokyo<i class="la la-exchange mx-2"></i>Taipei
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$340</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img2.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Tokyo<i class="la la-exchange mx-2"></i>Taipei
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$740</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img3.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Tokyo<i class="la la-exchange mx-2"></i>Beijing
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$140</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img4.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Tokyo<i class="la la-exchange mx-2"></i>Tokyo
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$340</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="/../../site_file/images/airline-img5.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Tokyo<i class="la la-exchange mx-2"></i>Hong kong
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$100</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img6.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Tokyo<i class="la la-exchange mx-2"></i>Hanoi
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$640</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                </div>
-                            </div><!-- end tab-pane -->
-                            <div class="tab-pane fade" id="beijing" role="tabpanel" aria-labelledby="beijing-tab">
-                                <div class="row">
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Beijing<i class="la la-exchange mx-2"></i>Taipei
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$340</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img2.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Beijing<i class="la la-exchange mx-2"></i>Taipei
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$740</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img3.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Beijing<i class="la la-exchange mx-2"></i>Beijing
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$140</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img4.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Beijing<i class="la la-exchange mx-2"></i>Tokyo
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$340</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img5.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Beijing<i class="la la-exchange mx-2"></i>Hong kong
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$100</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="deal-card">
-                                            <div class="deal-title d-flex align-items-center">
-                                                <img src="../../site_file/images/airline-img6.png" alt="air-line-img">
-                                                <h3 class="deal__title">
-                                                    <a href="flight-single.html" class="d-flex align-items-center">
-                                                        Beijing<i class="la la-exchange mx-2"></i>Hanoi
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <p class="deal__meta">Tue, Jul 14-Fri, Jul 24</p>
-                                            <div
-                                                class="deal-action-box d-flex align-items-center justify-content-between">
-                                                <div class="price-box d-flex align-items-center"><span
-                                                        class="price__from mr-1">From</span><span
-                                                        class="price__num">$640</span></div>
-                                                <a href="flight-single.html" class="btn-text">See details<i
-                                                        class="la la-angle-right"></i></a>
-                                            </div>
-                                        </div><!-- end deal-card -->
-                                    </div><!-- end col-lg-4 -->
-                                </div>
-                            </div><!-- end tab-pane -->
-                        </div><!-- end tab-content -->
-                        <div class="tab-content-info d-flex justify-content-between align-items-center">
-                            <p class="font-size-15"><i class="la la-question-circle mr-1"></i>Average round-trip price
-                                per person, taxes and fees included.</p>
-                            <a href="#" class="btn-text font-size-15">Discover More <i
-                                    class="la la-angle-right"></i></a>
-                        </div><!-- end tab-content-info -->
-                    </div>
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section><!-- end round-trip-flight -->
-    <!-- ================================
-    END ROUND-TRIP AREA
-================================= -->
-
-    <!-- ================================
-    START HOTEL AREA
-================================= -->
-    <section class="hotel-area section-bg section-padding overflow-hidden padding-right-100px padding-left-100px">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading text-center">
-                        <h2 class="sec__title line-height-55">Most Popular Hotel <br> Destinations</h2>
-                    </div><!-- end section-heading -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-            <div class="row padding-top-50px">
-                <div class="col-lg-12">
-                    <div class="hotel-card-wrap">
-                        <div class="hotel-card-carousel carousel-action">
-                            <div class="card-item mb-0">
-                                <div class="card-img">
-                                    <a href="hotel-single.html" class="d-block">
-                                        <img src="../../site_file/images/img1.jpg" alt="hotel-img">
-                                    </a>
-                                    <span class="badge">Bestseller</span>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Bookmark">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title"><a href="hotel-single.html">The Millennium Hilton New
-                                            York</a></h3>
-                                    <p class="card-meta">124 E Huron St, New york</p>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$88.00</span>
-                                            <span class="price__text">Per night</span>
-                                        </p>
-                                        <a href="hotel-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
-                            <div class="card-item mb-0">
-                                <div class="card-img">
-                                    <a href="hotel-single.html" class="d-block">
-                                        <img src="../../site_file/images/img2.jpg" alt="hotel-img">
-                                    </a>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Bookmark">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title"><a href="hotel-single.html">Best Western Grant Park Hotel</a>
-                                    </h3>
-                                    <p class="card-meta">124 E Huron St, Chicago</p>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$58.00</span>
-                                            <span class="price__text">Per night</span>
-                                        </p>
-                                        <a href="hotel-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
-                            <div class="card-item mb-0">
-                                <div class="card-img">
-                                    <a href="hotel-single.html" class="d-block">
-                                        <img src="../../site_file/images/img3.jpg" alt="hotel-img">
-                                    </a>
-                                    <span class="badge">Featured</span>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Bookmark">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title"><a href="hotel-single.html">Hyatt Regency Maui Resort &
-                                            Spa</a></h3>
-                                    <p class="card-meta">200 Nohea Kai Dr, Lahaina, HI</p>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$88.00</span>
-                                            <span class="price__text">Per night</span>
-                                        </p>
-                                        <a href="hotel-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
-                            <div class="card-item mb-0">
-                                <div class="card-img">
-                                    <a href="hotel-single.html" class="d-block">
-                                        <img src="../../site_file/images/img4.jpg" alt="hotel-img">
-                                    </a>
-                                    <span class="badge">Popular</span>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Bookmark">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title"><a href="hotel-single.html">Four Seasons Resort Maui at
-                                            Wailea</a></h3>
-                                    <p class="card-meta">3900 Wailea Alanui Drive, Kihei, HI</p>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$88.00</span>
-                                            <span class="price__text">Per night</span>
-                                        </p>
-                                        <a href="hotel-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
-                            <div class="card-item mb-0">
-                                <div class="card-img">
-                                    <a href="hotel-single.html" class="d-block">
-                                        <img src="../../site_file/images/img5.jpg" alt="hotel-img">
-                                    </a>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Bookmark">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title"><a href="hotel-single.html">Ibis Styles London Heathrow</a>
-                                    </h3>
-                                    <p class="card-meta"> 272 Bath Road, Harlington, England</p>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$88.00</span>
-                                            <span class="price__text">Per night</span>
-                                        </p>
-                                        <a href="hotel-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
-                            <div class="card-item mb-0">
-                                <div class="card-img">
-                                    <a href="hotel-single.html" class="d-block">
-                                        <img src="../../site_file/images/img6.jpg" alt="hotel-img">
-                                    </a>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Bookmark">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title"><a href="hotel-single.html">Hotel Europe Saint Severin
-                                            Paris</a></h3>
-                                    <p class="card-meta">38-40 Rue Saint Séverin, Paris, Paris</p>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$88.00</span>
-                                            <span class="price__text">Per night</span>
-                                        </p>
-                                        <a href="hotel-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
-                            <div class="card-item mb-0">
-                                <div class="card-img">
-                                    <a href="hotel-single.html" class="d-block">
-                                        <img src="/../../site_file/images/img1.jpg" alt="hotel-img">
-                                    </a>
-                                    <span class="badge">Bestseller</span>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Bookmark">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title"><a href="hotel-single.html">The Millennium Hilton New
-                                            York</a></h3>
-                                    <p class="card-meta">124 E Huron St, New york</p>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$88.00</span>
-                                            <span class="price__text">Per night</span>
-                                        </p>
-                                        <a href="hotel-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
-                            <div class="card-item mb-0">
-                                <div class="card-img">
-                                    <a href="hotel-single.html" class="d-block">
-                                        <img src="images/img2.jpg" alt="hotel-img">
-                                    </a>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Bookmark">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title"><a href="hotel-single.html">Best Western Grant Park Hotel</a>
-                                    </h3>
-                                    <p class="card-meta">124 E Huron St, Chicago</p>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$58.00</span>
-                                            <span class="price__text">Per night</span>
-                                        </p>
-                                        <a href="hotel-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
-                        </div><!-- end hotel-card-carousel -->
-                    </div>
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container-fluid -->
-    </section><!-- end hotel-area -->
-    <!-- ================================
-    END HOTEL AREA
-================================= -->
 
     <!-- ================================
     START DESTINATION AREA
@@ -2602,14 +1627,14 @@
         </div>
     </div><!-- end modal-popup -->
 
-    <!-- end modal-shared -->
-    <div class="modal-popup">
-        <div class="modal fade" id="loginPopupForm" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <!-- end modal-shared -->
+                                    <div class="modal-popup">
+        <div class="modal fade" id="contactdetail" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <div>
-                            <h5 class="modal-title title" id="exampleModalLongTitle2">Login</h5>
+                            <h5 class="modal-title title" id="exampleModalLongTitle2">Personal Detail</h5>
                             <p class="font-size-14"></p>
                         </div>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -2618,7 +1643,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="air__auth__containerInner mt-4">
-                            <div class="text-dark font-size-32 mb-3">Sign in</div>
+                        
                             <?php if (isset($validation)): ?>
                             <div class="alert alert-danger" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -2628,26 +1653,97 @@
                                     style="margin-left: -40px;margin-bottom: -30px;"><strong><?= $validation->listErrors() ?></strong></label>
                             </div>
                             <?php endif; ?>
-                            <form id="form-validation-simple" name="form-validation-simple" method="POST"
-                                action="/login/auth" class="mb-4">
-                                <div class="form-group mb-4">
-                                    <input type="text" class="form-control" name="email" data-validation="[NOTEMPTY]"
-                                        autocomplete="off" tabindex="1" placeholder="Email" />
+                                    <div class="row">
+                                <div class="col-lg-6 pr-0">
+                                            <div class="input-box">
+                                                <label for="fname" class="label-text">Fname</label>
+                                                <div class="form-group">       
+                                                    <input class="form-control" type="text" placeholder="First Name"
+                                                        required>
+                                                </div>
+                                            </div>
+                                </div><!-- end col-lg-4 -->
+                            
+                                <div class="col-lg-6 pr-0">
+                                            <div class="input-box">
+                                                <label class="label-text">Lname</label>
+                                                <div class="form-group">       
+                                                    <input class="form-control" type="text" placeholder=" Last Name"
+                                                        required>
+                                                </div>
+                                            </div>
+                                </div><!-- end col-lg-4 -->
                                 </div>
-                                <div class="form-group mb-4">
-                                    <input type="password" name="password" data-validation="[NOTEMPTY]"
-                                        class="form-control" autocomplete="off" tabindex="2" placeholder="Password" />
-                                </div>
+                            
                                 <button type="submit"
-                                    class="btn btn-primary text-center w-100"><strong><?= 'Log in' ?></strong></button>
+                                    class="btn btn-primary text-center w-100"><strong><?= 'Submit' ?></strong></button>
                             </form>
-                            <a href="#" class="kit__utils__link font-size-16"><?= 'Forgot password?' ?></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div><!-- end modal-popup -->
+
+                                       <!-- end modal-shared -->
+        <div class="modal-popup">
+        <div class="modal fade" id="loginPopupForm" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="modal-title title" id="exampleModalLongTitle2">Personal Detail</h5>
+                            <p class="font-size-14"></p>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="la la-close"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="air__auth__containerInner mt-4">
+                        
+                            <?php if (isset($validation)): ?>
+                            <div class="alert alert-danger" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <label
+                                    style="margin-left: -40px;margin-bottom: -30px;"><strong><?= $validation->listErrors() ?></strong></label>
+                            </div>
+                            <?php endif; ?>
+                                    <div class="row">
+                                <div class="col-lg-6 pr-0">
+                                            <div class="input-box">
+                                                <label for="fname" class="label-text">Fname</label>
+                                                <div class="form-group">       
+                                                    <input class="form-control" type="text" placeholder="First Name"
+                                                        required>
+                                                </div>
+                                            </div>
+                                </div><!-- end col-lg-4 -->
+                            
+                                <div class="col-lg-6 pr-0">
+                                            <div class="input-box">
+                                                <label class="label-text">Lname</label>
+                                                <div class="form-group">       
+                                                    <input class="form-control" type="text" placeholder=" Last Name"
+                                                        required>
+                                                </div>
+                                            </div>
+                                </div><!-- end col-lg-4 -->
+                                </div>
+                            
+                                <button type="submit"
+                                    class="btn btn-primary text-center w-100"><strong><?= 'Submit' ?></strong></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end modal-popup -->
+    
+    
 
     <!-- Template JS Files -->
     <script src="../../site_file/js/jquery-3.4.1.min.js"></script>
@@ -2664,6 +1760,54 @@
     <script src="../../site_file/js/jquery.ripples-min.js"></script>
     <script src="../../site_file/js/quantity-input.js"></script>
     <script src="../../site_file/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Validation library file -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<!-- Sweetalert library file -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
+<script>
+
+    $.ajax({
+      type: "POST",
+      url: "<?= site_url('mattress') ?>",
+      data: formData,
+      dataType: "json",
+      encode: true,
+    }).done(function (data) {
+      console.log(data);
+
+      if (!data.success) {
+        if (data.errors.name) {
+          $("#name-group").addClass("has-error");
+          $("#name-group").append(
+            '<div class="help-block">' + data.errors.name + "</div>"
+          );
+        }
+
+        if (data.errors.email) {
+          $("#email-group").addClass("has-error");
+          $("#email-group").append(
+            '<div class="help-block">' + data.errors.email + "</div>"
+          );
+        }
+
+        if (data.errors.superheroAlias) {
+          $("#superhero-group").addClass("has-error");
+          $("#superhero-group").append(
+            '<div class="help-block">' + data.errors.superheroAlias + "</div>"
+          );
+        }
+      } else {
+        $("form").html(
+          '<div class="alert alert-success">' + data.message + "</div>"
+        );
+      }
+
+    });
+
+    event.preventDefault();
+  });
+</script>
 </body>
 
 </html>

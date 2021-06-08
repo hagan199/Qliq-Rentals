@@ -54,6 +54,11 @@ $routes->match(['get', 'post'], '/vendor', 'Admin::setup_vendor/$1/$2');
 // Client Route
 $routes->get('/booking', 'Client::book_list');
 $routes->get('/sites', 'Client::site');
+$routes->get('/about', 'Client::about');
+$routes->get('/contact', 'Client::contact');
+
+
+$routes->get('/mattress', 'Client::mattress');
 
 $routes->match(['get', 'post'], '/canopy/(:any)/(:any)', 'Client::canopies/$1/$2');
 

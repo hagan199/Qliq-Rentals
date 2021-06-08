@@ -82,8 +82,6 @@ class Admin extends BaseController{
                     $session->setFlashdata("error", "Invalid data request");
                     $data['settingvendor'] = 'edit';
                 }else{
-
-                
                     $model = new UserModel();
                     $data['fname'] = $this->request->getVar('fname');
                     $data['lname'] = $this->request->getVar('lname');
