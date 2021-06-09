@@ -79,27 +79,6 @@
                                             <option
                                                 data-content='<span class="flag-icon flag-icon-ro mr-1"></span> Romanian'>
                                                 Romanian</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-es mr-1"></span> Español'>
-                                                Español</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-fr mr-1"></span> Francais'>
-                                                Francais</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-it mr-1"></span> Italiano'>
-                                                Italiano</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-pl mr-1"></span> Polski'>
-                                                Polski</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-pt mr-1"></span> Portuguese'>
-                                                Portuguese</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-tr mr-1"></span> Turkish'>
-                                                Turkish</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-ru mr-1"></span> Russian'>
-                                                Russian</option>
                                           
                                         </select>
                                     </div>
@@ -112,13 +91,6 @@
                                             <option value="3">BRL</option>
                                             <option value="4">CAD</option>
                                             <option value="5">CHF</option>
-                                            <option value="6">CNY</option>
-                                            <option value="7">EUR</option>
-                                            <option value="8">GBP</option>
-                                            <option value="9">HKD</option>
-                                            <option value="10">IDR</option>
-                                      
-                                     
                                         </select>
                                     </div>
                                 </div>
@@ -189,18 +161,9 @@
                     <div class="col-lg-6">
                         <div class="breadcrumb-content">
                             <div class="section-heading">
-                                <h2 class="sec__title text-white">Contact us</h2>
+                                <h2 class="sec__title text-white">Tables</h2>
                             </div>
                         </div><!-- end breadcrumb-content -->
-                    </div><!-- end col-lg-6 -->
-                    <div class="col-lg-6">
-                        <div class="breadcrumb-list text-right">
-                            <ul class="list-items">
-                                <li><a href="index.html">Home</a></li>
-                                <li>Pages</li>
-                                <li>Contact us</li>
-                            </ul>
-                        </div><!-- end breadcrumb-list -->
                     </div><!-- end col-lg-6 -->
                 </div><!-- end row -->
             </div><!-- end container -->
@@ -219,126 +182,271 @@
     START CONTACT AREA
 ================================= -->
     <section class="contact-area section--padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="form-box">
-                        <div class="form-title-wrap">
-                            <h3 class="title">We'd love to hear from you</h3>
-                            <p class="font-size-15">Send us a message and we'll respond as soon as possible</p>
-                        </div><!-- form-title-wrap -->
-                        <div class="form-content ">
-                            <div class="contact-form-action">
-                                <form class="row messenger-box-form" method="post" action="mailer.php">
-                                    <div class="alert alert-success messenger-box-contact__msg col-lg-12"
-                                        style="display: none" role="alert">
-                                        Thank You! Your message has been sent.
-                                    </div>
-                                    <div class="col-lg-6 responsive-column">
-                                        <div class="input-box messenger-box-input-wrap">
-                                            <label class="label-text" for="name">Your Name</label>
-                                            <div class="form-group">
-                                                <span class="la la-user form-icon"></span>
-                                                <input class="form-control" type="text" id="name" name="name"
-                                                    placeholder="Your name" required>
-                                            </div>
-                                        </div>
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-6 responsive-column">
-                                        <div class="input-box messenger-box-input-wrap">
-                                            <label class="label-text" for="email">Your Email</label>
-                                            <div class="form-group">
-                                                <span class="la la-envelope-o form-icon"></span>
-                                                <input class="form-control" type="email" name="email" id="email"
-                                                    placeholder="Email address" required>
-                                            </div>
-                                        </div>
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-12">
-                                        <div class="input-box messenger-box-input-wrap">
-                                            <label class="label-text" for="message">Message</label>
-                                            <div class="form-group">
-                                                <span class="la la-pencil form-icon"></span>
-                                                <textarea class="message-control form-control" name="message"
-                                                    id="message" placeholder="Write message" required></textarea>
-                                            </div>
-                                        </div>
-                                    </div><!-- end col-lg-12 -->
-                                    <div class="col-lg-12">
-                                        <div class="btn-box messenger-box-input-wrap">
-                                            <button name="submit" type="submit" class="theme-btn send-message-btn"
-                                                id="send-message-btn">Send Message</button>
-                                        </div>
-                                    </div><!-- end col-lg-12 -->
-                                </form>
-                            </div><!-- end contact-form-action -->
-                        </div><!-- end form-content -->
-                    </div><!-- end form-box -->
-                </div><!-- end col-lg-8 -->
-                <div class="col-lg-4">
-                    <div class="form-box">
-                        <div class="form-title-wrap">
-                            <h3 class="title">Contact Us</h3>
-                        </div><!-- form-title-wrap -->
-                        <div class="form-content">
-                            <div class="address-book">
-                                <ul class="list-items contact-address">
-                                    <li>
-                                        <i class="la la-map-marker icon-element"></i>
-                                        <h5 class="title font-size-16 pb-1">Address</h5>
-                                        <p class="map__desc">
-                                            Melbourne, Australia, 105 South Park Avenue
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <i class="la la-phone icon-element"></i>
-                                        <h5 class="title font-size-16 pb-1">Phone</h5>
-                                        <p class="map__desc">Telephone: 2800 256 508</p>
-                                        <p class="map__desc">Mobile: 666 777 888</p>
-                                    </li>
-                                    <li>
-                                        <i class="la la-envelope-o icon-element"></i>
-                                        <h5 class="title font-size-16 pb-1">Email</h5>
-                                        <p class="map__desc">needhelp@trizen.com</p>
-                                        <p class="map__desc">inquiry@trizen.com</p>
-                                    </li>
-                                </ul>
-                                <ul class="social-profile text-center">
-                                    <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                                    <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                                    <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="lab la-youtube"></i></a></li>
-                                </ul>
-                            </div>
-                        </div><!-- end form-content -->
-                    </div><!-- end form-box -->
-                </div><!-- end col-lg-4 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
+       
     </section><!-- end contact-area -->
     <!-- ================================
     END CONTACT AREA
 ================================= -->
-
-    <!-- ================================
-    START MAP AREA
-================================= -->
-    <section class="map-area padding-bottom-100px">
+<section class="car-area section-bg section-padding ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="map-container">
-                        <div id="map"></div>
-                    </div><!-- end map-container -->
+                    <div class="section-heading text-center">
+                        <h2 class="sec__title">Table Rentals</h2>
+                    </div><!-- end section-heading -->
+                </div><!-- end col-lg-12 -->
+            </div><!-- end row -->
+            <div class="row padding-top-50px">
+                <div class="col-lg-12">
+                    <div class="car-wrap">
+                        <div class="car-carousel carousel-action">
+                            <div class="card-item car-card mb-0">
+                                <div class="card-img">
+                                    <a href="car-single.html" class="d-block">
+                                        <img src="../../site_file/images/car-img.png" alt="car-img">
+                                    </a>
+                                    <span class="badge">Bestseller</span>
+                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
+                                        title="Save for later">
+                                        <i class="la la-heart-o"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-meta">Compact SUV</p>
+                                    <h3 class="card-title"><a href="car-single.html">Toyota Corolla or Similar</a></h3>
+                                    <div class="card-rating">
+                                        <span class="badge text-white">4.4/5</span>
+                                        <span class="review__text">Average</span>
+                                        <span class="rating__text">(30 Reviews)</span>
+                                    </div>
+                                    <div class="card-attributes">
+                                        <ul class="d-flex align-items-center">
+                                            <li class="d-flex align-items-center" data-toggle="tooltip"
+                                                data-placement="top" title="Passenger"><i
+                                                    class="la la-users"></i><span>4</span></li>
+                                            <li class="d-flex align-items-center" data-toggle="tooltip"
+                                                data-placement="top" title="Luggage"><i
+                                                    class="la la-suitcase"></i><span>1</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-price d-flex align-items-center justify-content-between">
+                                        <p>
+                                            <span class="price__from">From</span>
+                                            <span class="price__num">$23.00</span>
+                                            <span class="price__text">Per day</span>
+                                        </p>
+                                        <a href="car-single.html" class="btn-text">See details<i
+                                                class="la la-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div><!-- end card-item -->
+                            <div class="card-item car-card mb-0">
+                                <div class="card-img">
+                                    <a href="car-single.html" class="d-block">
+                                        <img src="../../site_file/images/car-img2.png" alt="car-img">
+                                    </a>
+                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
+                                        title="Save for later">
+                                        <i class="la la-heart-o"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-meta">Standard</p>
+                                    <h3 class="card-title"><a href="car-single.html">Volkswagen Jetta 2 Doors or
+                                            Similar</a></h3>
+                                    <div class="card-rating">
+                                        <span class="badge text-white">4.4/5</span>
+                                        <span class="review__text">Average</span>
+                                        <span class="rating__text">(30 Reviews)</span>
+                                    </div>
+                                    <div class="card-attributes">
+                                        <ul class="d-flex align-items-center">
+                                            <li class="d-flex align-items-center" data-toggle="tooltip"
+                                                data-placement="top" title="Passenger"><i
+                                                    class="la la-users"></i><span>4</span></li>
+                                            <li class="d-flex align-items-center" data-toggle="tooltip"
+                                                data-placement="top" title="Luggage"><i
+                                                    class="la la-suitcase"></i><span>1</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-price d-flex align-items-center justify-content-between">
+                                        <p>
+                                            <span class="price__from">From</span>
+                                            <span class="price__num">$33.00</span>
+                                            <span class="price__text">Per day</span>
+                                        </p>
+                                        <a href="car-single.html" class="btn-text">See details<i
+                                                class="la la-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div><!-- end card-item -->
+                            <div class="card-item car-card mb-0">
+                                <div class="card-img">
+                                    <a href="car-single.html" class="d-block">
+                                        <img src="../../site_file/images/car-img3.png" alt="car-img">
+                                    </a>
+                                    <span class="badge">featured</span>
+                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
+                                        title="Save for later">
+                                        <i class="la la-heart-o"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-meta">Compact Elite</p>
+                                    <h3 class="card-title"><a href="car-single.html">Toyota Yaris or Similar</a></h3>
+                                    <div class="card-rating">
+                                        <span class="badge text-white">4.4/5</span>
+                                        <span class="review__text">Average</span>
+                                        <span class="rating__text">(30 Reviews)</span>
+                                    </div>
+                                    <div class="card-attributes">
+                                        <ul class="d-flex align-items-center">
+                                            <li class="d-flex align-items-center" data-toggle="tooltip"
+                                                data-placement="top" title="Passenger"><i
+                                                    class="la la-users"></i><span>4</span></li>
+                                            <li class="d-flex align-items-center" data-toggle="tooltip"
+                                                data-placement="top" title="Luggage"><i
+                                                    class="la la-suitcase"></i><span>1</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-price d-flex align-items-center justify-content-between">
+                                        <p>
+                                            <span class="price__from">From</span>
+                                            <span class="price__num">$23.00</span>
+                                            <span class="price__text">Per day</span>
+                                        </p>
+                                        <a href="car-single.html" class="btn-text">See details<i
+                                                class="la la-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div><!-- end card-item -->
+                            <div class="card-item car-card mb-0">
+                                <div class="card-img">
+                                    <a href="car-single.html" class="d-block">
+                                        <img src="images/car-img4.png" alt="car-img">
+                                    </a>
+                                    <span class="badge">Bestseller</span>
+                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
+                                        title="Save for later">
+                                        <i class="la la-heart-o"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-meta">Fullsize Van</p>
+                                    <h3 class="card-title"><a href="car-single.html">Seat Alhambra or Similar</a></h3>
+                                    <div class="card-rating">
+                                        <span class="badge text-white">4.4/5</span>
+                                        <span class="review__text">Average</span>
+                                        <span class="rating__text">(30 Reviews)</span>
+                                    </div>
+                                    <div class="card-attributes">
+                                        <ul class="d-flex align-items-center">
+                                            <li class="d-flex align-items-center" data-toggle="tooltip"
+                                                data-placement="top" title="Passenger"><i
+                                                    class="la la-users"></i><span>6</span></li>
+                                            <li class="d-flex align-items-center" data-toggle="tooltip"
+                                                data-placement="top" title="Luggage"><i
+                                                    class="la la-suitcase"></i><span>2</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-price d-flex align-items-center justify-content-between">
+                                        <p>
+                                            <span class="price__from">From</span>
+                                            <span class="price__num">$45.00</span>
+                                            <span class="price__text">Per day</span>
+                                        </p>
+                                        <a href="car-single.html" class="btn-text">See details<i
+                                                class="la la-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div><!-- end card-item -->
+                            <div class="card-item car-card mb-0">
+                                <div class="card-img">
+                                    <a href="car-single.html" class="d-block">
+                                        <img src="images/car-img5.png" alt="car-img">
+                                    </a>
+                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
+                                        title="Save for later">
+                                        <i class="la la-heart-o"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-meta">Luxury</p>
+                                    <h3 class="card-title"><a href="car-single.html">Mercedes E Class or Similar</a>
+                                    </h3>
+                                    <div class="card-rating">
+                                        <span class="badge text-white">4.4/5</span>
+                                        <span class="review__text">Average</span>
+                                        <span class="rating__text">(30 Reviews)</span>
+                                    </div>
+                                    <div class="card-attributes">
+                                        <ul class="d-flex align-items-center">
+                                            <li class="d-flex align-items-center" data-toggle="tooltip"
+                                                data-placement="top" title="Passenger"><i
+                                                    class="la la-users"></i><span>5</span></li>
+                                            <li class="d-flex align-items-center" data-toggle="tooltip"
+                                                data-placement="top" title="Luggage"><i
+                                                    class="la la-suitcase"></i><span>3</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-price d-flex align-items-center justify-content-between">
+                                        <p>
+                                            <span class="price__from">From</span>
+                                            <span class="price__num">$58.00</span>
+                                            <span class="price__text">Per day</span>
+                                        </p>
+                                        <a href="car-single.html" class="btn-text">See details<i
+                                                class="la la-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div><!-- end card-item -->
+                            <div class="card-item car-card mb-0">
+                                <div class="card-img">
+                                    <a href="car-single.html" class="d-block">
+                                        <img src="../../site_file/images/car-img6.png" alt="car-img">
+                                    </a>
+                                    <span class="badge">featured</span>
+                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
+                                        title="Save for later">
+                                        <i class="la la-heart-o"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-meta">Mini</p>
+                                    <h3 class="card-title"><a href="car-single.html">Fiat Fiesta 2 Doors or Similar</a>
+                                    </h3>
+                                    <div class="card-rating">
+                                        <span class="badge text-white">4.4/5</span>
+                                        <span class="review__text">Average</span>
+                                        <span class="rating__text">(30 Reviews)</span>
+                                    </div>
+                                    <div class="card-attributes">
+                                        <ul class="d-flex align-items-center">
+                                            <li class="d-flex align-items-center" data-toggle="tooltip"
+                                                data-placement="top" title="Passenger"><i
+                                                    class="la la-users"></i><span>4</span></li>
+                                            <li class="d-flex align-items-center" data-toggle="tooltip"
+                                                data-placement="top" title="Luggage"><i
+                                                    class="la la-suitcase"></i><span>1</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-price d-flex align-items-center justify-content-between">
+                                        <p>
+                                            <span class="price__from">From</span>
+                                            <span class="price__num">$23.00</span>
+                                            <span class="price__text">Per day</span>
+                                        </p>
+                                        <a href="car-single.html" class="btn-text">See details<i
+                                                class="la la-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div><!-- end card-item -->
+                        </div><!-- end car-carousel -->
+                    </div>
                 </div><!-- end col-lg-12 -->
             </div><!-- end row -->
         </div><!-- end container -->
-    </section><!-- end map-area -->
-    <!-- ================================
-    END MAP AREA
-================================= -->
-
+    </section><!-- end car-area -->
     <!-- ================================
        START FOOTER AREA
 ================================= -->
@@ -373,10 +481,10 @@
                     <div class="footer-item">
                         <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Other Links</h4>
                         <ul class="list-items list--items">
-                            <li><a href="#">About Qi Rentals</a></li>
-                            <li><a href="#">Canopies</a></li>
-                            <li><a href="#">Tables</a></li>
-                            <li><a href="#">Mattress</a></li>
+                            <li><a href="/site">About Qi Rentals</a></li>
+                            <li><a href="/canopies">Canopies</a></li>
+                            <li><a href="/tables">Tables</a></li>
+                            <li><a href="/mattress">Mattress</a></li>
                         </ul>
                     </div><!-- end footer-item -->
                 </div><!-- end col-lg-3 -->
@@ -521,48 +629,27 @@
                     </div>
                     <div class="modal-body">
                         <div class="contact-form-action">
-                            <form method="post">
-                                <div class="input-box">
-                                    <label class="label-text">Username</label>
-                                    <div class="form-group">
-                                        <span class="la la-user form-icon"></span>
-                                        <input class="form-control" type="text" name="text"
-                                            placeholder="Type your username">
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="input-box">
-                                    <label class="label-text">Password</label>
-                                    <div class="form-group mb-2">
-                                        <span class="la la-lock form-icon"></span>
-                                        <input class="form-control" type="text" name="text"
-                                            placeholder="Type your password">
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="custom-checkbox mb-0">
-                                            <input type="checkbox" id="rememberchb">
-                                            <label for="rememberchb">Remember me</label>
-                                        </div>
-                                        <p class="forgot-password">
-                                            <a href="recover.html">Forgot Password?</a>
-                                        </p>
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="btn-box pt-3 pb-4">
-                                    <button type="button" class="theme-btn w-100">Login Account</button>
-                                </div>
-                                <div class="action-box text-center">
-                                    <p class="font-size-14">Or Login Using</p>
-                                    <ul class="social-profile py-3">
-                                        <li><a href="#" class="bg-5 text-white"><i class="lab la-facebook-f"></i></a>
-                                        </li>
-                                        <li><a href="#" class="bg-6 text-white"><i class="lab la-twitter"></i></a></li>
-                                        <li><a href="#" class="bg-7 text-white"><i class="lab la-instagram"></i></a>
-                                        </li>
-                                        <li><a href="#" class="bg-5 text-white"><i class="lab la-linkedin-in"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </form>
+                        <div class="text-dark font-size-32 mb-3">Sign In</div>
+          <?php if (isset($validation)): ?>
+            <div class="alert alert-danger" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <label style="margin-left: -40px;margin-bottom: -30px;"><strong><?= $validation->listErrors() ?></strong></label>
+          </div>
+          <?php endif; ?>
+      <form id="form-validation-simple" name="form-validation-simple" method="POST" action="/login/auth" class="mb-4">
+  
+        <div class="form-group mb-4">
+          <input type="text" class="form-control" name="email" data-validation="[NOTEMPTY]" autocomplete="off" tabindex="1" placeholder="Email" />
+        </div>
+        <div class="form-group mb-4">
+          <input type="password" name="password" data-validation="[NOTEMPTY]" class="form-control" autocomplete="off" tabindex="2" placeholder="Password" />
+        </div>
+        <button type="submit" class="btn btn-primary text-center w-100"><strong><?= 'Log in' ?></strong></button>
+      </form>
+      <a href="#" class="kit__utils__link font-size-16"><?= 'Forgot password?' ?></a>
+    </div>
                         </div><!-- end contact-form-action -->
                     </div>
                 </div>

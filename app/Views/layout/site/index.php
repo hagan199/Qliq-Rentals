@@ -136,15 +136,15 @@
                             <div class="main-menu-content">
                                 <nav>
                                     <ul>
-                                        <li><a href="#">Home</a></li>
+                                        <li><a href="/sites">Home</a></li>
                                         <li><a href="/about">About</a></li>
                                         <li>
                                             <a href="#"> Service<i class="la la-angle-down"></i></a>
                                             <ul class="dropdown-menu-item">
-                                                <li><a href="cruises.html">Canopies</a></li>
-                                                <li><a href="cruises-list.html">Chairs</a></li>
-                                                <li><a href="cruise-sidebar.html">Tables</a></li>
-                                                <li><a href="cruise-details.html">Mattress</a></li>
+                                                <li><a href="/canopies">Canopies</a></li>
+                                                <li><a href="/chairs">Chairs</a></li>
+                                                <li><a href="/tables">Tables</a></li>
+                                                <li><a href="/mattress">Mattress</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="/contact">Contact Us</a></li>
@@ -1485,8 +1485,7 @@
                     <div class="footer-item">
                         <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Company</h4>
                         <ul class="list-items list--items">
-                            <li><a href="about.html">About us</a></li>
-                            <li><a href="services.html">Services</a></li>
+                            <li><a href="/about">About us</a></li>
 
                         </ul>
                     </div><!-- end footer-item -->
@@ -1495,10 +1494,10 @@
                     <div class="footer-item">
                         <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Other Links</h4>
                         <ul class="list-items list--items">
-                            <li><a href="#">About Qi Rentals</a></li>
-                            <li><a href="#">Canopies</a></li>
-                            <li><a href="#">Tables</a></li>
-                            <li><a href="#">Mattress</a></li>
+                            <li><a href="/sites">About Qi Rentals</a></li>
+                            <li><a href="/canopies">Canopies</a></li>
+                            <li><a href="/tables">Tables</a></li>
+                            <li><a href="/mattress">Mattress</a></li>
                         </ul>
                     </div><!-- end footer-item -->
                 </div><!-- end col-lg-3 -->
@@ -1508,8 +1507,8 @@
                     <div class="term-box footer-item">
                         <ul class="list-items list--items d-flex align-items-center">
                             <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Privacy Policy</a></li>          
+                            <li><a href="/faq">Faq</a></li>
                         </ul>
                     </div>
                 </div><!-- end col-lg-8 -->
@@ -1533,7 +1532,7 @@
                         <p class="copy__desc">
                             &copy; Copyright Qliq 2021. Made with
                             <span class="la la-heart"></span> by <a
-                                href="https://themeforest.net/user/techydevs/portfolio">Qliq Integrations</a>
+                                href="https://qliqintegrations.com/">Qliq Integrations</a>
                         </p>
                     </div><!-- end copy-right -->
                 </div><!-- end col-lg-7 -->
@@ -1700,43 +1699,27 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="air__auth__containerInner mt-4">
-                        
-                            <?php if (isset($validation)): ?>
-                            <div class="alert alert-danger" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <label
-                                    style="margin-left: -40px;margin-bottom: -30px;"><strong><?= $validation->listErrors() ?></strong></label>
-                            </div>
-                            <?php endif; ?>
-                                    <div class="row">
-                                <div class="col-lg-6 pr-0">
-                                            <div class="input-box">
-                                                <label for="fname" class="label-text">Fname</label>
-                                                <div class="form-group">       
-                                                    <input class="form-control" type="text" placeholder="First Name"
-                                                        required>
-                                                </div>
-                                            </div>
-                                </div><!-- end col-lg-4 -->
-                            
-                                <div class="col-lg-6 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text">Lname</label>
-                                                <div class="form-group">       
-                                                    <input class="form-control" type="text" placeholder=" Last Name"
-                                                        required>
-                                                </div>
-                                            </div>
-                                </div><!-- end col-lg-4 -->
-                                </div>
-                            
-                                <button type="submit"
-                                    class="btn btn-primary text-center w-100"><strong><?= 'Submit' ?></strong></button>
-                            </form>
-                        </div>
+                    <div class="text-dark font-size-32 mb-3">Sign In</div>
+                        <?php if (isset($validation)): ?>
+                    <div class="alert alert-danger" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    <label style="margin-left: -40px;margin-bottom: -30px;"><strong><?= $validation->listErrors() ?></strong></label>
+                    </div>
+                    <?php endif; ?>
+                    <form id="form-validation-simple" name="form-validation-simple" method="POST" action="/login/auth" class="mb-4">
+  
+                    <div class="form-group mb-4">
+                    <input type="text" class="form-control" name="email" data-validation="[NOTEMPTY]" autocomplete="off" tabindex="1" placeholder="Email" />
+                    </div>
+                    <div class="form-group mb-4">
+                    <input type="password" name="password" data-validation="[NOTEMPTY]" class="form-control" autocomplete="off" tabindex="2" placeholder="Password" />
+                    </div>
+                    <button type="submit" class="btn btn-primary text-center w-100"><strong><?= 'Log in' ?></strong></button>
+                    </form>
+                    <a href="#" class="kit__utils__link font-size-16"><?= 'Forgot password?' ?></a>
+                    </div>
                     </div>
                 </div>
             </div>

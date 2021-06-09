@@ -56,9 +56,12 @@ $routes->get('/booking', 'Client::book_list');
 $routes->get('/sites', 'Client::site');
 $routes->get('/about', 'Client::about');
 $routes->get('/contact', 'Client::contact');
+$routes->get('/chairs', 'Client::site_chairs');
+$routes->get('/mattress', 'Client::site_mattress');
+$routes->get('/canopies', 'Client::site_canopies');
+$routes->get('/tables', 'Client::site_tables');
+$routes->get('/faq', 'Client::faq');
 
-
-$routes->get('/mattress', 'Client::mattress');
 
 $routes->match(['get', 'post'], '/canopy/(:any)/(:any)', 'Client::canopies/$1/$2');
 

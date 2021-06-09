@@ -144,10 +144,10 @@
                                         <li>
                                             <a href="#"> Service<i class="la la-angle-down"></i></a>
                                             <ul class="dropdown-menu-item">
-                                                <li><a href="cruises.html">Canopies</a></li>
-                                                <li><a href="cruises-list.html">Chairs</a></li>
-                                                <li><a href="cruise-sidebar.html">Tables</a></li>
-                                                <li><a href="cruise-details.html">Mattress</a></li>
+                                                <li><a href="/canopies">Canopies</a></li>
+                                                <li><a href="/chairs">Chairs</a></li>
+                                                <li><a href="/tables">Tables</a></li>
+                                                <li><a href="/mattress">Mattress</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="/contact"></a>Contact Us</a></li>
@@ -789,43 +789,27 @@
                 </div>
                 <div class="modal-body">
                     <div class="contact-form-action">
-                        <form method="post">
-                            <div class="input-box">
-                                <label class="label-text">Username</label>
-                                <div class="form-group">
-                                    <span class="la la-user form-icon"></span>
-                                    <input class="form-control" type="text" name="text" placeholder="Type your username">
-                                </div>
-                            </div><!-- end input-box -->
-                            <div class="input-box">
-                                <label class="label-text">Password</label>
-                                <div class="form-group mb-2">
-                                    <span class="la la-lock form-icon"></span>
-                                    <input class="form-control" type="text" name="text" placeholder="Type your password">
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="custom-checkbox mb-0">
-                                        <input type="checkbox" id="rememberchb">
-                                        <label for="rememberchb">Remember me</label>
-                                    </div>
-                                    <p class="forgot-password">
-                                        <a href="recover.html">Forgot Password?</a>
-                                    </p>
-                                </div>
-                            </div><!-- end input-box -->
-                            <div class="btn-box pt-3 pb-4">
-                                <button type="button" class="theme-btn w-100">Login Account</button>
-                            </div>
-                            <div class="action-box text-center">
-                                <p class="font-size-14">Or Login Using</p>
-                                <ul class="social-profile py-3">
-                                    <li><a href="#" class="bg-5 text-white"><i class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="#" class="bg-6 text-white"><i class="lab la-twitter"></i></a></li>
-                                    <li><a href="#" class="bg-7 text-white"><i class="lab la-instagram"></i></a></li>
-                                    <li><a href="#" class="bg-5 text-white"><i class="lab la-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </form>
+                    <div class="text-dark font-size-32 mb-3">Sign In</div>
+          <?php if (isset($validation)): ?>
+            <div class="alert alert-danger" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <label style="margin-left: -40px;margin-bottom: -30px;"><strong><?= $validation->listErrors() ?></strong></label>
+          </div>
+          <?php endif; ?>
+      <form id="form-validation-simple" name="form-validation-simple" method="POST" action="/login/auth" class="mb-4">
+  
+        <div class="form-group mb-4">
+          <input type="text" class="form-control" name="email" data-validation="[NOTEMPTY]" autocomplete="off" tabindex="1" placeholder="Email" />
+        </div>
+        <div class="form-group mb-4">
+          <input type="password" name="password" data-validation="[NOTEMPTY]" class="form-control" autocomplete="off" tabindex="2" placeholder="Password" />
+        </div>
+        <button type="submit" class="btn btn-primary text-center w-100"><strong><?= 'Log in' ?></strong></button>
+      </form>
+      <a href="#" class="kit__utils__link font-size-16"><?= 'Forgot password?' ?></a>
+    </div>
                     </div><!-- end contact-form-action -->
                 </div>
             </div>

@@ -23,28 +23,36 @@ class Client extends BaseController
 	{
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Canopies';
-		return view('layout/site/about',$data);
+		return view('layout/site/canopies',$data);
+	}
+      
+    public function faq()
+	{
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Faq
+        ';
+		return view('layout/site/faq',$data);
 	}
 
     public function site_tables()
 	{
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Tables';
-		return view('layout/site/about',$data);
+		return view('layout/site/tables',$data);
 	}
 
-    public function site_chair()
+    public function site_chairs()
 	{
         $data['title'] = 'Qi.Rentals';
-        $data['page']= 'Tables';
-		return view('layout/site/about',$data);
+        $data['page']= 'Chair';
+		return view('layout/site/chairs',$data);
 	}
 
     public function site_mattress()
 	{
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Mattress';
-		return view('layout/site/about',$data);
+		return view('layout/site/mattress',$data);
 	}
 
     public function contact()
