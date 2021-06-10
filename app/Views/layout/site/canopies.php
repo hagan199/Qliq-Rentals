@@ -473,7 +473,7 @@
                         <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Company</h4>
                         <ul class="list-items list--items">
                             <li><a href="/about">About us</a></li>
-                          
+                            <li><a href="/services">About us</a></li>
 
                         </ul>
                     </div><!-- end footer-item -->
@@ -527,7 +527,7 @@
                 <div class="col-lg-5">
                     <div class="copy-right-content d-flex align-items-center justify-content-end padding-top-30px">
                         <h3 class="title font-size-15 pr-2">We Accept</h3>
-                        <img src="images/payment-img.png" alt="">
+                        <img src="../../images/payment-img.png" alt="">
                     </div><!-- end copy-right-content -->
                 </div><!-- end col-lg-5 -->
             </div><!-- end row -->

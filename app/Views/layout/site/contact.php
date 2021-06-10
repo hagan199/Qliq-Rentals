@@ -385,7 +385,7 @@
                         <p class="copy__desc">
                             &copy; Copyright Qliq 2021. Made with
                             <span class="la la-heart"></span> by <a
-                                href="https://themeforest.net/user/techydevs/portfolio">Qliq Integrations</a>
+                                href="https://qliqintegrations.com/">Qliq Integrations</a>
                         </p>
                     </div><!-- end copy-right -->
                 </div><!-- end col-lg-7 -->

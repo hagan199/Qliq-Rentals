@@ -1067,9 +1067,8 @@
 <!-- ================================
     END CTA AREA
 ================================= -->
-
-<!-- ================================
-       START FOOTER AREA
+    <!-- ================================
+                    START FOOTER AREA
 ================================= -->
 <section class="footer-area section-bg padding-top-100px padding-bottom-30px">
         <div class="container">
@@ -1093,6 +1092,7 @@
                         <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Company</h4>
                         <ul class="list-items list--items">
                             <li><a href="/about">About us</a></li>
+                            <li><a href="/services">Service</a></li>
 
                         </ul>
                     </div><!-- end footer-item -->
@@ -1146,12 +1146,15 @@
                 <div class="col-lg-5">
                     <div class="copy-right-content d-flex align-items-center justify-content-end padding-top-30px">
                         <h3 class="title font-size-15 pr-2">We Accept</h3>
-                        <img src="images/payment-img.png" alt="">
+                        <img src="../../site_file/images/payment-img.png" alt="">
                     </div><!-- end copy-right-content -->
                 </div><!-- end col-lg-5 -->
             </div><!-- end row -->
         </div><!-- end container -->
     </section><!-- end footer-area -->
+    <!-- ================================
+                START FOOTER AREA
+================================= -->
 <!-- ================================
        START FOOTER AREA
 ================================= -->

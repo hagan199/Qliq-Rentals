@@ -25,6 +25,11 @@
     <link rel="stylesheet" href="../../site_file/css/jquery-ui.css">
     <link rel="stylesheet" href="../../site_file/css/flag-icon.min.css">
     <link rel="stylesheet" href="../../site_file/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </head>
 <style>
@@ -255,16 +260,18 @@
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
+
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
-                                                <label for="pick_date" id="pick_date" class="label-text">Pickup Date </label>
+                                                <label for="pick_date" id="datepicker" class="label-text">Pickup Date </label>
                                                 <div class="form-group">
-                                                    <span class="la la-calendar form-icon"></span>
-                                                    <input  name="pick_date" class="date-range form-control" type="date"
-                                                        name="daterange-single" readonly required>
+                                                    <span class=""></span>
+                                                    <input class="date-range form-control" type="date" name="pick_date"
+                                                        required>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
+
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
                                                 <label for="drop_off" id="drop_off" id="event_type" class="label-text">Drop off </label>
@@ -313,200 +320,15 @@
                                     <button  id="colorchange" data-toggle="modal"
                                         data-target="#contactdetail" class="theme-btn">Book</button>
                                 </div>
-
-</form>
+                            </form>
                             </div><!-- end tab-pane -->
                             <!------------Mattress ------------------->
                             <div class="tab-pane fade" id="package" role="tabpanel" aria-labelledby="package-tab">
                                 <div class="contact-form-action">
-                                <form class="form-horizontal" action="javascript:void(0)" id="frm-add-mattress">
+                                <form action="javascript:void(0)" id="frm-add-user"   class="row align-items-center">
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
-                                                <label class="label-text" for="event_location">Event Location </label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-marker form-icon"></span>
-                                                    <input class="form-control" type="text" id="event_location"  name="event_location"
-                                                        placeholder="Enter city or town" required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="pickup_date" id="pick_date"  class="label-text">Pickup Date </label>
-                                                <div class="form-group">
-                                                    <span class=""></span>
-                                                    <input class="date-range form-control" type="date" name="pickup_date"
-                                                        required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="drop_off" id="drop_off" class="label-text">Drop off </label>
-                                                <div class="form-group">
-                                                    <span class=""></span>
-                                                    <input class="date-range form-control" type="date" name="drop_off"
-                                                        required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="event_type" id="event_type"  class="label-text">Event Type</label>
-                                                <div class="form-group">
-                                                    <div class="select-contain w-auto">
-                                                        <select class="select-contain-select" name="event_type"
-                                                            required>
-                                                            <option value="Naming Ceremony" selected>Naming Ceremony
-                                                            </option>
-                                                            <option value="Graduation">Graduation</option>
-                                                            <option value="Wedding">Wedding</option>
-                                                            <option value="Funeral">Funeral</option>
-                                                            <option value="Camping">Camping</option>
-                                                            <option value="Other">Other</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <div class="qty-box d-flex align-items-center justify-content-between">
-                                                    <label for="number_mattress">Number Mattress</label>
-                                                    <div class="qtyBtn d-flex align-items-center">
-                                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                        <input type="number"  id="number_mattress" name="number_mattress" value="0" required>
-                                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <br>
-                                        </div><!-- end col-lg-3 -->
-
-                                </div>
-                                
-                                <div class="btn-box">
-                                    <button type="submit" class="theme-btn">Book</button>
-                                </div>
-                                </form>
-                        </div>
-
-       
-                            <!-- end tab-pane -->
-
-                            <!----------------------Tables------------------------->
-                            <div class="tab-pane fade" id="car" role="tabpanel" aria-labelledby="car-tab">
-                                <div class="contact-form-action">
-                                    <form action="/canopy/add_table/goal" class="row align-items-center">
-                                        <div class="col-lg-4 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text">Event Location</label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-marker form-icon"></span>
-                                                    <input class="form-control" type="text" placeholder="City,Town"
-                                                        required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text">Phone</label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-phone form-icon"></span>
-                                                    <input class="form-control" type="number"
-                                                        placeholder="023 0340 3030" required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text">Pick-up date</label>
-                                                <div class="form-group">
-                                                    <span class="la la-calendar form-icon"></span>
-                                                    <input class="date-range form-control" type="text"
-                                                        name="daterange-single" readonly>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="event_type" class="label-text">Event Type</label>
-                                                <div class="form-group">
-                                                    <div class="select-contain w-auto">
-                                                        <select class="select-contain-select" name="event_type"
-                                                            required>
-                                                            <option value="Naming Ceremony" selected>Naming Ceremony
-                                                            </option>
-                                                            <option value="Graduation">Graduation</option>
-                                                            <option value="Wedding">Wedding</option>
-                                                            <option value="Funeral">Funeral</option>
-                                                            <option value="Camping">Camping</option>
-                                                            <option value="Other">Other</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-4 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text">Drop-off</label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-marker form-icon"></span>
-                                                    <input class="form-control" type="date" required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <div class="qty-box d-flex align-items-center justify-content-between">
-                                                    <label for="numer_room">Number Mattress</label>
-                                                    <div class="qtyBtn d-flex align-items-center">
-                                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                        <input type="text" name="number_room" value="0" required>
-                                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                </div>
-                                <div class="btn-box pt-3">
-                                    <a href="car-search-result.html" class="theme-btn">Book</a>
-                                </div>
-                                </form><!-- end row -->
-                            </div><!-- end tab-pane -->
-
-
-
-                            <!-------------------------------Chair---------------------------->
-                            <div class="tab-pane fade" id="cruise" role="tabpanel" aria-labelledby="cruise-tab">
-                                <div class="contact-form-action">
-                                    <form action="#" class="row align-items-center">
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text">Pickup Date</label>
-                                                <div class="form-group">
-                                                    <span class="la la-calendar form-icon"></span>
-                                                    <input class="date-range form-control" type="text"
-                                                        name="daterange-single" readonly>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text">Drop off</label>
-                                                <div class="form-group">
-                                                    <span class="la la-calendar form-icon"></span>
-                                                    <input class="date-range form-control" type="text"
-                                                        name="daterange-single" readonly>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text" for="event_location">Event Location </label>
+                                                <label class="label-text" id="event" for="event_location">Event Locations </label>
                                                 <div class="form-group">
                                                     <span class="la la-map-marker form-icon"></span>
                                                     <input class="form-control" type="text" name="event_location"
@@ -514,19 +336,52 @@
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
-                                            <div class="col-lg-3 pr-0">
-                                        <div class="input-box">
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label for="phone" id="phone" class="label-text">Phone</label>
+                                                <div class="form-group">
+                                                    <span class="la la-map-phone form-icon"></span>
+                                                    <input class="form-control" type="text"
+                                                        placeholder="+233 023 234 3030" type="number" minlength="13" maxlength="13">
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label for="pick_date" id="" id="pick_date" class="label-text">Pickup Date </label>
+                                                <div class="form-group">
+                                                    <span class=""></span>
+                                                    <input class="date-range form-control" type="date" name="pick_date"
+                                                        required>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label for="drop_off" id="drop_off" id="event_type" class="label-text">Drop off </label>
+                                                <div class="form-group">
+                                                    <span class=""></span>
+                                                    <input class="date-range form-control" type="date" name="drop_off"
+                                                        required>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
                                                 <label for="event_type" class="label-text">Event Type</label>
                                                 <div class="form-group">
                                                     <div class="select-contain w-auto">
-                                                        <select class="select-contain-select" name="event_type"
+                                                        <select class="select-contain-select" id="event_type" name="event_type"
                                                             required>
                                                             <option value="Naming Ceremony" selected>Naming Ceremony
                                                             </option>
                                                             <option value="Graduation">Graduation</option>
                                                             <option value="Wedding">Wedding</option>
                                                             <option value="Funeral">Funeral</option>
-                                                            <option value="Camping">Camping</option>
+                                                            <option value="Funeral">Camp</option>
                                                             <option value="Other">Other</option>
                                                         </select>
                                                     </div>
@@ -535,11 +390,177 @@
                                         </div><!-- end col-lg-3 -->
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
-                                                <label class="label-text" for="phone">Phone </label>
+                                                <div class="qty-box d-flex align-items-center justify-content-between">
+                                                    <label for="numer_room">Number Mattress</label>
+                                                    <div class="qtyBtn d-flex align-items-center">
+                                                        <div class="qtyDec"><i class="la la-minus"></i></div>
+                                                        <input type="text" id="number_room" name="number_room" value="0" required>
+                                                        <div class="qtyInc"><i class="la la-plus"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+                                </div>
+
+                                <div class="btn-box">
+                                    <button  id="colorchange" data-toggle="modal"
+                                        data-target="#contactdetail" class="theme-btn">Book</button>
+                                </div>
+                            </form>
+                        </div>
+    <!-- end tab-pane -->
+                            <!----------------------Tables------------------------->
+                            <div class="tab-pane fade" id="car" role="tabpanel" aria-labelledby="car-tab">
+                                <div class="contact-form-action">
+                                <form action="javascript:void(0)" id="frm-add-user"   class="row align-items-center">
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label class="label-text" id="event" for="event_location">Event Locations </label>
                                                 <div class="form-group">
                                                     <span class="la la-map-marker form-icon"></span>
-                                                    <input class="form-control" type="text" name="phone"
-                                                        placeholder="023 040 0303" required>
+                                                    <input class="form-control" type="text" name="event_location"
+                                                        placeholder="Enter city or town" required>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label for="phone" id="phone" class="label-text">Phone</label>
+                                                <div class="form-group">
+                                                    <span class="la la-map-phone form-icon"></span>
+                                                    <input class="form-control" type="text"
+                                                        placeholder="+233 023 234 3030" type="number" minlength="13" maxlength="13">
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label for="pick_date" id="" id="pick_date" class="label-text">Pickup Date </label>
+                                                <div class="form-group">
+                                                    <span class=""></span>
+                                                    <input class="date-range form-control" type="date" name="pick_date"
+                                                        required>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label for="drop_off" id="drop_off" id="event_type" class="label-text">Drop off </label>
+                                                <div class="form-group">
+                                                    <span class=""></span>
+                                                    <input class="date-range form-control" type="date" name="drop_off"
+                                                        required>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label for="event_type" class="label-text">Event Type</label>
+                                                <div class="form-group">
+                                                    <div class="select-contain w-auto">
+                                                        <select class="select-contain-select" id="event_type" name="event_type"
+                                                            required>
+                                                            <option value="Naming Ceremony" selected>Naming Ceremony
+                                                            </option>
+                                                            <option value="Graduation">Graduation</option>
+                                                            <option value="Wedding">Wedding</option>
+                                                            <option value="Funeral">Funeral</option>
+                                                            <option value="Funeral">Camp</option>
+                                                            <option value="Other">Other</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <div class="qty-box d-flex align-items-center justify-content-between">
+                                                    <label for="numer_room">Number Tables</label>
+                                                    <div class="qtyBtn d-flex align-items-center">
+                                                        <div class="qtyDec"><i class="la la-minus"></i></div>
+                                                        <input type="text" id="number_room" name="number_room" value="0" required>
+                                                        <div class="qtyInc"><i class="la la-plus"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+                                </div>
+
+                                <div class="btn-box">
+                                    <button  id="colorchange" data-toggle="modal"
+                                        data-target="#contactdetail" class="theme-btn">Book</button>
+                                </div>
+                            </form>
+                            </div><!-- end tab-pane -->
+
+
+
+                            <!-------------------------------Chair---------------------------->
+                            <div class="tab-pane fade" id="cruise" role="tabpanel" aria-labelledby="cruise-tab">
+                                <div class="contact-form-action">
+                                <form action="javascript:void(0)" id="frm-add-user"   class="row align-items-center">
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label class="label-text" id="event" for="event_location">Event Locations </label>
+                                                <div class="form-group">
+                                                    <span class="la la-map-marker form-icon"></span>
+                                                    <input class="form-control" type="text" name="event_location"
+                                                        placeholder="Enter city or town" required>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label for="phone" id="phone" class="label-text">Phone</label>
+                                                <div class="form-group">
+                                                    <span class="la la-map-phone form-icon"></span>
+                                                    <input class="form-control" type="text"
+                                                        placeholder="+233 023 234 3030" type="number" minlength="13" maxlength="13">
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label for="pick_date" id="" id="pick_date" class="label-text">Pickup Date </label>
+                                                <div class="form-group">
+                                                    <span class=""></span>
+                                                    <input class="date-range form-control" type="date" name="pick_date"
+                                                        required>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label for="drop_off" id="drop_off" id="event_type" class="label-text">Drop off </label>
+                                                <div class="form-group">
+                                                    <span class=""></span>
+                                                    <input class="date-range form-control" type="date" name="drop_off"
+                                                        required>
+                                                </div>
+                                            </div>
+                                        </div><!-- end col-lg-3 -->
+
+                                        <div class="col-lg-3 pr-0">
+                                            <div class="input-box">
+                                                <label for="event_type" class="label-text">Event Type</label>
+                                                <div class="form-group">
+                                                    <div class="select-contain w-auto">
+                                                        <select class="select-contain-select" id="event_type" name="event_type"
+                                                            required>
+                                                            <option value="Naming Ceremony" selected>Naming Ceremony
+                                                            </option>
+                                                            <option value="Graduation">Graduation</option>
+                                                            <option value="Wedding">Wedding</option>
+                                                            <option value="Funeral">Funeral</option>
+                                                            <option value="Funeral">Camp</option>
+                                                            <option value="Other">Other</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
@@ -549,17 +570,19 @@
                                                     <label for="numer_room">Number Chair</label>
                                                     <div class="qtyBtn d-flex align-items-center">
                                                         <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                        <input type="text" name="number_room" value="0" required>
+                                                        <input type="text" id="number_room" name="number_room" value="0" required>
                                                         <div class="qtyInc"><i class="la la-plus"></i></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
                                 </div>
+
                                 <div class="btn-box">
-                                    <a href="cruise-search-result.html" class="theme-btn">Book</a>
+                                    <button  id="colorchange" data-toggle="modal"
+                                        data-target="#contactdetail" class="theme-btn">Book</button>
                                 </div>
-                                </form>
+                            </form>
                             </div><!-- end tab-pane -->
 
                         </div>
@@ -1486,6 +1509,7 @@
                         <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Company</h4>
                         <ul class="list-items list--items">
                             <li><a href="/about">About us</a></li>
+                            <li><a href="/services">Service</a></li>
 
                         </ul>
                     </div><!-- end footer-item -->
@@ -1539,7 +1563,7 @@
                 <div class="col-lg-5">
                     <div class="copy-right-content d-flex align-items-center justify-content-end padding-top-30px">
                         <h3 class="title font-size-15 pr-2">We Accept</h3>
-                        <img src="images/payment-img.png" alt="">
+                        <img src="../../site_file/images/payment-img.png" alt="">
                     </div><!-- end copy-right-content -->
                 </div><!-- end col-lg-5 -->
             </div><!-- end row -->
@@ -1790,6 +1814,15 @@
 
     event.preventDefault();
   });
+</script>\
+
+<script>
+$('.datepicker').datepicker({ 
+
+startDate: new Date()
+
+});
+
 </script>
 </body>
 
