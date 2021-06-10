@@ -107,7 +107,7 @@
                                         <li><a href="/site">Home</a></li>
                                         <li><a href="/about">About</a></li>
                                         <li>
-                                            <a href="#"> Service<i class="la la-angle-down"></i></a>
+                                            <a href="/services"> Service<i class="la la-angle-down"></i></a>
                                             <ul class="dropdown-menu-item">
                                                 <li><a href="/canopies">Canopies</a></li>
                                                 <li><a href="/chairs">Chairs</a></li>

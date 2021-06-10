@@ -6,7 +6,7 @@
     <meta name="author" content="TechyDevs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title</title>
+    <title><?= $page . ' | '. $title ?></title>
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.png">
 
@@ -79,12 +79,7 @@
                                             <option
                                                 data-content='<span class="flag-icon flag-icon-ro mr-1"></span> Romanian'>
                                                 Romanian</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-es mr-1"></span> Español'>
-                                                Español</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-fr mr-1"></span> Francais'>
-                                                Francais</option>
+                                       
                                       
                                           
                                         </select>
@@ -96,8 +91,7 @@
                                             <option value="1">AED</option>
                                             <option value="2">AUD</option>
                                             <option value="3">BRL</option>
-                                            <option value="4">CAD</option>
-                                            <option value="5">CHF</option>
+                                          
                                         </select>
                                     </div>
                                 </div>
@@ -128,10 +122,10 @@
                             <div class="main-menu-content">
                                 <nav>
                                     <ul>
-                                        <li><a href="#">Home</a></li>
+                                        <li><a href="/sites">Home</a></li>
                                         <li><a href="/about">About</a></li>
                                         <li>
-                                            <a href="#"> Service<i class="la la-angle-down"></i></a>
+                                            <a href="/services"> Service<i class="la la-angle-down"></i></a>
                                             <ul class="dropdown-menu-item">
                                                 <li><a href="/canopies">Canopies</a></li>
                                                 <li><a href="/chairs">Chairs</a></li>

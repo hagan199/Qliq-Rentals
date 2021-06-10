@@ -79,27 +79,7 @@
                                             <option
                                                 data-content='<span class="flag-icon flag-icon-ro mr-1"></span> Romanian'>
                                                 Romanian</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-es mr-1"></span> Español'>
-                                                Español</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-fr mr-1"></span> Francais'>
-                                                Francais</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-it mr-1"></span> Italiano'>
-                                                Italiano</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-pl mr-1"></span> Polski'>
-                                                Polski</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-pt mr-1"></span> Portuguese'>
-                                                Portuguese</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-tr mr-1"></span> Turkish'>
-                                                Turkish</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-ru mr-1"></span> Russian'>
-                                                Russian</option>
+                                      
                                           
                                         </select>
                                     </div>
@@ -112,13 +92,7 @@
                                             <option value="3">BRL</option>
                                             <option value="4">CAD</option>
                                             <option value="5">CHF</option>
-                                            <option value="6">CNY</option>
-                                            <option value="7">EUR</option>
-                                            <option value="8">GBP</option>
-                                            <option value="9">HKD</option>
-                                            <option value="10">IDR</option>
-                                      
-                                     
+                                        
                                         </select>
                                     </div>
                                 </div>
@@ -152,7 +126,7 @@
                                         <li><a href="/sites">Home</a></li>
                                         <li><a href="/about">About</a></li>
                                         <li>
-                                            <a href="#"> Service<i class="la la-angle-down"></i></a>
+                                            <a href="/services"> Service<i class="la la-angle-down"></i></a>
                                             <ul class="dropdown-menu-item">
                                                 <li><a href="/canopies">Canopies</a></li>
                                                 <li><a href="/chairs">Chairs</a></li>

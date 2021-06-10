@@ -62,6 +62,12 @@ class Client extends BaseController
 		return view('layout/site/contact',$data);
 	}
 
+        public function services()
+	{
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Services';
+		return view('layout/site/services',$data);
+	}
     //List of Booking Service
     function book_list()
     {    

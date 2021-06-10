@@ -471,8 +471,8 @@
                     <div class="footer-item">
                         <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Company</h4>
                         <ul class="list-items list--items">
-                            <li><a href="about.html">About us</a></li>
-                            <li><a href="services.html">Services</a></li>
+                            <li><a href="/about">About us</a></li>
+                            <li><a href="/services">Services</a></li>
 
                         </ul>
                     </div><!-- end footer-item -->
@@ -481,7 +481,7 @@
                     <div class="footer-item">
                         <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Other Links</h4>
                         <ul class="list-items list--items">
-                            <li><a href="/site">About Qi Rentals</a></li>
+                            <li><a href="/about">About Qi Rentals</a></li>
                             <li><a href="/canopies">Canopies</a></li>
                             <li><a href="/tables">Tables</a></li>
                             <li><a href="/mattress">Mattress</a></li>
@@ -630,26 +630,26 @@
                     <div class="modal-body">
                         <div class="contact-form-action">
                         <div class="text-dark font-size-32 mb-3">Sign In</div>
-          <?php if (isset($validation)): ?>
-            <div class="alert alert-danger" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <label style="margin-left: -40px;margin-bottom: -30px;"><strong><?= $validation->listErrors() ?></strong></label>
-          </div>
-          <?php endif; ?>
-      <form id="form-validation-simple" name="form-validation-simple" method="POST" action="/login/auth" class="mb-4">
+                    <?php if (isset($validation)): ?>
+                    <div class="alert alert-danger" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    <label style="margin-left: -40px;margin-bottom: -30px;"><strong><?= $validation->listErrors() ?></strong></label>
+                    </div>
+                    <?php endif; ?>
+                    <form id="form-validation-simple" name="form-validation-simple" method="POST" action="/login/auth" class="mb-4">
   
-        <div class="form-group mb-4">
-          <input type="text" class="form-control" name="email" data-validation="[NOTEMPTY]" autocomplete="off" tabindex="1" placeholder="Email" />
-        </div>
-        <div class="form-group mb-4">
-          <input type="password" name="password" data-validation="[NOTEMPTY]" class="form-control" autocomplete="off" tabindex="2" placeholder="Password" />
-        </div>
-        <button type="submit" class="btn btn-primary text-center w-100"><strong><?= 'Log in' ?></strong></button>
-      </form>
-      <a href="#" class="kit__utils__link font-size-16"><?= 'Forgot password?' ?></a>
-    </div>
+                    <div class="form-group mb-4">
+                    <input type="text" class="form-control" name="email" data-validation="[NOTEMPTY]" autocomplete="off" tabindex="1" placeholder="Email" />
+                    </div>
+                    <div class="form-group mb-4">
+                    <input type="password" name="password" data-validation="[NOTEMPTY]" class="form-control" autocomplete="off" tabindex="2" placeholder="Password" />
+                    </div>
+                    <button type="submit" class="btn btn-primary text-center w-100"><strong><?= 'Log in' ?></strong></button>
+                    </form>
+                    <a href="#" class="kit__utils__link font-size-16"><?= 'Forgot password?' ?></a>
+                </div>
                         </div><!-- end contact-form-action -->
                     </div>
                 </div>

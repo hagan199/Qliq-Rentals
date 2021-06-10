@@ -5,7 +5,7 @@
     <meta name="author" content="TechyDevs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trizen - Travel Booking HTML Template</title>
+    <title><?= $page . ' | '. $title ?></title>
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.png">
 
@@ -159,9 +159,9 @@
                 <div class="col-lg-6">
                     <div class="breadcrumb-list text-right">
                         <ul class="list-items">
-                            <li><a href="index.html">Home</a></li>
-                            <li>Pages</li>
-                            <li>Our Services</li>
+                            <li><a href="/sites">Home</a></li>
+                         
+                            <li><a href="/sites">Our Services</li>
                         </ul>
                     </div><!-- end breadcrumb-list -->
                 </div><!-- end col-lg-6 -->
@@ -770,18 +770,18 @@
 </div><!-- end modal-popup -->
 
 <!-- Template JS Files -->
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-select.min.js"></script>
-<script src="js/moment.min.js"></script>
-<script src="js/daterangepicker.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.fancybox.min.js"></script>
-<script src="js/jquery.countTo.min.js"></script>
-<script src="js/animated-headline.js"></script>
-<script src="js/jquery.ripples-min.js"></script>
-<script src="js/main.js"></script>
+<script src="../../site_file/js/jquery-3.4.1.min.js"></script>
+<script src="../../site_file/js/jquery-ui.js"></script>
+<script src="../../site_file/js/popper.min.js"></script>
+<script src="../../site_file/s/bootstrap.min.js"></script>
+<script src="../../site_file/js/bootstrap-select.min.js"></script>
+<script src="../../site_file/js/moment.min.js"></script>
+<script src="../../site_file/js/daterangepicker.js"></script>
+<script src="../../site_file/js/owl.carousel.min.js"></script>
+<script src="../../site_file/js/jquery.fancybox.min.js"></script>
+<script src="../../site_file/js/jquery.countTo.min.js"></script>
+<script src="../../site_file/js/animated-headline.js"></script>
+<script src="../../site_file/js/jquery.ripples-min.js"></script>
+<script src="../../site_file/js/main.js"></script>
 </body>
 </html>
