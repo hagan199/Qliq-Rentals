@@ -26,7 +26,6 @@ class Admin extends BaseController{
         $data['totalservice'] = $service->countAllResults();
         $data['vendortotal'] = $usermodel->where('user_type', '202')->countAllResults();
         $data['usertotal'] = $usermodel->where('user_type', '101')->countAllResults();
-
         $data['title'] ='Qi Rentals';
         $data['page'] ='Main';
         return view('layout/dashboard', $data);

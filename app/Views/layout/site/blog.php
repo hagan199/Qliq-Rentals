@@ -33,75 +33,8 @@
 
     </head>
 	<body>
-
-		<!-- Header -->
-		<header id="header">
-
-			<!-- Top nav -->
-			<div id="top-nav">
-				<div class="container">
-
-				<!-- logo -->
-				<div class="logo">
-					<a href="index.html"><img src="./img/logo.png" alt="logo"></a>
-				</div>
-				<!-- logo -->
-
-				<!-- Mobile toggle -->
-				<button class="navbar-toggle">
-					<span></span>
-				</button>
-				<!-- Mobile toggle -->
-
-				<!-- social links -->
-				<ul class="social-nav">
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				</ul>
-				<!-- /social links -->
-
-				</div>
-			</div>
-			<!-- /Top nav -->
-
-			<!-- Bottom nav -->
-			<div id="bottom-nav">
-				<div class="container">
-				<nav id="nav">
-
-					<!-- nav -->
-					<ul class="main-nav nav navbar-nav">
-						<li><a href="index.html#home">Home</a></li>
-						<li><a href="index.html#about">About</a></li>
-						<li><a href="index.html#menu">Menu</a></li>
-						<li><a href="index.html#reservation">Reservation</a></li>
-						<li><a href="index.html#gallery">Gallery</a></li>
-						<li><a href="index.html#events">Events</a></li>
-						<li><a href="index.html#contact">Contact</a></li>
-					</ul>
-					<!-- /nav -->
-
-					<!-- button nav -->
-					<ul class="cta-nav">
-						<li><a href="#" class="main-button">Reserve</a></li>
-					</ul>
-					<!-- button nav -->
-
-					<!-- contact nav -->
-					<ul class="contact-nav nav navbar-nav">
-						<li><a href="#"><i class="fa fa-phone"></i> 045-548-14-97</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 3685 Granville Lane</a></li>
-					</ul>
-					<!-- contact nav -->
-
-				</nav>
-				</div>
-			</div>
-			<!-- /Bottom nav -->
-
-
-		</header>
+	<!-- /Header -->
+	<?= $this->include('layout/site/header') ?>
 		<!-- /Header -->
 
 		<div class="banner-area">

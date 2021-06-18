@@ -1,6 +1,8 @@
 <?php namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\Booking;
+use App\Models\VendorService;
+use App\Models\Service;
 class Client extends BaseController
 {
 
@@ -8,6 +10,8 @@ class Client extends BaseController
 	{
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Website';
+        $model = new VendorService();
+        $data['vendor'] = $model->orderBy('id', 'DESC')->findAll();
 		return view('layout/site/index',$data);
 	}
 
@@ -21,16 +25,18 @@ class Client extends BaseController
     
     public function site_canopies()
 	{
+        $model = new VendorService();
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Canopies';
+        $data['vendor'] = $model->where('category_id', '13')->findAll();
 		return view('layout/site/canopies',$data);
 	}
       
+
     public function faq()
 	{
         $data['title'] = 'Qi.Rentals';
-        $data['page']= 'Faq
-        ';
+        $data['page']= 'Faq';
 		return view('layout/site/faq',$data);
 	}
 
@@ -38,6 +44,8 @@ class Client extends BaseController
 	{
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Tables';
+        $model = new VendorService();
+        $data['vendor'] = $model->where('category_id', '13')->findAll();
 		return view('layout/site/tables',$data);
 	}
 
@@ -45,6 +53,8 @@ class Client extends BaseController
 	{
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Chair';
+        $model = new VendorService();
+        $data['vendor'] = $model->where('category_id', '13')->findAll();
 		return view('layout/site/chairs',$data);
 	}
 
@@ -59,6 +69,8 @@ class Client extends BaseController
 	{
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Contact';
+        $model = new VendorService();
+        $data['vendor'] = $model->where('category_id', '13')->findAll();
 		return view('layout/site/contact',$data);
 	}
 
@@ -66,6 +78,8 @@ class Client extends BaseController
 	{
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Services';
+        $service_model = new Service();
+        $data['service'] = $service_model->orderBy('id', 'DECS')->findAll();
 		return view('layout/site/services',$data);
 	}
     //List of Booking Service
@@ -75,6 +89,8 @@ class Client extends BaseController
         $data['booking_list'] = $model->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'Booking List';
         $data['page'] = 'Booking ';
+        $service_model = new Service();
+        $data['vendor'] = $service_model->orderBy('id', 'DECS')->findAll();
         return view('admin/booking_tbl/list',$data);
     } 
     

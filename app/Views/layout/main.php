@@ -290,11 +290,8 @@ $(document).ready(function() {
 </script>
 <script>
 $('.datepicker').datepicker({ 
-
 startDate: new Date()
-
 });
-
 </script>
 
 <script>

@@ -22,19 +22,19 @@
     <link rel="stylesheet" href="../../site_file/css/daterangepicker.css">
     <link rel="stylesheet" href="../../site_file/css/animate.min.css">
     <link rel="stylesheet" href="../../site_file/css/animated-headline.css">
-    <link rel="stylesheet" href="../../site_file/css/jquery-ui.css">
+    <!--<link rel="stylesheet" href="../../site_file/css/jquery-ui.css">-->
     <link rel="stylesheet" href="../../site_file/css/flag-icon.min.css">
     <link rel="stylesheet" href="../../site_file/css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
-        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- load jQuery UI CSS theme -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
 
 </head>
 <style>
-        #frm-add-user label.error{
-            color:red;
+        body {
+        font-size: 12px; /* just so that it doesn't default to 16px (which is kinda huge) */
         }
     </style>
 <body>
@@ -53,121 +53,7 @@
     <!-- ================================
             START HEADER AREA
 ================================= -->
-    <header class="header-area">
-        <div class="header-top-bar padding-right-100px padding-left-100px">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="header-top-content">
-                            <div class="header-left">
-                                <ul class="list-items">
-                                    <li><a href="#"><i class="la la-phone mr-1"></i>(233) 241 977 529</a></li>
-                                    <li><a href="#"><i class="la la-envelope mr-1"></i>info@qliqintegrations.com</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="col-lg-6">
-                        <div class="header-top-content">
-                            <div class="header-right d-flex align-items-center justify-content-end">
-                                <div class="header-right-action">
-                                    <div class="select-contain select--contain w-auto">
-                                        <select class="select-contain-select">
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-id mr-1"></span> Bahasa Indonesia'>
-                                                Bahasa Indonesia</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-de mr-1"></span> Deutsch'>
-                                                Deutsch</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-us mr-1"></span> English(US)'
-                                                selected>English US</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-gb-eng mr-1"></span> English(UK)'>
-                                                English UK</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-ro mr-1"></span> Romanian'>
-                                                Romanian</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-es mr-1"></span> Español'>
-                                                Español</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-fr mr-1"></span> Francais'>
-                                                Francais</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-it mr-1"></span> Italiano'>
-                                                Italiano</option>
-                                            <option
-                                                data-content='<span class="flag-icon flag-icon-pl mr-1"></span> Polski'>
-                                                Polski</option>
-                                        
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="header-right-action">
-                                    <div class="select-contain select--contain w-auto">
-                                        <select class="select-contain-select">
-                                            <option value="1">AED</option>
-                                            <option value="2">AUD</option>
-                                            <option value="24" selected>USD</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="header-right-action">
-                                    <!---  <a href="#" class="theme-btn theme-btn-small theme-btn-transparent mr-1" data-toggle="modal" data-target="#signupPopupForm">Sign Up</a> --->
-                                    <a href="/login" class="theme-btn theme-btn-small" data-toggle="modal"
-                                        data-target="#loginPopupForm">Login</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-menu-wrapper padding-right-100px padding-left-100px">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="menu-wrapper">
-                            <a href="#" class="down-button"><i class="la la-angle-down"></i></a>
-                            <div class="logo">
-                                <div class="menu-toggler">
-                                    <i class="la la-bars"></i>
-                                    <i class="la la-times"></i>
-                                </div><!-- end menu-toggler -->
-                            </div><!-- end logo -->
-                            <div class="main-menu-content">
-                                <nav>
-                                    <ul>
-                                        <li><a href="/sites">Home</a></li>
-                                        <li><a href="/about">About</a></li>
-                                        <li>
-                                            <a href="/services"> Service<i class="la la-angle-down"></i></a>
-                                            <ul class="dropdown-menu-item">
-                                                <li><a href="/canopies">Canopies</a></li>
-                                                <li><a href="/chairs">Chairs</a></li>
-                                                <li><a href="/tables">Tables</a></li>
-                                                <li><a href="/mattress">Mattress</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="/contact">Contact Us</a></li>
-                                    </ul>
-                                </nav>
-                                
-
-                            </div><!-- end main-menu-content -->
-                            <div class="nav-btn">
-                                <!----    <a href="become-local-expert.html" class="theme-btn">Become Local Expert</a>--->
-                            </div><!-- end nav-btn -->
-                        </div><!-- end menu-wrapper -->
-                    </div><!-- end col-lg-12 -->
-                </div><!-- end row -->
-            </div><!-- end container-fluid -->
-        </div><!-- end header-menu-wrapper -->
-     
-    </header>
+<?= $this->include('layout/site/header') ?>
     <!-- ================================
     END HEADER AREA
 ================================= -->
@@ -236,353 +122,31 @@
 
                         <!---------Canopies------->
                         <div class="tab-content search-fields-container" id="myTabContent">
-                            <div class="tab-pane fade show active" id="hotel" role="tabpanel"
-                                aria-labelledby="hotel-tab">
+                            <div class="tab-pane fade show active" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
                                 <div class="contact-form-action">
-                                    <form action="javascript:void(0)" id="frm-add-user"   class="row align-items-center">
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text" id="event" for="event_location">Event Locations </label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-marker form-icon"></span>
-                                                    <input class="form-control" type="text" name="event_location"
-                                                        placeholder="Enter city or town" required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="phone" id="phone" class="label-text">Phone</label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-phone form-icon"></span>
-                                                    <input class="form-control" type="text"
-                                                        placeholder="+233 023 234 3030" type="number" minlength="13" maxlength="13">
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="pick_date" id="datepicker" class="label-text">Pickup Date </label>
-                                                <div class="form-group">
-                                                    <span class=""></span>
-                                                    <input class="date-range form-control" type="date" name="pick_date"
-                                                        required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="drop_off" id="drop_off" id="event_type" class="label-text">Drop off </label>
-                                                <div class="form-group">
-                                                    <span class=""></span>
-                                                    <input class="date-range form-control" type="date" name="drop_off"
-                                                        required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="event_type" class="label-text">Event Type</label>
-                                                <div class="form-group">
-                                                    <div class="select-contain w-auto">
-                                                        <select class="select-contain-select" id="event_type" name="event_type"
-                                                            required>
-                                                            <option value="Naming Ceremony" selected>Naming Ceremony
-                                                            </option>
-                                                            <option value="Graduation">Graduation</option>
-                                                            <option value="Wedding">Wedding</option>
-                                                            <option value="Funeral">Funeral</option>
-                                                            <option value="Funeral">Camp</option>
-                                                            <option value="Other">Other</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <div class="qty-box d-flex align-items-center justify-content-between">
-                                                    <label for="numer_room">Number Room</label>
-                                                    <div class="qtyBtn d-flex align-items-center">
-                                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                        <input type="text" id="number_room" name="number_room" value="0" required>
-                                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                </div>
-
-                                <div class="btn-box">
-                                    <button  id="colorchange" data-toggle="modal"
-                                        data-target="#contactdetail" class="theme-btn">Book</button>
-                                </div>
-                            </form>
-                            </div><!-- end tab-pane -->
+                                <?= $this->include('layout/site/form_canopies') ?>            
+                        </div>
+                    </div><!-- end tab-pane -->
                             <!------------Mattress ------------------->
                             <div class="tab-pane fade" id="package" role="tabpanel" aria-labelledby="package-tab">
                                 <div class="contact-form-action">
-                                <form action="javascript:void(0)" id="frm-add-user"   class="row align-items-center">
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text" id="event" for="event_location">Event Locations </label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-marker form-icon"></span>
-                                                    <input class="form-control" type="text" name="event_location"
-                                                        placeholder="Enter city or town" required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="phone" id="phone" class="label-text">Phone</label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-phone form-icon"></span>
-                                                    <input class="form-control" type="text"
-                                                        placeholder="+233 023 234 3030" type="number" minlength="13" maxlength="13">
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="pick_date" id="" id="pick_date" class="label-text">Pickup Date </label>
-                                                <div class="form-group">
-                                                    <span class=""></span>
-                                                    <input class="date-range form-control" type="date" name="pick_date"
-                                                        required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="drop_off" id="drop_off" id="event_type" class="label-text">Drop off </label>
-                                                <div class="form-group">
-                                                    <span class=""></span>
-                                                    <input class="date-range form-control" type="date" name="drop_off"
-                                                        required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="event_type" class="label-text">Event Type</label>
-                                                <div class="form-group">
-                                                    <div class="select-contain w-auto">
-                                                        <select class="select-contain-select" id="event_type" name="event_type"
-                                                            required>
-                                                            <option value="Naming Ceremony" selected>Naming Ceremony
-                                                            </option>
-                                                            <option value="Graduation">Graduation</option>
-                                                            <option value="Wedding">Wedding</option>
-                                                            <option value="Funeral">Funeral</option>
-                                                            <option value="Funeral">Camp</option>
-                                                            <option value="Other">Other</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <div class="qty-box d-flex align-items-center justify-content-between">
-                                                    <label for="numer_room">Number Mattress</label>
-                                                    <div class="qtyBtn d-flex align-items-center">
-                                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                        <input type="text" id="number_room" name="number_room" value="0" required>
-                                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
+                                <?= $this->include('layout/site/form_mattress') ?>    
                                 </div>
-
-                                <div class="btn-box">
-                                    <button  id="colorchange" data-toggle="modal"
-                                        data-target="#contactdetail" class="theme-btn">Book</button>
-                                </div>
-                            </form>
-                        </div>
+                            </div>
     <!-- end tab-pane -->
                             <!----------------------Tables------------------------->
                             <div class="tab-pane fade" id="car" role="tabpanel" aria-labelledby="car-tab">
                                 <div class="contact-form-action">
-                                <form action="javascript:void(0)" id="frm-add-user"   class="row align-items-center">
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text" id="event" for="event_location">Event Locations </label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-marker form-icon"></span>
-                                                    <input class="form-control" type="text" name="event_location"
-                                                        placeholder="Enter city or town" required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="phone" id="phone" class="label-text">Phone</label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-phone form-icon"></span>
-                                                    <input class="form-control" type="text"
-                                                        placeholder="+233 023 234 3030" type="number" minlength="13" maxlength="13">
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="pick_date" id="" id="pick_date" class="label-text">Pickup Date </label>
-                                                <div class="form-group">
-                                                    <span class=""></span>
-                                                    <input class="date-range form-control" type="date" name="pick_date"
-                                                        required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="drop_off" id="drop_off" id="event_type" class="label-text">Drop off </label>
-                                                <div class="form-group">
-                                                    <span class=""></span>
-                                                    <input class="date-range form-control" type="date" name="drop_off"
-                                                        required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="event_type" class="label-text">Event Type</label>
-                                                <div class="form-group">
-                                                    <div class="select-contain w-auto">
-                                                        <select class="select-contain-select" id="event_type" name="event_type"
-                                                            required>
-                                                            <option value="Naming Ceremony" selected>Naming Ceremony
-                                                            </option>
-                                                            <option value="Graduation">Graduation</option>
-                                                            <option value="Wedding">Wedding</option>
-                                                            <option value="Funeral">Funeral</option>
-                                                            <option value="Funeral">Camp</option>
-                                                            <option value="Other">Other</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <div class="qty-box d-flex align-items-center justify-content-between">
-                                                    <label for="numer_room">Number Tables</label>
-                                                    <div class="qtyBtn d-flex align-items-center">
-                                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                        <input type="text" id="number_room" name="number_room" value="0" required>
-                                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                </div>
-
-                                <div class="btn-box">
-                                    <button  id="colorchange" data-toggle="modal"
-                                        data-target="#contactdetail" class="theme-btn">Book</button>
-                                </div>
-                            </form>
-                            </div><!-- end tab-pane -->
+                                <?= $this->include('layout/site/form_tables') ?>   
+                            </div>
+                        </div><!-- end tab-pane -->
 
 
 
                             <!-------------------------------Chair---------------------------->
                             <div class="tab-pane fade" id="cruise" role="tabpanel" aria-labelledby="cruise-tab">
                                 <div class="contact-form-action">
-                                <form action="javascript:void(0)" id="frm-add-user"   class="row align-items-center">
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text" id="event" for="event_location">Event Locations </label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-marker form-icon"></span>
-                                                    <input class="form-control" type="text" name="event_location"
-                                                        placeholder="Enter city or town" required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="phone" id="phone" class="label-text">Phone</label>
-                                                <div class="form-group">
-                                                    <span class="la la-map-phone form-icon"></span>
-                                                    <input class="form-control" type="text"
-                                                        placeholder="+233 023 234 3030" type="number" minlength="13" maxlength="13">
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="pick_date" id="" id="pick_date" class="label-text">Pickup Date </label>
-                                                <div class="form-group">
-                                                    <span class=""></span>
-                                                    <input class="date-range form-control" type="date" name="pick_date"
-                                                        required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="drop_off" id="drop_off" id="event_type" class="label-text">Drop off </label>
-                                                <div class="form-group">
-                                                    <span class=""></span>
-                                                    <input class="date-range form-control" type="date" name="drop_off"
-                                                        required>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <label for="event_type" class="label-text">Event Type</label>
-                                                <div class="form-group">
-                                                    <div class="select-contain w-auto">
-                                                        <select class="select-contain-select" id="event_type" name="event_type"
-                                                            required>
-                                                            <option value="Naming Ceremony" selected>Naming Ceremony
-                                                            </option>
-                                                            <option value="Graduation">Graduation</option>
-                                                            <option value="Wedding">Wedding</option>
-                                                            <option value="Funeral">Funeral</option>
-                                                            <option value="Funeral">Camp</option>
-                                                            <option value="Other">Other</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                        <div class="col-lg-3 pr-0">
-                                            <div class="input-box">
-                                                <div class="qty-box d-flex align-items-center justify-content-between">
-                                                    <label for="numer_room">Number Chair</label>
-                                                    <div class="qtyBtn d-flex align-items-center">
-                                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                        <input type="text" id="number_room" name="number_room" value="0" required>
-                                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col-lg-3 -->
-                                </div>
-
-                                <div class="btn-box">
-                                    <button  id="colorchange" data-toggle="modal"
-                                        data-target="#contactdetail" class="theme-btn">Book</button>
-                                </div>
-                            </form>
+                                <?= $this->include('layout/site/form_chair') ?>   
                             </div><!-- end tab-pane -->
 
                         </div>
@@ -700,65 +264,9 @@
                             </div>
                         </div>
                     </div><!-- end card-item -->
-                    <div class="card-item destination-card">
-                        <div class="card-img">
-                            <img src="../../site_file/images/destination-img3.jpg" alt="destination-img">
-                            <span class="badge">chicago</span>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title"><a href="tour-details.html">Chicago Cultural Center</a></h3>
-                            <div class="card-rating d-flex align-items-center">
-                                <span class="ratings d-flex align-items-center mr-1">
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star-o"></i>
-                                </span>
-                                <span class="rating__text">(70694 Reviews)</span>
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p class="tour__text">
-                                    50 Tours
-                                </p>
-                                <p>
-                                    <span class="price__from">Price</span>
-                                    <span class="price__num">$68.00</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
+                
                 </div><!-- end col-lg-4 -->
                 <div class="col-lg-4">
-                    <div class="card-item destination-card">
-                        <div class="card-img">
-                            <img src="../../site_file/images/destination-img4.jpg" alt="destination-img">
-                            <span class="badge">Hong Kong</span>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title"><a href="tour-details.html">Lugard Road Lookout</a></h3>
-                            <div class="card-rating d-flex align-items-center">
-                                <span class="ratings d-flex align-items-center mr-1">
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star-o"></i>
-                                    <i class="la la-star-o"></i>
-                                </span>
-                                <span class="rating__text">(70694 Reviews)</span>
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p class="tour__text">
-                                    150 Tours
-                                </p>
-                                <p>
-                                    <span class="price__from">Price</span>
-                                    <span class="price__num">$79.00</span>
-                                    <span class="price__num before-price">$89.00</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
                     <div class="card-item destination-card">
                         <div class="card-img">
                             <img src="../../site_file/images/destination-img5.jpg" alt="destination-img">
@@ -833,7 +341,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading text-center">
-                        <h2 class="sec__title">Recommended Canopies Rentals</h2>
+                        <h2 class="sec__title">Recommended Rentals</h2>
                     </div><!-- end section-heading -->
                 </div><!-- end col-lg-12 -->
             </div><!-- end row -->
@@ -879,209 +387,8 @@
                                         <a href="car-single.html" class="btn-text">See details<i
                                                 class="la la-angle-right"></i></a>
                                     </div>
-                                </div>
-                            </div><!-- end card-item -->
-                            <div class="card-item car-card mb-0">
-                                <div class="card-img">
-                                    <a href="car-single.html" class="d-block">
-                                        <img src="../../site_file/images/car-img2.png" alt="car-img">
-                                    </a>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Save for later">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-meta">Standard</p>
-                                    <h3 class="card-title"><a href="car-single.html">Volkswagen Jetta 2 Doors or
-                                            Similar</a></h3>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-attributes">
-                                        <ul class="d-flex align-items-center">
-                                            <li class="d-flex align-items-center" data-toggle="tooltip"
-                                                data-placement="top" title="Passenger"><i
-                                                    class="la la-users"></i><span>4</span></li>
-                                            <li class="d-flex align-items-center" data-toggle="tooltip"
-                                                data-placement="top" title="Luggage"><i
-                                                    class="la la-suitcase"></i><span>1</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$33.00</span>
-                                            <span class="price__text">Per day</span>
-                                        </p>
-                                        <a href="car-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
-                            <div class="card-item car-card mb-0">
-                                <div class="card-img">
-                                    <a href="car-single.html" class="d-block">
-                                        <img src="../../site_file/images/car-img3.png" alt="car-img">
-                                    </a>
-                                    <span class="badge">featured</span>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Save for later">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-meta">Compact Elite</p>
-                                    <h3 class="card-title"><a href="car-single.html">Toyota Yaris or Similar</a></h3>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-attributes">
-                                        <ul class="d-flex align-items-center">
-                                            <li class="d-flex align-items-center" data-toggle="tooltip"
-                                                data-placement="top" title="Passenger"><i
-                                                    class="la la-users"></i><span>4</span></li>
-                                            <li class="d-flex align-items-center" data-toggle="tooltip"
-                                                data-placement="top" title="Luggage"><i
-                                                    class="la la-suitcase"></i><span>1</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$23.00</span>
-                                            <span class="price__text">Per day</span>
-                                        </p>
-                                        <a href="car-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
-                            <div class="card-item car-card mb-0">
-                                <div class="card-img">
-                                    <a href="car-single.html" class="d-block">
-                                        <img src="images/car-img4.png" alt="car-img">
-                                    </a>
-                                    <span class="badge">Bestseller</span>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Save for later">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-meta">Fullsize Van</p>
-                                    <h3 class="card-title"><a href="car-single.html">Seat Alhambra or Similar</a></h3>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-attributes">
-                                        <ul class="d-flex align-items-center">
-                                            <li class="d-flex align-items-center" data-toggle="tooltip"
-                                                data-placement="top" title="Passenger"><i
-                                                    class="la la-users"></i><span>6</span></li>
-                                            <li class="d-flex align-items-center" data-toggle="tooltip"
-                                                data-placement="top" title="Luggage"><i
-                                                    class="la la-suitcase"></i><span>2</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$45.00</span>
-                                            <span class="price__text">Per day</span>
-                                        </p>
-                                        <a href="car-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
-                            <div class="card-item car-card mb-0">
-                                <div class="card-img">
-                                    <a href="car-single.html" class="d-block">
-                                        <img src="images/car-img5.png" alt="car-img">
-                                    </a>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Save for later">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-meta">Luxury</p>
-                                    <h3 class="card-title"><a href="car-single.html">Mercedes E Class or Similar</a>
-                                    </h3>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-attributes">
-                                        <ul class="d-flex align-items-center">
-                                            <li class="d-flex align-items-center" data-toggle="tooltip"
-                                                data-placement="top" title="Passenger"><i
-                                                    class="la la-users"></i><span>5</span></li>
-                                            <li class="d-flex align-items-center" data-toggle="tooltip"
-                                                data-placement="top" title="Luggage"><i
-                                                    class="la la-suitcase"></i><span>3</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$58.00</span>
-                                            <span class="price__text">Per day</span>
-                                        </p>
-                                        <a href="car-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
-                            <div class="card-item car-card mb-0">
-                                <div class="card-img">
-                                    <a href="car-single.html" class="d-block">
-                                        <img src="images/car-img6.png" alt="car-img">
-                                    </a>
-                                    <span class="badge">featured</span>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Save for later">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-meta">Mini</p>
-                                    <h3 class="card-title"><a href="car-single.html">Fiat Fiesta 2 Doors or Similar</a>
-                                    </h3>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-attributes">
-                                        <ul class="d-flex align-items-center">
-                                            <li class="d-flex align-items-center" data-toggle="tooltip"
-                                                data-placement="top" title="Passenger"><i
-                                                    class="la la-users"></i><span>4</span></li>
-                                            <li class="d-flex align-items-center" data-toggle="tooltip"
-                                                data-placement="top" title="Luggage"><i
-                                                    class="la la-suitcase"></i><span>1</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$23.00</span>
-                                            <span class="price__text">Per day</span>
-                                        </p>
-                                        <a href="car-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div><!-- end card-item -->
+                                </div>   
+                                </div><!-- end card-item -->                  
                         </div><!-- end car-carousel -->
                     </div>
                 </div><!-- end col-lg-12 -->
@@ -1447,128 +754,10 @@
     <!-- ================================
     END MOBILE AREA
 ================================= -->
-
-    <!-- ================================
-       START CLIENTLOGO AREA
-================================= -->
-    <section class="clientlogo-area padding-top-80px padding-bottom-80px text-center">
-        <div class="container">
-            <div class="row"></div>
-            <!---
-            <div class="col-lg-12">
-                <div class="client-logo">
-                    <div class="client-logo-item">
-                        <img src="../../site_fileimages/client-logo.png" alt="brand image">
-                    </div><!-- end client-logo-item 
-                    <div class="client-logo-item">
-                        <img src="../../site_file/images/client-logo2.png" alt="brand image">
-                    </div><!-- end client-logo-item 
-                    <div class="client-logo-item">
-                        <img src="../../site_file/images/client-logo3.png" alt="brand image">
-                    </div><!-- end client-logo-item
-                    <div class="client-logo-item">
-                        <img src="../../site_file/images/client-logo4.png" alt="brand image">
-                    </div><!-- end client-logo-item 
-                    <div class="client-logo-item">
-                        <img src="../../site_file/images/client-logo5.png" alt="brand image">
-                    </div><!-- end client-logo-item 
-                    <div class="client-logo-item">
-                        <img src="../../site_file/images/client-logo6.png" alt="brand image">
-                    </div><!-- end client-logo-item -->
-        </div><!-- end client-logo -->
-        </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-        </div><!-- end container -->
-    </section><!-- end clientlogo-area -->
-    <!-- ================================
-                    START CLIENTLOGO AREA
-================================= -->
-
     <!-- ================================
                     START FOOTER AREA
 ================================= -->
-    <section class="footer-area section-bg padding-top-100px padding-bottom-30px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 responsive-column">
-                    <div class="footer-item">
-                        <div class="footer-logo padding-bottom-30px">
-                            <a href="index.html" class="foot__logo"><img src="../../site_file/images/logo.png"
-                                    alt="logo"></a>
-                        </div><!-- end logo -->
-                        <p class="footer__desc">Best Service Rental</p>
-                        <ul class="list-items pt-3">
-                            <li>Anija,<br>Blue Water</li>
-                            <li>+(233) 241 977 529</li>
-                            <li><a href="#">info@Qirentals.com</a></li>
-                        </ul>
-                    </div><!-- end footer-item -->
-                </div><!-- end col-lg-3 -->
-                <div class="col-lg-4 responsive-column">
-                    <div class="footer-item">
-                        <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Company</h4>
-                        <ul class="list-items list--items">
-                            <li><a href="/about">About us</a></li>
-                            <li><a href="/services">Service</a></li>
-
-                        </ul>
-                    </div><!-- end footer-item -->
-                </div><!-- end col-lg-3 -->
-                <div class="col-lg-4 responsive-column">
-                    <div class="footer-item">
-                        <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">Other Links</h4>
-                        <ul class="list-items list--items">
-                            <li><a href="/sites">About Qi Rentals</a></li>
-                            <li><a href="/canopies">Canopies</a></li>
-                            <li><a href="/tables">Tables</a></li>
-                            <li><a href="/mattress">Mattress</a></li>
-                        </ul>
-                    </div><!-- end footer-item -->
-                </div><!-- end col-lg-3 -->
-            </div><!-- end row -->
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <div class="term-box footer-item">
-                        <ul class="list-items list--items d-flex align-items-center">
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>          
-                            <li><a href="/faq">Faq</a></li>
-                        </ul>
-                    </div>
-                </div><!-- end col-lg-8 -->
-                <div class="col-lg-4">
-                    <div class="footer-social-box text-right">
-                        <ul class="social-profile">
-                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                            <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                        </ul>
-                    </div>
-                </div><!-- end col-lg-4 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-        <div class="section-block mt-4"></div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="copy-right padding-top-30px">
-                        <p class="copy__desc">
-                            &copy; Copyright Qliq 2021. Made with
-                            <span class="la la-heart"></span> by <a
-                                href="https://qliqintegrations.com/">Qliq Integrations</a>
-                        </p>
-                    </div><!-- end copy-right -->
-                </div><!-- end col-lg-7 -->
-                <div class="col-lg-5">
-                    <div class="copy-right-content d-flex align-items-center justify-content-end padding-top-30px">
-                        <h3 class="title font-size-15 pr-2">We Accept</h3>
-                        <img src="../../site_file/images/payment-img.png" alt="">
-                    </div><!-- end copy-right-content -->
-                </div><!-- end col-lg-5 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section><!-- end footer-area -->
+<?= $this->include('layout/site/footer') ?>
     <!-- ================================
                 START FOOTER AREA
 ================================= -->
@@ -1579,177 +768,11 @@
     </div>
     <!-- end back-to-top -->
 
-    <!-- end modal-shared -->
-    <div class="modal-popup">
-        <div class="modal fade" id="signupPopupForm" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div>
-                            <h5 class="modal-title title" id="exampleModalLongTitle">Sign Up</h5>
-                            <p class="font-size-14">Hello! Welcome Create a New Account</p>
-                        </div>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" class="la la-close"></span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="contact-form-action">
-                            <form method="post">
-                                <div class="input-box">
-                                    <label class="label-text">Username</label>
-                                    <div class="form-group">
-                                        <span class="la la-user form-icon"></span>
-                                        <input class="form-control" type="text" name="text"
-                                            placeholder="Type your username">
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="input-box">
-                                    <label class="label-text">Email Address</label>
-                                    <div class="form-group">
-                                        <span class="la la-envelope form-icon"></span>
-                                        <input class="form-control" type="text" name="text"
-                                            placeholder="Type your email">
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="input-box">
-                                    <label class="label-text">Password</label>
-                                    <div class="form-group">
-                                        <span class="la la-lock form-icon"></span>
-                                        <input class="form-control" type="text" name="text" placeholder="Type password">
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="input-box">
-                                    <label class="label-text">Repeat Password</label>
-                                    <div class="form-group">
-                                        <span class="la la-lock form-icon"></span>
-                                        <input class="form-control" type="text" name="text"
-                                            placeholder="Type again password">
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="btn-box pt-3 pb-4">
-                                    <button type="button" class="theme-btn w-100">Register Account</button>
-                                </div>
-                                <div class="action-box text-center">
-                                    <p class="font-size-14">Or Sign up Using</p>
-                                    <ul class="social-profile py-3">
-                                        <li><a href="#" class="bg-5 text-white"><i class="lab la-facebook-f"></i></a>
-                                        </li>
-                                        <li><a href="#" class="bg-6 text-white"><i class="lab la-twitter"></i></a></li>
-                                        <li><a href="#" class="bg-7 text-white"><i class="lab la-instagram"></i></a>
-                                        </li>
-                                        <li><a href="#" class="bg-5 text-white"><i class="lab la-linkedin-in"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </form>
-                        </div><!-- end contact-form-action -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- end modal-popup -->
-
-                                    <!-- end modal-shared -->
-                                    <div class="modal-popup">
-        <div class="modal fade" id="contactdetail" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div>
-                            <h5 class="modal-title title" id="exampleModalLongTitle2">Personal Detail</h5>
-                            <p class="font-size-14"></p>
-                        </div>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" class="la la-close"></span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="air__auth__containerInner mt-4">
-                        
-                            <?php if (isset($validation)): ?>
-                            <div class="alert alert-danger" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <label
-                                    style="margin-left: -40px;margin-bottom: -30px;"><strong><?= $validation->listErrors() ?></strong></label>
-                            </div>
-                            <?php endif; ?>
-                                    <div class="row">
-                                <div class="col-lg-6 pr-0">
-                                            <div class="input-box">
-                                                <label for="fname" class="label-text">Fname</label>
-                                                <div class="form-group">       
-                                                    <input class="form-control" type="text" placeholder="First Name"
-                                                        required>
-                                                </div>
-                                            </div>
-                                </div><!-- end col-lg-4 -->
-                            
-                                <div class="col-lg-6 pr-0">
-                                            <div class="input-box">
-                                                <label class="label-text">Lname</label>
-                                                <div class="form-group">       
-                                                    <input class="form-control" type="text" placeholder=" Last Name"
-                                                        required>
-                                                </div>
-                                            </div>
-                                </div><!-- end col-lg-4 -->
-                                </div>
-                            
-                                <button type="submit"
-                                    class="btn btn-primary text-center w-100"><strong><?= 'Submit' ?></strong></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- end modal-popup -->
-
-                                       <!-- end modal-shared -->
-        <div class="modal-popup">
-        <div class="modal fade" id="loginPopupForm" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div>
-                            <h5 class="modal-title title" id="exampleModalLongTitle2">Personal Detail</h5>
-                            <p class="font-size-14"></p>
-                        </div>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" class="la la-close"></span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                    <div class="text-dark font-size-32 mb-3">Sign In</div>
-                        <?php if (isset($validation)): ?>
-                    <div class="alert alert-danger" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                    <label style="margin-left: -40px;margin-bottom: -30px;"><strong><?= $validation->listErrors() ?></strong></label>
-                    </div>
-                    <?php endif; ?>
-                    <form id="form-validation-simple" name="form-validation-simple" method="POST" action="/login/auth" class="mb-4">
-  
-                    <div class="form-group mb-4">
-                    <input type="text" class="form-control" name="email" data-validation="[NOTEMPTY]" autocomplete="off" tabindex="1" placeholder="Email" />
-                    </div>
-                    <div class="form-group mb-4">
-                    <input type="password" name="password" data-validation="[NOTEMPTY]" class="form-control" autocomplete="off" tabindex="2" placeholder="Password" />
-                    </div>
-                    <button type="submit" class="btn btn-primary text-center w-100"><strong><?= 'Log in' ?></strong></button>
-                    </form>
-                    <a href="#" class="kit__utils__link font-size-16"><?= 'Forgot password?' ?></a>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- end modal-popup -->
-    
+    <!-- Modal -->
+    <?= $this->include('layout/modal/signpopup') ?>
+    <?= $this->include('layout/modal/contactdetailpopup') ?>
+    <?= $this->include('layout/modal/loginpopup') ?>
+    <!-- End Modal -->
     
 
     <!-- Template JS Files -->
@@ -1767,63 +790,7 @@
     <script src="../../site_file/js/jquery.ripples-min.js"></script>
     <script src="../../site_file/js/quantity-input.js"></script>
     <script src="../../site_file/js/main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Validation library file -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
-<!-- Sweetalert library file -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
-<script>
-
-    $.ajax({
-      type: "POST",
-      url: "<?= site_url('mattress') ?>",
-      data: formData,
-      dataType: "json",
-      encode: true,
-    }).done(function (data) {
-      console.log(data);
-
-      if (!data.success) {
-        if (data.errors.name) {
-          $("#name-group").addClass("has-error");
-          $("#name-group").append(
-            '<div class="help-block">' + data.errors.name + "</div>"
-          );
-        }
-
-        if (data.errors.email) {
-          $("#email-group").addClass("has-error");
-          $("#email-group").append(
-            '<div class="help-block">' + data.errors.email + "</div>"
-          );
-        }
-
-        if (data.errors.superheroAlias) {
-          $("#superhero-group").addClass("has-error");
-          $("#superhero-group").append(
-            '<div class="help-block">' + data.errors.superheroAlias + "</div>"
-          );
-        }
-      } else {
-        $("form").html(
-          '<div class="alert alert-success">' + data.message + "</div>"
-        );
-      }
-
-    });
-
-    event.preventDefault();
-  });
-</script>\
-
-<script>
-$('.datepicker').datepicker({ 
-
-startDate: new Date()
-
-});
-
-</script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
-
 </html>

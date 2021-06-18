@@ -32,6 +32,23 @@
             </div>
         </div>
     </div>
+    <div class="col-lg-4">
+    <div class="card">
+        <div class="card-body">
+        <div class="d-flex flex-wrap align-items-center">
+            <div class="mr-auto">
+                <p class="text-uppercase text-dark font-weight-bold mb-1">
+                    Booking
+                    </p>
+                <p class="text-gray-5 mb-0">
+                    Total Booking
+                    </p>
+                    </div>
+                <p class="text-success font-weight-bold font-size-24 mb-0"> <?= $bookingorder ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
         <!---Total Paymnent---->
     <div class="col-lg-4">
         <div class="card">

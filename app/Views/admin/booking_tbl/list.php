@@ -49,7 +49,7 @@
                         <th>#</th>
                         <th>Client Name</th>
                         <th>Service Type</th>  
-                        <th>Price</th>                             
+                          
                         <th>Catorgory Service</th>  
                         <th>number</th> 
                         <th>date</th> 
@@ -62,7 +62,7 @@
                         <th>#</th>
                         <th>Client Name</th>
                         <th>Service Type</th>  
-                        <th>Price</th>                             
+                                         
                         <th>Catorgory Service</th>  
                         <th>number</th> 
                         <th>date</th> 
@@ -76,7 +76,7 @@
                                 <td><?= $i++?></td>
                                 <td><?= $u['fname']. ' ' .$u['fname'] ?></td>
                                 <td><?= $u['service_id'] ?></td>
-                                <td><?= $u['price'] ?></td>
+                                
                                 <td><?= $u['vendor_id'] ?></td>
                                 <td><?= $u['date'] ?></td>  
                                 <td><?= $u['time'] ?></td>                                             
