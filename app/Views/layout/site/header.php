@@ -74,31 +74,67 @@
         <div class="header-menu-wrapper padding-right-100px padding-left-100px">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-md-11">
                         <div class="menu-wrapper">
                             <a href="#" class="down-button"><i class="la la-angle-down"></i></a>
                             <div class="logo">
-                                <div class="menu-toggler">
-                                    <i class="la la-bars"></i>
+                              <h3>QI Rental</h3>
+                       <div class="menu-toggler">
+                                    <i class="la la-bars">QI Rental</i>
                                     <i class="la la-times"></i>
                                 </div><!-- end menu-toggler -->
                             </div><!-- end logo -->
                             <div class="main-menu-content">
                                 <nav>
-                                    <ul>
-                                        <li><a href="/sites">Home</a></li>
-                                        <li><a href="/about">About</a></li>
-                                        <li>
-                                            <a href="/services"> Service<i class="la la-angle-down"></i></a>
-                                            <ul class="dropdown-menu-item">
+                                <ul>
+    <li><a href="/sites">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li>
+                                        <a href="/services">Services <i class="la la-angle-down"></i></a>
+                                        <ul class="dropdown-menu-item"> 
+                                        <li><a href="#">Social Gathering <i class="la la-plus"></i></a>
+                                        <ul class="sub-menu">
                                                 <li><a href="/canopies">Canopies</a></li>
                                                 <li><a href="/chairs">Chairs</a></li>
                                                 <li><a href="/tables">Tables</a></li>
                                                 <li><a href="/mattress">Mattress</a></li>
-                                            </ul>
+                                                <li><a href="#">Urinal Cubicles</a></li>
+                                                <li><a href="#">Ice Containers</a></li>
+                                                <li><a href="#">Food Warmers</a></li>
+                                                <li><a href="#">Plates & Spoons</a></li>
+                                                <li><a href="#">Deco Items</a></li>
+                                                </ul>
                                         </li>
-                                        <li><a href="/contact">Contact Us</a></li>
-                                    </ul>
+                                        <li><a href="#">Cleaning <i class="la la-plus"></i></a>
+                                        <ul class="sub-menu">
+                                                <li><a href="#">Mower</a></li>
+                                                <li><a href="#">Gardening Tools</a></li>
+                                                <li><a href="#">Laundry</a></li>
+                                                <li><a href="#">House Cleaning</a></li>
+                                                </ul>
+                                        </li>
+                                        <li><a href="#">Cleaning <i class="la la-plus"></i></a>
+                                        <ul class="sub-menu">
+                                        <li><a href="#">Sound Systems</a></li>
+                                                <li><a href="#">Stage & Lighting</a></li>
+                                                <li><a href="#">Drones & Cameras</a></li>
+                                                <li><a href="#">Video Coverage</a></li>
+                                                <li><a href="#">Stage Setup</a></li>
+                                                </ul>
+                                        </li>
+                                        <li><a href="#">Pickups & Delivery</a></li>
+                                        <li><a href="#">Equipment & Tools</a></li>
+                                        <li><a href="#">Event Centres </a></li>
+                                        <li><a href="#">Business Tools & Equipment</a></li>
+                                        <li><a href="#">Accomodation</a></li>
+                                        <li><a href="#">Rent a Car</a></li>
+                                        <li><a href="#">Transporters</a></li>
+                                          
+                                        </ul>
+                                    </li>
+    <li><a href="/contact">Contact Us</a></li>
+    
+</ul>
                                 </nav>
                                 
 

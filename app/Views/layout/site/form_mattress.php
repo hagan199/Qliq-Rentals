@@ -33,7 +33,7 @@
 
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
-                                                <label for="drop_off" id="drop_off" id="event_type" class="label-text">Drop off </label>
+                                                <label for="drop_off" id="drop_off" id="event_type" class="label-text">Drop off date</label>
                                                 <div class="form-group">
                                                     <span class=""></span>
                                                     <input class="date-range form-control" type="date" name="drop_off"
@@ -73,10 +73,10 @@
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
-                         
-
-                                <div class="btn-box">
-                                    <button  id="colorchange" data-toggle="modal"
+                                <div class="col-lg-3 pr-0">
+                                    <div class="btn-box">
+                                        <button  id="colorchange" data-toggle="modal"
                                         data-target="#contactdetail" class="theme-btn">Book</button>
+                                </div>
                                 </div>
                             </form>

@@ -227,6 +227,7 @@ class Admin extends BaseController{
                             'category_id' => $this->request->getVar('category_id'),
                             'sub_category_id' => $this->request->getVar('sub_category_id'),
                             'vendor_id'   => $this->request->getVar('vendor_id'),
+                            'description'   => $this->request->getVar('description'),
                             'name' => json_encode($datas),
                         ];
                         if($model->insert($data)){
@@ -272,17 +273,18 @@ class Admin extends BaseController{
             }else{
                 $model = new CategoryService();    
                 
-              //  $file = $this->request->getFile('image');
+               $file = $this->request->getFile('image');
                // echo $file->getName();
                // exit();
-               // if($file->isValid() && !$file->hasMoved()){
-              //  $file->move('./uploads/images','testName.' .$file->getExtension());
+                if($file->isValid() && !$file->hasMoved()){
+                $file->move('./uploads/category','testName.' .$file->getExtension()   . $file->getName() );
+               }
             
-
                 $data = [
                 'category_name' => $this->request->getVar('category_name'),
                 'detail'  => $this->request->getVar('detail'),
-                'service_id'  => $this->request->getVar('service_id'),        
+                'service_id'  => $this->request->getVar('service_id'),  
+                'name'=>   $file->getName(),   
                 ];
                 if($model->insert($data)){
                 $session->setFlashdata("success", "successfully");

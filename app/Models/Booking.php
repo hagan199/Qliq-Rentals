@@ -5,5 +5,5 @@ class Booking extends Model{
     protected $primaryKey = 'id';
     protected $allowedFields = ['fname','lname','email', 'service_id',
                                 'vendor_id','number_room','number_chair','number_tables',
-                                'number_mattress','number_room','pick_date','event_location','drop_off','event_type',];
+                                'number_mattress','number_room','pick_date','event_location','drop_off','status','event_type',];
     }

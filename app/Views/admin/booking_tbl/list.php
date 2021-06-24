@@ -47,26 +47,26 @@
                     <thead>
                         <tr>
                         <th>#</th>
-                        <th>Client Name</th>
-                        <th>Service Type</th>  
-                          
-                        <th>Catorgory Service</th>  
+                        <th>Event Location</th>
+                        <th>Event Type</th>                              
+                        <th>Pick Date</th> 
+                        <th>Drop off Date</th>  
                         <th>number</th> 
-                        <th>date</th> 
-                        <th>time</th>                    
-                            <th class="disabled-sorting text-right">Actions</th>
+                        <th>Status</th>
+                        <th>Payment</th>                 
+                        <th class="disabled-sorting text-right">Actions</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>  
                         <th>#</th>
-                        <th>Client Name</th>
-                        <th>Service Type</th>  
-                                         
-                        <th>Catorgory Service</th>  
+                        <th>Event Location</th>
+                        <th>Event Type</th>                              
+                        <th>Pick Date</th> 
+                        <th>Drop off Date</th>  
                         <th>number</th> 
-                        <th>date</th> 
-                        <th>time</th>                       
+                        <th>Status</th>
+                        <th>Payment</th>              
                         <th class="text-right">Actions</th>
                         </tr>
                     </tfoot>
@@ -74,16 +74,25 @@
                             <?php $i=1; foreach($booking_list as $u){ ?>
                             <tr>
                                 <td><?= $i++?></td>
-                                <td><?= $u['fname']. ' ' .$u['fname'] ?></td>
-                                <td><?= $u['service_id'] ?></td>
-                                
-                                <td><?= $u['vendor_id'] ?></td>
-                                <td><?= $u['date'] ?></td>  
-                                <td><?= $u['time'] ?></td>                                             
+                                <td><?= $u['event_location'] ?></td>
+                                <td><?= $u['event_type'] ?></td>          
+                                <td><?= $u['pick_date'] ?></td>
+                                <td><?= $u['drop_off'] ?></td>
+                                <td><?= $u['number_room'] ?></td> 
+                                <td id="status" class="text-center">
+                              <?php
+                              if ($u['status']==='0'){
+                                ?>
+                              <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+                              <span class="sr-only">Loading...</span>
+
+                              <?php } else {?>
+                                <a class="btn btn-sm btn-outline-success"><i class="fa fa-check text-default"></i></a>
+                              <?php }?>
+                              </td>
+                                <td><?= $u['status'] ?></td> 
                                 <td>
-                                <a title="edit" href="" class="btn btn-link btn-warning btn-just-icon like"><i class="material-icons">edit</i></a>
-                                <a title="delete" href="" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
-                                
+                                <a href="#" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Cancel</a>
                                 </td>
                             </tr>
                             <?php } ?>

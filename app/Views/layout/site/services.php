@@ -61,11 +61,7 @@
                 </div><!-- end col-lg-6 -->
                 <div class="col-lg-6">
                     <div class="breadcrumb-list text-right">
-                        <ul class="list-items">
-                            <li><a href="/sites">Home</a></li>
-                         
-                            <li><a href="/sites">Our Services</li>
-                        </ul>
+                    
                     </div><!-- end breadcrumb-list -->
                 </div><!-- end col-lg-6 -->
             </div><!-- end row -->
@@ -92,119 +88,85 @@
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
         <div class="row padding-top-80px">
-            <div class="col-lg-3 responsive-column">
+            <div class="col-lg-4 responsive-column">
                 <div class="icon-box icon-layout-4">
                     <div class="info-icon">
                         <i class="la la-plane"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title"><a href="#">Flight Deals</a></h4>
+                        <h4 class="info__title"><a href="#">Canopies</a></h4>
                         <p class="info__desc">
                            Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
                         </p>
                     </div><!-- end info-content -->
                 </div><!-- end icon-box -->
             </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
+            <div class="col-lg-4 responsive-column">
                 <div class="icon-box icon-layout-4">
                     <div class="info-icon">
                         <i class="la la-anchor"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title"><a href="#">Amazing Tour</a></h4>
+                        <h4 class="info__title"><a href="#">Chairs</a></h4>
                         <p class="info__desc">
                            Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
                         </p>
                     </div><!-- end info-content -->
                 </div><!-- end icon-box -->
             </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
+            <div class="col-lg-4 responsive-column">
                 <div class="icon-box icon-layout-4">
                     <div class="info-icon">
                         <i class="la la-support"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title"><a href="#">Support Cases</a></h4>
+                        <h4 class="info__title"><a href="#">Tables</a></h4>
                         <p class="info__desc">
                            Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
                         </p>
                     </div><!-- end info-content -->
                 </div><!-- end icon-box -->
             </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
+            <div class="col-lg-4 responsive-column">
                 <div class="icon-box icon-layout-4">
                     <div class="info-icon">
                         <i class="la la-briefcase"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title"><a href="#">In Business</a></h4>
+                        <h4 class="info__title"><a href="#">Mattress</a></h4>
                         <p class="info__desc">
                            Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
                         </p>
                     </div><!-- end info-content -->
                 </div><!-- end icon-box -->
             </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
+            <div class="col-lg-4 responsive-column">
                 <div class="icon-box icon-layout-4">
                     <div class="info-icon">
                         <i class="la la-hotel"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title"><a href="#">Handpicked Hotels</a></h4>
+                        <h4 class="info__title"><a href="#">Cleaning</a></h4>
                         <p class="info__desc">
                            Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
                         </p>
                     </div><!-- end info-content -->
                 </div><!-- end icon-box -->
             </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
+            <div class="col-lg-4 responsive-column">
                 <div class="icon-box icon-layout-4">
                     <div class="info-icon">
-                        <i class="la la-user-secret"></i>
+                        <i class="la la-hotel"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title"><a href="#">Private Guide</a></h4>
+                        <h4 class="info__title"><a href="#">Housing Cleaning</a></h4>
                         <p class="info__desc">
                            Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
                         </p>
                     </div><!-- end info-content -->
                 </div><!-- end icon-box -->
             </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
-                <div class="icon-box icon-layout-4">
-                    <div class="info-icon">
-                        <i class="la la-map"></i>
-                    </div><!-- end info-icon-->
-                    <div class="info-content">
-                        <h4 class="info__title"><a href="#">Location Manager</a></h4>
-                        <p class="info__desc">
-                           Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
-                        </p>
-                    </div><!-- end info-content -->
-                </div><!-- end icon-box -->
-            </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
-                <div class="icon-box icon-layout-4">
-                    <div class="info-icon">
-                        <i class="la la-thumbs-up"></i>
-                    </div><!-- end info-icon-->
-                    <div class="info-content">
-                        <h4 class="info__title"><a href="#">Best Travel Agent</a></h4>
-                        <p class="info__desc">
-                           Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
-                        </p>
-                    </div><!-- end info-content -->
-                </div><!-- end icon-box -->
-            </div><!-- end col-lg-3 -->
-        </div><!-- end row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="tab-content-info mt-n4 d-flex justify-content-between align-items-center">
-                    <p class="font-size-15">Do not hesitate to contact us for better help and service.</p>
-                    <a href="/contact" class="btn-text font-size-15">Contact us <i class="la la-arrow-right ml-1"></i></a>
-                </div><!-- end tab-content-info -->
-            </div>
-        </div>
+ 
     </div><!-- end container -->
 </section><!-- end service-area -->
 <!-- ================================
@@ -224,7 +186,7 @@
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
         <div class="row padding-top-50px">
-        <?php $i=1; foreach($service as $u){ ?>
+        <?php $i=1; foreach($category as $u){ ?>
                 <div class="col-lg-4">
                     <div class="card-item car-card mb-0">
                                 <div class="card-img">
@@ -239,18 +201,12 @@
                                 </div>
                                 <div class="card-body">
                                     <p class="card-meta"></p>
-                                    <h3 class="card-title"><a href="car-single.html"></a></h3>
+                                    <h3 class="card-title"><a href="car-single.html"></a><?= $u['category_name'] ?></h3>
                                     <div class="card-rating">
                                     </div>
                                     <div class="card-attributes">
                                     </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-
-                                            <span class="price__num">GH </span>
-                                            <span class="price__text">Per day</span>
-                                        </p>
-                                    
+                                    <div class="card-price d-flex align-items-center justify-content-between">     
                                     </div>
                                 </div>
         </div><!-- end container -->

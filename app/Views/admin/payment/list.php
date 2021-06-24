@@ -111,7 +111,7 @@
             </div>
             <div class="col-md-6">
             <div class="form-group col-md-12">
-                <label>Upload Image</label>
+                <label>Upload Presentation</label>
                 <input type="file" class="dropify" />
             </div>
             </div>

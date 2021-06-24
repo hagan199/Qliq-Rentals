@@ -28,7 +28,7 @@
                                             <div class="input-box">
                                                 <label for="fname" class="label-text">Fname</label>
                                                 <div class="form-group">       
-                                                    <input class="form-control" type="text" placeholder="First Name"
+                                                    <input class="form-control" name="fname" id="fname" type="text" placeholder="First Name"
                                                         required>
                                                 </div>
                                             </div>
@@ -36,9 +36,27 @@
                             
                                 <div class="col-lg-6 pr-0">
                                             <div class="input-box">
-                                                <label class="label-text">Lname</label>
+                                                <label  for="fname" class="label-text">Lname</label>
                                                 <div class="form-group">       
-                                                    <input class="form-control" type="text" placeholder=" Last Name"
+                                                    <input class="form-control"  name="lname"  id="lname"  type="text" placeholder=" Last Name"
+                                                        required>
+                                                </div>
+                                            </div>
+                                </div><!-- end col-lg-4 -->
+                                <div class="col-lg-6 pr-0">
+                                            <div class="input-box">
+                                                <label  for="email" class="label-text">Email</label>
+                                                <div class="form-group">       
+                                                    <input class="form-control"  name="email" id="email"  type="text" placeholder=" Last Name"
+                                                        required>
+                                                </div>
+                                            </div>
+                                </div><!-- end col-lg-4 -->
+                                <div class="col-lg-6 pr-0">
+                                            <div class="input-box">
+                                                <label  for="fname" class="label-text">Phone</label>
+                                                <div class="form-group">       
+                                                    <input class="form-control" type="text" name="phone" placeholder=" Last Name"
                                                         required>
                                                 </div>
                                             </div>

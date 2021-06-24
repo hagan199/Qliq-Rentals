@@ -68,6 +68,10 @@ $routes->match(['get', 'post'], '/canopy/(:any)/(:any)', 'Client::canopies/$1/$2
 
 // Users 
 $routes->get('/users-add', 'User::create');
+
+$routes->match(['get', 'post'], '/dynamic_dependent', 'Dynamic_dependent::vendor_service_dependant');
+
+$routes->match(['get', 'post'], '/dynamic_dependent_cat', 'Dynamic_dependent::vendor_getcategory_dependant');
 // Service
 $routes->get('/services', 'Service_tbl::index');
 // Service

@@ -3,6 +3,7 @@ use CodeIgniter\Controller;
 use App\Models\Booking;
 use App\Models\VendorService;
 use App\Models\Service;
+use App\Models\CategoryService;
 class Client extends BaseController
 {
 
@@ -28,11 +29,10 @@ class Client extends BaseController
         $model = new VendorService();
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Canopies';
-        $data['vendor'] = $model->where('category_id', '13')->findAll();
+        $data['canopies'] = $model->where('category_id', '13')->findAll();
 		return view('layout/site/canopies',$data);
 	}
-      
-
+    
     public function faq()
 	{
         $data['title'] = 'Qi.Rentals';
@@ -45,7 +45,7 @@ class Client extends BaseController
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Tables';
         $model = new VendorService();
-        $data['vendor'] = $model->where('category_id', '13')->findAll();
+        $data['tables'] = $model->where('category_id', '15')->findAll();
 		return view('layout/site/tables',$data);
 	}
 
@@ -54,7 +54,7 @@ class Client extends BaseController
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Chair';
         $model = new VendorService();
-        $data['vendor'] = $model->where('category_id', '13')->findAll();
+        $data['chair'] = $model->where('category_id', '14')->findAll();
 		return view('layout/site/chairs',$data);
 	}
 
@@ -62,6 +62,8 @@ class Client extends BaseController
 	{
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Mattress';
+        $model = new VendorService();
+        $data['mattress'] = $model->where('category_id', '16')->findAll();
 		return view('layout/site/mattress',$data);
 	}
 
@@ -78,6 +80,8 @@ class Client extends BaseController
 	{
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Services';
+        $categorymodel = new CategoryService();
+        $data['category'] = $categorymodel->orderBy('id', 'DECS')->findAll();
         $service_model = new Service();
         $data['service'] = $service_model->orderBy('id', 'DECS')->findAll();
 		return view('layout/site/services',$data);
@@ -116,7 +120,7 @@ class Client extends BaseController
                 $data['drop_off'] =  $this->request->getVar('drop_off');
                 $data['event_location'] =  $this->request->getVar('event_location');
                 $data['number_room'] =  $this->request->getVar('number_room');
-                $data['cat_service_id'] =  '1' ;
+                $data['cat_service_id'] =  '13' ;
             
                 if($model->insert($data)){
                     print_r($data);
@@ -152,7 +156,7 @@ class Client extends BaseController
                 $data['lname'] =  $this->request->getVar('lname');
                 $data['event_location'] =  $this->request->getVar('event_location');
                 $data['number_mattress'] =  $this->request->getVar('number_mattress');
-                $data['cat_service_id'] =  '2' ;
+                $data['cat_service_id'] =  '12' ;
             
                 if($model->insert($data)){
                     print_r($data);
@@ -187,7 +191,6 @@ public function mattress($param1='' , $param2= '')
         ];
         if (!$this->validate($rules)){
             $session->setFlashdata("error", "Invalid data request");
-
         }else{
             $model = new Booking();
             $data['event_type'] =  $this->request->getVar('event_type');

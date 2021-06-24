@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class CategoryService extends Model{
           protected $table = 'category_service_tbl';
           protected $primaryKey = 'id';
-          protected $allowedFields = ['category_name','service_id'];
+          protected $allowedFields = ['category_name','service_id', 'name'];
           }
 
           function get_all_CategoryService()

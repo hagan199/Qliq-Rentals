@@ -95,7 +95,7 @@
                 </div><!-- end col-lg-12 -->
             </div><!-- end row -->
             <div class="row padding-top-50px">
-            <?php $i=1; foreach($service as $u){ ?>
+            <?php $i=1; foreach($canopies as $u){ ?>
                 <div class="col-lg-4">
 
             <div class="card-item car-card mb-0">
@@ -113,13 +113,13 @@
                                     <p class="card-meta"><?= get_column_name_by_id('service_tbl', $u['service_id'], 'service_name') ?></p>
                                     <h3 class="card-title"><a href="car-single.html"><?= get_column_name_by_id('category_service_tbl', $u['category_id'], 'category_name') ?></a></h3>
                                     <div class="card-rating">
+                                    <h2 class="card-title"><a href="car-single.html"><?= get_column_name_by_id('sub_category_service_tbl', $u['sub_category_id'], 'sub_cat_name') ?></a></h2>
                                     </div>
                                     <div class="card-attributes">
                                     </div>
                                     <div class="card-price d-flex align-items-center justify-content-between">
                                         <p>
-
-                                            <span class="price__num">GH <?= $u['price'] ?></span>
+                                            <span class="price__num">Gh¢.<?= $u['price'] ?></span>
                                             <span class="price__text">Per day</span>
                                         </p>
                                     

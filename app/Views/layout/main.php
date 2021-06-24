@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Main</title>
+    <title><?= $page . ' | '. $title ?></title>
     <link rel="icon" type="image/png" href="../../components/kit/core/img/favicon.png" />
     <link href="https://fonts.googleapis.com/css?family=Mukta:400,700,800&amp;display=swap" rel="stylesheet">
 
@@ -198,7 +198,7 @@
     <!--End footer-->
     </div>
     <!--- main and footer join to together-->
-
+    <?= $this->include('layout/modal/profile') ?>
     </div>
 </body>
 
@@ -294,34 +294,8 @@ startDate: new Date()
 });
 </script>
 
-<script>
-// on class category change
-$('#catg').on('change', function() {
-    let value = $(this).val();
-    if (value) {
-        $.ajax({
-            url: '<?php echo site_url("Billing/getsubcategory/")?>' + value,
-            dataType: 'Json',
-            contentType: 'application/json',
-            success: function(data) {
-                // console.log(data);
-                if (data) {
-                    let options_html = '<option value="">Select Sub Category</option>';
-                    $.each(data, function(i, err) {
-                        options_html += '<option data-tokens="' + data[i].name +
-                            '" value=' + data[i].id + '>' + data[i].name + '</option>';
-                    });
-                    $('#category_zone_id').html(options_html);
-                }
-            }
-        });
-    } else {
-        console.log('failed');
-    }
-});
-</script>
 
-<script>
+<!-- <script>
 // on class category change
 $('#service').on('change', function() {
     let value = $(this).val();
@@ -347,4 +321,4 @@ $('#service').on('change', function() {
         console.log('failed');
     }
 });
-</script>
+</script> -->

@@ -200,7 +200,7 @@
                 </div><!-- end col-lg-12 -->
             </div><!-- end row -->
             <div class="row padding-top-50px">
-            <?php $i=1; foreach($vendor as $u){ ?>
+            <?php $i=1; foreach($chair as $u){ ?>
                 <div class="col-lg-4">
                     <div class="card-item car-card mb-0">
                                 <div class="card-img">
@@ -223,7 +223,7 @@
                                     <div class="card-price d-flex align-items-center justify-content-between">
                                         <p>
 
-                                            <span class="price__num">GH <?= $u['price'] ?></span>
+                                            <span class="price__num">Gh¢.<?= $u['price'] ?></span>
                                             <span class="price__text">Per day</span>
                                         </p>
                                     
