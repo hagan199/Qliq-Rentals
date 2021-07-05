@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +27,7 @@
     <!--<link rel="stylesheet" href="../../site_file/css/jquery-ui.css">-->
     <link rel="stylesheet" href="../../site_file/css/flag-icon.min.css">
     <link rel="stylesheet" href="../../site_file/css/style.css">
+    <link rel="stylesheet" href="../../site_file/css/customstyle.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
         <!-- load jQuery UI CSS theme -->
@@ -70,102 +73,315 @@
             <span class="line-bg line-bg5"></span>
             <span class="line-bg line-bg6"></span>
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 mx-auto responsive--column-l">
-                        <div class="hero-content pb-5">
-                            <div class="section-heading">
-                                <h2 class="sec__title cd-headline zoom">
-                                    Amazing <span class="cd-words-wrapper">
-                                        <b class="is-visible">Tours</b>
-                                        <b>Adventures</b>
-                                        <b>Flights</b>
-                                        <b>Hotels</b>
-                                        <b>Cars</b>
-                                        <b>Cruises</b>
-                                        <b>Package Deals</b>
-                                        <b>Fun</b>
-                                        <b>People</b>
-                                    </span>
-                                    Waiting for You
-                                </h2>
-                            </div>
-                        </div><!-- end hero-content -->
-                        <div class="section-tab text-center pl-4">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center" id="hotel-tab" data-toggle="tab"
-                                        href="#hotel" role="tab" aria-controls="hotel" aria-selected="false">
-                                        <i class="la la-hotel mr-1"></i>Canopies
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center" id="package-tab" data-toggle="tab"
-                                        href="#package" role="tab" aria-controls="package" aria-selected="false">
-                                        <i class="la la-shopping-bag mr-1"></i>Mattress
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center" id="car-tab" data-toggle="tab"
-                                        href="#car" role="tab" aria-controls="car" aria-selected="true">
-                                        <i class="la la-car mr-1"></i>Tables
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center" id="cruise-tab" data-toggle="tab"
-                                        href="#cruise" role="tab" aria-controls="cruise" aria-selected="false">
-                                        <i class="la la-ship mr-1"></i>Chair
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div><!-- end section-tab -->
-
-                        <!---------Canopies------->
-                        <div class="tab-content search-fields-container" id="myTabContent">
-                            <div class="tab-pane fade show active" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
-                                <div class="contact-form-action">
-                                <?= $this->include('layout/site/form_canopies') ?>            
-                        </div>
-                    </div><!-- end tab-pane -->
-                            <!------------Mattress ------------------->
-                            <div class="tab-pane fade" id="package" role="tabpanel" aria-labelledby="package-tab">
-                                <div class="contact-form-action">
-                                <?= $this->include('layout/site/form_mattress') ?>    
-                                </div>
-                            </div>
-    <!-- end tab-pane -->
-                            <!----------------------Tables------------------------->
-                            <div class="tab-pane fade" id="car" role="tabpanel" aria-labelledby="car-tab">
-                                <div class="contact-form-action">
-                                <?= $this->include('layout/site/form_tables') ?>   
-                            </div>
-                        </div><!-- end tab-pane -->
-
-
-
-                            <!-------------------------------Chair---------------------------->
-                            <div class="tab-pane fade" id="cruise" role="tabpanel" aria-labelledby="cruise-tab">
-                                <div class="contact-form-action">
-                                <?= $this->include('layout/site/form_chair') ?>   
-                            </div><!-- end tab-pane -->
-
-                        </div>
-                    </div><!-- end col-lg-12 -->
-                </div><!-- end row -->
-            </div><!-- end container -->
+                
+            </div><!-- end container 
             <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 10 0 0 A 90 59, 0, 0, 0, 100 0 L 100 10 Z"></path>
-            </svg>
+            </svg>-->
         </div>
     </section><!-- end hero-wrapper -->
     <!-- ================================
     END HERO-WRAPPER AREA
 ================================= -->
 
+
+<section class="card-area section--padding">
+    <div class="container">
+    <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading text-center">
+                        <h2 class="sec__title">Services We Provide </h2>
+                    </div><!-- end section-heading -->
+                </div><!-- end col-lg-12 -->
+            </div><!-- end row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="filter-wrap margin-bottom-40px">
+                    <div class="filter-top d-flex align-items-center justify-content-between">
+                        <div class="section-tab section-tab-3">
+                            <ul class="nav nav-tabs" id="myTab4" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="false">
+                                    Social Gathering
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="dorm-beds-tab" data-toggle="tab" href="#dorm-beds" role="tab" aria-controls="dorm-beds" aria-selected="false">
+                                    Cleaning
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="private-room-tab" data-toggle="tab" href="#private-room" role="tab" aria-controls="private-room" aria-selected="false">
+                                    Rent A Car
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="suites-tab" data-toggle="tab" href="#suites" role="tab" aria-controls="suites" aria-selected="false">
+                                    Music & Entertainment
+                                    </a>
+                                </li>
+                            </ul>
+                        </div><!-- end section-tab -->
+                        <div class="layout-view d-flex align-items-center">
+                            <a href="room-grid.html" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="la la-th-large"></i></a>
+                            <a href="room-list.html" data-toggle="tooltip" data-placement="top" title="List View" class="active"><i class="la la-th-list"></i></a>
+                        </div>
+                    </div>
+                </div><!-- end filter-wrap -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+
+
+        <!--------------Social Gathering------>
+        <div class="tab-content" id="may-tabContent4">
+            <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+            <!-----
+            <div class="row">
+            <div class="col-md-6">
+							<label for="category_service_id" class="control-label">Category Service List</label>				
+							<select name="category_service_id" id="category_service_id" onChange="changecat(this.value);">
+                            <option value="" disabled selected>Select</option>
+                            <option value="A">Canopies</option>
+                            <option value="B">Chairs</option>
+                            <option value="C">Tables</option>
+                            <option value="D">Mattress</option>
+            </select>
+			</div>
+            <div class="col-md-6">
+							<label for="category_service_id" class="control-label">Sub Cat Service List</label>				
+                            <select name="category" id="category">
+                            <option value="" disabled selected>Select</option>
+                            </select>
+			</div>
+            </div>   ---> 
+
+
+            <!---------------  Social Gathering ------------->
+            <div class="tab-content" id="myTabContent3">
+          
+            <?php $i=1; foreach($canopies as $u){ ?>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card-item card-item-list room-card">
+                            <div class="card-img-carousel carousel-action carousel--action">
+                                <div class="card-img">
+                                    <a href="room-details.html" class="d-block">
+                                        <img  src="/uploads/images/<?= $u['name3'] ?>" alt="hotel-img">
+                                    </a>
+                                </div>
+                            </div>                          
+                            <div class="card-body">
+                                <div class="card-price pb-2">
+                                    <p>
+                                        <span class="price__from">From</span>
+                                        <span class="price__num"><?= 'Gh¢'. $u['price'] ?></span>
+                                    </p>
+                                </div>
+                                <h3 class="card-title font-size-26"><a href="room-details.html"><?= get_column_name_by_id('sub_category_service_tbl', $u['sub_category_id'], 'sub_cat_name') ?></a></h3>
+                                <p class="card-text pt-2"><?= $u['description'] ?></p>  
+                                <div class="card-btn">
+                                    <a href="/book/<?= $u['id'] ?>" class="theme-btn theme-btn-transparent">Book Now</a>
+                                </div>
+                            </div>
+                        </div><!-- end card-item -->
+                    </div><!-- end col-lg-12 -->
+                </div><!-- end row -->
+            </div>
+            <?php } ?>
+      
+    </div>
+
+            <!--------------------------Cleaning---------------------------------->
+            <div class="tab-pane fade" id="dorm-beds" role="tabpanel" aria-labelledby="dorm-beds-tab">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card-item card-item-list room-card">
+                            <div class="card-img-carousel carousel-action carousel--action">
+                                <div class="card-img">
+                                    <a href="room-details.html" class="d-block">
+                                        <img src="images/img33.jpg" alt="hotel-img">
+                                    </a>
+                                </div>
+                                <div class="card-img">
+                                    <a href="room-details.html" class="d-block">
+                                        <img src="images/img32.jpg" alt="hotel-img">
+                                    </a>
+                                </div>
+                                <div class="card-img">
+                                    <a href="room-details.html" class="d-block">
+                                        <img src="images/img31.jpg" alt="hotel-img">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-price pb-2">
+                                    <p>
+                                        <span class="price__from">From</span>
+                                        <span class="price__num">$145.00</span>
+                                    </p>
+                                </div>
+                                <h3 class="card-title font-size-26"><a href="room-details.html">Deluxe King Bed Private</a></h3>
+                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
+                                <div class="card-attributes pt-3 pb-4">
+                                    <ul class="d-flex align-items-center">
+                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
+                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
+                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
+                                    </ul>
+                                </div>
+                                <div class="card-btn">
+                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
+                                </div>
+                            </div>
+                        </div><!-- end card-item -->
+                    </div><!-- end col-lg-12 -->
+                </div><!-- end row -->
+            </div>
+
+         <!-------------------Clea------------------>
+            <div class="tab-pane fade" id="private-room" role="tabpanel" aria-labelledby="private-room-tab">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card-item card-item-list room-card">
+                            <div class="card-img-carousel carousel-action carousel--action">
+                                <div class="card-img">
+                                    <a href="room-details.html" class="d-block">
+                                        <img src="images/img5.jpg" alt="hotel-img">
+                                    </a>
+                                </div>
+                                <div class="card-img">
+                                    <a href="room-details.html" class="d-block">
+                                        <img src="images/img29.jpg" alt="hotel-img">
+                                    </a>
+                                </div>
+                                <div class="card-img">
+                                    <a href="room-details.html" class="d-block">
+                                        <img src="images/img30.jpg" alt="hotel-img">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-price pb-2">
+                                    <p>
+                                        <span class="price__from">From</span>
+                                        <span class="price__num">$88.00</span>
+                                    </p>
+                                </div>
+                                <h3 class="card-title font-size-26"><a href="room-details.html">Premium Lake View Room</a></h3>
+                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
+                                <div class="card-attributes pt-3 pb-4">
+                                    <ul class="d-flex align-items-center">
+                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
+                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
+                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
+                                    </ul>
+                                </div>
+                                <div class="card-btn">
+                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
+                                </div>
+                            </div>
+                        </div><!-- end card-item -->
+            </div><!-- end col-lg-12 -->    
+        </div><!-- end row -->
+    </div>
+
+
+<!----------------------------Rent a Car----------------------->    
+            <div class="tab-pane fade" id="suites" role="tabpanel" aria-labelledby="suites-tab">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card-item card-item-list room-card">
+                            <div class="card-img-carousel carousel-action carousel--action">
+                                <div class="card-img">
+                                    <a href="room-details.html" class="d-block">
+                                        <img src="images/img31.jpg" alt="hotel-img">
+                                    </a>
+                                </div>
+                                <div class="card-img">
+                                    <a href="room-details.html" class="d-block">
+                                        <img src="images/img32.jpg" alt="hotel-img">
+                                    </a>
+                                </div>
+                                <div class="card-img">
+                                    <a href="room-details.html" class="d-block">
+                                        <img src="images/img33.jpg" alt="hotel-img">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-price pb-2">
+                                    <p>
+                                        <span class="price__from">From</span>
+                                        <span class="price__num">$45.00</span>
+                                    </p>
+                                </div>
+                                <h3 class="card-title font-size-26"><a href="room-details.html">Standard 2 Bed Male Dorm</a></h3>
+                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
+                                <div class="card-attributes pt-3 pb-4">
+                                    <ul class="d-flex align-items-center">
+                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
+                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
+                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
+                                    </ul>
+                                </div>
+                                <div class="card-btn">
+                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
+                                </div>
+                            </div>
+                        </div><!-- end card-item -->
+                    </div><!-- end col-lg-12 -->
+                 
+                </div><!-- end row -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="btn-box mt-4 text-center">
+                    <button type="button" class="theme-btn"><i class="la la-refresh mr-1"></i>Load More</button>
+                    <p class="font-size-13 pt-2">Showing 1 - 5 of 124 Rooms</p>
+                </div><!-- end btn-box -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+<!-- end card-area -->
+
+    <div class="section-block"></div>
+
+            <!-- ================================
+            START DESTINATION AREA
+            ================================= -->
+
+    <section class="cta-area padding-top-100px padding-bottom-180px text-center">
+        <div class="video-bg">
+            <video autoplay loop>
+                <source src="video/video-bg.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2 class="sec__title text-white line-height-55">Let us show you the world <br> Discover our
+                            most popular destinations</h2>
+                    </div><!-- end section-heading -->
+                    <div class="btn-box padding-top-35px">
+                        <a href="become-local-expert.html" class="theme-btn border-0">Join with us</a>
+                    </div>
+                </div><!-- end col-lg-12 -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+        <svg class="cta-svg" viewBox="0 0 500 150" preserveAspectRatio="none">
+            <path d="M-31.31,170.22 C164.50,33.05 334.36,-32.06 547.11,196.88 L500.00,150.00 L0.00,150.00 Z"></path>
+        </svg>
+    </section><!-- end cta-area -->
     <!-- ================================
+    END CTA AREA
+================================= -->
+  <!-- ================================
     START INFO AREA
 ================================= -->
-    <section class="info-area info-bg padding-top-50px padding-bottom-50px text-center">
+<section class="info-area info-bg padding-top-50px padding-bottom-50px text-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -212,1067 +428,7 @@
     </section><!-- end info-area -->
     <!-- ================================
     END INFO AREA
-================================= -->
-
-    <div class="section-block"></div>
-
-    <!-- ================================
-    START DESTINATION AREA
-================================= -->
-    <section class="destination-area section--padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <div class="section-heading">
-                        <h2 class="sec__title">Top Visited Places</h2>
-                        <p class="sec__desc pt-3">Morbi convallis bibendum urna ut viverra Maecenas quis
-                    </div><!-- end section-heading -->
-                </div><!-- end col-lg-8 -->
-                <div class="col-lg-4">
-                    <div class="btn-box btn--box text-right">
-                        <a href="tour-grid.html" class="theme-btn">Discover More</a>
-                    </div>
-                </div>
-            </div><!-- end row -->
-            <div class="row padding-top-50px">
-                <div class="col-lg-4">
-                    <div class="card-item destination-card">
-                        <div class="card-img">
-                            <img src="../../site_file/images/destination-img2.jpg" alt="destination-img">
-                            <span class="badge">new york</span>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title"><a href="tour-details.html">Main Street Park</a></h3>
-                            <div class="card-rating d-flex align-items-center">
-                                <span class="ratings d-flex align-items-center mr-1">
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star-o"></i>
-                                    <i class="la la-star-o"></i>
-                                </span>
-                                <span class="rating__text">(70694 Reviews)</span>
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p class="tour__text">
-                                    50 Tours
-                                </p>
-                                <p>
-                                    <span class="price__from">Price</span>
-                                    <span class="price__num">$58.00</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
-                
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="card-item destination-card">
-                        <div class="card-img">
-                            <img src="../../site_file/images/destination-img5.jpg" alt="destination-img">
-                            <span class="badge">Las Vegas</span>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title"><a href="tour-details.html">Planet Hollywood Resort</a></h3>
-                            <div class="card-rating d-flex align-items-center">
-                                <span class="ratings d-flex align-items-center mr-1">
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star-o"></i>
-                                </span>
-                                <span class="rating__text">(70694 Reviews)</span>
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p class="tour__text">
-                                    50 Tours
-                                </p>
-                                <p>
-                                    <span class="price__from">Price</span>
-                                    <span class="price__num">$88.00</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="card-item destination-card">
-                        <div class="card-img">
-                            <img src="../../site_file/images/destination-img.jpg" alt="destination-img">
-                            <span class="badge">Shanghai</span>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title"><a href="tour-details.html">Oriental Pearl TV Tower</a></h3>
-                            <div class="card-rating d-flex align-items-center">
-                                <span class="ratings d-flex align-items-center mr-1">
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                </span>
-                                <span class="rating__text">(70694 Reviews)</span>
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                                <p class="tour__text">
-                                    50 Tours
-                                </p>
-                                <p>
-                                    <span class="price__from">Price</span>
-                                    <span class="price__num">$58.00</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
-                </div><!-- end col-lg-4 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section><!-- end destination-area -->
-    <!-- ================================
-    END DESTINATION AREA
-================================= -->
-
-    <!-- ================================
-    START CAR AREA
-================================= -->
-    <section class="car-area section-bg section-padding ">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading text-center">
-                        <h2 class="sec__title">Recommended Rentals</h2>
-                    </div><!-- end section-heading -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-            <div class="row padding-top-50px">
-                <div class="col-lg-12">
-                    <div class="car-wrap">
-                        <div class="car-carousel carousel-action">
-                            <div class="card-item car-card mb-0">
-                                <div class="card-img">
-                                    <a href="car-single.html" class="d-block">
-                                        <img src="../../site_file/images/car-img.png" alt="car-img">
-                                    </a>
-                                    <span class="badge">Bestseller</span>
-                                    <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                                        title="Save for later">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-meta">Compact SUV</p>
-                                    <h3 class="card-title"><a href="car-single.html">Toyota Corolla or Similar</a></h3>
-                                    <div class="card-rating">
-                                        <span class="badge text-white">4.4/5</span>
-                                        <span class="review__text">Average</span>
-                                        <span class="rating__text">(30 Reviews)</span>
-                                    </div>
-                                    <div class="card-attributes">
-                                        <ul class="d-flex align-items-center">
-                                            <li class="d-flex align-items-center" data-toggle="tooltip"
-                                                data-placement="top" title="Passenger"><i
-                                                    class="la la-users"></i><span>4</span></li>
-                                            <li class="d-flex align-items-center" data-toggle="tooltip"
-                                                data-placement="top" title="Luggage"><i
-                                                    class="la la-suitcase"></i><span>1</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-price d-flex align-items-center justify-content-between">
-                                        <p>
-                                            <span class="price__from">From</span>
-                                            <span class="price__num">$23.00</span>
-                                            <span class="price__text">Per day</span>
-                                        </p>
-                                        <a href="car-single.html" class="btn-text">See details<i
-                                                class="la la-angle-right"></i></a>
-                                    </div>
-                                </div>   
-                                </div><!-- end card-item -->                  
-                        </div><!-- end car-carousel -->
-                    </div>
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section><!-- end car-area -->
-    <!-- ================================
-    END CAR AREA
-================================= -->
-
-    <!-- ================================
-       START TESTIMONIAL AREA
-================================= -->
-    <section class="testimonial-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="section-heading">
-                        <h2 class="sec__title line-height-50">What our customers are saying us?</h2>
-                        <p class="sec__desc padding-top-30px">
-                            Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero
-                        </p>
-                        <div class="btn-box padding-top-35px">
-                            <a href="#" class="theme-btn">Explore All</a>
-                        </div>
-                    </div><!-- end section-heading -->
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-8">
-                    <div class="testimonial-carousel carousel-action">
-                        <div class="testimonial-card">
-                            <div class="testi-desc-box">
-                                <p class="testi__desc">Excepteur sint occaecat cupidatat non proident sunt in culpa
-                                    officia deserunt mollit anim laborum sint occaecat cupidatat non proident. Occaecat
-                                    cupidatat non proident des.</p>
-                            </div>
-                            <div class="author-content d-flex align-items-center">
-                                <div class="author-img">
-                                    <img src="../../site_file/images/team8.jpg" alt="testimonial image">
-                                </div>
-                                <div class="author-bio">
-                                    <h4 class="author__title">Leroy Bell</h4>
-                                    <span class="author__meta">United States</span>
-                                    <span class="ratings d-flex align-items-center">
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div><!-- end testimonial-card -->
-                        <div class="testimonial-card">
-                            <div class="testi-desc-box">
-                                <p class="testi__desc">Excepteur sint occaecat cupidatat non proident sunt in culpa
-                                    officia deserunt mollit anim laborum sint occaecat cupidatat non proident. Occaecat
-                                    cupidatat non proident des.</p>
-                            </div>
-                            <div class="author-content d-flex align-items-center">
-                                <div class="author-img">
-                                    <img src="../../site_file/images/team9.jpg" alt="testimonial image">
-                                </div>
-                                <div class="author-bio">
-                                    <h4 class="author__title">Richard Pam</h4>
-                                    <span class="author__meta">Canada</span>
-                                    <span class="ratings d-flex align-items-center">
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div><!-- end testimonial-card -->
-                        <div class="testimonial-card">
-                            <div class="testi-desc-box">
-                                <p class="testi__desc">Excepteur sint occaecat cupidatat non proident sunt in culpa
-                                    officia deserunt mollit anim laborum sint occaecat cupidatat non proident. Occaecat
-                                    cupidatat non proident des.</p>
-                            </div>
-                            <div class="author-content d-flex align-items-center">
-                                <div class="author-img">
-                                    <img src="images/team10.jpg" alt="testimonial image">
-                                </div>
-                                <div class="author-bio">
-                                    <h4 class="author__title">Luke Jacobs</h4>
-                                    <span class="author__meta">Australia</span>
-                                    <span class="ratings d-flex align-items-center">
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div><!-- end testimonial-card -->
-                        <div class="testimonial-card">
-                            <div class="testi-desc-box">
-                                <p class="testi__desc">Excepteur sint occaecat cupidatat non proident sunt in culpa
-                                    officia deserunt mollit anim laborum sint occaecat cupidatat non proident. Occaecat
-                                    cupidatat non proident des.</p>
-                            </div>
-                            <div class="author-content d-flex align-items-center">
-                                <div class="author-img">
-                                    <img src="images/team8.jpg" alt="testimonial image">
-                                </div>
-                                <div class="author-bio">
-                                    <h4 class="author__title">Chulbul Panday</h4>
-                                    <span class="author__meta">Italy</span>
-                                    <span class="ratings d-flex align-items-center">
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                        <i class="la la-star"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div><!-- end testimonial-card -->
-                    </div><!-- end testimonial-carousel -->
-                </div><!-- end col-lg-8 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section><!-- end testimonial-area -->
-    <!-- ================================
-       START TESTIMONIAL AREA
-================================= -->
-
-    <!-- ================================
-    START CTA AREA
-================================= -->
-    <section class="cta-area padding-top-100px padding-bottom-180px text-center">
-        <div class="video-bg">
-            <video autoplay loop>
-                <source src="video/video-bg.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading">
-                        <h2 class="sec__title text-white line-height-55">Let us show you the world <br> Discover our
-                            most popular destinations</h2>
-                    </div><!-- end section-heading -->
-                    <div class="btn-box padding-top-35px">
-                        <a href="become-local-expert.html" class="theme-btn border-0">Join with us</a>
-                    </div>
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-        <svg class="cta-svg" viewBox="0 0 500 150" preserveAspectRatio="none">
-            <path d="M-31.31,170.22 C164.50,33.05 334.36,-32.06 547.11,196.88 L500.00,150.00 L0.00,150.00 Z"></path>
-        </svg>
-    </section><!-- end cta-area -->
-    <!-- ================================
-    END CTA AREA
-================================= -->
-
-    <!-- ================================
-       START BLOG AREA
-================================= -->
-    <section class="blog-area padding-top-30px padding-bottom-90px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading text-center">
-                        <h2 class="sec__title line-height-55">Latest News & Articles <br> You Might Like</h2>
-                    </div><!-- end section-heading -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-            <div class="row padding-top-50px">
-                <div class="col-lg-4 responsive-column">
-                    <div class="card-item blog-card">
-                        <div class="card-img">
-                            <img src="../../site_file/images/blog-img.jpg" alt="blog-img">
-                            <div class="post-format icon-element">
-                                <i class="la la-photo"></i>
-                            </div>
-                            <div class="card-body">
-                                <div class="post-categories">
-                                    <a href="#" class="badge">Travel</a>
-                                    <a href="#" class="badge">lifestyle</a>
-                                </div>
-                                <h3 class="card-title line-height-26"><a href="blog-single.html">When Traveling Avoid
-                                        Expensive Hotels & Resorts</a></h3>
-                                <p class="card-meta">
-                                    <span class="post__date"> 1 January, 2020</span>
-                                    <span class="post-dot"></span>
-                                    <span class="post__time">5 Mins read</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <div class="author-content d-flex align-items-center">
-                                <div class="author-img">
-                                    <img src="../../site_file/images/small-team1.jpg" alt="testimonial image">
-                                </div>
-                                <div class="author-bio">
-                                    <a href="#" class="author__title">Leroy Bell</a>
-                                </div>
-                            </div>
-                            <div class="post-share">
-                                <ul>
-                                    <li>
-                                        <i class="la la-share icon-element"></i>
-                                        <ul class="post-share-dropdown d-flex align-items-center">
-                                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4 responsive-column">
-                    <div class="card-item blog-card">
-                        <div class="card-img">
-                            <img src="../../site_file/images/blog-img2.jpg" alt="blog-img">
-                            <div class="post-format icon-element">
-                                <i class="la la-play"></i>
-                            </div>
-                            <div class="card-body">
-                                <div class="post-categories">
-                                    <a href="#" class="badge">Video</a>
-                                </div>
-                                <h3 class="card-title line-height-26"><a href="blog-single.html">My Best Travel Tips:
-                                        The Ultimate Travel Guide</a></h3>
-                                <p class="card-meta">
-                                    <span class="post__date"> 1 February, 2020</span>
-                                    <span class="post-dot"></span>
-                                    <span class="post__time">4 Mins read</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <div class="author-content d-flex align-items-center">
-                                <div class="author-img">
-                                    <img src="../../site_file/images/small-team2.jpg" alt="testimonial image">
-                                </div>
-                                <div class="author-bio">
-                                    <a href="#" class="author__title">Phillip Hunt</a>
-                                </div>
-                            </div>
-                            <div class="post-share">
-                                <ul>
-                                    <li>
-                                        <i class="la la-share icon-element"></i>
-                                        <ul class="post-share-dropdown d-flex align-items-center">
-                                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
-                </div><!-- end col-lg-4 -->
-                <div class="col-lg-4 responsive-column">
-                    <div class="card-item blog-card">
-                        <div class="card-img">
-                            <img src="../../site_file/images/blog-img3.jpg" alt="blog-img">
-                            <div class="post-format icon-element">
-                                <i class="la la-music"></i>
-                            </div>
-                            <div class="card-body">
-                                <div class="post-categories">
-                                    <a href="#" class="badge">audio</a>
-                                </div>
-                                <h3 class="card-title line-height-26"><a href="blog-single.html">By all Means, Travel to
-                                        Popular Sites & Don’t Rule Out Other Locations</a></h3>
-                                <p class="card-meta">
-                                    <span class="post__date"> 1 March, 2020</span>
-                                    <span class="post-dot"></span>
-                                    <span class="post__time">3 Mins read</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <div class="author-content d-flex align-items-center">
-                                <div class="author-img">
-                                    <img src="../../site_file/images/small-team3.jpg" alt="testimonial image">
-                                </div>
-                                <div class="author-bio">
-                                    <a href="#" class="author__title">Luke Jacobs</a>
-                                </div>
-                            </div>
-                            <div class="post-share">
-                                <ul>
-                                    <li>
-                                        <i class="la la-share icon-element"></i>
-                                        <ul class="post-share-dropdown d-flex align-items-center">
-                                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div><!-- end card-item -->
-                </div><!-- end col-lg-4 -->
-            </div><!-- end row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="btn-box text-center pt-4">
-                        <a href="blog-grid.html" class="theme-btn">Read More Post</a>
-                    </div>
-                </div>
-            </div>
-        </div><!-- end container -->
-    </section><!-- end blog-area -->
-    <!-- ================================
-       START BLOG AREA
-================================= -->
-
-<section class="card-area section--padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="filter-wrap margin-bottom-40px">
-                    <div class="filter-top d-flex align-items-center justify-content-between">
-                        <div class="section-tab section-tab-3">
-                            <ul class="nav nav-tabs" id="myTab4" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="false">
-                                        All
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="dorm-beds-tab" data-toggle="tab" href="#dorm-beds" role="tab" aria-controls="dorm-beds" aria-selected="false">
-                                        Social Gathering
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="private-room-tab" data-toggle="tab" href="#private-room" role="tab" aria-controls="private-room" aria-selected="false">
-                                        Cleaning
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="suites-tab" data-toggle="tab" href="#suites" role="tab" aria-controls="suites" aria-selected="false">
-                                        Rent A Car
-                                    </a>
-                                </li>
-                            </ul>
-                        </div><!-- end section-tab -->
-                        <div class="layout-view d-flex align-items-center">
-                            <a href="room-grid.html" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="la la-th-large"></i></a>
-                            <a href="room-list.html" data-toggle="tooltip" data-placement="top" title="List View" class="active"><i class="la la-th-list"></i></a>
-                        </div>
-                    </div>
-                </div><!-- end filter-wrap -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-        <div class="tab-content" id="may-tabContent4">
-            <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card-item card-item-list room-card">
-                            <div class="card-img-carousel carousel-action carousel--action">
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img31.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img32.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img33.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-price pb-2">
-                                    <p>
-                                        <span class="price__from">From</span>
-                                        <span class="price__num">$145.00</span>
-                                    </p>
-                                </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Superior Room</a></h3>
-                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
-                                <div class="card-attributes pt-3 pb-4">
-                                    <ul class="d-flex align-items-center">
-                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
-                                    </ul>
-                                </div>
-                                <div class="card-btn">
-                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end col-lg-12 -->
-                </div><!-- end row -->
-            </div>
-
-
-<!----Ca
-
-            <div class="tab-pane fade" id="dorm-beds" role="tabpanel" aria-labelledby="dorm-beds-tab">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card-item card-item-list room-card">
-                            <div class="card-img-carousel carousel-action carousel--action">
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img33.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img32.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img31.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-price pb-2">
-                                    <p>
-                                        <span class="price__from">From</span>
-                                        <span class="price__num">$145.00</span>
-                                    </p>
-                                </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Deluxe King Bed Private</a></h3>
-                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
-                                <div class="card-attributes pt-3 pb-4">
-                                    <ul class="d-flex align-items-center">
-                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
-                                    </ul>
-                                </div>
-                                <div class="card-btn">
-                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end col-lg-12 -->
-                </div><!-- end row -->
-            </div>
-            <div class="tab-pane fade" id="private-room" role="tabpanel" aria-labelledby="private-room-tab">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card-item card-item-list room-card">
-                            <div class="card-img-carousel carousel-action carousel--action">
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img5.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img29.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img30.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-price pb-2">
-                                    <p>
-                                        <span class="price__from">From</span>
-                                        <span class="price__num">$88.00</span>
-                                    </p>
-                                </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Premium Lake View Room</a></h3>
-                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
-                                <div class="card-attributes pt-3 pb-4">
-                                    <ul class="d-flex align-items-center">
-                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
-                                    </ul>
-                                </div>
-                                <div class="card-btn">
-                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end col-lg-12 -->
-                    <div class="col-lg-12">
-                        <div class="card-item card-item-list room-card">
-                            <div class="card-img-carousel carousel-action carousel--action">
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img31.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img32.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img33.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-price pb-2">
-                                    <p>
-                                        <span class="price__from">From</span>
-                                        <span class="price__num">$45.00</span>
-                                    </p>
-                                </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Standard 2 Bed Male Dorm</a></h3>
-                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
-                                <div class="card-attributes pt-3 pb-4">
-                                    <ul class="d-flex align-items-center">
-                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
-                                    </ul>
-                                </div>
-                                <div class="card-btn">
-                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end col-lg-12 -->
-                    <div class="col-lg-12">
-                        <div class="card-item card-item-list room-card">
-                            <div class="card-img-carousel carousel-action carousel--action">
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img33.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img32.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img31.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-price pb-2">
-                                    <p>
-                                        <span class="price__from">From</span>
-                                        <span class="price__num">$145.00</span>
-                                    </p>
-                                </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Deluxe King Bed Private</a></h3>
-                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
-                                <div class="card-attributes pt-3 pb-4">
-                                    <ul class="d-flex align-items-center">
-                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
-                                    </ul>
-                                </div>
-                                <div class="card-btn">
-                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end col-lg-12 -->
-                    <div class="col-lg-12">
-                        <div class="card-item card-item-list room-card">
-                            <div class="card-img-carousel carousel-action carousel--action">
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img32.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img33.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img31.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-price pb-2">
-                                    <p>
-                                        <span class="price__from">From</span>
-                                        <span class="price__num">$145.00</span>
-                                    </p>
-                                </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Premium Lake View Suite</a></h3>
-                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
-                                <div class="card-attributes pt-3 pb-4">
-                                    <ul class="d-flex align-items-center">
-                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
-                                    </ul>
-                                </div>
-                                <div class="card-btn">
-                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end col-lg-12 -->
-                    <div class="col-lg-12">
-                        <div class="card-item card-item-list room-card">
-                            <div class="card-img-carousel carousel-action carousel--action">
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img31.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img32.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img33.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-price pb-2">
-                                    <p>
-                                        <span class="price__from">From</span>
-                                        <span class="price__num">$145.00</span>
-                                    </p>
-                                </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Superior Room</a></h3>
-                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
-                                <div class="card-attributes pt-3 pb-4">
-                                    <ul class="d-flex align-items-center">
-                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
-                                    </ul>
-                                </div>
-                                <div class="card-btn">
-                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end col-lg-12 -->
-                </div><!-- end row -->
-            </div>
-            <div class="tab-pane fade" id="suites" role="tabpanel" aria-labelledby="suites-tab">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card-item card-item-list room-card">
-                            <div class="card-img-carousel carousel-action carousel--action">
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img31.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img32.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img33.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-price pb-2">
-                                    <p>
-                                        <span class="price__from">From</span>
-                                        <span class="price__num">$45.00</span>
-                                    </p>
-                                </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Standard 2 Bed Male Dorm</a></h3>
-                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
-                                <div class="card-attributes pt-3 pb-4">
-                                    <ul class="d-flex align-items-center">
-                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
-                                    </ul>
-                                </div>
-                                <div class="card-btn">
-                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end col-lg-12 -->
-                    <div class="col-lg-12">
-                        <div class="card-item card-item-list room-card">
-                            <div class="card-img-carousel carousel-action carousel--action">
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img33.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img32.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img31.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-price pb-2">
-                                    <p>
-                                        <span class="price__from">From</span>
-                                        <span class="price__num">$145.00</span>
-                                    </p>
-                                </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Deluxe King Bed Private</a></h3>
-                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
-                                <div class="card-attributes pt-3 pb-4">
-                                    <ul class="d-flex align-items-center">
-                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
-                                    </ul>
-                                </div>
-                                <div class="card-btn">
-                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end col-lg-12 -->
-                    <div class="col-lg-12">
-                        <div class="card-item card-item-list room-card">
-                            <div class="card-img-carousel carousel-action carousel--action">
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img5.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img29.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img30.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-price pb-2">
-                                    <p>
-                                        <span class="price__from">From</span>
-                                        <span class="price__num">$88.00</span>
-                                    </p>
-                                </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Premium Lake View Room</a></h3>
-                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
-                                <div class="card-attributes pt-3 pb-4">
-                                    <ul class="d-flex align-items-center">
-                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
-                                    </ul>
-                                </div>
-                                <div class="card-btn">
-                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end col-lg-12 -->
-                    <div class="col-lg-12">
-                        <div class="card-item card-item-list room-card">
-                            <div class="card-img-carousel carousel-action carousel--action">
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img32.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img33.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img31.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-price pb-2">
-                                    <p>
-                                        <span class="price__from">From</span>
-                                        <span class="price__num">$145.00</span>
-                                    </p>
-                                </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Premium Lake View Suite</a></h3>
-                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
-                                <div class="card-attributes pt-3 pb-4">
-                                    <ul class="d-flex align-items-center">
-                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
-                                    </ul>
-                                </div>
-                                <div class="card-btn">
-                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end col-lg-12 -->
-                    <div class="col-lg-12">
-                        <div class="card-item card-item-list room-card">
-                            <div class="card-img-carousel carousel-action carousel--action">
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img31.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img32.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img33.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-price pb-2">
-                                    <p>
-                                        <span class="price__from">From</span>
-                                        <span class="price__num">$145.00</span>
-                                    </p>
-                                </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Superior Room</a></h3>
-                                <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
-                                <div class="card-attributes pt-3 pb-4">
-                                    <ul class="d-flex align-items-center">
-                                        <li class="d-flex align-items-center"><i class="la la-bed"></i><span>2 Beds</span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-building"></i><span>24 ft<sup>2</sup></span></li>
-                                        <li class="d-flex align-items-center"><i class="la la-bathtub"></i><span>2 Bathrooms</span></li>
-                                    </ul>
-                                </div>
-                                <div class="card-btn">
-                                    <a href="room-details.html" class="theme-btn theme-btn-transparent">Book Now</a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end col-lg-12 -->
-                </div><!-- end row -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="btn-box mt-4 text-center">
-                    <button type="button" class="theme-btn"><i class="la la-refresh mr-1"></i>Load More</button>
-                    <p class="font-size-13 pt-2">Showing 1 - 5 of 124 Rooms</p>
-                </div><!-- end btn-box -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end card-area -->
-
+    ------------------>
 
 
 
@@ -1358,5 +514,28 @@
     <script src="../../site_file/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<script>
+
+var mealsByCategory = {
+    A: ["Soup", "Juice", "Tea", "Others"],
+    B: ["Juice", "Water", "Others"],
+    C: ["Soup", "Juice", "Coffee", "Tea", "Others"]
+}
+
+    function changecat(value) {
+        if (value.length == 0) document.getElementById("category").innerHTML = "<option></option>";
+        else {
+            var catOptions = "";
+            for (categoryId in mealsByCategory[value]) {
+                catOptions += "<option>" + mealsByCategory[value][categoryId] + "</option>";
+            }
+            document.getElementById("category").innerHTML = catOptions;
+        }
+    }
+    
+</script>
+
 </body>
 </html>

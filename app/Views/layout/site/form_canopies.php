@@ -30,12 +30,10 @@
                                                 </div>
                                             </div>
                                         </div><!-- end col-lg-3 -->
-                                     
-
 
                                         <div class="col-lg-3 pr-0">
                                             <div class="input-box">
-                                                <label for="drop_off" id="drop_off" id="event_type" class="label-text">Drop off date </label>
+                                                <label for="drop_off" id="drop_off" class="label-text">Drop off date </label>
                                                 <div class="form-group">
                                                     <span class=""></span>
                                                     <input class="date-range form-control" type="date" name="drop_off"

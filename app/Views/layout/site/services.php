@@ -94,7 +94,7 @@
                         <i class="la la-plane"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title"><a href="#">Canopies</a></h4>
+                        <h4 class="info__title"><a href="#">Social Gathering</a></h4>
                         <p class="info__desc">
                            Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
                         </p>
@@ -107,7 +107,7 @@
                         <i class="la la-anchor"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title"><a href="#">Chairs</a></h4>
+                        <h4 class="info__title"><a href="#">Cleaning</a></h4>
                         <p class="info__desc">
                            Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
                         </p>
@@ -120,7 +120,7 @@
                         <i class="la la-support"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title"><a href="#">Tables</a></h4>
+                        <h4 class="info__title"><a href="#">Music & Entertainmenrt </a></h4>
                         <p class="info__desc">
                            Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
                         </p>
@@ -133,7 +133,7 @@
                         <i class="la la-briefcase"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title"><a href="#">Mattress</a></h4>
+                        <h4 class="info__title"><a href="#">Pickup & Delivery</a></h4>
                         <p class="info__desc">
                            Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
                         </p>
@@ -146,7 +146,7 @@
                         <i class="la la-hotel"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title"><a href="#">Cleaning</a></h4>
+                        <h4 class="info__title"><a href="#">Rent a Car</a></h4>
                         <p class="info__desc">
                            Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
                         </p>
@@ -159,7 +159,7 @@
                         <i class="la la-hotel"></i>
                     </div><!-- end info-icon-->
                     <div class="info-content">
-                        <h4 class="info__title"><a href="#">Housing Cleaning</a></h4>
+                        <h4 class="info__title"><a href="#">Transporter</a></h4>
                         <p class="info__desc">
                            Pellentesque ac turpis egestas, varius justo et, condimentum augue nerrowe.
                         </p>

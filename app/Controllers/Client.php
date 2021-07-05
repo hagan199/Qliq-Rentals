@@ -4,16 +4,26 @@ use App\Models\Booking;
 use App\Models\VendorService;
 use App\Models\Service;
 use App\Models\CategoryService;
+use App\Models\SubCategoryService;
 class Client extends BaseController
 {
 
-	public function site()
-	{
+    public function index(){
+        $model = new VendorService();
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Website';
+        $data['canopies'] = $model->where('category_id', '13')->findAll(); 
+        return view('/layout/site/index',$data);
+    }
+
+	public function site()
+	{ 
         $model = new VendorService();
-        $data['vendor'] = $model->orderBy('id', 'DESC')->findAll();
-		return view('layout/site/index',$data);
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Website';
+        $data['canopy'] = $model->orderBy('id', 'DESC')->findAll();
+        $data['canopies'] = $model->where('category_id', '13')->findAll(); 
+		return view('/layout/site/index',$data);
 	}
 
 
@@ -30,7 +40,7 @@ class Client extends BaseController
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Canopies';
         $data['canopies'] = $model->where('category_id', '13')->findAll();
-		return view('layout/site/canopies',$data);
+		return view('layout/site/index',$data);
 	}
     
     public function faq()
@@ -71,8 +81,6 @@ class Client extends BaseController
 	{
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Contact';
-        $model = new VendorService();
-        $data['vendor'] = $model->where('category_id', '13')->findAll();
 		return view('layout/site/contact',$data);
 	}
 
@@ -86,6 +94,16 @@ class Client extends BaseController
         $data['service'] = $service_model->orderBy('id', 'DECS')->findAll();
 		return view('layout/site/services',$data);
 	}
+
+    public function book($id)
+	{   $model = new VendorService();
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Book';
+        $data['canopies'] = $model->where('id', $id)->findAll();
+		return view('layout/site/booked-details',$data);
+	}
+    
+
     //List of Booking Service
     function book_list()
     {    
@@ -106,8 +124,8 @@ class Client extends BaseController
         if($this->request->getMethod() == 'post'){
             $rules = [
                 "event_type" => "required",
-                //"pick_date" => "required",       
-                //"drop_off" => "required",     
+            //  "pick_date" => "required",       
+            //  "drop_off" => "required",     
             ];
             if (!$this->validate($rules)){
                 $session->setFlashdata("error", "Invalid data request");
@@ -145,7 +163,7 @@ class Client extends BaseController
             ];
             if (!$this->validate($rules)){
                 $session->setFlashdata("error", "Invalid data request");
-    
+
             }else{
                 $model = new Booking();
                 $data['event_type'] =  $this->request->getVar('event_type');

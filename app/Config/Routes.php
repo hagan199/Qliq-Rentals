@@ -16,8 +16,8 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Login');
-$routes->setDefaultMethod('site');
+$routes->setDefaultController('Client');
+$routes->setDefaultMethod('test_me');
 $routes->setTranslateURIDashes(false);
 $routes->setAutoRoute(true);
 $routes->set404Override(function()
@@ -35,10 +35,10 @@ $routes->set404Override(function()
 // route since we don't have to scan directories.
 
 // Layout
+//$routes->get('/site', 'Client::site');
 $routes->get('/logins', 'Login::index');
 $routes->get('/login', 'Login::auth');
 $routes->get('/logout', 'Login::logout');
-$routes->get('/booking', 'Client::book_list');
 
 // Admin Route
 $routes->get('/dashboard', 'Admin::index');
@@ -63,7 +63,6 @@ $routes->get('/tables', 'Client::site_tables');
 $routes->get('/faq', 'Client::faq');
 $routes->get('/services', 'Client::services');
 
-
 $routes->match(['get', 'post'], '/canopy/(:any)/(:any)', 'Client::canopies/$1/$2');
 
 // Users 
@@ -72,6 +71,9 @@ $routes->get('/users-add', 'User::create');
 $routes->match(['get', 'post'], '/dynamic_dependent', 'Dynamic_dependent::vendor_service_dependant');
 
 $routes->match(['get', 'post'], '/dynamic_dependent_cat', 'Dynamic_dependent::vendor_getcategory_dependant');
+
+$routes->match(['get', 'post'], '/book/(:any)', 'Client::book/$1');
+
 // Service
 $routes->get('/services', 'Service_tbl::index');
 // Service

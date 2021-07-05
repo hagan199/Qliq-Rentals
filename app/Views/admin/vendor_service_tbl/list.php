@@ -76,11 +76,12 @@
                                 <td><?= get_column_name_by_id('sub_category_service_tbl', $u['sub_category_id'], 'sub_cat_name') ?></td>
                                 <td><?= 'Gh¢ '. $u['price'] ?></td> 
                                 <td><?= $u['description'] ?></td>   	
-                                <td><img src="/uploads/images/<?= $u['name'] ?>" width="50px" /></td>		
+                                <td><img src="/uploads/images/<?= $u['name'] ?>" width="50px" /></td>
                                 <td>
                                 <a title="edit" href="" class="btn btn-link btn-warning btn-just-icon like"><i class="material-icons">edit</i></a>                              
                                 </td>
                             </tr>
+                            
                             <?php } ?>
                         
                         </tbody>
@@ -147,6 +148,18 @@
             <div class="col-md-4">
                     <label for="image" class="form-label">Upload File</label>
                         <input type='file' name="image[]" multiple/>
+                        <div id="myImg">
+                </div>
+            </div>
+            <div class="col-md-4">
+                    <label for="image2" class="form-label">Upload File 2</label>
+                        <input type='file' name="image2[]" multiple/>
+                        <div id="myImg">
+                </div>
+            </div>
+            <div class="col-md-4">
+                    <label for="image3" class="form-label">Upload File 3</label>
+                        <input type='file' name="image3[]" multiple/>
                         <div id="myImg">
                 </div>
             </div>

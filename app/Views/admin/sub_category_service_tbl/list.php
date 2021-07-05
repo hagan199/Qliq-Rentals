@@ -45,7 +45,8 @@
                         <tr>
                             <th>#</th>
                             <th>Category name</th>
-                            <th>Sub Category name</th>                                                                    
+                            <th>Sub Category name</th> 
+                                                                                  
                             <th class="disabled-sorting text-right">Actions</th>
                         </tr>
                         </thead>
@@ -53,7 +54,8 @@
                         <tr>  
                             <th>#</th>
                             <th>Category name</th>
-                            <th>Sub Category name</th>                                                                                                                        
+                            <th>Sub Category name</th>  
+                                                                                                                                         
                         <th class="text-center">Actions</th>
                         </tr>
                     </tfoot>
@@ -62,8 +64,8 @@
                             <tr>
                                 <td><?= $i++?></td>
                                 <td><?= get_column_name_by_id('category_service_tbl', $u['category_service_id'], 'category_name') ?></td>
-                                <td><?= $u['sub_cat_name'] ?></td>                                                         
-                                <td>
+                                <td><?= $u['sub_cat_name'] ?></td>
+                             <td>
                                 <a title="edit" href="" class="btn btn-success" ><i class="fe fe-edit mr-1" aria-hidden="true"></i>Edit</a>                 
                     <!--<a title="delete" href="" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>--->
                                 </td>
@@ -116,6 +118,9 @@
                 <input type="text" name="sub_cat_name"  class="form-control" id="sub_cat_name" />
             </div>
             </div>
+
+          
+
             </div>
                     <div class="col-md-12" style="margin-top:3%">
                     <div class="box-footer">

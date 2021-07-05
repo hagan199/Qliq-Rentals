@@ -95,7 +95,7 @@
                 </div><!-- end col-lg-12 -->
             </div><!-- end row -->
             <div class="row padding-top-50px">
-            <?php $i=1; foreach($canopies as $u){ ?>
+            <?php $i=1; foreach($canopy as $u){ ?>
                 <div class="col-lg-4">
 
             <div class="card-item car-card mb-0">

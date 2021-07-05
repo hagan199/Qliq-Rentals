@@ -43,7 +43,8 @@
                         <tr>
                             <th>#</th>
                             <th>Service name</th>
-                            <th>Category name</th>                                                                                 
+                            <th>Category name</th>  
+                            <th>Image</th>                                                                                
                             <th class="disabled-sorting text-right">Actions</th>
                         </tr>
                         </thead>
@@ -51,7 +52,8 @@
                         <tr>  
                             <th>#</th>
                             <th>Service name</th>
-                            <th>Category name</th>                                                                                                                  
+                            <th>Category name</th>  
+                            <th>Image</th>                                                                                                                       
                         <th class="text-center">Actions</th>
                         </tr>
                     </tfoot>
@@ -60,7 +62,9 @@
                             <tr>
                                 <td><?= $i++?></td>
                                 <td><?= get_column_name_by_id('service_tbl', $u['service_id'], 'service_name') ?></td>
-                                <td><?= $u['category_name'] ?></td>                                                     
+                                <td><?= $u['category_name'] ?></td>  
+                                <td><img src="/uploads/category/<?= json_decode($u['name']) ?>" width="50px" /></td>
+                                	 	                                                   
                                 <td>
                                 <a title="edit" href="" class="btn btn-success" ><i class="fe fe-edit mr-1" aria-hidden="true"></i>Edit</a>                 
                             <!--<a title="delete" href="" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>--->
@@ -108,6 +112,12 @@
                     <div class="form-group">
                 <input type="text" name="category_name"  class="form-control" id="category_name" required/>
             </div>
+            </div>
+            <div class="col-md-4">
+                    <label for="image" class="form-label">Upload File</label>
+                        <input type='file' name="image[]" multiple/>
+                        <div id="myImg">
+                </div>
             </div>
 
             </div>
