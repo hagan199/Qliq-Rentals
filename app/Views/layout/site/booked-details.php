@@ -51,7 +51,6 @@
 ================================= -->
 
 
-
 <section class="room-detail-bread">
 <?php foreach($canopies as $row): ?>
     <div class="full-width-slider carousel-action">
@@ -97,7 +96,13 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="single-content-wrap padding-top-60px">
-                    <?php foreach($canopies as $row): ?>
+                    <?php foreach($canopies as $row): 
+                        $cat_id = $row['sub_category_id'];
+                        $vendor_id = $row['vendor_id'];
+                        $service_id = $row['service_id'];
+                        $price = $row['price'];
+                        $category_id = $row['category_id'];
+                        ?> 
                         <div id="description" class="page-scroll">
                             <div class="single-content-item pb-4">
                                 <h3 class="title font-size-26"><?= get_column_name_by_id('sub_category_service_tbl', $row['sub_category_id'], 'sub_cat_name') ?></h3>
@@ -343,8 +348,116 @@
                         </div><!-- end itinerary -->     
                     </div><!-- end single-content-wrap -->
                 </div><!-- end col-lg-8 -->
+
 <!----------------------------Booking Now ------------------>            
-                <?= $this->include('layout/site/booknow') ?>
+                <div class="col-lg-4">
+                    <div class="sidebar single-content-sidebar mb-0">
+                        <div class="sidebar-widget single-content-widget">
+                            <h3 class="title stroke-shape">Book Now </h3>
+                            <div class="sidebar-widget-item">
+                            <div class="contact-form-action"></div>
+                                    <div class="input-box">
+                                        <label class="label-text" for="event_location">Event Locations </label>
+                                                <div class="form-group">
+                                                    <span class="la la-map-marker form-icon"></span>
+                                                    <input class="form-control" type="text" id="event_location" name="event_location" placeholder="Enter city or town" >
+                            <input class="form-control"  hidden type="text" id="price" value="<?php echo $price; ?> " name="price">
+                            <input class="form-control"  hidden type="text" id="cat_service_id" value="<?php echo $cat_id; ?> " name="cat_service_id">
+                            <input class="form-control"  hidden type="text" id="vendor_id" value="<?php echo $vendor_id; ?> " name="vendor_id">
+                            <input class="form-control"  hidden type="text" id="service_id" value="<?php echo $service_id; ?> " name="service_id"> 
+                            <input class="form-control"  hidden type="text" id="category_id" value="<?php echo $category_id; ?> " name="category_id"> 
+                                    </div>
+                                    </div>
+                                    <div class="input-box">
+                                            <label class="label-text">Pickup Date</label>
+                                            <div class="form-group">
+                                                <span class="la la-calendar form-icon"></span>
+                                                <input class="date-range form-control" type="text" id="pickup_date"  name="daterange-single"    readonly>
+                                            </div>
+                                    </div>
+                                    <div class="input-box">
+                                            <label  name="drop_off" class="label-text">Drop off date</label>
+                                            <div class="form-group">
+                                                <span class="la la-calendar form-icon"></span>
+                                                <input class="date-range form-control"  type="text" id="drop_off" name="daterange-single"    readonly>
+                                            </div>
+                                    </div>
+                                    <div class="input-box">
+                                                <label for="event_type"   class="label-text">Event Type</label>
+                                                <div class="form-group">
+                                                    <div class="select-contain w-auto">
+                                                        <select class="select-contain-select"  id="event_type" name="event_type">
+                                                            <option value="1" selected>Naming Ceremony</option>
+                                                            <option value="2">Graduation</option>
+                                                            <option value="3">Wedding</option>
+                                                            <option value="4">Funeral</option>
+                                                            <option value="5">Camp</option>
+                                                            <option value="6">Other</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                    </div>
+                                    <div class="input-box">
+                                            <div class="qty-box d-flex align-items-center justify-content-between">
+                                                    <label for="numer_room">Number Room</label>
+                                                    <div class="qtyBtn d-flex align-items-center">
+                                                        <div class="qtyDec"><i class="la la-minus"></i></div>
+                                                        <input type="number" id="number_room" name="number_room" value="0" >
+                                                        <div class="qtyInc"><i class="la la-plus"></i></div>
+                                                    </div>
+                                            </div>
+                                    </div>
+                                            <br>
+                                            <div class="total-price pt-3">
+                                            <p class="text-black">Your Price</p>
+                                            <p class="d-flex align-items-center"><span class="font-size-17 text-black">$ </span>  
+                                            <span type="text"  name="total" class="num" readonly="readonly"></span>
+                                            <span id="total"> soln / per room</span></p>
+                                        </div>
+                            <button    data-toggle="modal"
+                                        data-target="#contactdetail"   class="theme-btn text-center w-100 mb-2">Book Now</button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                        <!-- end sidebar-widget -->
+                        <div class="sidebar-widget single-content-widget">
+                            <h3 class="title stroke-shape">Why Book With Us?</h3>
+                            <div class="sidebar-list">
+                                <ul class="list-items">
+                                    <li><i class="la la-dollar icon-element mr-2"></i>No-hassle best price guarantee</li>
+                                    <li><i class="la la-microphone icon-element mr-2"></i>Customer care available 24/7</li>
+                                    <li><i class="la la-thumbs-up icon-element mr-2"></i>Hand-picked Tours & Activities</li>
+                                    <li><i class="la la-file-text icon-element mr-2"></i>Free Travel Insureance</li>
+                                </ul>
+                            </div><!-- end sidebar-list -->
+                        </div><!-- end sidebar-widget -->
+                        <div class="sidebar-widget single-content-widget">
+                            <h3 class="title stroke-shape">Get a Question?</h3>
+                            <p class="font-size-14 line-height-24">Do not hesitate to give us a call. We are an expert team and we are happy to talk to you.</p>
+                            <div class="sidebar-list pt-3">
+                                <ul class="list-items">
+                                    <li><i class="la la-phone icon-element mr-2"></i><a href="#">+ (233) 241 977 5256
+                                    </a></li>
+                                    <li><i class="la la-envelope icon-element mr-2"></i><a href="mailto:info@trizen.com">info@qliqintegrations.com</a></li>
+                                </ul>
+                            </div><!-- end sidebar-list -->
+                        </div><!-- end sidebar-widget -->
+                    </div><!-- end sidebar -->
+                </div><!-- end col-lg-4 -->
+                <script>
+    
+    window.onkeyup=function() {
+        var str = document.getElementById("number_room").value;
+        var price = document.getElementById("price").value;
+        var price = parseFloat(str*str1);
+        document.getElementById("price[]").value = price;
+        alert('hello');
+}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <!---------------------------End Booking Now ------------------>
 
 
@@ -408,8 +521,80 @@
                         START FOOTER AREA
 ================================= -->
 
+<div class="modal-popup">
+        <div class="modal fade" id="contactdetail" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="modal-title title" id="exampleModalLongTitle2">Personal Detail</h5>
+                            <p class="font-size-14"></p>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="la la-close"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="air__auth__containerInner mt-4">
+                        
+                            <?php if (isset($validation)): ?>
+                            <div class="alert alert-danger" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <label
+                                    style="margin-left: -40px;margin-bottom: -30px;"><strong><?= $validation->listErrors() ?></strong></label>
+                            </div>
+                            <?php endif; ?>
+                            <div class="row">
+                                <div class="col-lg-6 pr-0">
+                                            <div class="input-box">
+                                                <label for="fname" class="label-text">Fname</label>
+                                                <div class="form-group">       
+                                                    <input class="form-control" name="fname" id="fname" type="text" placeholder="First Name">
+                                                </div>
+                                            </div>
+                                </div><!-- end col-lg-4 -->
+                            
+                                <div class="col-lg-6 pr-0">
+                                            <div class="input-box">
+                                                <label  for="fname" class="label-text">Lname</label>
+                                                <div class="form-group">       
+                                                    <input class="form-control"  name="lname"  id="lname"  type="text" placeholder=" Last Name">
+                                                </div>
+                                            </div>
+                                </div><!-- end col-lg-4 -->
+                                <div class="col-lg-6 pr-0">
+                                            <div class="input-box">
+                                                <label  for="email" class="label-text">Email</label>
+                                                <div class="form-group">       
+                                                    <input class="form-control"  name="email" id="email"  type="text" placeholder=" Email">
+                                                </div>
+                                            </div>
+                                </div><!-- end col-lg-4 -->
+                                <div class="col-lg-6 pr-0">
+                                            <div class="input-box">
+                                                <label  for="phone" class="label-text">Phone</label>
+                                                <div class="form-group">       
+                                                    <input class="form-control" type="text" id="phone" name="phone" placeholder="Phone"
+                                                        >
+                                                </div>
+                                            </div>
+                                </div><!-- end col-lg-4 -->
+                                </div>
+                                <div id="promptme"></div>
+                                <button id="save_data"   class="theme-btn text-center w-100 mb-2">Book Now</button>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end modal-popup -->
+
+
 <!-- start back-to-top -->
-<div id="back-to-top">
+<div id="back-to-top"></div>
     <i class="la la-angle-up" title="Go top"></i>
 </div>
 <!-- end back-to-top -->
@@ -418,7 +603,57 @@
     <?= $this->include('layout/modal/contactdetailpopup') ?>
     <?= $this->include('layout/modal/loginpopup') ?>
     <!-- End Modal -->
-<!-- Template JS Files -->
+<!-- Template JS Files
+<script>
+            var pricetag = parseFloat(document.getElementById('price').value;
+            var numroom = parseFloat(document.getElementById('number_room').value;
+            var totals =  parseFloat(pricetag * numroom);
+            document.getElementById('total').innerHTML ="dummy" + totals;
+
+</script>
+ -->
+<script>
+        $('#save_data').click(function(){
+            $("#save_data").attr("disabled", "disabled");
+        var event_location = $('#event_location').val();
+		var pickup_date = $('#pickup_date').val();
+		var drop_off = $('#drop_off').val();
+		var number_room = $('#number_room').val();
+        var pickup_date = $('#pickup_date').val();
+        var event_type = $('#event_type').val();
+        var email = $('#email').val();
+        var phone = $('#phone').val();
+        var lname = $('#lname').val();
+        var fname = $('#fname').val();
+        var vendor_id = $('#vendor_id').val();
+        var service_id = $('#service_id').val();
+        var cat_service_id = $('#cat_service_id').val();
+        var category_id = $('#category_id').val();
+        if(event_location !="" ){
+        $.ajax({
+                url:'/savecanopies',
+                method:'POST',
+                data: {
+                    event_location: event_location,
+                    pickup_date: pickup_date,
+                    drop_off: drop_off,
+                    number_room: number_room, 
+                    event_type: event_type, 
+                    lname: lname, 
+                    fname: fname, 
+                    email: email,  
+                    phone: phone,
+                    cat_service_id: cat_service_id, 
+                    vendor_id: vendor_id, 
+                    service_id: service_id,  
+                    category_id: category_id                      
+                },
+            })
+            document.getElementById('promptme').innerHTML = 'Booked sucessfully!';
+        }
+        });
+</script>
+
 <script src="../../site_file/js/jquery-3.4.1.min.js"></script>
 <script src="../../site_file/js/jquery-ui.js"></script>
 <script src="../../site_file/js/popper.min.js"></script>

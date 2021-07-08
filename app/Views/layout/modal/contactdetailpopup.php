@@ -63,8 +63,7 @@
                                 </div><!-- end col-lg-4 -->
                                 </div>
                             
-                                <button type="submit"
-                                    class="btn btn-primary text-center w-100"><strong><?= 'Submit' ?></strong></button>
+                                <button id="save_data"  data-toggle="modal" data-target="#profile" class="theme-btn text-center w-100 mb-2">Book Now</button>
                             </form>
                         </div>
                     </div>

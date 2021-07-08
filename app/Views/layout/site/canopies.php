@@ -95,13 +95,12 @@
                 </div><!-- end col-lg-12 -->
             </div><!-- end row -->
             <div class="row padding-top-50px">
-            <?php $i=1; foreach($canopy as $u){ ?>
-                <div class="col-lg-4">
-
+            <?php $i=1; foreach($canopies as $u){ ?>
+            <div class="col-lg-4">
             <div class="card-item car-card mb-0">
                                 <div class="card-img">
                                     <a href="car-single.html" class="d-block">
-                                        <img src="../../site_file/images/car-img.png" alt="car-img">
+                                        <img  src="/uploads/images/<?= $u['name'] ?>" alt="car-img">
                                     </a>
                                     <span class="badge">Bestseller</span>
                                     <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
@@ -122,7 +121,9 @@
                                             <span class="price__num">Gh¢.<?= $u['price'] ?></span>
                                             <span class="price__text">Per day</span>
                                         </p>
-                                    
+                                        <div class="card-btn">
+                                            <a href="/book/<?= $u['id'] ?>" class="theme-btn theme-btn-transparent">Book Now</a>
+                                        </div>
                                     </div>
                                 </div>
         </div><!-- end container -->

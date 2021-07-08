@@ -208,7 +208,7 @@
                                 <li><span>Address:</span>2701 Spence Pl, Knoxville, USA</li>
                                 <li><span>Website:</span><a href="#">techydevs.com</a></li>
                             </ul>
-                             <ul class="list-items flex-grow-1">
+                            <ul class="list-items flex-grow-1">
                                 <li><h3 class="title">Verifications</h3></li>
                                 <li class="d-flex justify-content-between align-items-center"><span class="color-text-2 font-weight-medium mr-2">Phone</span><span class="theme-btn theme-btn-small theme-btn-rgb theme-btn-danger-rgb">Not verified</span></li>
                                 <li class="d-flex justify-content-between align-items-center"><span class="color-text-2 font-weight-medium mr-2">Email</span><span class="theme-btn theme-btn-small theme-btn-rgb">Verified</span></li>

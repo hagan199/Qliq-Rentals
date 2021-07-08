@@ -40,7 +40,7 @@ class Client extends BaseController
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Canopies';
         $data['canopies'] = $model->where('category_id', '13')->findAll();
-		return view('layout/site/index',$data);
+		return view('layout/site/canopies',$data);
 	}
     
     public function faq()
@@ -196,6 +196,53 @@ class Client extends BaseController
 } 
 
 
+public function saveCanopies()
+{
+    if ($this->request->getMethod() == "post") {
+
+        $rules = [
+            "drop_off" => "required",
+        ];
+
+        if (!$this->validate($rules)) {
+
+            $response = [
+                'success' => false,
+                'msg' => "There are some validation errors",
+            ];
+
+            return $this->response->setJSON($response);
+        } else {
+
+            $model = new Booking();
+            $vmodel = new VendorService();
+
+            $data = [
+                'pickup_date' => $this->request->getVar('pickup_date'),
+                'drop_off' => $this->request->getVar('drop_off'),
+                'event_location' => $this->request->getVar('event_location'),
+                'event_type' => $this->request->getVar('event_type'),
+                'number_room' => $this->request->getVar('number_room'),
+                'fname' => $this->request->getVar('fname'),
+                'lname' => $this->request->getVar('lname'),
+                'phone' => $this->request->getVar('phone'),
+                'email' => $this->request->getVar('email'),
+                'vendor_id' => $this->request->getVar('vendor_id'),
+                'service_id' => $this->request->getVar('service_id'),
+                'cat_service_id' => $this->request->getVar('cat_service_id'),
+                'category_id' => $this->request->getVar('category_id')
+            ];
+            if($model->insert($data)) {
+                $response = [
+                    'success' => true,            
+                ];
+            } 
+            return $this->response->setJSON($response);
+        }
+    }
+}
+
+
 public function mattress($param1='' , $param2= '')
 {
     $session = session();
@@ -269,7 +316,7 @@ public function mattresss()
                     "drop_off" =>  $this->request->getVar('drop_off'),
                     "event_location" =>  $this->request->getVar('event_location'),
                     "number_matttress" =>  $this->request->getVar('number_matttress'),
-                    "cat_service_id" =>  '2' 
+                    "cat_service_id" =>  1
 					
 				];
 

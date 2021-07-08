@@ -62,8 +62,10 @@ $routes->get('/canopies', 'Client::site_canopies');
 $routes->get('/tables', 'Client::site_tables');
 $routes->get('/faq', 'Client::faq');
 $routes->get('/services', 'Client::services');
-
+$routes->match(['get', 'post'], '/savecanopies', 'Client::saveCanopies');
 $routes->match(['get', 'post'], '/canopy/(:any)/(:any)', 'Client::canopies/$1/$2');
+
+
 
 // Users 
 $routes->get('/users-add', 'User::create');

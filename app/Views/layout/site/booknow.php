@@ -1,64 +1,68 @@
-            <div class="col-lg-4">
+
+<!----------------------------Booking Now ------------------>            
+<div class="col-lg-4">
                     <div class="sidebar single-content-sidebar mb-0">
                         <div class="sidebar-widget single-content-widget">
                             <h3 class="title stroke-shape">Book Now </h3>
                             <div class="sidebar-widget-item">
                             <div class="contact-form-action">
-                            <form action="/canopy/add_canopy/goals" enctype="multipart/form-data" method="post">
                                     <div class="input-box">
-                                        <label class="label-text" id="event" for="event_location">Event Locations </label>
+                                        <label class="label-text" for="event_location">Event Locations </label>
                                                 <div class="form-group">
                                                     <span class="la la-map-marker form-icon"></span>
                                                     <input class="form-control" type="text" id="event_location" name="event_location"
-                                                        placeholder="Enter city or town" required>
+                                                        placeholder="Enter city or town" >
                                                 </div>
-                                        </div>
-                                        <div class="input-box">
-                                            <label class="label-text">Pickup Date</label>
+                                    </div>
+                                    <div class="input-box">
+                                            <label name="pick_date" class="label-text">Pickup Date</label>
                                             <div class="form-group">
                                                 <span class="la la-calendar form-icon"></span>
-                                                <input class="date-range form-control" type="text" id="pickup_date"  name="daterange-single"   required readonly>
+                                                <input class="date-range form-control" type="text" id="pick_date"  name="daterange-single"    readonly>
                                             </div>
-                                        </div>
-                                        <div class="input-box">
+                                    </div>
+                                    <div class="input-box">
                                             <label  name="drop_off" class="label-text">Drop off date</label>
                                             <div class="form-group">
                                                 <span class="la la-calendar form-icon"></span>
-                                                <input class="date-range form-control"  type="text" id="drop_off" name="daterange-single"   required readonly>
+                                                <input class="date-range form-control"  type="text" id="drop_off" name="daterange-single"    readonly>
                                             </div>
-                                        </div>
-                                        <div class="input-box">
-                                                <label for="event_type" class="label-text">Event Type</label>
+                                    </div>
+                                    <div class="input-box">
+                                                <label class="label-text">Event Type</label>
                                                 <div class="form-group">
                                                     <div class="select-contain w-auto">
                                                         <select class="select-contain-select" id="event_type" name="event_type"
-                                                            required>
-                                                            <option value="Naming Ceremony" selected>Naming Ceremony
+                                                            >
+                                                            <option value="Naming Ceremony" selected>Naming Ceremony 
                                                             </option>
+                                                            <option value="Naming Ceremony">Naming Ceremony</option>
                                                             <option value="Graduation">Graduation</option>
                                                             <option value="Wedding">Wedding</option>
                                                             <option value="Funeral">Funeral</option>
-                                                            <option value="Funeral">Camp</option>
+                                                            <option value="Camp">Camp</option>
                                                             <option value="Other">Other</option>
                                                         </select>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="input-box">
-                                                <div class="qty-box d-flex align-items-center justify-content-between">
+                                    </div>
+                                    <div class="input-box">
+                                            <div class="qty-box d-flex align-items-center justify-content-between">
                                                     <label for="numer_room">Number Room</label>
                                                     <div class="qtyBtn d-flex align-items-center">
                                                         <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                        <input type="text" id="number_room" name="number_room" value="0" required>
+                                                        <input type="text" id="number_room" name="number_room" value="0" >
                                                         <div class="qtyInc"><i class="la la-plus"></i></div>
                                                     </div>
-                                                </div>
                                             </div>
+                                    </div>
+                                            <br>
                                             <div class="btn-box">
-                                <a  type="submit"  class="theme-btn text-center w-100 mb-2">Book Now</a>
+                                
                             </div>
-                            </form>
+                            <button id="save_data"  class="theme-btn text-center w-100 mb-2">Book Now</button>
                             </div>
+                            
                             </div><!-- end sidebar-widget-item -->
                             <div class="sidebar-widget-item py-4">
                                 <div class="extra-service-wrap">
@@ -67,7 +71,6 @@
                                             <p class="text-black">Your Price</p>
                                             <p class="d-flex align-items-center"><span class="font-size-17 text-black">$</span> <input type="text" name="total" class="num" value="80.00" readonly="readonly"/><span>/ per Day</span></p>
                                         </div>
-                                 
                                 </div>
                             </div><!-- end sidebar-widget-item -->
                         
@@ -98,43 +101,34 @@
                         </div><!-- end sidebar-widget -->
                     </div><!-- end sidebar -->
                 </div><!-- end col-lg-4 -->
-
-
                 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    $(function() {
+    $(document).ready(function() { 
 
-        // Adding form validation
-        $('#canopies_form').validate();
-
-        // Ajax form submission with image
-        $('#canopies_form').on('submit', function(e) {
-
-            e.preventDefault();
-
-            var formData = new FormData(this);
-            // OR var formData = $(this).serialize();
-
-            //We can add more values to form data
-            //formData.append("key", "value");
-
+        $('#save_data').click(function(){
+		var event_location = $('#event_location').val();
+		var pick_date = $('#pick_date').val();
+		var drop_off = $('#drop_off').val();
+		var number_room = $('#number_room').val();
+        if(event_location !='' && drop_off !='' && pickup_date !='' && number_room !=''){
             $.ajax({
-                url: "/canopy",
-                type: "POST",
-                cache: false,
-                data: formData,
-                processData: false,
-                contentType: false,
-                dataType: "JSON",
-                success: function(data) {
-                    if (data.success == true) {
-                        Swal.fire('Saved!', '', 'success')
-                    }
+                url:'/savecanopies',
+                method:'POST',
+                data: {
+                    event_location: event_location,
+                    pick_date: pick_date,
+                    drop_off: drop_off,
+                    number_room: number_room                                     
                 },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    alert('Error at add data');
-                }
-            });
+            })
+        }
+		else{
+            alert('Saved');
+		}
         });
     });
 </script>
+<!---------------------------End Booking Now ------------------>
+
+

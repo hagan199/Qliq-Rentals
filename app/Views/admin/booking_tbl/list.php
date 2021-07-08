@@ -48,12 +48,17 @@
                         <tr>
                         <th>#</th>
                         <th>Event Location</th>
+                        <th>Client Name</th>  
                         <th>Event Type</th>                              
                         <th>Pick Date</th> 
                         <th>Drop off Date</th>  
-                        <th>number</th> 
+                        <th>Number</th> 
                         <th>Status</th>
-                        <th>Payment</th>                 
+                        <th>Payment</th>
+                        <th>Vendor Name</th> 
+                        <th>Category</th> 
+                        <th>Cat Service</th>                        
+                        <th>Service</th>                 
                         <th class="disabled-sorting text-right">Actions</th>
                         </tr>
                         </thead>
@@ -61,12 +66,17 @@
                         <tr>  
                         <th>#</th>
                         <th>Event Location</th>
+                        <th>Client Name</th>  
                         <th>Event Type</th>                              
                         <th>Pick Date</th> 
                         <th>Drop off Date</th>  
-                        <th>number</th> 
+                        <th>Number</th> 
                         <th>Status</th>
-                        <th>Payment</th>              
+                        <th>Payment</th>
+                        <th>Vendor Name</th>
+                        <th>Category</th> 
+                        <th>Cat Service</th>  
+                        <th>Service</th>       
                         <th class="text-right">Actions</th>
                         </tr>
                     </tfoot>
@@ -75,8 +85,9 @@
                             <tr>
                                 <td><?= $i++?></td>
                                 <td><?= $u['event_location'] ?></td>
-                                <td><?= $u['event_type'] ?></td>          
-                                <td><?= $u['pick_date'] ?></td>
+                                <td><?= $u['fname']. ' ' .$u['lname'] ?></td> 
+                                <td><?= $u['event_type'] ?></td>               
+                                <td><?= $u['pickup_date'] ?></td>
                                 <td><?= $u['drop_off'] ?></td>
                                 <td><?= $u['number_room'] ?></td> 
                                 <td id="status" class="text-center">
@@ -90,7 +101,11 @@
                                 <a class="btn btn-sm btn-outline-success"><i class="fa fa-check text-default"></i></a>
                               <?php }?>
                               </td>
-                                <td><?= $u['status'] ?></td> 
+                                <td><?= $u['status'] ?></td>  
+                                <td><?= get_column_name_by_id('setting_vendor', $u['vendor_id'], 'company_name') ?></td>
+                                <td><?= get_column_name_by_id('category_service_tbl', $u['category_id'], 'category_name') ?></td>
+                                <td><?= get_column_name_by_id('sub_category_service_tbl', $u['cat_service_id'], 'sub_cat_name') ?></td>
+                                <td><?= get_column_name_by_id('service_tbl', $u['service_id'], 'service_name') ?></td>         
                                 <td>
                                 <a href="#" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Cancel</a>
                                 </td>

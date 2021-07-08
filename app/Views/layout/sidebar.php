@@ -114,8 +114,7 @@ $id = session()->get('logged_user');
             </li>
           </ul>
         </li>
-
       </ul>
     </div>
   </div>
-  </div>
+</div>

@@ -204,14 +204,9 @@
                                 </div>
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="images/img32.jpg" alt="hotel-img">
+                                        <img src="../../images/img32.jpg" alt="hotel-img">
                                     </a>
-                                </div>
-                                <div class="card-img">
-                                    <a href="room-details.html" class="d-block">
-                                        <img src="images/img31.jpg" alt="hotel-img">
-                                    </a>
-                                </div>
+                                </div>            
                             </div>
                             <div class="card-body">
                                 <div class="card-price pb-2">
@@ -238,7 +233,7 @@
                 </div><!-- end row -->
             </div>
 
-         <!-------------------Clea------------------>
+    <!-----------------------Clean------------------>
             <div class="tab-pane fade" id="private-room" role="tabpanel" aria-labelledby="private-room-tab">
                 <div class="row">
                     <div class="col-lg-12">
@@ -246,17 +241,17 @@
                             <div class="card-img-carousel carousel-action carousel--action">
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="images/img5.jpg" alt="hotel-img">
+                                        <img src="../../images/img5.jpg" alt="hotel-img">
                                     </a>
                                 </div>
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="images/img29.jpg" alt="hotel-img">
+                                        <img src="../../images/img29.jpg" alt="hotel-img">
                                     </a>
                                 </div>
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="images/img30.jpg" alt="hotel-img">
+                                        <img src="../../images/img30.jpg" alt="hotel-img">
                                     </a>
                                 </div>
                             </div>
@@ -294,17 +289,17 @@
                             <div class="card-img-carousel carousel-action carousel--action">
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="images/img31.jpg" alt="hotel-img">
+                                        <img src="../../images/img31.jpg" alt="hotel-img">
                                     </a>
                                 </div>
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="images/img32.jpg" alt="hotel-img">
+                                        <img src="../../images/img32.jpg" alt="hotel-img">
                                     </a>
                                 </div>
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="images/img33.jpg" alt="hotel-img">
+                                        <img src="../../images/img33.jpg" alt="hotel-img">
                                     </a>
                                 </div>
                             </div>
@@ -330,14 +325,17 @@
                             </div>
                         </div><!-- end card-item -->
                     </div><!-- end col-lg-12 -->
-                 
                 </div><!-- end row -->
             </div>
         </div>
+
+
+        <?php $id=$u['id']; 
+        ?> 
         <div class="row">
             <div class="col-lg-12">
                 <div class="btn-box mt-4 text-center">
-                    <button type="button" class="theme-btn"><i class="la la-refresh mr-1"></i>Load More</button>
+                    <button type="button"  id="load_more" data.id="<?php echo $id; ?>" iclass="theme-btn"><i class="la la-refresh mr-1"></i>Load More</button>
                     <p class="font-size-13 pt-2">Showing 1 - 5 of 124 Rooms</p>
                 </div><!-- end btn-box -->
             </div><!-- end col-lg-12 -->
@@ -536,6 +534,6 @@ var mealsByCategory = {
     }
     
 </script>
-
+    
 </body>
 </html>
