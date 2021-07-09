@@ -28,7 +28,6 @@
                         <th>Drop off Date</th>  
                         <th>Number</th> 
                         <th>Status</th>
-                      
                         <th>Vendor Name</th> 
                         <th>Category</th> 
                         <th>Cat Service</th>                        
@@ -46,7 +45,6 @@
                         <th>Drop off Date</th>  
                         <th>Number</th> 
                         <th>Status</th>
-                      
                         <th>Vendor Name</th>
                         <th>Category</th> 
                         <th>Cat Service</th>  
@@ -75,7 +73,7 @@
                                 <a class="btn btn-sm btn-outline-success"><i class="fa fa-check text-default"></i></a>
                               <?php }?>
                               </td>
-                        
+                                <td><?= $u['status'] ?></td>  
                                 <td><?= get_column_name_by_id('setting_vendor', $u['vendor_id'], 'company_name') ?></td>
                                 <td><?= get_column_name_by_id('category_service_tbl', $u['category_id'], 'category_name') ?></td>
                                 <td><?= get_column_name_by_id('sub_category_service_tbl', $u['cat_service_id'], 'sub_cat_name') ?></td>
@@ -97,138 +95,4 @@
             <!-- end col-md-12 -->
           </div>
 </div>
-
-
-
-          <!-- 
-   
-  
-  <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tabpanel" aria-labelledby="add-tab">    
-  <div class="row">
-  <div class="col-md-12">
-              <div class="card ">
-                <div class="card-header card-header-rose card-header-text">
-                  <div class="card-text">
-                    <h4 class="card-title">Add User</h4>
-                  </div>
-                </div>
-                <div class="card-body ">
-                 <form action="/user/add" method="post">
-            <div class="box-body">
-      
-
-   
-          <div class="row">
-          <div class="col-md-4">
-          <label for="fname" class="control-label">First Name</label>
-          <div class="form-group">
-          <input type="text" name="fname"  class="form-control" id="fname" />
-          </div>
-          </div>
-
-          <div class="col-md-4">
-          <label for="mname" class="control-label">Middle Name</label>
-          <div class="form-group">
-            <input type="text" name="mname"  class="form-control" id="mname" />
-            </div>
-            </div>
-            <div class="col-md-4">
-            <label for="lname" class="control-label">Last Name</label>
-            <div class="form-group">
-              <input type="text" name="lname"  class="form-control" id="lname" />
-            </div>
-            </div>
-            </div>
-
-
-          <div class="row">
-          <div class="col-md-4">
-          <label for="phone" class="control-label">Phone</label>
-          <div class="form-group">
-          <input type="tel" name="phone"  class="form-control" placeholder="+233245958764" id="phone" required minlength="13" maxlength="13"  />
-          </div>
-          </div>
-          <div class="col-md-4">
-          <label for="gender" class="control-label">Gender</label>
-          <div class="form-group">
-            <input type="text" name="gender"  class="form-control" id="gender" />
-            </div>
-            </div>
-          <div class="col-md-4">
-          <label for="date" class="control-label">Date</label>
-          <div class="form-group">
-            <input type="date" name="date"  class="form-control" id="date" />
-            </div>
-            </div>
-        
-            </div>
-
-          <div class="row">
-            <div class="col-md-6">
-          <label for="hall_type" class="control-label">Hall Detail</label>
-          <div class="form-group">
-            <input type="text" name="hall_type"  class="form-control" id="hall_type" />
-            </div>
-            </div>
-            <div class="col-md-6">
-          <label for="email" class="control-label">Email</label>
-          <div class="form-group">
-            <input type="text" name="email" class="form-control" id="email" />
-            </div>
-            </div>
-    
-            </div>
-            <script>
-					function yesnoCheck() {
-						if (document.getElementById('yes_member').checked) {
-							document.getElementById('classHide').style.display = 'block';
-						} else document.getElementById('classHide').style.display = 'none';
-
-					}
-				</script>
-
-                <div class="col-md-6">
-						<p>Are u a member GNAT?</p>
-						<input type="radio" name="member" value="1" id="yes_member" onClick="yesnoCheck();"> YES
-						<input type="radio" name="member" value="0" id="no_member" onClick="yesnoCheck();"> NO
-
-					</div>
-
-					<div class="col-md-6" id="classHide" style="display:none">
-						<label for="gnat_id" class="control-label"> ID GNAT</label>
-						<div class="form-group">
-							<input placeholder="ID GNAT" type="text" name="gnat_id"
-                               class="form-control"
-                                   id="gnat_id" autocomplete="off"/>
-                        </div>
-              <div class="col-md-12" style="margin-top:3%">
-                    <div class="box-footer">
-                      <div class="form-group">
-                        <div class="col-md-4"></div>
-                      <div class="col-md-8">
-
-                        <button type="submit" class="btn btn-success">
-                          <i class="fa fa-check"></i>Submit
-                        </button>
-                         </div>
-                      </div>
-                  </div>
-          </div>
-             </form>
-        
-                </div>
-              </div>
-  </div>
-          
-      
-      </div>
-    </div>
-</div>
-</div>
-
-
-
-
-
-
           <?= $this->endSection()?> 

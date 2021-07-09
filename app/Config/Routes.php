@@ -53,6 +53,8 @@ $routes->match(['get', 'post'], '/vendor', 'Admin::setup_vendor/$1/$2');
 
 // Client Route
 $routes->get('/booking', 'Client::book_list');
+$routes->get('/approved_book', 'Client::approved_book_list');
+$routes->get('/cancel_list', 'Client::cancel_list');
 $routes->get('/sites', 'Client::site');
 $routes->get('/about', 'Client::about');
 $routes->get('/contact', 'Client::contact');

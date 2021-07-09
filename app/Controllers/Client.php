@@ -105,8 +105,7 @@ class Client extends BaseController
     
 
     //List of Booking Service
-    function book_list()
-    {    
+    function book_list(){    
         $model = new Booking();
         $data['booking_list'] = $model->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'Booking List';
@@ -116,6 +115,28 @@ class Client extends BaseController
         return view('admin/booking_tbl/list',$data);
     } 
     
+    function approved_book_list(){    
+        $model = new Booking();
+        $data['booking_list'] = $model->orderBy('id', 'DESC')->findAll();
+        $data['title'] = 'Approved List';
+        $data['page'] = 'Booking ';
+        $service_model = new Service();
+        $data['vendor'] = $service_model->orderBy('id', 'DECS')->findAll();
+        return view('admin/booking_tbl/approve_list',$data);
+    } 
+    
+    function cancel_list(){    
+        $model = new Booking();
+        $data['booking_list'] = $model->orderBy('id', 'DESC')->findAll();
+        $data['title'] = 'Cancel List';
+        $data['page'] = 'Booking ';
+        $service_model = new Service();
+        $data['vendor'] = $service_model->orderBy('id', 'DECS')->findAll();
+        return view('admin/booking_tbl/cancel_list',$data);
+    } 
+    
+
+
     public function canopies($param1='' , $param2= '')
 	{
         $session = session();

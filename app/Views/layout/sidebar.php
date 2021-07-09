@@ -43,6 +43,18 @@ $id = session()->get('logged_user');
             <span>Booked Detail</span>
           </a>
         </li>
+        <li class="air__menuLeft__item">
+          <a href="/approved_book"  class="air__menuLeft__link air__sidebar__actionToggle">
+            <i class="fe fe-settings air__menuLeft__icon"></i>
+            <span>Approve Booked List </span>
+          </a>
+        </li>
+        <li class="air__menuLeft__item">
+          <a href="/cancel_list"  class="air__menuLeft__link air__sidebar__actionToggle">
+            <i class="fe fe-settings air__menuLeft__icon"></i>
+            <span>Cancel Booked List </span>
+          </a>
+        </li>
         <li class="air__menuLeft__category">
           <span> Admin Configuration</span>
         </li>
