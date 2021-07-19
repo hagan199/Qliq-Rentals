@@ -73,7 +73,9 @@ $routes->get('/tables', 'Client::site_tables');
 
 //   Cleaning 
 $routes->get('/gardening-tools', 'Client::site_gardening_tools');
-$routes->get('/gardening-tools', 'Client::site_gardening_tools');
+$routes->get('/house-cleaning', 'Client::site_house_cleaning');
+$routes->get('/laundry', 'Client::site_laundry');
+$routes->get('/mower', 'Client::site_mower');
 
 //   Music Ent
 
