@@ -115,7 +115,6 @@
                                 <p class="py-3"><?= $row['description'] ?></p>                                                      
                             </div><!-- end single-content-item -->
                             <div class="section-block"></div>
-                         
                         </div><!-- end description -->
                         <?php endforeach; ?>
                         <div id="services" class="page-scroll">
@@ -361,7 +360,7 @@
                                                 <div class="form-group">
                                                     <span class="la la-map-marker form-icon"></span>
                                                     <input class="form-control" type="text" id="event_location" name="event_location" placeholder="Enter city or town" >
-                            <input class="form-control"  hidden type="text" id="price" value="<?php echo $price; ?> " name="price">
+                            <input id="box2" type="text" name="price" hidden value="<?php echo $price; ?> " oninput="calculate()" />
                             <input class="form-control"  hidden type="text" id="cat_service_id" value="<?php echo $cat_id; ?> " name="cat_service_id">
                             <input class="form-control"  hidden type="text" id="vendor_id" value="<?php echo $vendor_id; ?> " name="vendor_id">
                             <input class="form-control"  hidden type="text" id="service_id" value="<?php echo $service_id; ?> " name="service_id"> 
@@ -400,19 +399,15 @@
                                     <div class="input-box">
                                             <div class="qty-box d-flex align-items-center justify-content-between">
                                                     <label for="numer_room">Number Room</label>
-                                                    <div class="qtyBtn d-flex align-items-center">
-                                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                        <input type="number" id="number_room" name="number_room" value="0" >
-                                                        <div class="qtyInc"><i class="la la-plus"></i></div>
+                                                        <input id="number_room" type="number" name="number_room" oninput="calculate()"  value="0"  />
                                                     </div>
                                             </div>
                                     </div>
+ 
                                             <br>
                                             <div class="total-price pt-3">
                                             <p class="text-black">Your Price</p>
-                                            <p class="d-flex align-items-center"><span class="font-size-17 text-black">$ </span>  
-                                            <span type="text"  name="total" class="num" readonly="readonly"></span>
-                                            <span id="total"> soln / per room</span></p>
+                                            <input class="form-control"   value="0"  id="total_price"  name="total_price">
                                         </div>
                             <button    data-toggle="modal"
                                         data-target="#contactdetail"   class="theme-btn text-center w-100 mb-2">Book Now</button>
@@ -445,22 +440,21 @@
                         </div><!-- end sidebar-widget -->
                     </div><!-- end sidebar -->
                 </div><!-- end col-lg-4 -->
-                <script>
-    
-    window.onkeyup=function() {
-        var str = document.getElementById("number_room").value;
-        var price = document.getElementById("price").value;
-        var price = parseFloat(str*str1);
-        document.getElementById("price[]").value = price;
-        alert('hello');
-}
+                  
+
+<script>  
+   function calculate() {
+		var myBox1 = document.getElementById('number_room').value;	
+		var myBox2 = document.getElementById('box2').value;
+		var total_price = document.getElementById('total_price');	
+		var myResult = myBox1 * myBox2;
+		total_price.value = myResult;	
+	}
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!---------------------------End Booking Now ------------------>
-
-
 
 
             </div><!-- end row -->
@@ -642,7 +636,7 @@
                     lname: lname, 
                     fname: fname, 
                     email: email,  
-                    phone: phone,
+                    phone: phone, 
                     cat_service_id: cat_service_id, 
                     vendor_id: vendor_id, 
                     service_id: service_id,  

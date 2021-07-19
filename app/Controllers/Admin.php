@@ -9,6 +9,7 @@ use App\Models\VendorService;
 use App\Libraries\TestLibrary;
 use App\Models\CategoryService;
 use App\Models\SubCategoryService;
+use App\Models\PaymentConfirm;
 use App\Controllers\BaseController;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
@@ -399,18 +400,24 @@ public function subcategoryService($param1 = '',  $param2 = ''){
         $data['users'] = $model->orderBy('id', 'DESC')->findAll();
         $servicemodel = new Service();
         $data['all_service'] = $servicemodel->orderBy('id', 'DESC')->findAll();
-
         $categorymodel = new SubCategoryService();
         $data['all_catergory'] = $categorymodel->orderBy('id', 'DESC')->findAll();
-
         $catmodel = new CategoryService();
         $data['category'] = $catmodel->orderBy('id', 'DESC')->findAll();
-
         $data['title'] = 'Sub Category Service List';
         $data['page'] = 'Sub Category Service';
         return view('admin/sub_category_service_tbl/list',$data);
         }  
 }
+
+public function payment_detail()
+	{ 
+        $model = new PaymentConfirm();
+        $data['title'] = 'Payment Confirm List';
+        $data['page']= 'Payment Detail';
+        $data['payment'] = $model->orderBy('id', 'DESC')->findAll();
+        return view('admin/payment/list',$data);
+	}
 }
 
 ?>

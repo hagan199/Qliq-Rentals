@@ -65,23 +65,16 @@
                                 <td><?= $u['drop_off'] ?></td>
                                 <td><?= $u['number_room'] ?></td> 
                                 <td id="status" class="text-center">
-                              <?php
-                              if ($u['status']==='0'){
-                                ?>
-                              <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
-                              <span class="sr-only">Loading...</span>
-
-                              <?php } else {?>
-                                <a class="btn btn-sm btn-outline-success"><i class="fa fa-check text-default"></i></a>
-                              <?php }?>
-                              </td>
-                        
+                                <a href="/approved-list/<?= $u['id'] ?>" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Approved</a>
+                                <a href="/cancel-booked/<?= $u['id'] ?>" id="cancel-booked" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Cancel</a>
+                                </td>
                                 <td><?= get_column_name_by_id('setting_vendor', $u['vendor_id'], 'company_name') ?></td>
                                 <td><?= get_column_name_by_id('category_service_tbl', $u['category_id'], 'category_name') ?></td>
                                 <td><?= get_column_name_by_id('sub_category_service_tbl', $u['cat_service_id'], 'sub_cat_name') ?></td>
                                 <td><?= get_column_name_by_id('service_tbl', $u['service_id'], 'service_name') ?></td>         
                                 <td>
-                                <a href="#" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Cancel</a>
+                                <a href="/approved-list/<?= $u['id'] ?>" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Approved</a>
+                                <a href="/cancel-booked/<?= $u['id'] ?>" id="cancel-booked" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Cancel</a>
                                 </td>
                             </tr>
                             <?php } ?>
@@ -100,9 +93,20 @@
 
 
 
+<script>
+        $('#cancel-booked').click(function(){
+            $("#cancel-booked").attr("disabled", "disabled");
+        $.ajax({
+                url:'/cancel-booked',
+                method:'POST',     
+            })
+            document.getElementById('promptme').innerHTML = 'Booked sucessfully!';
+
+        });
+</script>
           <!-- 
-   
-  
+
+
   <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="add" role="tabpanel" aria-labelledby="add-tab">    
   <div class="row">
   <div class="col-md-12">

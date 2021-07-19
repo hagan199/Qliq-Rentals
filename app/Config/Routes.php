@@ -50,21 +50,40 @@ $routes->match(['get', 'post'], '/services/(:any)/(:any)', 'Admin::service/$1/$2
 $routes->match(['get', 'post'], '/svendor/(:any)/(:any)', 'Admin::settingVendor/$1/$2');
 $routes->match(['get', 'post'], '/vservice/(:any)/(:any)', 'Admin::vendorService/$1/$2');
 $routes->match(['get', 'post'], '/vendor', 'Admin::setup_vendor/$1/$2');
+$routes->match(['get', 'post'], '/payment-detail', 'Admin::payment_detail');
 
 // Client Route
 $routes->get('/booking', 'Client::book_list');
 $routes->get('/approved_book', 'Client::approved_book_list');
+$routes->match(['get', 'post'], '/approved-list/(:any)', 'Client::approved_list/$1');
+$routes->match(['get', 'post'], '/cancel-booked/(:any)', 'Client::cancel_book/$1');
+$routes->match(['get', 'post'], '/payment_confirm/(:any)', 'Client::payment_confirm/$1');
 $routes->get('/cancel_list', 'Client::cancel_list');
 $routes->get('/sites', 'Client::site');
 $routes->get('/about', 'Client::about');
 $routes->get('/contact', 'Client::contact');
+$routes->get('/faq', 'Client::faq');
+$routes->get('/services', 'Client::services');
+
+// Social Gathering
 $routes->get('/chairs', 'Client::site_chairs');
 $routes->get('/mattress', 'Client::site_mattress');
 $routes->get('/canopies', 'Client::site_canopies');
 $routes->get('/tables', 'Client::site_tables');
-$routes->get('/faq', 'Client::faq');
-$routes->get('/services', 'Client::services');
+
+//   Cleaning 
+$routes->get('/gardening-tools', 'Client::site_gardening_tools');
+$routes->get('/gardening-tools', 'Client::site_gardening_tools');
+
+//   Music Ent
+
+
+
+
+$routes->get('/products', 'SiteController::index');
+
 $routes->match(['get', 'post'], '/savecanopies', 'Client::saveCanopies');
+$routes->match(['get', 'post'], '/payment-detail', 'Admin::payment_detail');
 $routes->match(['get', 'post'], '/canopy/(:any)/(:any)', 'Client::canopies/$1/$2');
 
 

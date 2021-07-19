@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,10 +27,10 @@
     <link rel="stylesheet" href="../../site_file/css/style.css">
     <link rel="stylesheet" href="../../site_file/css/customstyle.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
         <!-- load jQuery UI CSS theme -->
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
 
 </head>
 <style>
@@ -50,7 +48,6 @@
         </div>
     </div>
     <!-- end cssload-loader -->
-
     <a href="http://techydevs.com/demos/themes/html/trizen/rtl/index.html" class="rtl-btn">RTL Version</a>
 
     <!-- ================================
@@ -83,18 +80,14 @@
     <!-- ================================
     END HERO-WRAPPER AREA
 ================================= -->
-
-
 <section class="card-area section--padding">
     <div class="container">
-    <div class="row">
-                <div class="col-lg-12">
+    <div class="col-lg-12">
                     <div class="section-heading text-center">
                         <h2 class="sec__title">Services We Provide </h2>
                     </div><!-- end section-heading -->
                 </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        <div class="row">
+        <div class="row">          
             <div class="col-lg-12">
                 <div class="filter-wrap margin-bottom-40px">
                     <div class="filter-top d-flex align-items-center justify-content-between">
@@ -120,7 +113,6 @@
                                     Music & Entertainment
                                     </a>
                                 </li>
-                            </ul>
                         </div><!-- end section-tab -->
                         <div class="layout-view d-flex align-items-center">
                             <a href="room-grid.html" data-toggle="tooltip" data-placement="top" title="Grid View"><i class="la la-th-large"></i></a>
@@ -131,37 +123,15 @@
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
 
-
-        <!--------------Social Gathering------>
         <div class="tab-content" id="may-tabContent4">
             <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
-            <!-----
-            <div class="row">
-            <div class="col-md-6">
-							<label for="category_service_id" class="control-label">Category Service List</label>				
-							<select name="category_service_id" id="category_service_id" onChange="changecat(this.value);">
-                            <option value="" disabled selected>Select</option>
-                            <option value="A">Canopies</option>
-                            <option value="B">Chairs</option>
-                            <option value="C">Tables</option>
-                            <option value="D">Mattress</option>
-            </select>
-			</div>
-            <div class="col-md-6">
-							<label for="category_service_id" class="control-label">Sub Cat Service List</label>				
-                            <select name="category" id="category">
-                            <option value="" disabled selected>Select</option>
-                            </select>
-			</div>
-            </div>   ---> 
-
-
-            <!---------------  Social Gathering ------------->
-            <div class="tab-content" id="myTabContent3">
-          
-            <?php $i=1; foreach($canopies as $u){ ?>
                 <div class="row">
                     <div class="col-lg-12">
+                    <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">    
+                    <?php $i=1; foreach($canopies as $u){ ?>
+                        <?php $id = $u['id'];
+                     
+                         ?> 
                         <div class="card-item card-item-list room-card">
                             <div class="card-img-carousel carousel-action carousel--action">
                                 <div class="card-img">
@@ -184,15 +154,51 @@
                                 </div>
                             </div>
                         </div><!-- end card-item -->
+                        <?php } ?>
+                    </table>
                     </div><!-- end col-lg-12 -->
+                    <div class="row">
+            <div class="col-lg-12">
+                <div class="btn-box mt-4 text-center">
+                    <button type="button" id="load_more" data-id="<?php echo 
+                    $id; ?>"></i>Load More</button>
+                    <p class="font-size-13 pt-2">Showing 1 - 5 of 124 Rooms</p>
+                </div><!-- end btn-box -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
                 </div><!-- end row -->
             </div>
-            <?php } ?>
-    </div>
-
-            <!--------------------------Cleaning---------------------------------->
             <div class="tab-pane fade" id="dorm-beds" role="tabpanel" aria-labelledby="dorm-beds-tab">
                 <div class="row">
+                <script>
+        $(document).ready(function(){
+            $(document).on('click', '#load_more', function(event){
+            event.preventDefault();
+            var id = $('#load_more').data('id');
+            alert(id);
+            });
+        });
+        </script> 
+        
+        <script type="text/javascript">
+$(document).ready(function(){
+    $(document).on('click','.show_more',function(){
+        var ID = $(this).attr('id');
+        $('.show_more').hide();
+        $('.loding').show();
+        $.ajax({
+            type:'POST',
+            url:'ajax_more-without-design.php',
+            data:'id='+ID,
+            success:function(html){
+                $('#show_more_main'+ID).remove();
+                $('.postList').append(html);
+            }
+        });
+    });
+});
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <div class="col-lg-12">
                         <div class="card-item card-item-list room-card">
                             <div class="card-img-carousel carousel-action carousel--action">
@@ -203,9 +209,14 @@
                                 </div>
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="../../images/img32.jpg" alt="hotel-img">
+                                        <img src="images/img32.jpg" alt="hotel-img">
                                     </a>
-                                </div>            
+                                </div>
+                                <div class="card-img">
+                                    <a href="room-details.html" class="d-block">
+                                        <img src="images/img31.jpg" alt="hotel-img">
+                                    </a>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="card-price pb-2">
@@ -231,8 +242,6 @@
                     </div><!-- end col-lg-12 -->
                 </div><!-- end row -->
             </div>
-
-    <!-----------------------Clean------------------>
             <div class="tab-pane fade" id="private-room" role="tabpanel" aria-labelledby="private-room-tab">
                 <div class="row">
                     <div class="col-lg-12">
@@ -240,17 +249,17 @@
                             <div class="card-img-carousel carousel-action carousel--action">
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="../../images/img5.jpg" alt="hotel-img">
+                                        <img src="images/img31.jpg" alt="hotel-img">
                                     </a>
                                 </div>
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="../../images/img29.jpg" alt="hotel-img">
+                                        <img src="images/img32.jpg" alt="hotel-img">
                                     </a>
                                 </div>
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="../../images/img30.jpg" alt="hotel-img">
+                                        <img src="images/img33.jpg" alt="hotel-img">
                                     </a>
                                 </div>
                             </div>
@@ -258,10 +267,10 @@
                                 <div class="card-price pb-2">
                                     <p>
                                         <span class="price__from">From</span>
-                                        <span class="price__num">$88.00</span>
+                                        <span class="price__num">$145.00</span>
                                     </p>
                                 </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Premium Lake View Room</a></h3>
+                                <h3 class="card-title font-size-26"><a href="room-details.html">Superior Room</a></h3>
                                 <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
                                 <div class="card-attributes pt-3 pb-4">
                                     <ul class="d-flex align-items-center">
@@ -275,12 +284,9 @@
                                 </div>
                             </div>
                         </div><!-- end card-item -->
-            </div><!-- end col-lg-12 -->    
-        </div><!-- end row -->
-    </div>
-
-
-<!----------------------------Rent a Car----------------------->    
+                    </div><!-- end col-lg-12 -->
+                </div><!-- end row -->
+            </div>
             <div class="tab-pane fade" id="suites" role="tabpanel" aria-labelledby="suites-tab">
                 <div class="row">
                     <div class="col-lg-12">
@@ -288,17 +294,17 @@
                             <div class="card-img-carousel carousel-action carousel--action">
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="../../images/img31.jpg" alt="hotel-img">
+                                        <img src="images/img31.jpg" alt="hotel-img">
                                     </a>
                                 </div>
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="../../images/img32.jpg" alt="hotel-img">
+                                        <img src="images/img32.jpg" alt="hotel-img">
                                     </a>
                                 </div>
                                 <div class="card-img">
                                     <a href="room-details.html" class="d-block">
-                                        <img src="../../images/img33.jpg" alt="hotel-img">
+                                        <img src="images/img33.jpg" alt="hotel-img">
                                     </a>
                                 </div>
                             </div>
@@ -306,10 +312,10 @@
                                 <div class="card-price pb-2">
                                     <p>
                                         <span class="price__from">From</span>
-                                        <span class="price__num">$45.00</span>
+                                        <span class="price__num">$145.00</span>
                                     </p>
                                 </div>
-                                <h3 class="card-title font-size-26"><a href="room-details.html">Standard 2 Bed Male Dorm</a></h3>
+                                <h3 class="card-title font-size-26"><a href="room-details.html">Superior Room</a></h3>
                                 <p class="card-text pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores commodi deleniti hic inventore laboriosam laborum molestias, non odit quaerat! Aperiam culpa facilis fuga impedit.</p>
                                 <div class="card-attributes pt-3 pb-4">
                                     <ul class="d-flex align-items-center">
@@ -327,25 +333,33 @@
                 </div><!-- end row -->
             </div>
         </div>
-
-
         <div class="row">
             <div class="col-lg-12">
                 <div class="btn-box mt-4 text-center">
-                    <button type="button"  id="load_more" iclass="theme-btn"><i class="la la-refresh mr-1"></i>Load More</button>
+                    <button type="button" class="theme-btn"><i class="la la-refresh mr-1"></i>Load More</button>
                     <p class="font-size-13 pt-2">Showing 1 - 5 of 124 Rooms</p>
                 </div><!-- end btn-box -->
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
     </div><!-- end container -->
-<!-- end card-area -->
+</section><!-- end card-area -->
+<!-- ================================-->
+
+
+
+
+
+
+
+
+
 
     <div class="section-block"></div>
 
             <!-- ================================
             START DESTINATION AREA
             ================================= -->
-
+        
     <section class="cta-area padding-top-100px padding-bottom-180px text-center">
         <div class="video-bg">
             <video autoplay loop>
@@ -490,8 +504,8 @@
     <?= $this->include('layout/modal/contactdetailpopup') ?>
     <?= $this->include('layout/modal/loginpopup') ?>
     <!-- End Modal -->
-    
 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <!-- Template JS Files -->
     <script src="../../site_file/js/jquery-3.4.1.min.js"></script>
     <script src="../../site_file/js/jquery-ui.js"></script>
@@ -511,26 +525,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-<script>
+<!-----------   Ajax Load more   ------------------->
 
-var mealsByCategory = {
-    A: ["Soup", "Juice", "Tea", "Others"],
-    B: ["Juice", "Water", "Others"],
-    C: ["Soup", "Juice", "Coffee", "Tea", "Others"]
-}
-
-    function changecat(value) {
-        if (value.length == 0) document.getElementById("category").innerHTML = "<option></option>";
-        else {
-            var catOptions = "";
-            for (categoryId in mealsByCategory[value]) {
-                catOptions += "<option>" + mealsByCategory[value][categoryId] + "</option>";
-            }
-            document.getElementById("category").innerHTML = catOptions;
-        }
-    }
-    
-</script>
-    
 </body>
 </html>

@@ -78,8 +78,8 @@
                         <div class="menu-wrapper">
                             <a href="#" class="down-button"><i class="la la-angle-down"></i></a>
                             <div class="logo">
-                              <h3>QI Rental</h3>
-                       <div class="menu-toggler">
+                            <h3>QI Rental</h3>
+                        <div class="menu-toggler">
                                     <i class="la la-bars">QI Rental</i>
                                     <i class="la la-times"></i>
                                 </div><!-- end menu-toggler -->
@@ -113,7 +113,7 @@
                                                 <li><a href="#">House Cleaning</a></li>
                                                 </ul>
                                         </li>
-                                        <li><a href="#">Cleaning <i class="la la-plus"></i></a>
+                                        <li><a href="#">Music & Ent.<i class="la la-plus"></i></a>
                                         <ul class="sub-menu">
                                         <li><a href="#">Sound Systems</a></li>
                                                 <li><a href="#">Stage & Lighting</a></li>
@@ -129,7 +129,6 @@
                                         <li><a href="#">Accomodation</a></li>
                                         <li><a href="#">Rent a Car</a></li>
                                         <li><a href="#">Transporters</a></li>
-                                          
                                         </ul>
                                     </li>
     <li><a href="/contact">Contact Us</a></li>
@@ -137,7 +136,6 @@
 </ul>
                                 </nav>
                                 
-
                             </div><!-- end main-menu-content -->
                             <div class="nav-btn">
                                 <!----    <a href="become-local-expert.html" class="theme-btn">Become Local Expert</a>--->

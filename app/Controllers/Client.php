@@ -5,14 +5,16 @@ use App\Models\VendorService;
 use App\Models\Service;
 use App\Models\CategoryService;
 use App\Models\SubCategoryService;
+use App\Models\PaymentConfirm;
 class Client extends BaseController
 {
 
-    public function index(){
+    public function index()
+    {
         $model = new VendorService();
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Website';
-        $data['canopies'] = $model->where('category_id', '13')->findAll(); 
+        $data['canopies'] = $model->where('category_id', '13')->limit(1)->findAll(); 
         return view('/layout/site/index',$data);
     }
 
@@ -39,7 +41,7 @@ class Client extends BaseController
         $model = new VendorService();
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Canopies';
-        $data['canopies'] = $model->where('category_id', '13')->findAll();
+        $data['canopies'] = $model->where('category_id', '13')->limit(1,1)->findAll();
 		return view('layout/site/canopies',$data);
 	}
     
@@ -77,6 +79,72 @@ class Client extends BaseController
 		return view('layout/site/mattress',$data);
 	}
 
+    public function site_gardening_tools()
+	{
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Gardening Tool';
+        $model = new VendorService();
+        $data['mattress'] = $model->where('category_id', '16')->findAll();
+		return view('layout/site/cleaning/gardening_tools',$data);
+	}
+
+    public function site_house_cleaning()
+	{
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'House Cleaning';
+        $model = new VendorService();
+        $data['mattress'] = $model->where('category_id', '16')->findAll();
+		return view('layout/site/cleaning/house_cleaning',$data);
+	}
+
+    public function site_laundry()
+	{
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Laundry';
+        $model = new VendorService();
+        $data['mattress'] = $model->where('category_id', '16')->findAll();
+		return view('layout/site/cleaning/laundry',$data);
+	}
+
+    public function site_mower()
+	{
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Mower';
+        $model = new VendorService();
+        $data['mattress'] = $model->where('category_id', '16')->findAll();
+		return view('layout/site/cleaning/mower',$data);
+	}
+
+    
+    public function site_drones_camera()
+	{
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Drones Camera';
+        $model = new VendorService();
+        $data['mattress'] = $model->where('category_id', '16')->findAll();
+		return view('layout/site/music_ent/drones_camera',$data);
+	}
+
+    public function site_sound_system()
+	{
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Sound System';
+        $model = new VendorService();
+        $data['mattress'] = $model->where('category_id', '16')->findAll();
+		return view('layout/site/music_ent/sound_system',$data);
+	}
+
+    public function site_staget_lighting()
+	{
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Sound System';
+        $model = new VendorService();
+        $data['mattress'] = $model->where('category_id', '16')->findAll();
+		return view('layout/site/music_ent/staget_lighting',$data);
+	}
+
+
+    
     public function contact()
 	{
         $data['title'] = 'Qi.Rentals';
@@ -96,18 +164,90 @@ class Client extends BaseController
 	}
 
     public function book($id)
-	{   $model = new VendorService();
+	{   
+        $model = new VendorService();
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Book';
         $data['canopies'] = $model->where('id', $id)->findAll();
 		return view('layout/site/booked-details',$data);
 	}
     
+    public function approved_list($id)
+	{   $model = new Booking();
+        $userdata = get_column_name_by_id('users', session()->get('id'), session()->get('fname'));
+        $data['booking_list'] = $model->where('approved_status', '1')->orderBy('id', 'DESC')->findAll();
+        $param = array(
+                    'approved_status' =>  '1',
+                    'approved_date'   =>  date('Y-m-d'),
+                    'approved_time'   =>  date('H:i:s'),
+                    'admin_approved'  =>  session()->get('id')
+                    );
+        $model->update($id, $param);
+        $data['title'] = 'Approved List';
+        $data['page']  = 'Approved ';
+    return view('admin/booking_tbl/list',$data);
+	}
+
+        
+    public function cancel_book($id)
+	{   $userdata = get_column_name_by_id('users', session()->get('id'), session()->get('fname'));
+        $model = new Booking();
+        $data['booking_list'] = $model->where('approved_status', '1')->orderBy('id', 'DESC')->findAll();
+        $param = array(
+                    'approved_status' =>  '2',
+                    'approved_date'   =>  date('Y-m-d'),
+                    'approved_time'   =>  date('H:i:s')
+                    );
+        $model->update($id, $param);
+        $data['title'] = 'Cancel List';
+        $data['page']  = 'Cancel ';
+    return view('admin/booking_tbl/cancel_list',$data);
+	}
+
+    public function payment_confirms($id)
+	{   $userdata = get_column_name_by_id('users', session()->get('id'), session()->get('fname'));
+        $model = new Booking();
+        $data['booking_list'] = $model->where('approved_status', '1')->orderBy('id', 'DESC')->findAll();
+        $param = array(
+                    'payment_status' =>  '1',
+                    );
+                    $model->update($id, $param);
+                    $data['title'] = 'Approve List';
+                    $data['page']  = 'Approved';
+    return view('admin/booking_tbl/approve_list',$data);
+	}
+
+    public function payment_confirm($id)
+	{   $session = session();
+        $model = new Booking();
+        $pmodel = new PaymentConfirm();
+        $data['booking_list'] = $model->where('approved_status', '1')->orderBy('id', 'DESC')->findAll();
+        $booking = $model->where('id',$id)->findAll();
+        foreach($booking as $row) 
+            $book_id = $row['id'];
+        //  $p = $row['price'];
+        $param_payment = array(
+                    'payment_status' =>  '1',
+                    'date' => date('Y-m-d'),
+                    'time' => date('H:i:s'),
+                    'book_id' => $book_id,     
+                    'admin'  =>  $session->get('id')
+                    );
+        $pmodel->insert($param_payment);     
+        $param = array(
+                    'payment_status' =>  '1',      
+                    );                          
+        $model->update($id, $param);
+        $data['title'] = 'Approve List';
+        $data['page']  = 'Approved ';
+    return view('admin/booking_tbl/approve_list',$data);
+	}
 
     //List of Booking Service
     function book_list(){    
         $model = new Booking();
-        $data['booking_list'] = $model->orderBy('id', 'DESC')->findAll();
+        $session = session(); 
+        $data['booking_list'] = $model->where('approved_status', '0')->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'Booking List';
         $data['page'] = 'Booking ';
         $service_model = new Service();
@@ -117,7 +257,7 @@ class Client extends BaseController
     
     function approved_book_list(){    
         $model = new Booking();
-        $data['booking_list'] = $model->orderBy('id', 'DESC')->findAll();
+        $data['booking_list'] = $model->where('approved_status', '1')->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'Approved List';
         $data['page'] = 'Booking ';
         $service_model = new Service();
@@ -127,7 +267,7 @@ class Client extends BaseController
     
     function cancel_list(){    
         $model = new Booking();
-        $data['booking_list'] = $model->orderBy('id', 'DESC')->findAll();
+        $data['booking_list'] = $model->where('approved_status', '2')->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'Cancel List';
         $data['page'] = 'Booking ';
         $service_model = new Service();
@@ -135,8 +275,6 @@ class Client extends BaseController
         return view('admin/booking_tbl/cancel_list',$data);
     } 
     
-
-
     public function canopies($param1='' , $param2= '')
 	{
         $session = session();
@@ -150,7 +288,6 @@ class Client extends BaseController
             ];
             if (!$this->validate($rules)){
                 $session->setFlashdata("error", "Invalid data request");
-
             }else{
                 $model = new Booking();
                 $data['event_type'] =  $this->request->getVar('event_type');
@@ -160,13 +297,8 @@ class Client extends BaseController
                 $data['event_location'] =  $this->request->getVar('event_location');
                 $data['number_room'] =  $this->request->getVar('number_room');
                 $data['cat_service_id'] =  '13' ;
-            
                 if($model->insert($data)){
-                    print_r($data);
-                    var_dump($data);
-
                 $session->setFlashdata("success", "successfully");
-
                 $data['canopies'] = 'add';
                     }else{
                 $session->setFlashdata("error", "Something happened please try again");
@@ -262,6 +394,7 @@ public function saveCanopies()
         }
     }
 }
+
 
 
 public function mattress($param1='' , $param2= '')

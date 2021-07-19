@@ -120,7 +120,7 @@ $id = session()->get('logged_user');
           </a>
           <ul class="air__menuLeft__list">
             <li class="air__menuLeft__item">
-              <a href="bootstrap-tabs-pills-navs.html" class="air__menuLeft__link">
+              <a href="/payment-detail" class="air__menuLeft__link">
                 <span>Payment Detail</span>
               </a>
             </li>
