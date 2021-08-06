@@ -19,22 +19,25 @@ class Admin extends BaseController{
         }
     
     // Main layout  
-    public function index(){
+    public function dashboard(){
         $userdata = get_column_name_by_id('users', session()->get('id'), session()->get('fname'));
         $usermodel = new UserModel();
         $booking = new Booking();
         $service = new Service();
-        $data['bookingorder'] = $booking->countAllResults();
+        $vendor = new SettingVendor();
+        $data['bookingorder'] = $booking->where('MONTH(drop_off)')->countAllResults();
+       // print_r($data['bookingorder']);
+      //  exit;
         $data['totalservice'] = $service->countAllResults();
-        $data['vendortotal'] = $usermodel->where('user_type', '202')->countAllResults();
+        $data['vendor'] = $vendor->countAllResults();
         $data['usertotal'] = $usermodel->where('user_type', '101')->countAllResults();
         $data['title'] ='Qi Rentals';
-        $data['page'] ='Main';
+        $data['page'] ='dashboard';
         return view('layout/dashboard', $data);
     }
 
     // Setting Vendor
-    public function settingVendor($param1 = '',  $param2 = '' , $param3 = ''){    
+    public function settingVendor($param1 = '',$param2 = '' , $param3 = ''){    
         $session = session();  
         helper(['form', 'image']); 
         if($param1 == 'add'){
@@ -125,6 +128,8 @@ class Admin extends BaseController{
         $data['page'] = 'Setting Vendor ';
         return view('admin/setting_vendor/list',$data);
     } 
+
+    
 
     // Services
     public function service($param1 = '',  $param2 = ''){    
@@ -305,6 +310,22 @@ class Admin extends BaseController{
                     }
                 }
             }
+            if($parem1 = 'delete'){
+                $session = session();  
+                $VendorService = new VendorService();
+                ## Check record
+                if($VendorService->find()){
+    
+                ## Delete record
+                $VendorService->delete($param2);
+    
+                    $session->setFlashdata("success", "Deleted Successfully!");
+                }else{
+                $session->setFlashdata("success", "alert-danger");
+                }
+            }
+
+
             $model = new VendorService();
             $data['vendor'] = $model->orderBy('id', 'DESC')->findAll();
             $settingvendormodel = new SettingVendor();
@@ -322,6 +343,25 @@ class Admin extends BaseController{
             return view('admin/vendor_service_tbl/list',$data);
         }  
 
+
+
+        public function vendorService_delete($id=0){
+            $session = session();  
+            $VendorService = new VendorService();
+            ## Check record
+            if($VendorService->find($id)){
+
+            ## Delete record
+            $VendorService->delete($id);
+
+                $session->setFlashdata("success", "Deleted Successfully!");
+            }else{
+            $session->setFlashdata("success", "alert-danger");
+            }
+            $data['title'] = 'Setup Vendor Service ';
+            $data['page'] = 'Vendor Service '; 
+            return view('vservice/add/goals',$data);
+        }
 
         // Category  Service  
     public function categoryService($param1 = '',  $param2 = ''){    
@@ -373,9 +413,6 @@ public function subcategoryService($param1 = '',  $param2 = ''){
             $rules = [
                 "sub_cat_name" => "required",
                 "category_service_id" => "required", 
-                
-                            
-            
             ];
             if (!$this->validate($rules)){
                 $session->setFlashdata("error", "Invalid data request");

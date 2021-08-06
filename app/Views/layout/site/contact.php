@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="../../site_file/css/flag-icon.min.css">
     <link rel="stylesheet" href="../../site_file/css/leaflet.css">
     <link rel="stylesheet" href="../../site_file/css/style.css">
+    <link rel="stylesheet" href="../../site_file/css/style_all.css">
 </head>
 
 <body>
@@ -184,9 +185,97 @@
                         </div><!-- end form-content -->
                     </div><!-- end form-box -->
                 </div><!-- end col-lg-4 -->
+                
             </div><!-- end row -->
         </div><!-- end container -->
     </section><!-- end contact-area -->
+
+    <section class="contact-area section--padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="form-box">
+                        <div class="form-title-wrap">
+                            <h3 class="title">We'd love to hear from you</h3>
+                            <p class="font-size-15">Send us a message and we'll respond as soon as possible</p>
+                        </div><!-- form-title-wrap -->
+                        <div class="form-content ">
+                            <div class="contact-form-action">
+                                <form class="row messenger-box-form" method="post" action="mailer.php">
+                                    <div class="alert alert-success messenger-box-contact__msg col-lg-12"
+                                        style="display: none" role="alert">
+                                        Thank You! Your message has been sent.
+                                    </div>
+                                    <div class="col-lg-6 responsive-column">
+                                        <div class="input-box messenger-box-input-wrap">
+                                            <label class="label-text" for="name">Your Name</label>
+                                            <div class="form-group">
+                                                <span class="la la-user form-icon"></span>
+                                                <input class="form-control" type="text" id="name" name="name"
+                                                    placeholder="Your name" required>
+                                            </div>
+                                        </div>
+                                    </div><!-- end col-lg-6 -->
+                                    <div class="col-lg-6 responsive-column">
+                                        <div class="input-box messenger-box-input-wrap">
+                                            <label class="label-text" for="email">Your Email</label>
+                                            <div class="form-group">
+                                                <span class="la la-envelope-o form-icon"></span>
+                                                <input class="form-control" type="email" name="email" id="email"
+                                                    placeholder="Email address" required>
+                                            </div>
+                                        </div>
+                                    </div><!-- end col-lg-6 -->
+                                    <div class="col-lg-12">
+                                        <div class="input-box messenger-box-input-wrap">
+                                            <label class="label-text" for="message">Message</label>
+                                            <div class="form-group">
+                                                <span class="la la-pencil form-icon"></span>
+                                                <textarea class="message-control form-control" name="message"
+                                                    id="message" placeholder="Write message" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div><!-- end col-lg-12 -->
+                                    <div class="col-lg-12">
+                                        <div class="btn-box messenger-box-input-wrap">
+                                            <button name="submit" type="submit" class="theme-btn send-message-btn"
+                                                id="send-message-btn">Send Message</button>
+                                        </div>
+                                    </div><!-- end col-lg-12 -->
+                                </form>
+                            </div><!-- end contact-form-action -->
+                        </div><!-- end form-content -->
+                    </div><!-- end form-box -->
+                </div><!-- end col-lg-8 -->
+                <div class="col-lg-4">
+                    <div class="form-box">
+                        <div class="form-title-wrap">
+                            <h3 class="title">Are you a Vendor?</h3>
+                        </div><!-- form-title-wrap -->
+                        <div class="form-content">
+                            <div class="address-book">
+                                <ul class="list-items contact-address">                     
+                                        <p4 class="title font-size-16 pb-1">                                 
+                                        Do you want your restaurant listed on Jumia Food? Are you already our partner 
+                                        and have questions regarding our service?
+                                        You can always send an email to:
+                                        qi@rental.com.gh
+                                        </p4>
+                                  
+                                 
+                             
+                                </ul>
+                             
+                            </div>
+                        </div><!-- end form-content -->
+                    </div><!-- end form-box -->
+                </div><!-- end col-lg-4 -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section><!-- end contact-area -->
+
+
+    
     <!-- ================================
     END CONTACT AREA
 ================================= -->

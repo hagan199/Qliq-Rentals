@@ -26,7 +26,10 @@
     <link rel="stylesheet" href="../../site_file/css/flag-icon.min.css">
     <link rel="stylesheet" href="../../site_file/css/leaflet.css">
     <link rel="stylesheet" href="../../site_file/css/style.css">
+    <link rel="stylesheet" href="../../site_file/css/style_all.css">
 </head>
+
+
 <body>
 <!-- start cssload-loader -->
 <div class="preloader" id="preloader">
@@ -55,13 +58,13 @@
 <?php foreach($canopies as $row): ?>
     <div class="full-width-slider carousel-action">
         <div class="full-width-slide-item">
-        <img  src="/uploads/images/<?= $row['name'] ?>" alt="hotel-img">
+        <img  src="/uploads/images/<?= $row['name'] ?>"  width="700" height="600" alt="hotel-img">
         </div><!-- end full-width-slide-item -->
         <div class="full-width-slide-item">
-        <img  src="/uploads/images/<?= $row['name2'] ?>" alt="hotel-img">
+        <img  src="/uploads/images/<?= $row['name2'] ?>"  width="700" height="600"  alt="hotel-img">
         </div><!-- end full-width-slide-item -->
         <div class="full-width-slide-item">
-        <img  src="/uploads/images/<?= $row['name3'] ?>" alt="hotel-img">
+        <img  src="/uploads/images/<?= $row['name3'] ?>"  width="700" height="600"  alt="hotel-img">
         </div><!-- end full-width-slide-item -->
     </div><!-- end full-width-slider -->
 </section><!-- end room-detail-bread -->
@@ -91,7 +94,6 @@
     </div><!-- end single-content-navbar-wrap -->
     <div class="single-content-box">
 
- 
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -355,37 +357,37 @@
                             <h3 class="title stroke-shape">Book Now </h3>
                             <div class="sidebar-widget-item">
                             <div class="contact-form-action"></div>
-                                    <div class="input-box">
-                                        <label class="label-text" for="event_location">Event Locations </label>
+                                    <div class="col">
+                                        <label class="label-text" for="event_location">Event Locations <span class="text-warning">*</span></label>
                                                 <div class="form-group">
-                                                    <span class="la la-map-marker form-icon"></span>
-                                                    <input class="form-control" type="text" id="event_location" name="event_location" placeholder="Enter city or town" >
-                            <input id="box2" type="text" name="price" hidden value="<?php echo $price; ?> " oninput="calculate()" />
+                                        
+                            <input class="form-control" type="text" id="event_location" name="event_location" placeholder="Enter Location" >
+                            <input id="box2" type="text"  id="price" name="price" hidden value="<?php echo $price; ?> " oninput="calculate()" />
                             <input class="form-control"  hidden type="text" id="cat_service_id" value="<?php echo $cat_id; ?> " name="cat_service_id">
                             <input class="form-control"  hidden type="text" id="vendor_id" value="<?php echo $vendor_id; ?> " name="vendor_id">
                             <input class="form-control"  hidden type="text" id="service_id" value="<?php echo $service_id; ?> " name="service_id"> 
                             <input class="form-control"  hidden type="text" id="category_id" value="<?php echo $category_id; ?> " name="category_id"> 
                                     </div>
                                     </div>
-                                    <div class="input-box">
-                                            <label class="label-text">Pickup Date</label>
-                                            <div class="form-group">
-                                                <span class="la la-calendar form-icon"></span>
-                                                <input class="date-range form-control" type="text" id="pickup_date"  name="daterange-single"    readonly>
+                                    
+                                    <div class="col">
+                                            <label class="label-text">Pickup Date <span class="text-warning">*</span></label>
+                                            <div class="form-group"> 
+                                                <input class="date-range form-control" type="text" id="pickup_date"  name="daterange-single" required   readonly>
                                             </div>
                                     </div>
-                                    <div class="input-box">
-                                            <label  name="drop_off" class="label-text">Drop off date</label>
+               
+                                    <div class="col">
+                                            <label  name="drop_off" class="label-text">Drop off date<span class="text-warning">*</span></label>
                                             <div class="form-group">
-                                                <span class="la la-calendar form-icon"></span>
-                                                <input class="date-range form-control"  type="text" id="drop_off" name="daterange-single"    readonly>
+                                            <input class="date-range form-control"  type="text" id="drop_off" name="daterange-single"  required readonly>
                                             </div>
                                     </div>
-                                    <div class="input-box">
-                                                <label for="event_type"   class="label-text">Event Type</label>
+                                    <div class="col">
+                                                <label for="event_type"   class="label-text">Event Type <span class="text-warning">*</span></label>
                                                 <div class="form-group">
                                                     <div class="select-contain w-auto">
-                                                        <select class="select-contain-select"  id="event_type" name="event_type">
+                                                        <select class="select-contain-select"  id="event_type" name="event_type" required>
                                                             <option value="1" selected>Naming Ceremony</option>
                                                             <option value="2">Graduation</option>
                                                             <option value="3">Wedding</option>
@@ -396,10 +398,10 @@
                                                     </div>
                                                 </div>
                                     </div>
-                                    <div class="input-box">
+                                    <div class="col">
                                             <div class="qty-box d-flex align-items-center justify-content-between">
                                                     <label for="numer_room">Number Room</label>
-                                                        <input id="number_room" type="number" name="number_room" oninput="calculate()"  value="0"  />
+                                                        <input id="number_room" type="number" name="number_room" oninput="calculate()"  value="0" requried />
                                                     </div>
                                             </div>
                                     </div>
@@ -540,6 +542,8 @@
                                     style="margin-left: -40px;margin-bottom: -30px;"><strong><?= $validation->listErrors() ?></strong></label>
                             </div>
                             <?php endif; ?>
+                            
+                              <div      style="background: #A8FF33";  style="padding: 20px"; style="color: white"; id="promptme"></div>
                             <div class="row">
                                 <div class="col-lg-6 pr-0">
                                             <div class="input-box">
@@ -576,7 +580,7 @@
                                             </div>
                                 </div><!-- end col-lg-4 -->
                                 </div>
-                                <div id="promptme"></div>
+                              
                                 <button id="save_data"   class="theme-btn text-center w-100 mb-2">Book Now</button>
                                 
                         </div>
@@ -616,13 +620,15 @@
         var pickup_date = $('#pickup_date').val();
         var event_type = $('#event_type').val();
         var email = $('#email').val();
-        var phone = $('#phone').val();
+        var phone = $('#phone').val();    
         var lname = $('#lname').val();
         var fname = $('#fname').val();
         var vendor_id = $('#vendor_id').val();
         var service_id = $('#service_id').val();
         var cat_service_id = $('#cat_service_id').val();
         var category_id = $('#category_id').val();
+        var total_price = $('#total_price').val();
+       
         if(event_location !="" ){
         $.ajax({
                 url:'/savecanopies',
@@ -637,6 +643,7 @@
                     fname: fname, 
                     email: email,  
                     phone: phone, 
+                    total_price: total_price, 
                     cat_service_id: cat_service_id, 
                     vendor_id: vendor_id, 
                     service_id: service_id,  
@@ -644,6 +651,7 @@
                 },
             })
             document.getElementById('promptme').innerHTML = 'Booked sucessfully!';
+            alert('Booked sucessfully!');
         }
         });
 </script>

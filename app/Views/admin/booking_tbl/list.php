@@ -1,8 +1,6 @@
 <?= $this->extend('layout/main')?>
 <?= $this->section('content')?>
 
-
-
     <div class="tab-content" id="v-pills-tabContent">   
     <!-------USER lIST---->
     <div class="tab-pane fade <?php if(!isset($print_report))echo 'show active'; ?>" id="list" role="tabpanel" aria-labelledby="list-tab">  
@@ -26,59 +24,41 @@
                         <th>Event Type</th>                              
                         <th>Pick Date</th> 
                         <th>Drop off Date</th>  
-                        <th>Number</th> 
-                        <th>Status</th>
-                      
+                        <th>Number</th>                    
                         <th>Vendor Name</th> 
+                        <th>Total Price</th> 
                         <th>Category</th> 
                         <th>Cat Service</th>                        
                         <th>Service</th>                 
                         <th class="disabled-sorting text-right">Actions</th>
                         </tr>
-                        </thead>
-                        <tfoot>
-                        <tr>  
-                        <th>#</th>
-                        <th>Event Location</th>
-                        <th>Client Name</th>  
-                        <th>Event Type</th>                              
-                        <th>Pick Date</th> 
-                        <th>Drop off Date</th>  
-                        <th>Number</th> 
-                        <th>Status</th>
-                      
-                        <th>Vendor Name</th>
-                        <th>Category</th> 
-                        <th>Cat Service</th>  
-                        <th>Service</th>       
-                        <th class="text-right">Actions</th>
-                        </tr>
-                    </tfoot>
+                        </thead>                
                         <tbody>
                             <?php $i=1; foreach($booking_list as $u){ ?>
                             <tr>
                                 <td><?= $i++?></td>
                                 <td><?= $u['event_location'] ?></td>
                                 <td><?= $u['fname']. ' ' .$u['lname'] ?></td> 
-                                <td><?= $u['event_type'] ?></td>               
+                                <td><?php if($u['event_type'] == '1'){echo 'Naming Ceremony';}
+                                    elseif($u['event_type'] == '2'){echo 'Graduation';} 
+                                    elseif($u['event_type'] == '3'){echo 'Wedding';}
+                                    elseif($u['event_type'] == '4'){echo 'Funeral';}
+                                    elseif($u['event_type'] == '5'){echo 'Camp';} 
+                                    elseif($u['event_type'] == '6'){echo 'Other';}   ?></td>               
                                 <td><?= $u['pickup_date'] ?></td>
                                 <td><?= $u['drop_off'] ?></td>
                                 <td><?= $u['number_room'] ?></td> 
-                                <td id="status" class="text-center">
-                                <a href="/approved-list/<?= $u['id'] ?>" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Approved</a>
-                                <a href="/cancel-booked/<?= $u['id'] ?>" id="cancel-booked" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Cancel</a>
-                                </td>
                                 <td><?= get_column_name_by_id('setting_vendor', $u['vendor_id'], 'company_name') ?></td>
+                                <td><?= $u['total_price']. '.00' ?></td>
                                 <td><?= get_column_name_by_id('category_service_tbl', $u['category_id'], 'category_name') ?></td>
                                 <td><?= get_column_name_by_id('sub_category_service_tbl', $u['cat_service_id'], 'sub_cat_name') ?></td>
                                 <td><?= get_column_name_by_id('service_tbl', $u['service_id'], 'service_name') ?></td>         
                                 <td>
-                                <a href="/approved-list/<?= $u['id'] ?>" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Approved</a>
-                                <a href="/cancel-booked/<?= $u['id'] ?>" id="cancel-booked" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Cancel</a>
+                                <a href="/booking/approve/<?= $u['id'] ?>" class="theme-btn theme-btn-small"><i class="la la-times mr-1"> <span class="font-size-12 badge badge-primary">Approved</span></a>
+                                <a href="/booking/cancel/<?= $u['id'] ?>" id="cancel-booked" class="btn btn-sm btn-light"><small ><i class="fe fe-trash mr-2"><!-- --></i></small>Canceled</a>
                                 </td>
                             </tr>
-                            <?php } ?>
-                        
+                            <?php } ?>           
                         </tbody>
                     </table>
                   </div>

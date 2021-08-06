@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../../site_file/css/jquery-ui.css">
     <link rel="stylesheet" href="../../site_file/css/flag-icon.min.css">
     <link rel="stylesheet" href="../../site_file/css/style.css">
+    <link rel="stylesheet" href="../../site_file/css/style_all.css">
 </head>
 <body>
 <!-- start cssload-loader -->

@@ -35,22 +35,23 @@ $id = session()->get('logged_user');
     <div class="air__menuLeft__container kit__customScroll">
       <ul class="air__menuLeft__list">
         <li class="air__menuLeft__category">
-        <span>Dashboard</span>
+          <a href="/dashboard"> <span>Dashboard</span></a>
+       
         </li>
         <li class="air__menuLeft__item">
-          <a href="/booking"  class="air__menuLeft__link air__sidebar__actionToggle">
+          <a href="/booking/list/item"  class="air__menuLeft__link air__sidebar__actionToggle">
             <i class="fe fe-settings air__menuLeft__icon"></i>
             <span>Booked Detail</span>
           </a>
         </li>
         <li class="air__menuLeft__item">
-          <a href="/approved_book"  class="air__menuLeft__link air__sidebar__actionToggle">
+          <a href="/approved/list/item"  class="air__menuLeft__link air__sidebar__actionToggle">
             <i class="fe fe-settings air__menuLeft__icon"></i>
             <span>Approve Booked List </span>
           </a>
         </li>
         <li class="air__menuLeft__item">
-          <a href="/cancel_list"  class="air__menuLeft__link air__sidebar__actionToggle">
+          <a href="/cancel_list/list/item"  class="air__menuLeft__link air__sidebar__actionToggle">
             <i class="fe fe-settings air__menuLeft__icon"></i>
             <span>Cancel Booked List </span>
           </a>
@@ -64,7 +65,7 @@ $id = session()->get('logged_user');
             <span>Adminstrator</span>
           </a>
           <ul class="air__menuLeft__list">
-          <li class="<?php if($page == 'user')echo 'active'; ?>">
+          <li class="">
             <a href="/users/add/goals" class="air__menuLeft__link">
                 <span>Setup User</span>
               </a>

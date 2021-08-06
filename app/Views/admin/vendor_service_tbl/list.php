@@ -78,7 +78,7 @@
                                 <td><?= $u['description'] ?></td>   	
                                 <td><img src="/uploads/images/<?= $u['name'] ?>" width="50px" /></td>
                                 <td>
-                                <a title="edit" href="" class="btn btn-link btn-warning btn-just-icon like"><i class="material-icons">edit</i></a>                              
+                                <a title="delete" href="/vservice/delete/<?= $u['id'] ?>" class="btn btn-danger"><i class="material-icons">Delete</i></a>                              
                                 </td>
                             </tr>
                             
@@ -99,7 +99,7 @@
 
 
 <div class="tab-pane fade <?php if(isset($vendor_service))echo 'show active'; ?>" id="add" role="tabpanel" aria-labelledby="add-tab">    
-    <div class="row">
+
     <div class="col-md-12">
             <div class="card ">
                 <div class="card-header card-header-rose card-header-text">
@@ -137,19 +137,19 @@
 								<select name="category_id"  id="category" class="form-control" required>
                                 </select>
 			</div>
-            <br>
-            <br>
+            </div>
+            <div class="row">
+           
             <div class="col-md-4">
 					<label for="sub_category_id" class="control-label"> Sub Category List</label>				
 							<select name="sub_category_id" id="sub_category" class="form-control"required></select>
 			</div>
-            <br>
-            <br>
+          
             <div class="col-md-4">
                     <label for="image" class="form-label">Upload File</label>
                         <input type='file' name="image[]" multiple/>
                         <div id="myImg">
-                </div>
+            </div>
             </div>
             <div class="col-md-4">
                     <label for="image2" class="form-label">Upload File 2</label>
@@ -157,6 +157,8 @@
                         <div id="myImg">
                 </div>
             </div>
+         </div>
+         <div class="row">
             <div class="col-md-4">
                     <label for="image3" class="form-label">Upload File 3</label>
                         <input type='file' name="image3[]" multiple/>
@@ -174,6 +176,7 @@
                     <div class="form-group">
                         <textarea type="textarea" name="description"  class="form-control" id="description" placeholder="Enter Description"rows="4" cols="50"></textarea>
             </div>
+        </div>
         </div>
         </div>
             <div class="col-md-12" style="margin-top:3%">

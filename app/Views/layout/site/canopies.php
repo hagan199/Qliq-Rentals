@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -24,10 +23,19 @@
     <link rel="stylesheet" href="../../site_file/css/daterangepicker.css">
     <link rel="stylesheet" href="../../site_file/css/animate.min.css">
     <link rel="stylesheet" href="../../site_file/css/animated-headline.css">
-    <link rel="stylesheet" href="../../site_file/css/jquery-ui.css">
+    
+    <!--<link rel="stylesheet" href="../../site_file/css/jquery-ui.css">-->
     <link rel="stylesheet" href="../../site_file/css/flag-icon.min.css">
-    <link rel="stylesheet" href="../../site_file/css/leaflet.css">
     <link rel="stylesheet" href="../../site_file/css/style.css">
+    <link rel="stylesheet" href="../../csss/style.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../site_file/css/customstyle.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+        <!-- load jQuery UI CSS theme -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="../../site_file/css/style_all.css">
 </head>
 
 <body>
@@ -46,7 +54,7 @@
 ================================= -->
 <?= $this->include('layout/site/header') ?>
     <!-- ================================
-         END HEADER AREA
+                    END HEADER AREA
 ================================= -->
 
     <!-- ================================
@@ -95,8 +103,10 @@
                 </div><!-- end col-lg-12 -->
             </div><!-- end row -->
             <div class="row padding-top-50px">
-            <?php $i=1; foreach($canopies as $u){ ?>
-            <div class="col-lg-4">
+                <?php $i=1; foreach($canopies as $u){ 
+                    $id = $u['id']
+                    ?>
+            <div class="col-lg-4" id="post_<?=  $id;?>">
             <div class="card-item car-card mb-0">
                                 <div class="card-img">
                                     <a href="car-single.html" class="d-block">
@@ -126,9 +136,22 @@
                                         </div>
                                     </div>
                                 </div>
-        </div><!-- end container -->
+                        </div><!-- end container -->
+                    </div>
+                <?php } ?>
+            </div>
+        <br>
+        <div class="row">
+
+                <?php if ($pager) :?>
+                <?php $pagi_path='/canopies'; ?>
+                <?php $pager->setPath($pagi_path); ?>             
+                <?= $pager->links();  ?>
+                <?php endif ?> 
+                </div>         
+            </div>
         </div>
-        <?php } ?>
+
     </section><!-- end car-area -->
     <!-- ================================
        START FOOTER AREA
@@ -341,6 +364,8 @@
     </div><!-- end modal-popup -->
 
     <!-- Template JS Files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Template JS Files -->
     <script src="../../site_file/js/jquery-3.4.1.min.js"></script>
     <script src="../../site_file/js/jquery-ui.js"></script>
     <script src="../../site_file/js/popper.min.js"></script>
@@ -353,10 +378,13 @@
     <script src="../../site_file/js/jquery.countTo.min.js"></script>
     <script src="../../site_file/js/animated-headline.js"></script>
     <script src="../../site_file/js/jquery.ripples-min.js"></script>
-    <script src="../../site_file/js/leaflet.js"></script>
-    <script src="../../site_file/js/map.js"></script>
-    <script src="../../site_file/js/ajax-form.js"></script>
+    <script src="../../site_file/js/quantity-input.js"></script>
     <script src="../../site_file/js/main.js"></script>
-</body>
+    <script src="../../js/ajax-script.js"></script>
+    <script src="../../js/jquery-1.12.0.min.js"></script>
+     <script src="../../js/jquery-1.12.0.min.js"></script>
+     <script src="../../js/jquery-latest-min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 </html>

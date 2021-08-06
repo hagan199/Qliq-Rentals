@@ -4,7 +4,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <div>
-                            <h5 class="modal-title title" id="exampleModalLongTitle2">Personal Detail</h5>
+                            <h5 class="modal-title title" id="exampleModalLongTitle2">LOGIN IN</h5>
                             <p class="font-size-14"></p>
                         </div>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -12,7 +12,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                    <div class="text-dark font-size-32 mb-3">Sign In</div>
+                 
                         <?php if (isset($validation)): ?>
                     <div class="alert alert-danger" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -31,7 +31,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary text-center w-100"><strong><?= 'Log in' ?></strong></button>
                     </form>
-                    <a href="#" class="kit__utils__link font-size-16"><?= 'Forgot password?' ?></a>
+                 
                     </div>
                     </div>
                 </div>

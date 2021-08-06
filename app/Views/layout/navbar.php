@@ -13,8 +13,6 @@
     </div>
   </div>
   <div class="dropdown mr-auto d-none d-md-block">
-
-
   </div>
 
   <div class="air__topbar__actionsDropdown dropdown mr-4 d-none d-sm-block">
@@ -25,17 +23,17 @@
     <div class="air__topbar__actionsDropdownMenu dropdown-menu dropdown-menu-right" role="menu">
       <div style="width: 350px;">
         <div class="card-header card-header-flex">
-  <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-bold nav-tabs-noborder nav-tabs-stretched">
-    <li class="nav-item">
-      <a
+    <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-bold nav-tabs-noborder nav-tabs-stretched">
+      <li class="nav-item">
+        <a
         href="#tab-alert-content"
         class="nav-link active"
         id="tab-alert"
         role="button"
         data-toggle="tab"
-      >
+        >
         Alerts
-      </a>
+        </a>
     </li>
     <li class="nav-item">
       <a

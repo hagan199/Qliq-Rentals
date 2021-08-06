@@ -21,7 +21,7 @@
                         <ul class="list-items list--items">
                             <li><a href="/about">About us</a></li>
                             <li><a href="/services">Service</a></li>
-
+                            <li><a href="/policy">Policy</a></li>
                         </ul>
                     </div><!-- end footer-item -->
                 </div><!-- end col-lg-3 -->

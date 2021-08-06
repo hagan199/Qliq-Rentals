@@ -748,6 +748,7 @@ textarea.input {
 	text-align: center;
 }
 
+  
 .event .event-day span {
 	color: #FFF;
 	position: absolute;
@@ -1107,6 +1108,7 @@ textarea.input {
 		display:none;
 	}
 }
+
 
 @media only screen and (max-width: 767px) {
 	/* --- contact nav --- */

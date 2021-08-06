@@ -9,9 +9,9 @@
         </div>
         <div class="col-md-4">
         <div class="air__footer__logo">
-            <div class="air__footer__logo__letter">G</div>
-            <div class="air__footer__logo__name">GNAT </div>
-            <div class="air__footer__logo__descr">GNAT BOOKING</div>
+            <div class="air__footer__logo__letter">QI</div>
+            <div class="air__footer__logo__name">RENTAL</div>
+            <div class="air__footer__logo__descr">RENTAL BOOKING</div>
         </div>
         </div>
     </div>

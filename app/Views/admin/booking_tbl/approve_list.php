@@ -61,11 +61,23 @@
                                 <td><?= $u['event_location'] ?></td>
                                 <td><?= $u['approved_date']. ' / '.$u['approved_time']  ?></td>   
                                 <td><?= $u['fname']. ' ' .$u['lname'] ?></td> 
-                                <td><?= $u['event_type'] ?></td>               
+                                <td><?php if($u['event_type'] == '1'){echo 'Naming Ceremony';}
+                                    elseif($u['event_type'] == '2'){echo 'Graduation';} 
+                                    elseif($u['event_type'] == '3'){echo 'Wedding';}
+                                    elseif($u['event_type'] == '4'){echo 'Funeral';}
+                                    elseif($u['event_type'] == '5'){echo 'Camp';} 
+                                    elseif($u['event_type'] == '6'){echo 'Other';}   ?></td>         
                                 <td><?= $u['pickup_date'] ?></td>
                                 <td><?= $u['drop_off'] ?></td>
                                 <td><?= $u['number_room'] ?></td>  
-                                <td><a href="/payment_confirm/<?= $u['id'] ?>" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Payment</a></td>
+                                <td>
+                                <?php if ($u['payment_status']=='0'){ ?>
+                                    <a href="/approved/payment_confirm/<?= $u['id'] ?>" class="theme-btn theme-btn-small"><span class="font-size-12 badge badge-primary">Payment</span></a>
+                                            <?php } ?>
+                                            <?php if($u['payment_status'] =='1'){ ?>
+                                                <label class="text-success p-1 border border-success rounded">Completed</label>
+                                            <?php }?>
+                                </td>
                                 <td><?= get_column_name_by_id('category_service_tbl', $u['category_id'], 'category_name') ?></td>
                                 <td><?= get_column_name_by_id('sub_category_service_tbl', $u['cat_service_id'], 'sub_cat_name') ?></td>
                                 <td><?= get_column_name_by_id('service_tbl', $u['service_id'], 'service_name') ?></td>  

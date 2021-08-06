@@ -22,8 +22,7 @@
                         <tr>
                             <th>#</th>
                             <th>Confirm Date</th>     
-                            <th>Status</th>   
-                            <th>Booked </th>                                   
+                            <th>Status</th>                                     
                         </tr>
                         </thead>
                         <tfoot>
@@ -31,7 +30,7 @@
                             <th>#</th>
                             <th>Confirm Date</th>     
                             <th>Status</th>   
-                            <th>Booked </th>                                                                                       
+                                                                                                                 
                         </tr>
                     </tfoot>
                         <tbody>
@@ -39,8 +38,15 @@
                             <tr>
                                 <td><?= $i++?></td>
                                 <td><?= $u['date']. '-' .$u['time']  ?></td>
-                                <td><?= $u['payment_status'] ?></td>  
-                                <td><?= get_column_name_by_id('payment_confirm_tbl', $u['book_id'], 'fname'  ) ?>    </td>
+                             
+                                <td>
+                                <?php if ($u['payment_status']=='1'){ ?>
+                                                <a  title="Submit First SMS" href="" class="btn btn-sm btn-outline-green">
+                                                    <i class="material-icons">Paid</i>
+                                                </a>
+                                            <?php } ?>
+                                </td>  
+                           
                             </tr>
                             <?php } ?>                       
                         </tbody>

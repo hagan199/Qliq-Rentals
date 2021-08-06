@@ -17,22 +17,44 @@
     <?php if (session()->get('user_type') == 101):?>
 <div class="col-lg-4">
     <div class="card">
-        <div class="card-body">
-        <div class="d-flex flex-wrap align-items-center">
-            <div class="mr-auto">
-                <p class="text-uppercase text-dark font-weight-bold mb-1">
-                        Users
-                    </p>
-                <p class="text-gray-5 mb-0">
-                    Total User
-                    </p>
-                    </div>
-                <p class="text-success font-weight-bold font-size-24 mb-0"> <?= $usertotal ?></p>
+        <a  href="/users/add/goals">
+            <div class="card-body">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="mr-auto">
+                        <p class="text-uppercase text-dark font-weight-bold mb-1">
+                         User
+                        </p>
+                        <p class="text-gray-5 mb-0">
+                        Total User
+                        </p>
+                        </div>
+                    <p class="text-primary font-weight-bold font-size-24 mb-0"> <?= $usertotal ?></p>
                 </div>
             </div>
-        </div>
+        </a>
+    </div>
     </div>
     <div class="col-lg-4">
+    <div class="card">
+        <a  href="/users/add/goals">
+            <div class="card-body">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="mr-auto">
+                        <p class="text-uppercase text-dark font-weight-bold mb-1">
+                        Vendor Owners
+                        </p>
+                        <p class="text-gray-5 mb-0">
+                        Total Vendor Owners
+                        </p>
+                        </div>
+                    <p class="text-secondary font-weight-bold font-size-24 mb-0"> <?= $usertotal ?></p>
+                </div>
+            </div>
+        </a>
+    </div>
+    </div>
+    <div class="col-lg-4">
+        <a  href="/booking">
     <div class="card">
         <div class="card-body">
         <div class="d-flex flex-wrap align-items-center">
@@ -44,13 +66,15 @@
                     Total Booking
                     </p>
                     </div>
-                <p class="text-success font-weight-bold font-size-24 mb-0"> <?= $bookingorder ?></p>
+                <p class="text-success font-weight-bold font-size-24 mb-0"><?= $bookingorder ?></p>
                 </div>
+            </a>
             </div>
         </div>
     </div>
     <div class="col-lg-4">
     <div class="card">
+        <a href="/approved/list/item">
         <div class="card-body">
         <div class="d-flex flex-wrap align-items-center">
             <div class="mr-auto">
@@ -61,15 +85,17 @@
                     Total Approved Booking
                     </p>
                     </div>
-                <p class="text-success font-weight-bold font-size-24 mb-0"> <?= $bookingorder ?></p>
+                <p class="text-warning font-weight-bold font-size-24 mb-0"> <?= $bookingorder ?></p>
                 </div>
             </div>
+        </a>
         </div>
     </div>
 
         <!---Total Paymnent---->
     <div class="col-lg-4">
         <div class="card">
+            <a href="/payment-detail">
             <div class="card-body">
                 <div class="d-flex flex-wrap align-items-center">
                 <div class="mr-auto">
@@ -81,11 +107,13 @@
                 <p class="text-primary font-weight-bold font-size-24 mb-0"><?= +$bookingorder ?></p>
             </div>
             </div>
+            </a>
         </div>
     </div>
     <!--------- Service-------->
     <div class="col-lg-4">
             <div class="card">
+                <a href= "/services/add/servicesadd">
                 <div class="card-body">
                     <div class="d-flex flex-wrap align-items-center">
                     <div class="mr-auto">
@@ -95,20 +123,23 @@
             <p class="text-danger font-weight-bold font-size-24 mb-0"><?= $totalservice ?></p>
             </div>
             </div>
+            </a>
         </div>
     </div>
     <!------ Vendor----->
     <div class="col-lg-4">
             <div class="card">
+            <a href="/svendor/edit/goals">
                 <div class="card-body">
                     <div class="d-flex flex-wrap align-items-center">
                     <div class="mr-auto">
-                    <p class="text-uppercase text-dark font-weight-bold mb-1"> Vendor </p>
+                    <p class="text-uppercase text-dark font-weight-bold mb-1"> Company Vendor </p>
                     <p class="text-gray-5 mb-0">Total Vendor</p>
                     </div>
-                    <p class="text-danger font-weight-bold font-size-24 mb-0"><?= $vendortotal ?></p>
+                    <p class="text-danger font-weight-bold font-size-24 mb-0"><?= $vendor ?></p>
             </div>
             </div>
+            </a>
         </div>
     </div>
     <?php endif;?>
@@ -120,6 +151,7 @@
 <?php if (session()->get('user_type') == 101):?>
 <div class="col-lg-4">
 <div class="card">
+
         <div class="card-body">
         <div class="mb-3">
     <div class="bg-success text-white text-uppercase px-3 py-1 mb-2">
@@ -152,7 +184,7 @@
         <tr>
             <td class="text-nowrap">
             <div class="kit__l12__donut kit__l12__donut--info mr-3"></div>
-            Mattres
+            Mattress
             </td>
             <td class="text-right"><strong>+18</strong></td>
         </tr>

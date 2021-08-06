@@ -58,7 +58,12 @@
                                 <td><?= $i++?></td>
                                 <td><?= $u['event_location'] ?></td>
                                 <td><?= $u['fname']. ' ' .$u['lname'] ?></td> 
-                                <td><?= $u['event_type'] ?></td>               
+                                <td><?php if($u['event_type'] == '1'){echo 'Naming Ceremony';}
+                                    elseif($u['event_type'] == '2'){echo 'Graduation';} 
+                                    elseif($u['event_type'] == '3'){echo 'Wedding';}
+                                    elseif($u['event_type'] == '4'){echo 'Funeral';}
+                                    elseif($u['event_type'] == '5'){echo 'Camp';} 
+                                    elseif($u['event_type'] == '6'){echo 'Other';}   ?></td>            
                                 <td><?= $u['pickup_date'] ?></td>
                                 <td><?= $u['drop_off'] ?></td>
                                 <td><?= $u['number_room'] ?></td>               
@@ -68,7 +73,7 @@
                                 <td><?= get_column_name_by_id('service_tbl', $u['service_id'], 'service_name') ?></td>  
                                 <td><?= get_column_name_by_id('service_tbl', $u['service_id'], 'service_name') ?></td>         
                                 <td>
-                                <a href="#" class="theme-btn theme-btn-small"><i class="la la-times mr-1"></i>Delete</a>
+                                <a href="/cancel_list/delete/<?= $u['id'] ?>"  class="btn btn-sm btn-light"><small ><i class="fe fe-trash mr-2"><!-- --></i></small>Delete</a>
                                 </td>
                             </tr>
                             <?php } ?>

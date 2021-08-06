@@ -14,7 +14,6 @@
     <title><?= $page . ' | '. $title ?></title>
     <link rel="icon" type="image/png" href="../../components/kit/core/img/favicon.png" />
     <link href="https://fonts.googleapis.com/css?family=Mukta:400,700,800&amp;display=swap" rel="stylesheet">
-
     <!-- VENDORS -->
     <link rel="stylesheet" type="text/css" href="../../vendors/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../vendors/perfect-scrollbar/css/perfect-scrollbar.css">
@@ -41,12 +40,9 @@
     <link rel="stylesheet" type="text/css" href="../../vendors/font-awesome/css/font-awesome.min.css">
 
     <!-------DATETABLES------------->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.bootstrap4.min.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap4.min.css" />
+    <link rel="stylesheet" type="text/css"href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" type="text/css"href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.bootstrap4.min.css" />
+    <link rel="stylesheet" type="text/css"href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap4.min.css" />
 
     <script src="../../js/jquery-3.3.1.js"></script>
     <script src="../../vendors/jquery/dist/jquery.min.js"></script>
