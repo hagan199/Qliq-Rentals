@@ -99,12 +99,28 @@
 
 
 <div class="tab-pane fade <?php if(isset($vendor_service))echo 'show active'; ?>" id="add" role="tabpanel" aria-labelledby="add-tab">    
-
-    <div class="col-md-12">
+<br>
+<div class="col-lg-6 mb-5">
+                                <ul class="nav nav-pills nav-justified" id="myTab2" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="flight-hotel-tab" data-toggle="tab" href="#flight-hotel" role="tab" aria-controls="flight-hotel" aria-selected="true">
+                                    Social Gathering
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="flight-hotel-car-tab" data-toggle="tab" href="#flight-hotel-car" role="tab" aria-controls="flight-hotel-car" aria-selected="false">
+                                    Cleaning
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div><!-- end section-tab -->
+        <div class="tab-content" id="myTabContent3">
+        <div class="tab-pane fade show active" id="flight-hotel" role="tabpanel" aria-labelledby="flight-hotel-tab">
+        <div class="col-md-12">
             <div class="card ">
                 <div class="card-header card-header-rose card-header-text">
                         <div class="card-text">
-                        <h4 class="card-title">Setup Service Detail</h4>
+                        <h4 class="card-title">Setup Social Gathering Service</h4> Detail</h4>
                     </div>
                 </div>
         <div class="card-body ">
@@ -194,11 +210,108 @@
         </div>
     </form>  
     </div>
-</div>    
+</div>   
+</div>
+<!-------Cleaning--------->
+     <div class="tab-pane fade" id="flight-hotel-car" role="tabpanel" aria-labelledby="flight-hotel-car-tab"> 
+     <div class="col-md-12">
+            <div class="card ">
+                <div class="card-header card-header-rose card-header-text">
+                        <div class="card-text">
+                        <h4 class="card-title">Setup Cleaning Service</h4> Detail</h4>
+                    </div>
+                </div>
+        <div class="card-body ">
+            <form action="/vservice/cleaning/goals" enctype="multipart/form-data" method="post">
+        <div class="box-body">
+            <div class="row">
+                    <div class="col-md-4">
+							<label for="vendor_id" class="control-label">Vendor Name</label>				
+								<select name="vendor_id" class="form-control" required>
+									<option value="">Select Vendor Name </option>
+                                    <?php foreach($all_vendor_name as $vendor_name): ?>
+                                        <option value="<?= $vendor_name['id'] ?>"><?= $vendor_name['company_name'] ?></option>
+                                    <?php endforeach; ?>                    
+							</select>
+			</div>
+
+            <div class="col-md-4">
+					<label for="service_id" class="control-label">Service List</label>				
+						    <select name="service_id" id="service_id" class="form-control" required>
+								<option value="" selected disabled>Select Service  </option>
+                                    <?php foreach($all_service as $service): ?>
+                                        <option value="<?= $service['id'] ?>"><?= $service['service_name'] ?></option>
+                                    <?php endforeach; ?>
+							</select>
+			</div>
+            
+
+            <div class="col-md-4">
+					<label for="category_id" class="control-label">Category List</label>				
+								<select name="category_id"  id="category" class="form-control" required>
+                                </select>
+			</div>
+            </div>
+            <div class="row">
+           
+            <div class="col-md-4">
+					<label for="sub_category_id" class="control-label"> Sub Category List</label>				
+							<select name="sub_category_id" id="sub_category" class="form-control"required></select>
+			</div>
+          
+            <div class="col-md-4">
+                    <label for="image" class="form-label">Upload File</label>
+                        <input type='file' name="image[]" multiple/>
+                        <div id="myImg">
+            </div>
+            </div>
+            <div class="col-md-4">
+                    <label for="image2" class="form-label">Upload File 2</label>
+                        <input type='file' name="image2[]" multiple/>
+                        <div id="myImg">
+                </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-4">
+                    <label for="image3" class="form-label">Upload File 3</label>
+                        <input type='file' name="image3[]" multiple/>
+                        <div id="myImg">
+                </div>
+            </div>
+            <div class="col-md-4">
+                    <label for="price" class="control-label">Price</label>
+                        <div class="form-group">
+                <input type="number" name="price"  class="form-control" id="price" required/>
+            </div>
+            </div>
+            <div class="col-md-4">
+                <label for="description" class="control-label">Description</label>
+                    <div class="form-group">
+                        <textarea type="textarea" name="description"  class="form-control" id="description" placeholder="Enter Description"rows="4" cols="50"></textarea>
+            </div>
         </div>
+        </div>
+        </div>
+            <div class="col-md-12" style="margin-top:3%">
+                    <div class="box-footer">
+                            <div class="form-group">
+                                <div class="col-md-4"></div>
+                                    <div class="col-md-8">
+                                    <button type="submit" class="btn btn-success">
+                                    <i class="fa fa-check"></i>Add
+                                    </button>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </form>  
     </div>
+</div> 
+</div> 
 </div>
-</div>
+
 
 
 

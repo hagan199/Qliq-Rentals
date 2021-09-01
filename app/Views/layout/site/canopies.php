@@ -106,7 +106,7 @@
                 <?php $i=1; foreach($canopies as $u){ 
                     $id = $u['id']
                     ?>
-            <div class="col-lg-4" id="post_<?=  $id;?>">
+            <div class="col-lg-3" id="post_<?=  $id;?>">
             <div class="card-item car-card mb-0">
                                 <div class="card-img">
                                     <a href="car-single.html" class="d-block">
@@ -154,7 +154,7 @@
 
     </section><!-- end car-area -->
     <!-- ================================
-       START FOOTER AREA
+        START FOOTER AREA
 ================================= -->
 <section class="footer-area section-bg padding-top-100px padding-bottom-30px">
         <div class="container">
@@ -355,7 +355,7 @@
                 <button type="submit" class="btn btn-primary text-center w-100"><strong><?= 'Log in' ?></strong></button>
                     </form>
                 <a href="#" class="kit__utils__link font-size-16"><?= 'Forgot password?' ?></a>
-                 </div>
+                </div>
                         </div><!-- end contact-form-action -->
                     </div>
                 </div>

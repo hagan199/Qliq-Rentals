@@ -6,6 +6,7 @@ use App\Models\Service;
 use App\Models\CategoryService;
 use App\Models\SubCategoryService;
 use App\Models\PaymentConfirm;
+use App\Models\UserModel;
 use App\Models\CustomModel;
 class Client extends BaseController
 {
@@ -17,17 +18,19 @@ class Client extends BaseController
         $this->db = \Config\Database::connect();
     }
 
-    public function index($param1 = '')
-    {
+    public function index($param1 = ''){
         
         $pager = \Config\Services::pager();
       //  $db = db_connect();
        // $modelCus = new CustomModel($db);
         $model = new VendorService();
-        $data['canopies'] =  $model->where('category_id', '13')->paginate(50);
-        $data['chairs']   =  $model->where('category_id', '14')->paginate(50);
-        $data['tables']   =  $model->where('category_id', '15')->paginate(50);
-        $data['mattress'] =  $model->where('category_id', '16')->paginate(50);
+        $data['canopies'] =  $model->where('category_id', '13')->paginate(60);
+        $data['chairs']   =  $model->where('category_id', '14')->paginate(60);
+        $data['tables']   =  $model->where('category_id', '15')->paginate(60);
+        $data['mattress'] =  $model->where('category_id', '16')->paginate(60);
+        $data['mower']    =  $model->where('category_id', '19')->paginate(60);
+        $data['laundry']  =  $model->where('category_id', '20')->paginate(60);
+        $data['garderning']  =  $model->where('category_id', '21')->paginate(60);
         $data['pager']    =  $model->pager;
         $data['page']     =  'Website';
         $data['title']    =  'Qi.Rentals';
@@ -35,8 +38,7 @@ class Client extends BaseController
     }
 
 
-    public function ajaxCanopies()
-{
+    public function ajaxCanopies(){
             $vmodel = new VendorService();
             $row = $_POST['row'];
             $rowperpage = 3;
@@ -60,15 +62,16 @@ class Client extends BaseController
                 echo $html;
         }
     
-	public function site()
-	{   
+	public function site(){   
             $pager = \Config\Services::pager();
             $model = new VendorService();
-            $data['canopies'] =  $model->where('category_id', '13')->paginate(4,'group1');
-            $data['chairs']   =  $model->where('category_id', '14')->paginate(4,'group2');
-            $data['tables']   =  $model->where('category_id', '15')->paginate(4,'group3');
-            $data['mattress'] =  $model->where('category_id', '16')->paginate(4,'group4');
-            $data['pager']    =  $model->pager;
+       $data['canopies'] =  $model->where('category_id', '13')->paginate(60);
+        $data['chairs']   =  $model->where('category_id', '14')->paginate(60);
+        $data['tables']   =  $model->where('category_id', '15')->paginate(60);
+        $data['mattress'] =  $model->where('category_id', '16')->paginate(60);
+        $data['mower']    =  $model->where('category_id', '19')->paginate(60);
+        $data['laundry']  =  $model->where('category_id', '20')->paginate(60);
+        $data['garderning']  =  $model->where('category_id', '21')->paginate(60);
             $data['pager'] =  $model->pager;
             $data['title'] = 'Qi.Rentals';
             $data['page']= 'Website';
@@ -76,15 +79,14 @@ class Client extends BaseController
 	}
 
 
-    public function about()
-	{
+    public function about(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'About';
 		return view('layout/site/about',$data);
 	}
     
-    public function site_canopies()
-	{   $pager = \Config\Services::pager();
+    public function site_canopies(){   
+        $pager = \Config\Services::pager();
         $model = new VendorService();
         $data['canopies'] =  $model->where('category_id', '13')->paginate(10);
         $data['pager'] =  $model->pager;
@@ -94,15 +96,13 @@ class Client extends BaseController
 		return view('layout/site/canopies',$data);
 	}
     
-    public function faq()
-	{
+    public function faq(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Faq';
 		return view('layout/site/faq',$data);
 	}
 
-    public function site_tables()
-	{  
+    public function site_tables(){  
         $model = new VendorService();
         $data['tables'] = $model->where('category_id', '15')->paginate(10);
         $data['pager'] =  $model->pager;
@@ -111,8 +111,8 @@ class Client extends BaseController
 		return view('layout/site/tables',$data);
 	}
 
-    public function site_chairs()
-	{   $pager = \Config\Services::pager();
+    public function site_chairs(){   
+        $pager = \Config\Services::pager();
         $model = new VendorService();
         $data['chairs'] =  $model->where('category_id', '13')->paginate(10);
         $data['pager'] =  $model->pager;
@@ -121,8 +121,7 @@ class Client extends BaseController
 		return view('layout/site/chairs',$data);
 	}
 
-    public function site_mattress()
-	{
+    public function site_mattress(){
         $pager = \Config\Services::pager();
         $model = new VendorService();
         $data['mattress'] = $model->where('category_id', '16')->paginate(10);
@@ -132,8 +131,7 @@ class Client extends BaseController
 		return view('layout/site/mattress',$data);
 	}
 
-    public function site_gardening_tools()
-	{
+    public function site_gardening_tools(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Gardening Tool';
         $model = new VendorService();
@@ -141,8 +139,7 @@ class Client extends BaseController
 		return view('layout/site/cleaning/gardening_tools',$data);
 	}
 
-    public function site_house_cleaning()
-	{
+    public function site_house_cleaning(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'House Cleaning';
         $model = new VendorService();
@@ -150,8 +147,7 @@ class Client extends BaseController
 		return view('layout/site/cleaning/house_cleaning',$data);
 	}
 
-    public function site_laundry()
-	{
+    public function site_laundry(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Laundry';
         $model = new VendorService();
@@ -159,8 +155,7 @@ class Client extends BaseController
 		return view('layout/site/cleaning/laundry',$data);
 	}
 
-    public function site_mower()
-	{
+    public function site_mower(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Mower';
         $model = new VendorService();
@@ -168,8 +163,7 @@ class Client extends BaseController
 		return view('layout/site/cleaning/mower',$data);
 	}
     
-    public function site_drones_camera()
-	{
+    public function site_drones_camera(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Drones Camera';
         $model = new VendorService();
@@ -177,8 +171,7 @@ class Client extends BaseController
 		return view('layout/site/music_ent/drones_camera',$data);
 	}
 
-    public function site_sound_system()
-	{
+    public function site_sound_system(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Sound System';
         $model = new VendorService();
@@ -186,8 +179,7 @@ class Client extends BaseController
 		return view('layout/site/music_ent/sound_system',$data);
 	}
 
-    public function site_staget_lighting()
-	{
+    public function site_staget_lighting(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Staget lighting';
         $model = new VendorService();
@@ -195,8 +187,7 @@ class Client extends BaseController
 		return view('layout/site/music_ent/staget_lighting',$data);
 	}
 
-    public function site_video_coverage()
-	{
+    public function site_video_coverage(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Video Coverage';
         $model = new VendorService();
@@ -204,15 +195,13 @@ class Client extends BaseController
 		return view('layout/site/music_ent/video_coverage',$data);
 	}
 
-    public function contact()
-	{
+    public function contact(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Contact';
 		return view('layout/site/contact',$data);
 	}
 
-        public function services()
-	{
+    public function services(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Services';
         $categorymodel = new CategoryService();
@@ -222,15 +211,55 @@ class Client extends BaseController
 		return view('layout/site/services',$data);
 	}
 
-    public function join_us()
-	{
+    public function join_us(){
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Join Us';
 		return view('layout/site/join_us',$data);
 	}
 
-    public function book($id)
-	{   
+
+    
+public function  vendor_self_sign_up($param1 = '',  $param2 = ''){    
+            $session = session();
+            if($param1 == 'add'){
+                if($this->request->getMethod() == 'post'){
+                    $rules = [
+                        "fname" => "required",
+                        "lname" => "required",  
+                        "location" => "required"          
+                    ];
+                    if (!$this->validate($rules)){
+                        $session->setFlashdata("error", "Invalid data request");
+                        $data['users'] =  'add';
+                    }else{
+                        $model = new UserModel();       
+                        $data['fname'] = $this->request->getVar('fname');
+                        $data['lname'] = $this->request->getVar('lname');
+                        $data['phone'] = $this->request->getVar('phone');
+                        $data['location'] = $this->request->getVar('location');
+                        $data['email'] = $this->request->getVar('email');
+                        $data['user_type'] = '404';
+                        $data['date'] =  date('Y-m-d');
+                        $data['time'] = date('H:i:s');
+                        $data['user_name'] = $this->request->getVar('user_name',FILTER_SANITIZE_STRING);
+                        $data['user_password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
+                    if($model->insert($data)){
+                    $session->setFlashdata("success", "successfully");
+                        $data['users'] =  'add';
+                        }else{
+                    $session->setFlashdata("error", "Something happened please try again");
+                    $data['users'] =  'add';
+                        }
+                }   
+            }   
+            }
+        $session->setFlashdata("success", "successfully");
+            $data['title'] = 'Qi.Rentals';
+            $data['page']= 'Vendor Self Sign Up';
+		    return view('layout/site/vendor_self_sign_up',$data);
+	}
+
+    public function book($id){   
         $model = new VendorService();
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Book';
@@ -238,8 +267,7 @@ class Client extends BaseController
 		return view('layout/site/booked-details',$data);
 	}
 
-    public function book_table($id)
-	{   
+    public function book_table($id){   
         $model = new VendorService();
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Book';
@@ -247,8 +275,7 @@ class Client extends BaseController
 		return view('layout/site/booked-details-tables',$data);
 	}
     
-    public function book_chair($id)
-	{   
+    public function book_chair($id){   
         $model = new VendorService();
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Book';
@@ -256,16 +283,31 @@ class Client extends BaseController
 		return view('layout/site/booked-details-chair',$data);
 	}
 
-    public function book_mattress($id)
-	{   
+    public function book_mattress($id){   
         $model = new VendorService();
         $data['title'] = 'Qi.Rentals';
         $data['page']= 'Book';
         $data['canopies'] = $model->where('id', $id)->findAll();
 		return view('layout/site/booked-details-mattress',$data);
 	}
-  
-   
+
+    public function method_payment(){
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Method Payment';
+		return view('layout/site/method_payment',$data);
+	}
+
+    public function policy(){
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Policy';
+		return view('layout/site/policy',$data);
+	}
+    
+    public function term_condition(){
+        $data['title'] = 'Qi.Rentals';
+        $data['page']= 'Terms & Condition';
+		return view('layout/site/term_condition',$data);
+	}
     //List of Booking Service
     function book_list($param1 = '', $param2 = ''){ 
         if($param1 == 'approve'){
@@ -300,40 +342,45 @@ class Client extends BaseController
         $service_model = new Service();
         $data['vendor'] = $service_model->orderBy('id', 'DECS')->findAll();
         return view('admin/booking_tbl/list',$data);
-    } 
-       
+    }   
+
     function approved_book_list($parem1 = '' , $parem2 =''){  
         if($parem1 = 'payment_confirm'){
+            if($this->request->getMethod() == 'post'){
             $session = session(); 
             $model = new Booking();
             $pmodel = new PaymentConfirm();
-            $data['booking_list'] = $model->where('approved_status', '1')->orderBy('id', 'DESC')->findAll();
-            $booking = $model->where('id', $parem2)->findAll();
-            foreach($booking as $row) 
-                $book_id = $row['id'];
-            //  $p = $row['price'];
+            
             $param_payment = array(
-                        'payment_status' =>  '1',
-                        'date' => date('Y-m-d'),
-                        'time' => date('H:i:s'),
-                      //  'book_id' => $book_id,     
-                        'admin'  =>  $session->get('id')
-                        );
-            $pmodel->insert($param_payment);     
+                'payment_status' =>  '1',
+                'date'           => date('Y-m-d'),
+                'time'           => date('H:i:s'),
+                'book_id'        => $parem2,     
+                'admin'          =>  $session->get('id')
+            );
             $param = array(
-                        'payment_status' =>  '1',      
-                        );                          
-            $model->update($parem2, $param);
+                'payment_status' =>  '1',
+            );
+           // $pmodel->insert($param_payment); 
+            if($pmodel->insert($param_payment )){
+                $session->setFlashdata("success", "successfully");
+                    }else{
+                $session->setFlashdata("error", "Something happened please try again");
+                }
+                $param = array(
+                    'payment_status' =>  '1',      
+                );                          
+                $model->update($parem2, $param);
         }
+    }
         $model = new Booking();
-        $data['booking_list'] = $model->where('approved_status', '1')->orderBy('id', 'DESC')->findAll();
+        $data['booking_list'] = $model->where('approved_status','1')->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'Approved List';
-        $data['page'] = 'Booking ';
-        $service_model = new Service();
-        $data['vendor'] = $service_model->orderBy('id', 'DECS')->findAll();
+        $data['page'] = 'Approved Booking ';
+
         return view('admin/booking_tbl/approve_list',$data);
-    } 
-    
+    }  
+
     function cancel_list($param1 = '', $param2 = ''){ 
         if($param1 = 'delete'){
             $session = session();  
@@ -357,8 +404,7 @@ class Client extends BaseController
         return view('admin/booking_tbl/cancel_list',$data);
     } 
     
-    public function canopies($param1='' , $param2= '')
-	{
+    public function canopies($param1='' , $param2= ''){
         $session = session();
         helper(['form']);
         if($param1 == 'add_canopy'){
@@ -430,8 +476,7 @@ class Client extends BaseController
 
 } 
 
-public function saveCanopies()
-{
+public function saveCanopies(){
     if ($this->request->getMethod() == "post") {
         $rules = [
             "drop_off" => "required",
@@ -441,7 +486,6 @@ public function saveCanopies()
                 'success' => false,
                 'msg' => "There are some validation errors",
             ];
-
             return $this->response->setJSON($response);
         } else {
 
@@ -461,10 +505,15 @@ public function saveCanopies()
                 'service_id' => $this->request->getVar('service_id'),
                 'cat_service_id' => $this->request->getVar('cat_service_id'),
                 'category_id' => $this->request->getVar('category_id'),
-                'total_price' => $this->request->getVar('total_price'),
-              
+                'total_price' => $this->request->getVar('total_price'),    
             ];
             if($model->insert($data)) {
+                $to =  $this->request->getVar('phone');
+                $category_service = get_column_name_by_id('category_service_tbl', $data['category_id'], 'category_name');
+                $total_price = $this->request->getVar('total_price');
+                $msg = "Congrats on successfully registering.Your price  is  Gh¢."."{$total_price}";
+    
+                $res = send_sms($to,$msg);
                 $response = [
                     'success' => true,            
                 ];
@@ -475,8 +524,7 @@ public function saveCanopies()
 }
 
 
-public function mattress($param1='' , $param2= '')
-{
+public function mattress($param1='' , $param2= ''){
     $session = session();
     helper(['form']);
     if($param1 == 'add_mattres'){
@@ -511,13 +559,12 @@ public function mattress($param1='' , $param2= '')
             }
     }   
 }
-$data['title'] = 'Qi.Rentals';
-$data['page']= 'Website';
-return view('layout/site/index',$data);
+    $data['title'] = 'Qi.Rentals';
+    $data['page']= 'Website';
+    return view('layout/site/index',$data);
 } 
 
-public function mattresss()
-	{
+public function mattresss(){
 		if ($this->request->getMethod() == "post") {
 			$rules = [
 				"drop_off" => "required",
@@ -560,4 +607,3 @@ public function mattresss()
 }
 
 ?>
-

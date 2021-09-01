@@ -29,11 +29,10 @@
                                             </div>
                                     </div>
                                     <div class="input-box">
-                                                <label class="label-text">Event Type</label>
+                                            <label class="label-text">Event Type</label>
                                                 <div class="form-group">
                                                     <div class="select-contain w-auto">
-                                                        <select class="select-contain-select" id="event_type" name="event_type"
-                                                            >
+                                                        <select class="select-contain-select" id="event_type" name="event_type">
                                                             <option value="Naming Ceremony" selected>Naming Ceremony 
                                                             </option>
                                                             <option value="Naming Ceremony">Naming Ceremony</option>
@@ -44,9 +43,9 @@
                                                             <option value="Other">Other</option>
                                                         </select>
                                                     </div>
-                                                </div>
+                                            </div>
                                     </div>
-                                    <div class="input-box">
+                                <div class="input-box">
                                             <div class="qty-box d-flex align-items-center justify-content-between">
                                                     <label for="numer_room">Number Room</label>
                                                     <div class="qtyBtn d-flex align-items-center">
@@ -56,9 +55,9 @@
                                                     </div>
                                             </div>
                                     </div>
-                                            <br>
-                                            <div class="btn-box">
-                                
+                                <br>
+                            <div class="btn-box">
+    
                             </div>
                             <button id="save_data"  class="theme-btn text-center w-100 mb-2">Book Now</button>
                             </div>

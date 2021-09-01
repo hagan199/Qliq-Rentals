@@ -14,7 +14,15 @@
                             </div>
                         </div>
                     </div>
-                
+                    <?php if (session()->get("success")): ?>
+        <script>
+            $(document).ready(function() { $.notify({ message: '<?= session()->get("success") ?>',}, { type: 'success',},)})
+        </script>
+    <?php elseif (session()->get("error")): ?>
+      <script>
+            $(document).ready(function() { $.notify({ message: '<?= session()->get("error") ?>',}, { type: 'danger',},)})
+        </script>
+    <?php endif; ?>
                     <div class="col-lg-6">
                         <div class="header-top-content">
                             <div class="header-right d-flex align-items-center justify-content-end">

@@ -26,26 +26,45 @@
     <link rel="stylesheet" href="../../site_file/css/animated-headline.css">
     <link rel="stylesheet" href="../../site_file/css/jquery-ui.css">
     <link rel="stylesheet" href="../../site_file/css/flag-icon.min.css">
-    <link rel="stylesheet" href="../../site_file/css/leaflet.css">
     <link rel="stylesheet" href="../../site_file/css/style.css">
     <link rel="stylesheet" href="../../site_file/css/style_all.css">
 </head>
 <style>
-        body {
-        font-size: 12px; /* just so that it doesn't default to 16px (which is kinda huge) */
-        }
-        .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #007bff;
+    text-align: left;
+    background-color: #fff;
+}
+
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
     z-index: 2;
     color: #23527c;
     background-color: #eee;
     border-color: #ddd;
-        }
-        .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover, .pagination>li>a:hover {
+}
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover,
+.pagination>li>a:hover {
     background-color: #006537;
     border-color: #006537;
     color: #fff;
-        }
-        .pagination>li>a, .pagination>li>span {
+}
+
+.pagination>li>a,
+.pagination>li>span {
     padding: 3px 20px;
     margin-left: 10px;
     line-height: 28px;
@@ -54,7 +73,9 @@
     background: #eee;
     font-size: 30px;
     border: none;
-}pager{
+}
+
+pager {
     z-index: 2;
     background-color: #006537;
     border-color: #006537;
@@ -68,7 +89,23 @@
     font-size: 30px;
     border: none;
 }
-li.pager{
+
+.cta-area {
+    background-size: cover;
+    background-color: #007bff;
+}
+
+.section-bg-2 {
+    background-color: #007bff;
+}
+
+.section-heading .sec__title {
+    font-size: 40px;
+    color: #007bff;
+    font-weight: 700;
+}
+
+li.pager {
     padding: 3px 20px;
     margin-left: 10px;
     line-height: 28px;
@@ -78,9 +115,11 @@ li.pager{
     font-size: 30px;
     border: none;
 }
-    </style>
+</style>
+
 <body>
-    <!-- start cssload-loader -->
+    <!-- start cssload-loader 
+-->
     <div class="preloader" id="preloader">
         <div class="loader">
             <svg class="spinner" viewBox="0 0 50 50">
@@ -89,30 +128,27 @@ li.pager{
         </div>
     </div>
     <!-- end cssload-loader -->
-
     <!-- ================================
             START HEADER AREA
 ================================= -->
-
-<?= $this->include('layout/site/header') ?>
-
+    <?= $this->include('layout/site/header') ?>
     <!-- ================================
-         END HEADER AREA
+        END HEADER AREA
 ================================= -->
-
-    <!-- ================================
-    START BREADCRUMB AREA
-================================= -->
-    <section class="breadcrumb-area bread-bg-5">
+<section class="breadcrumb-area bread-bg-9">
         <div class="breadcrumb-wrap">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="breadcrumb-content">
                             <div class="section-heading">
-                                <h2 class="sec__title text-white">Tables</h2>
+                                <h2 class="sec__title text-white">Reach new customers, get more sales</h2>
                             </div>
                         </div><!-- end breadcrumb-content -->
+                    </div><!-- end col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="breadcrumb-list text-right">
+                        </div><!-- end breadcrumb-list -->
                     </div><!-- end col-lg-6 -->
                 </div><!-- end row -->
             </div><!-- end container -->
@@ -128,80 +164,37 @@ li.pager{
 ================================= -->
 
     <!-- ================================
-    START CONTACT AREA
+    START SERVICE AREA
 ================================= -->
-    <section class="contact-area section--padding">
-       
-    </section><!-- end contact-area -->
-    <!-- ================================
-    END CONTACT AREA
-================================= -->
-<section class="car-area section-bg section-padding ">
+    <section class="service-area section--padding text-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading text-center">
-                        <h2 class="sec__title">Table Rentals</h2>
+                        <h2 class="sec__title">Coming Soon</h2>
                     </div><!-- end section-heading -->
                 </div><!-- end col-lg-12 -->
             </div><!-- end row -->
-            <div class="row" >
-                    <?php $i=1; foreach($tables as $u){ 
-                    $id = $u['id']
-                    ?> 
-                <div class="col-lg-3" id="post_<?=  $id;?>">
-                    <div class="card-item car-card mb-0">
-                    <div class="card-img">
-                        <a  href="/book-tables/<?= $u['id'] ?>" class="d-block">
-                            <img  src="/uploads/images/<?= $u['name'] ?>" width="300" height="200"  alt="car-img">
-                            </a>
-                            <span class="badge">Bestseller</span>
-                            <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top"
-                            title="Save for later">
-                            <i class="la la-heart-o"></i>
-                        </div>
-                </div>
-            <div class="card-body">
-                    <p class="card-meta"><a href="car-single.html"><?= get_column_name_by_id('sub_category_service_tbl', $u['sub_category_id'], 'sub_cat_name') ?></a></p>
-                        <h3 class="card-title"><a href="car-single.html"><?= get_column_name_by_id('category_service_tbl', $u['category_id'], 'category_name') ?> |  Gh¢.<?= $u['price'] ?></a></h3>
-                        <div class="card-rating">
-                            <h2 class="card-title"></h2>
-                                </div>
-                                <div class="card-attributes">
-                            </div>
-                            <div class="card-price d-flex align-items-center justify-content-between">
-                            <p>
-                                <span class="price__num"></span>
-                                <span class="price__text">Per day</span>
-                            </p>
-                            <div class="card-btn">
-                                <a href="/book/<?= $u['id'] ?>" class="theme-btn theme-btn-transparent">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
+                    </div><!-- end icon-box -->
+                </div><!-- end col-lg-3 -->
             </div><!-- end container -->
-        </div>
-    <?php } ?>
-</div>
-<br>
-<div class="row">
-
-    <?php if ($pager) :?>
-    <?php $pagi_path='/tables'; ?>
-    <?php $pager->setPath($pagi_path); ?>             
-    <?= $pager->links();  ?>
-    <?php endif ?> 
-    </div>         
-    </div>
-    </div>
-    </section><!-- end car-area -->
+    </section><!-- end service-area -->
+ 
     <!-- ================================
-    START FOOTER AREA
+    START SERVICE AREA
 ================================= -->
-<?= $this->include('layout/site/footer') ?>
+
 
     <!-- ================================
-        START FOOTER AREA
+    END CTA AREA
+================================= -->
+
+    <!-- ================================
+                    START FOOTER AREA
+================================= -->
+    <?= $this->include('layout/site/footer') ?>
+    <!-- ================================
+                START FOOTER AREA
 ================================= -->
 
     <!-- start back-to-top -->
@@ -214,12 +207,11 @@ li.pager{
     <?= $this->include('layout/modal/contactdetailpopup') ?>
     <?= $this->include('layout/modal/loginpopup') ?>
 
-
     <!-- Template JS Files -->
     <script src="../../site_file/js/jquery-3.4.1.min.js"></script>
     <script src="../../site_file/js/jquery-ui.js"></script>
     <script src="../../site_file/js/popper.min.js"></script>
-    <script src="../../site_file/js/bootstrap.min.js"></script>
+    <script src="../../site_file/s/bootstrap.min.js"></script>
     <script src="../../site_file/js/bootstrap-select.min.js"></script>
     <script src="../../site_file/js/moment.min.js"></script>
     <script src="../../site_file/js/daterangepicker.js"></script>
@@ -228,9 +220,6 @@ li.pager{
     <script src="../../site_file/js/jquery.countTo.min.js"></script>
     <script src="../../site_file/js/animated-headline.js"></script>
     <script src="../../site_file/js/jquery.ripples-min.js"></script>
-    <script src="../../site_file/js/leaflet.js"></script>
-    <script src="../../site_file/js/map.js"></script>
-    <script src="../../site_file/js/ajax-form.js"></script>
     <script src="../../site_file/js/main.js"></script>
 </body>
 

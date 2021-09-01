@@ -1,7 +1,12 @@
 <?= $this->extend('layout/main')?>
 <?= $this->section('content')?>
 
-
+<style>
+    .green{
+            color: white;
+            background-color: green;
+    }
+</style>
 
     <div class="tab-content" id="v-pills-tabContent">             
         <!------Service list---->
@@ -20,9 +25,11 @@
                     <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <<th>#</th>
                             <th>Confirm Date</th>     
-                            <th>Status</th>                                     
+                            <th>Status</th>   
+                            <th>Admin</th> 
+                            <th>Booked ID</th>>                                     
                         </tr>
                         </thead>
                         <tfoot>
@@ -30,23 +37,24 @@
                             <th>#</th>
                             <th>Confirm Date</th>     
                             <th>Status</th>   
-                                                                                                                 
+                            <th>Admin</th> 
+                            <th>Booked ID</th>                                                                                       
                         </tr>
                     </tfoot>
                         <tbody>
                             <?php $i=1; foreach($payment as $u){ ?>
                             <tr>
                                 <td><?= $i++?></td>
-                                <td><?= $u['date']. '-' .$u['time']  ?></td>
-                             
+                                <td><?= $u['date']. ' / ' .$u['time']  ?></td>
                                 <td>
                                 <?php if ($u['payment_status']=='1'){ ?>
-                                                <a  title="Submit First SMS" href="" class="btn btn-sm btn-outline-green">
+                                                <a href="" class="btn btn-sm btn-outline-green green">
                                                     <i class="material-icons">Paid</i>
                                                 </a>
                                             <?php } ?>
                                 </td>  
-                           
+                                <td><?= get_column_name_by_id('users', $u['admin'], 'fname' ),' ', get_column_name_by_id('users', $u['admin'], 'lname' )?></td>
+                                <td><?= get_column_name_by_id('booking_tbl', $u['book_id'], 'id' )?></td>
                             </tr>
                             <?php } ?>                       
                         </tbody>
@@ -61,7 +69,5 @@
             </div>
             <!-- end row -->
             </div>
-            
-
-</div>
+        </div>
             <?= $this->endSection()?> 

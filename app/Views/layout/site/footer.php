@@ -7,7 +7,7 @@
                             <a href="index.html" class="foot__logo"><img src="../../site_file/images/logo.png"
                                     alt="logo"></a>
                         </div><!-- end logo -->
-                        <p class="footer__desc">Best Service Rental</p>
+                        <p class="footer__desc">Best Service Rentals</p>
                         <ul class="list-items pt-3">
                             <li>Anija,<br>Blue Water</li>
                             <li>+(233) 241 977 529</li>
@@ -22,6 +22,7 @@
                             <li><a href="/about">About us</a></li>
                             <li><a href="/services">Service</a></li>
                             <li><a href="/policy">Policy</a></li>
+                            <li><a href="/method-payment">Method of Payment</a></li>
                         </ul>
                     </div><!-- end footer-item -->
                 </div><!-- end col-lg-3 -->
@@ -41,8 +42,54 @@
                 <div class="col-lg-8">
                     <div class="term-box footer-item">
                         <ul class="list-items list--items d-flex align-items-center">
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>          
+                            <li><a href="term-condition
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            ">Terms & Conditions</a></li>
+                            <li><a href="policy">Privacy Policy</a></li>          
                             <li><a href="/faq">Faq</a></li>
                         </ul>
                     </div>
@@ -73,8 +120,6 @@
                 </div><!-- end col-lg-7 -->
                 <div class="col-lg-5">
                     <div class="copy-right-content d-flex align-items-center justify-content-end padding-top-30px">
-                        <h3 class="title font-size-15 pr-2">We Accept</h3>
-                        <img src="../../site_file/images/payment-img.png" alt="">
                     </div><!-- end copy-right-content -->
                 </div><!-- end col-lg-5 -->
             </div><!-- end row -->

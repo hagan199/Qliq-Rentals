@@ -34,17 +34,17 @@ $id = session()->get('logged_user');
     </a>
     <div class="air__menuLeft__container kit__customScroll">
       <ul class="air__menuLeft__list">
-        <li class="air__menuLeft__category">
+        <li class="air__menuLeft__category" <?php if($page == "Vendor Service")echo'' ?>>
           <a href="/dashboard"> <span>Dashboard</span></a>
        
         </li>
-        <li class="air__menuLeft__item">
+        <li class="air__menuLeft__item <?php if($page == 'Booking')echo'air__menuLeft__item--active'; ?>">
           <a href="/booking/list/item"  class="air__menuLeft__link air__sidebar__actionToggle">
             <i class="fe fe-settings air__menuLeft__icon"></i>
             <span>Booked Detail</span>
           </a>
         </li>
-        <li class="air__menuLeft__item">
+        <li class="air__menuLeft__item <?php if($page == 'Booking')echo'air__menuLeft__item--active'; ?>">
           <a href="/approved/list/item"  class="air__menuLeft__link air__sidebar__actionToggle">
             <i class="fe fe-settings air__menuLeft__icon"></i>
             <span>Approve Booked List </span>
@@ -77,34 +77,40 @@ $id = session()->get('logged_user');
             </li>
           </ul>
         </li>
-        <li class="air__menuLeft__item air__menuLeft__submenu">
+        <li class="air__menuLeft__item air__menuLeft__submenu <?php if($page == 'Vendor Service' || $page == 'Sub Category Service'  
+        || $page == 'Service' || $page == 'Category Service' || $page == 'Setting Vendor')echo'air__menuLeft__submenu--active'; ?>">
           <a href="javascript: void(0)" class="air__menuLeft__link">
             <i class="fe fe-home air__menuLeft__icon"></i>
             <span>Vendor</span>
             <span class="badge text-white bg-blue-light float-right mt-1 px-2"></span>
           </a>
           <ul class="air__menuLeft__list">
-          <li class="<?php if($page == 'user')echo 'active'; ?>">
+          <li class="air__menuLeft__item  <?php if($page == 'Setting Vendor')echo'air__menuLeft__item--active'; ?>">
             <a href="/svendor/edit/goals" class="air__menuLeft__link">
                 <span>Vendor Name</span>
               </a>
             </li>
-            <li class=" air__menuLeft__item">
+            <li class="air__menuLeft__item  ">
+            <a href="/sign-up-vendor/add/goals" class="air__menuLeft__link">
+                <span>Sign Up Request Vendor</span>
+              </a>
+            </li>
+            <li class="air__menuLeft__item <?php if($page == 'Service')echo'air__menuLeft__item--active'; ?>">
             <a href="/services/add/servicesadd" class="air__menuLeft__link">
                 <span>Service</span>
               </a>
             </li>
-            <li class=" air__menuLeft__item">
+            <li class="air__menuLeft__item <?php if($page == 'Category Service')echo'air__menuLeft__item--active'; ?>">
             <a href="/cservice/add/goals" class="air__menuLeft__link">
                 <span>Cat Service</span>
               </a>
             </li>
-            <li class=" air__menuLeft__item">
+            <li class="air__menuLeft__item <?php if($page == 'Sub Category Service')echo'air__menuLeft__item--active'; ?>">
             <a href="/subservice/add/goals" class="air__menuLeft__link">
                 <span>Sub Cat Service</span>
               </a>
             </li>
-            <li class=" air__menuLeft__item">
+            <li class="air__menuLeft__item <?php if($page == 'Vendor Service')echo'air__menuLeft__item--active'; ?>">
             <a href="/vservice/add/goals" class="air__menuLeft__link">
                 <span>Vendor Service</span>
               </a>

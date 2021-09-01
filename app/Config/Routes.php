@@ -49,7 +49,10 @@ $routes->match(['get', 'post'], '/subservice/(:any)/(:any)', 'Admin::subcategory
 $routes->match(['get', 'post'], '/services/(:any)/(:any)', 'Admin::service/$1/$2');
 $routes->match(['get', 'post'], '/svendor/(:any)/(:any)', 'Admin::settingVendor/$1/$2');
 $routes->match(['get', 'post'], '/vservice/(:any)/(:any)', 'Admin::vendorService/$1/$2');
-$routes->match(['get', 'post'], '/cancel-list-delete/(:num)', 'Admin::cancel_list_delete/$1/');
+$routes->match(['get', 'post'], '/sign-up-vendor/(:any)/(:any)', 'Admin::sign_up_request_vendor/$1/$2');
+
+$routes->match(['get', 'post'], '/vendor-self-sign-up/(:any)/(:any)', 'Client::vendor_self_sign_up/$1/$2');
+
 $routes->match(['get', 'post'], '/vendor', 'Admin::setup_vendor/$1/$2');
 $routes->match(['get', 'post'], '/payment-detail', 'Admin::payment_detail');
 
@@ -109,8 +112,13 @@ $routes->match(['get', 'post'], '/book-tables/(:any)', 'Client::book_table/$1');
 $routes->match(['get', 'post'], '/book-mattress/(:any)', 'Client::book_mattress/$1');
 
 $routes->match(['get', 'post'], '/join-us', 'Client::join_us');
+
+$routes->match(['get', 'post'], '/method-payment', 'Client::method_payment');
+$routes->match(['get', 'post'], '/policy', 'Client::policy');
+$routes->match(['get', 'post'], '/term-condition', 'Client::term_condition');
 // Service
 $routes->get('/services', 'Service_tbl::index');
+
 // Service
 $routes->get('/vservice', 'Vendor_service_tbl::index');
 

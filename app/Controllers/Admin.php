@@ -129,8 +129,6 @@ class Admin extends BaseController{
         return view('admin/setting_vendor/list',$data);
     } 
 
-    
-
     // Services
     public function service($param1 = '',  $param2 = ''){    
         $session = session();
@@ -196,7 +194,33 @@ class Admin extends BaseController{
             }   
         }   
         }
-
+        if($param1 == 'vendor_self_sign_up'){
+            if($this->request->getMethod() == 'post'){
+                $rules = [
+                    "fname" => "required",
+                    "lname" => "required",  
+                
+                ];
+                if (!$this->validate($rules)){
+                    $session->setFlashdata("error", "Invalid data request");
+                    $data['users'] =  'vendor_self_sign_up';
+                }else{
+                    $model = new UserModel();       
+                    $data['fname'] = $this->request->getVar('fname');
+                    $data['lname'] = $this->request->getVar('lname');
+                    $data['phone'] = $this->request->getVar('phone');
+                    $data['email'] = $this->request->getVar('email');
+                    $data['user_type'] = '202';
+                    $data['user_password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
+                if($model->insert($data)){
+                $session->setFlashdata("success", "successfully");
+                    }else{
+                $session->setFlashdata("error", "Something happened please try again");
+                $data['users'] =  'vendor_self_sign_up';
+                    }
+            }   
+        }   
+        }
         $model = new UserModel();
         $data['users_detail'] = $model->orderBy('id', 'DESC')->findAll();
         $data['title'] = 'User List';
@@ -204,8 +228,7 @@ class Admin extends BaseController{
         return view('admin/users/list',$data);
     }  
 
-
-
+    // Vendor Service
     public function vendorService($param1 = '',  $param2 = ''){ 
         $session = session();   
         if($param1 == 'add'){
@@ -287,8 +310,6 @@ class Admin extends BaseController{
            //     $file->move(WRITEPATH .  $path );
      //}
       //      }
-
-
                     $data = [
                             'vendor_id'   => $this->request->getVar('vendor_id'),
                             'service_id'  => $this->request->getVar('service_id'),
@@ -310,6 +331,76 @@ class Admin extends BaseController{
                     }
                 }
             }
+
+            if($param1 == 'cleaning'){
+                if($this->request->getMethod() == 'post'){
+                    $rules = [
+                        "vendor_id" => "required",
+                        "service_id" => "required",   
+                        "price" => "required",   
+                        "vendor_id" => "required",  
+                    ];
+                    if(!$this->validate($rules)){
+                        $session->setFlashdata("error", "Invalid data request");
+                        $data['vendor_service'] = 'cleaning';
+                    }else{
+                        $model = new VendorService(); 
+                        
+                    $path = './uploads/images';  
+                    
+                    if($imagefile = $this->request->getFiles())
+                    {
+                        foreach($imagefile['image'] as $img)
+                        {
+                            if ($img->isValid() && ! $img->hasMoved())
+                            {
+                            $img->move($path);
+                            }
+                        }
+                    }
+
+                    if($imagefile = $this->request->getFiles())
+                    {
+                        foreach($imagefile['image2'] as $img2)
+                        {
+                            if ($img->isValid() && ! $img2->hasMoved())
+                            {
+                            $img2->move($path);
+                            }
+                            }
+                    }
+                    if($imagefile = $this->request->getFiles())
+                    {
+                            foreach($imagefile['image3'] as $img3)
+                            {
+                            if ($img->isValid() && ! $img3->hasMoved())
+                            {
+                            $img3->move($path);
+                            }
+                        }
+                    }
+
+                    $data = [
+                            'vendor_id'   => $this->request->getVar('vendor_id'),
+                            'service_id'  => $this->request->getVar('service_id'),
+                            'price'       => $this->request->getVar('price'),
+                            'category_id' => $this->request->getVar('category_id'),
+                            'sub_category_id' => $this->request->getVar('sub_category_id'),
+                            'vendor_id'   => $this->request->getVar('vendor_id'),
+                            'description'   => $this->request->getVar('description'),
+                            'name' =>$img->getName(),
+                            'name2' =>$img2->getName(),
+                            'name3' =>$img3->getName(),
+                        ];
+                        if($model->insert($data)){
+                        $session->setFlashdata("success", "successfully");
+                            }else{
+                        $session->setFlashdata("error", "Something happened please try again");
+                        $data['vendor_service'] = 'cleaning';
+                        }
+                    }
+                }
+            }
             if($parem1 = 'delete'){
                 $session = session();  
                 $VendorService = new VendorService();
@@ -324,8 +415,6 @@ class Admin extends BaseController{
                 $session->setFlashdata("success", "alert-danger");
                 }
             }
-
-
             $model = new VendorService();
             $data['vendor'] = $model->orderBy('id', 'DESC')->findAll();
             $settingvendormodel = new SettingVendor();
@@ -339,29 +428,9 @@ class Admin extends BaseController{
             $service_model = new Service();
             $data['all_service'] = $service_model->orderBy('id', 'DESC')->findAll();
             $data['title'] = 'Setup Vendor Service ';
-            $data['page'] = 'Vendor Service ';
+            $data['page'] = 'Vendor Service';
             return view('admin/vendor_service_tbl/list',$data);
         }  
-
-
-
-        public function vendorService_delete($id=0){
-            $session = session();  
-            $VendorService = new VendorService();
-            ## Check record
-            if($VendorService->find($id)){
-
-            ## Delete record
-            $VendorService->delete($id);
-
-                $session->setFlashdata("success", "Deleted Successfully!");
-            }else{
-            $session->setFlashdata("success", "alert-danger");
-            }
-            $data['title'] = 'Setup Vendor Service ';
-            $data['page'] = 'Vendor Service '; 
-            return view('vservice/add/goals',$data);
-        }
 
         // Category  Service  
     public function categoryService($param1 = '',  $param2 = ''){    
@@ -447,6 +516,51 @@ public function subcategoryService($param1 = '',  $param2 = ''){
         }  
 }
 
+
+public function sign_up_requests($param1 = '',  $param2 = ''){  
+    helper(['form']);  
+    $session = session();
+    $data =[];
+    if($param1 == 'add'){
+        if($this->request->getMethod() == 'post'){
+            $rules = [
+                "sub_cat_name" => "required",
+                "category_service_id" => "required", 
+            ];
+            if (!$this->validate($rules)){
+                $session->setFlashdata("error", "Invalid data request");
+                $data['subcategory'] = 'add';
+            }else{
+                $model = new SubCategoryService();  
+                
+                
+                $data = [
+                'sub_cat_name' => $this->request->getVar('sub_cat_name'),
+                'category_service_id'  => $this->request->getVar('category_service_id'),
+                ];
+                if($model->insert($data)){
+                $session->setFlashdata("success", "successfully");
+                    }else{
+                $session->setFlashdata("error", "Something happened please try again");
+                $data['subcategory'] = 'add';
+                }
+                }
+        } 
+        $model = new UserModel();
+        $data['users'] = $model->orderBy('id', 'DESC')->findAll();
+        $servicemodel = new Service();
+        $data['all_service'] = $servicemodel->orderBy('id', 'DESC')->findAll();
+        $categorymodel = new SubCategoryService();
+        $data['all_catergory'] = $categorymodel->orderBy('id', 'DESC')->findAll();
+        $catmodel = new CategoryService();
+        $data['category'] = $catmodel->orderBy('id', 'DESC')->findAll();
+        $data['title'] = 'Sub Category Service List';
+        $data['page'] = 'Sub Category Service';
+        return view('admin/sub_category_service_tbl/list',$data);
+        }  
+}
+
+
 public function payment_detail()
 	{ 
         $model = new PaymentConfirm();
@@ -455,6 +569,86 @@ public function payment_detail()
         $data['payment'] = $model->orderBy('id', 'DESC')->findAll();
         return view('admin/payment/list',$data);
 	}
+
+    
+public function sign_up_request()
+{ 
+    $model = new UserModel();
+    $data['title'] = 'Sign Up Request List';
+    $data['page']= 'Sign Up Request';
+    $data['request'] = $model->orderBy('id', 'DESC')->findAll();
+    return view('admin/sign_up_request/list',$data);
+}
+
+
+    // Vendor sign up  request list
+    
+public function sign_up_request_vendor($param1 = '',  $param2 = ''){    
+        $session = session();
+        if($param1 == 'add'){
+            if($this->request->getMethod() == 'post'){
+                $rules = [
+                    "fname" => "required",
+                    "lname" => "required",  
+                    "location" => "required"          
+                ];
+                if (!$this->validate($rules)){
+                    $session->setFlashdata("error", "Invalid data request");
+                    $data['users'] =  'add';
+                }else{
+
+                    $model = new UserModel();       
+                    $data['fname'] = $this->request->getVar('fname');
+                    $data['lname'] = $this->request->getVar('lname');
+                    $data['phone'] = $this->request->getVar('phone');
+                    $data['location'] = $this->request->getVar('location');
+                    $data['email'] = $this->request->getVar('email');
+                    $data['user_type'] = '404';
+                    $data['user_name'] = $this->request->getVar('user_name',FILTER_SANITIZE_STRING);
+                    $data['user_password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
+                if($model->insert($data)){
+                $session->setFlashdata("success", "successfully");
+                    }else{
+                $session->setFlashdata("error", "Something happened please try again");
+                $data['users'] =  'add';
+                    }
+            }   
+        }   
+        }
+        if($param1 == 'vendor_self_sign_up'){
+            if($this->request->getMethod() == 'post'){
+                $rules = [
+                    "fname" => "required",
+                    "lname" => "required",                
+                ];
+                if (!$this->validate($rules)){
+                    $session->setFlashdata("error", "Invalid data request");
+                    $data['users'] =  'vendor_self_sign_up';
+                }else{
+                    $model = new UserModel();       
+                    $data['fname'] = $this->request->getVar('fname');
+                    $data['lname'] = $this->request->getVar('lname');
+                    $data['phone'] = $this->request->getVar('phone');
+                    $data['email'] = $this->request->getVar('email');
+                    $data['user_type'] = '202';
+                    $data['user_password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
+                if($model->insert($data)){
+                $session->setFlashdata("success", "successfully");
+                $data['users'] =  'vendor_self_sign_up';
+                return view('site//list',$data);
+                    }else{
+                $session->setFlashdata("error", "Something happened please try again");
+                $data['users'] =  'vendor_self_sign_up';
+                    }
+            }   
+        }   
+        }
+        $model = new UserModel();
+        $data['sign_up_request'] = $model->where('user_type' ,'404')->orderBy('id', 'DESC')->findAll();
+        $data['title'] = 'New Vendor List';
+        $data['page'] = 'New Vendor';
+        return view('admin/sign_up_request/list',$data);
+    }  
 }
 
 ?>
