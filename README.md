@@ -1,4 +1,3 @@
-# GNAT
 # Rentals Project
 
 This project is a Rentals application where users can search and rent various items such as cars, bikes, apartments, etc.
